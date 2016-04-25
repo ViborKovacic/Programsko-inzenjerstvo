@@ -8,3 +8,6 @@ C:\Users\Mario\Documents\GitHub\Cvjecara\PICvjecara\obj\Debug\PICvjecara.csproj.
 C:\Users\Mario\Documents\GitHub\Cvjecara\PICvjecara\obj\Debug\PICvjecara.exe
 C:\Users\Mario\Documents\GitHub\Cvjecara\PICvjecara\obj\Debug\PICvjecara.pdb
 C:\Users\Mario\Documents\GitHub\Cvjecara\PICvjecara\obj\Debug\PICvjecara.frmCvjecarna.resources
+C:\Users\Mario\Documents\GitHub\r16027\PICvjecara\bin\Debug\PICvjecara.exe.config
+C:\Users\Mario\Documents\GitHub\r16027\PICvjecara\obj\Debug\PICvjecara.exe
+C:\Users\Mario\Documents\GitHub\r16027\PICvjecara\obj\Debug\PICvjecara.pdb
