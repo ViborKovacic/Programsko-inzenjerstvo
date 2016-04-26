@@ -15,6 +15,7 @@ namespace PICvjecara
         public PregledArtikla()
         {
             InitializeComponent();
+            ControlBox = false;
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)

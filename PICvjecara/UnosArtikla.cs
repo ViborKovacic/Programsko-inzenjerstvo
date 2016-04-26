@@ -15,6 +15,7 @@ namespace PICvjecara
         public UnosArtikla()
         {
             InitializeComponent();
+            ControlBox = false;
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
