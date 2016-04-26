@@ -36,12 +36,12 @@
             this.btnProdaja = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.lblNaslov = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnKraj = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +96,7 @@
             this.btnArtikli.TabIndex = 2;
             this.btnArtikli.Text = "Artikli";
             this.btnArtikli.UseVisualStyleBackColor = true;
+            this.btnArtikli.Click += new System.EventHandler(this.btnArtikli_Click);
             // 
             // btnProdaja
             // 
@@ -126,17 +127,6 @@
             this.lblNaslov.TabIndex = 1;
             this.lblNaslov.Text = "Cvjećarna Mak";
             this.lblNaslov.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::PICvjecara.Properties.Resources.logo;
-            this.pbLogo.InitialImage = global::PICvjecara.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(977, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(123, 124);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 2;
-            this.pbLogo.TabStop = false;
             // 
             // button1
             // 
@@ -172,7 +162,7 @@
             this.groupBox2.Size = new System.Drawing.Size(625, 425);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "\"Prikaz dodatnih gumbova il promata nekog\"";
+            this.groupBox2.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
             // 
             // btnKraj
             // 
@@ -183,6 +173,17 @@
             this.btnKraj.Text = "Kraj";
             this.btnKraj.UseVisualStyleBackColor = true;
             this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::PICvjecara.Properties.Resources.logo;
+            this.pbLogo.InitialImage = global::PICvjecara.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(977, 2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(123, 124);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
             // 
             // frmCvjecarna
             // 

@@ -26,5 +26,12 @@ namespace PICvjecara
         {
             Environment.Exit(0);
         }
+
+        private void btnArtikli_Click(object sender, EventArgs e)
+        {
+            PregledArtikla openPregledArtikla = new PregledArtikla();
+            openPregledArtikla.Show();
+            Visible = false;
+        }
     }
 }
