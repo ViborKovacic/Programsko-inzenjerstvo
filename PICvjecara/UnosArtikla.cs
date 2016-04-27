@@ -36,24 +36,22 @@ namespace PICvjecara
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            /* otvoriti konekciju sa bazom, dodati vrijednosti u tablicu
-            naredba (insert), zatvoriti konekciju s bazom*/
             DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.Connection();
+            newConnection.ConnectionDB();
 
             SqlCommand comm = new SqlCommand();
             comm.Connection = DatabaseConnection.conn;
 
             comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
-            comm.Parameters.AddWithValue("Naziv", txtNaziv);
-            comm.Parameters.AddWithValue("Cijena", txtCijena);
-            comm.Parameters.AddWithValue("Kolicina", txtKolicina);
-            comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla);
-
+            comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
+            comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
+            comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
+            comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.Text);
             comm.ExecuteNonQuery();
+
             MessageBox.Show(cmboxTipArtikla.Text + "  dodano." + Environment.NewLine +
-                 txtNaziv.Text + " dodano." + Environment.NewLine + txtCijena.Text +
-                 " dodano." + Environment.NewLine + txtKolicina.Text + " dodano.", "Dodano");
+                            txtNaziv.Text + " dodano." + Environment.NewLine + txtCijena.Text +
+                            " dodano." + Environment.NewLine + txtKolicina.Text + " dodano.", "Dodano");
 
             DatabaseConnection.conn.Close();
         }

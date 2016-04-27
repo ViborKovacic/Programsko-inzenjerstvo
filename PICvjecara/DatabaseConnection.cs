@@ -11,9 +11,9 @@ namespace PICvjecara
     {
         public static SqlConnection conn = null;
 
-        public void Connection()
+        public void ConnectionDB()
         {
-            conn = new SqlConnection("Data Source=31.147.204.119\\PISERVER,1433;Initial Catalog=16027_DB;Persist Security Info=True;User ID=16027_User;Password=***********");
+            conn = new SqlConnection("Data Source=31.147.204.119\\PISERVER,1433;Initial Catalog=16027_DB;Persist Security Info=True;User ID=16027_User;Password=uJYptMsf");
             conn.Open();
         }
     }

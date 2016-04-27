@@ -29,7 +29,7 @@ namespace PICvjecara
         {
             UnosArtikla openUnosArtikla = new UnosArtikla();
             openUnosArtikla.Show();
-            Visible = false;
+            //Visible = false;
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
