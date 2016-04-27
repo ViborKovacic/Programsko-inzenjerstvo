@@ -22,15 +22,13 @@ namespace PICvjecara
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             cmboxTipArtikla.Text = "Odaberi tip";
-            txtNaziv.Clear();
-            txtCijena.Clear();
-            txtKolicina.Clear();
+            txtNaziv.Text = "Naziv artikla";
+            txtCijena.Text = "Unesite cijenu u kn";
+            txtKolicina.Text = "Unesite količinu";
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            PregledArtikla openPregledArtikla = new PregledArtikla();
-            openPregledArtikla.Show();
             Visible = false;
         }
 
@@ -54,6 +52,13 @@ namespace PICvjecara
                             " dodano." + Environment.NewLine + txtKolicina.Text + " dodano.", "Dodano");
 
             DatabaseConnection.conn.Close();
+        }
+
+        private void UnosArtikla_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
+            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
+
         }
     }
 }

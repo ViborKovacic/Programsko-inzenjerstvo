@@ -200,6 +200,7 @@
             this.Controls.Add(this.lblNaslov);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCvjecarna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cvjećarna";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
