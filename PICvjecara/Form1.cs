@@ -34,5 +34,12 @@ namespace PICvjecara
             openPregledArtikla.Show();
             Visible = false;
         }
+
+        private void btnSwitchUser_Click(object sender, EventArgs e)
+        {
+            Prijava openPrijava = new Prijava();
+            openPrijava.Show();
+            Visible = false;
+        }
     }
 }
