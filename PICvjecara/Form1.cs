@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,13 @@ namespace PICvjecara
             InitializeComponent();
             ControlBox = false;
             btnPrikazNarudzbi.Visible = false;
-            btnNarudzbenica.Visible = false;
+            btnNarudzbenica.Visible = false;           
+
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnKraj_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace PICvjecara
             openPregledArtikla.Show();
             Visible = false;
         }
-
+        
         private void btnSwitchUser_Click(object sender, EventArgs e)
         {
             Prijava openPrijava = new Prijava();
@@ -57,5 +59,6 @@ namespace PICvjecara
             openNarudzbenica.Show();
             Visible = false;
         }
+           
     }
 }

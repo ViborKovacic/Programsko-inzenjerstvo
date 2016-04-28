@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.grpBox = new System.Windows.Forms.GroupBox();
-            this.btnKraj = new System.Windows.Forms.Button();
-            this.btnNarudzbenica = new System.Windows.Forms.Button();
             this.btnPrikazNarudzbi = new System.Windows.Forms.Button();
+            this.btnNarudzbenica = new System.Windows.Forms.Button();
+            this.btnKraj = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.grpBox.SuspendLayout();
@@ -171,15 +171,14 @@
             this.grpBox.TabStop = false;
             this.grpBox.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
             // 
-            // btnKraj
+            // btnPrikazNarudzbi
             // 
-            this.btnKraj.Location = new System.Drawing.Point(998, 552);
-            this.btnKraj.Name = "btnKraj";
-            this.btnKraj.Size = new System.Drawing.Size(90, 35);
-            this.btnKraj.TabIndex = 7;
-            this.btnKraj.Text = "Kraj";
-            this.btnKraj.UseVisualStyleBackColor = true;
-            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
+            this.btnPrikazNarudzbi.Location = new System.Drawing.Point(262, 84);
+            this.btnPrikazNarudzbi.Name = "btnPrikazNarudzbi";
+            this.btnPrikazNarudzbi.Size = new System.Drawing.Size(150, 50);
+            this.btnPrikazNarudzbi.TabIndex = 1;
+            this.btnPrikazNarudzbi.Text = "Prikaži sve narudžbe";
+            this.btnPrikazNarudzbi.UseVisualStyleBackColor = true;
             // 
             // btnNarudzbenica
             // 
@@ -191,14 +190,15 @@
             this.btnNarudzbenica.UseVisualStyleBackColor = true;
             this.btnNarudzbenica.Click += new System.EventHandler(this.btnNarudzbenica_Click);
             // 
-            // btnPrikazNarudzbi
+            // btnKraj
             // 
-            this.btnPrikazNarudzbi.Location = new System.Drawing.Point(262, 84);
-            this.btnPrikazNarudzbi.Name = "btnPrikazNarudzbi";
-            this.btnPrikazNarudzbi.Size = new System.Drawing.Size(150, 50);
-            this.btnPrikazNarudzbi.TabIndex = 1;
-            this.btnPrikazNarudzbi.Text = "Prikaži sve narudžbe";
-            this.btnPrikazNarudzbi.UseVisualStyleBackColor = true;
+            this.btnKraj.Location = new System.Drawing.Point(998, 552);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(90, 35);
+            this.btnKraj.TabIndex = 7;
+            this.btnKraj.Text = "Kraj";
+            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
             // 
             // pbLogo
             // 
@@ -227,7 +227,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCvjecarna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cvjećarna";
+            this.Text = "Cvjećarna";            
             this.groupBox1.ResumeLayout(false);
             this.grpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();

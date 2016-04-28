@@ -49,8 +49,11 @@ namespace PICvjecara
 
         }
 
-       
-
-        
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Prijava openPrijava = new Prijava();
+            openPrijava.Show();
+            Visible = false;
+        }
     }
 }

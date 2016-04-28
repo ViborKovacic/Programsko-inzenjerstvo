@@ -46,7 +46,7 @@ namespace PICvjecara
 
                 if (txtKorIme.Text == KorIme && txtLozinka.Text == Lozinka)
                 {
-                    frmCvjecarna openCvjecarna = new frmCvjecarna();
+                    frmCvjecarna openCvjecarna = new frmCvjecarna();                    
                     openCvjecarna.Show();
                     Visible = false;
                 }
