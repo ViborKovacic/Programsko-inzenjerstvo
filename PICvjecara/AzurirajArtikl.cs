@@ -2,37 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace PICvjecara
 {
-    public partial class UnosArtikla : Form
+    public partial class AzurirajArtikl : Form
     {
-        public UnosArtikla()
+        public AzurirajArtikl()
         {
             InitializeComponent();
             ControlBox = false;
         }
 
-        private void btnObrisi_Click(object sender, EventArgs e)
-        {
-            cmboxTipArtikla.Text = "Odaberi tip";
-            txtNaziv.Text = "Naziv artikla";
-            txtCijena.Text = "Unesite cijenu u kn";
-            txtKolicina.Text = "Unesite količinu";
-        }
-
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-            Visible = false;
-        }
-
-        private void btnDodaj_Click(object sender, EventArgs e)
+        private void btnAzuriraj_Click(object sender, EventArgs e)
         {
             int broj = 0;
             if (int.TryParse(txtCijena.Text.Trim(), out broj))
@@ -43,27 +30,31 @@ namespace PICvjecara
                 SqlCommand comm = new SqlCommand();
                 comm.Connection = DatabaseConnection.conn;
 
-                comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
-                comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
-                comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
-                comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
-                comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.SelectedValue);
+                comm.CommandText = "update Artikli set Naziv='" + txtNaziv.Text + "',Cijena='" + txtCijena.Text + "',Kolicina='" + txtKolicina.Text + "',ID_vrsta_artikla='" + cmboxTipArtikla.Text + "'where ID_artikla = '" + cmbBrojArtikla.Text + "' ;";
                 comm.ExecuteNonQuery();
 
-                MessageBox.Show("Uspiješno ste unjeli artikl");
+                MessageBox.Show("Uspiješno ste ažurirali", "Dodano");
 
                 DatabaseConnection.conn.Close();
             }
+
             else
             {
                 MessageBox.Show("Cijena i količina moraju biti brojevi");
             }
         }
 
-        private void UnosArtikla_Load(object sender, EventArgs e)
+        private void btnPovratak_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+        }
+
+        private void AzurirajArtikl_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
             this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
+            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
 
         }
     }

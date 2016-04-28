@@ -13,10 +13,15 @@ namespace PICvjecara
 {
     public partial class PregledArtikla : Form
     {
+        public SqlCommandBuilder builder = new SqlCommandBuilder();
+        public SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        public DataSet ds = new DataSet();
+
         public PregledArtikla()
         {
             InitializeComponent();
             ControlBox = false;
+            timerRefresh.Start();
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -34,38 +39,42 @@ namespace PICvjecara
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
-            /*otvoiti konekciju s bazom, ažurirati podatke naredba (alter),
-            zatvoriti konekciju sa bazom*/
+            AzurirajArtikl openAzuriraj = new AzurirajArtikl();
+            openAzuriraj.Show();
+        }
 
+        private void btnBrisi_Click(object sender, EventArgs e)
+        {
             DatabaseConnection newConnection = new DatabaseConnection();
             newConnection.ConnectionDB();
 
             SqlCommand comm = new SqlCommand();
             comm.Connection = DatabaseConnection.conn;
+            comm.CommandText = "delete from Artikli where ID_artikla='" + cmbBrojArtikla.Text + "'";
 
-            /*comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
-            comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
-            comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
-            comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
-            comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.Text);
-            comm.ExecuteNonQuery();
+            MessageBox.Show("Artikl broj " + cmbBrojArtikla.Text + ". uspiješno orbisan");
+        }
 
-            MessageBox.Show();*/
+        private void timerRefresh_Tick(object sender, EventArgs e)
+        {
+            DatabaseConnection newConnection = new DatabaseConnection();
+            newConnection.ConnectionDB();
+
+            SqlCommand comm = new SqlCommand();
+            comm.Connection = DatabaseConnection.conn;
+            comm.CommandText = "select Artikli.ID_artikla as [Broj artikla], Artikli.Naziv, Artikli.Cijena, Artikli.Kolicina, Vrsta_artikla.Vrsta as [Vrsta artikla] from Artikli inner join Vrsta_artikla on Artikli.ID_vrsta_artikla = Vrsta_artikla.ID_vrsta_artikla";
+
+            dataAdapter = new SqlDataAdapter(comm);
+
+            builder = new SqlCommandBuilder(dataAdapter);
+
+            ds = new DataSet();
+
+            dataAdapter.Fill(ds);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.DataSource = ds.Tables[0];
 
             DatabaseConnection.conn.Close();
-        }
-
-        private void btnBrisi_Click(object sender, EventArgs e)
-        {
-            /*otvoiti konekciju s bazom, obrisati podatke naredba (delete),
-            zatvoriti konekciju sa bazom*/
-        }
-
-        private void PregledArtikla_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
-
         }
     }
 }
