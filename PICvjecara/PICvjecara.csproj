@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzurirajArtikl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajArtikl.Designer.cs">
+      <DependentUpon>AzurirajArtikl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_16027_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AzurirajArtikl.resx">
+      <DependentUpon>AzurirajArtikl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,24 +34,32 @@ namespace PICvjecara
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
+            int broj = 0;
+            if (int.TryParse(txtCijena.Text.Trim(), out broj))
+            {
+                DatabaseConnection newConnection = new DatabaseConnection();
+                newConnection.ConnectionDB();
 
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = DatabaseConnection.conn;
 
-            comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
-            comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
-            comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
-            comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
-            comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.Text);
-            comm.ExecuteNonQuery();
+                comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
+                comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
+                comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
+                comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
+                comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.SelectedValue);
+                comm.ExecuteNonQuery();
 
-            MessageBox.Show(cmboxTipArtikla.Text + "  dodano." + Environment.NewLine +
-                            txtNaziv.Text + " dodano." + Environment.NewLine + txtCijena.Text +
-                            " dodano." + Environment.NewLine + txtKolicina.Text + " dodano.", "Dodano");
+                MessageBox.Show(cmboxTipArtikla.Text + "  dodano." + Environment.NewLine +
+                                txtNaziv.Text + " dodano." + Environment.NewLine + txtCijena.Text +
+                                " dodano." + Environment.NewLine + txtKolicina.Text + " dodano.", "Dodano");
 
-            DatabaseConnection.conn.Close();
+                DatabaseConnection.conn.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cijena i količina moraju biti brojevi");
+            }
         }
 
         private void UnosArtikla_Load(object sender, EventArgs e)

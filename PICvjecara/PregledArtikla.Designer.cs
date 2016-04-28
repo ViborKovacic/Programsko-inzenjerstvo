@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDvrstaartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.btnUnosNovogArtikla = new System.Windows.Forms.Button();
@@ -42,6 +37,9 @@
             this.btnPovratak = new System.Windows.Forms.Button();
             this.btnBrisi = new System.Windows.Forms.Button();
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
+            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.cmbBrojArtikla = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
@@ -49,50 +47,11 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDartiklaDataGridViewTextBoxColumn,
-            this.nazivDataGridViewTextBoxColumn,
-            this.cijenaDataGridViewTextBoxColumn,
-            this.kolicinaDataGridViewTextBoxColumn,
-            this.iDvrstaartiklaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.artikliBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(201, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 554);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // iDartiklaDataGridViewTextBoxColumn
-            // 
-            this.iDartiklaDataGridViewTextBoxColumn.DataPropertyName = "ID_artikla";
-            this.iDartiklaDataGridViewTextBoxColumn.HeaderText = "ID_artikla";
-            this.iDartiklaDataGridViewTextBoxColumn.Name = "iDartiklaDataGridViewTextBoxColumn";
-            this.iDartiklaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // cijenaDataGridViewTextBoxColumn
-            // 
-            this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "Cijena";
-            this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
-            this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            // 
-            // iDvrstaartiklaDataGridViewTextBoxColumn
-            // 
-            this.iDvrstaartiklaDataGridViewTextBoxColumn.DataPropertyName = "ID_vrsta_artikla";
-            this.iDvrstaartiklaDataGridViewTextBoxColumn.HeaderText = "ID_vrsta_artikla";
-            this.iDvrstaartiklaDataGridViewTextBoxColumn.Name = "iDvrstaartiklaDataGridViewTextBoxColumn";
             // 
             // artikliBindingSource
             // 
@@ -137,7 +96,7 @@
             // 
             // btnBrisi
             // 
-            this.btnBrisi.Location = new System.Drawing.Point(25, 289);
+            this.btnBrisi.Location = new System.Drawing.Point(25, 489);
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(157, 72);
             this.btnBrisi.TabIndex = 5;
@@ -149,11 +108,39 @@
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
             // 
+            // timerRefresh
+            // 
+            this.timerRefresh.Interval = 1000;
+            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // cmbBrojArtikla
+            // 
+            this.cmbBrojArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artikliBindingSource, "ID_artikla", true));
+            this.cmbBrojArtikla.DataSource = this.artikliBindingSource;
+            this.cmbBrojArtikla.DisplayMember = "ID_artikla";
+            this.cmbBrojArtikla.FormattingEnabled = true;
+            this.cmbBrojArtikla.Location = new System.Drawing.Point(137, 446);
+            this.cmbBrojArtikla.Name = "cmbBrojArtikla";
+            this.cmbBrojArtikla.Size = new System.Drawing.Size(49, 21);
+            this.cmbBrojArtikla.TabIndex = 23;
+            this.cmbBrojArtikla.ValueMember = "ID_artikla";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 449);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Broj artikla za brisanje";
+            // 
             // PregledArtikla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 599);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbBrojArtikla);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnAzuriraj);
@@ -162,11 +149,11 @@
             this.Name = "PregledArtikla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled artikla";
-            this.Load += new System.EventHandler(this.PregledArtikla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,10 +167,8 @@
         private _16027_DBDataSet _16027_DBDataSet;
         private System.Windows.Forms.BindingSource artikliBindingSource;
         private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDartiklaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDvrstaartiklaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer timerRefresh;
+        private System.Windows.Forms.ComboBox cmbBrojArtikla;
+        private System.Windows.Forms.Label label1;
     }
 }
