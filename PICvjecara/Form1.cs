@@ -16,6 +16,8 @@ namespace PICvjecara
         {
             InitializeComponent();
             ControlBox = false;
+            btnPrikazNarudzbi.Visible = false;
+            btnNarudzbenica.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -39,6 +41,20 @@ namespace PICvjecara
         {
             Prijava openPrijava = new Prijava();
             openPrijava.Show();
+            Visible = false;
+        }
+
+        private void btnNarudzba_Click(object sender, EventArgs e)
+        {
+            btnNarudzbenica.Visible = true;
+            btnPrikazNarudzbi.Visible = true;
+            grpBox.Text = "Narudžbe i Rezervacije";
+        }
+
+        private void btnNarudzbenica_Click(object sender, EventArgs e)
+        {
+            frmNarudzbenica openNarudzbenica = new frmNarudzbenica();
+            openNarudzbenica.Show();
             Visible = false;
         }
     }

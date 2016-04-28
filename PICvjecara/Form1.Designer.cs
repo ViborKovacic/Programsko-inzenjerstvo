@@ -39,10 +39,13 @@
             this.btnSwitchUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpBox = new System.Windows.Forms.GroupBox();
             this.btnKraj = new System.Windows.Forms.Button();
+            this.btnNarudzbenica = new System.Windows.Forms.Button();
+            this.btnPrikazNarudzbi = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            this.grpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +90,7 @@
             this.btnNarudzba.TabIndex = 3;
             this.btnNarudzba.Text = "Narudžba";
             this.btnNarudzba.UseVisualStyleBackColor = true;
+            this.btnNarudzba.Click += new System.EventHandler(this.btnNarudzba_Click);
             // 
             // btnArtikli
             // 
@@ -156,14 +160,16 @@
             this.lblKorisnik.TabIndex = 5;
             this.lblKorisnik.Text = "\"Ovdje ide trenutno aktivan user\"";
             // 
-            // groupBox2
+            // grpBox
             // 
-            this.groupBox2.Location = new System.Drawing.Point(320, 137);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(625, 425);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
+            this.grpBox.Controls.Add(this.btnPrikazNarudzbi);
+            this.grpBox.Controls.Add(this.btnNarudzbenica);
+            this.grpBox.Location = new System.Drawing.Point(320, 137);
+            this.grpBox.Name = "grpBox";
+            this.grpBox.Size = new System.Drawing.Size(625, 425);
+            this.grpBox.TabIndex = 6;
+            this.grpBox.TabStop = false;
+            this.grpBox.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
             // 
             // btnKraj
             // 
@@ -174,6 +180,25 @@
             this.btnKraj.Text = "Kraj";
             this.btnKraj.UseVisualStyleBackColor = true;
             this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
+            // 
+            // btnNarudzbenica
+            // 
+            this.btnNarudzbenica.Location = new System.Drawing.Point(64, 84);
+            this.btnNarudzbenica.Name = "btnNarudzbenica";
+            this.btnNarudzbenica.Size = new System.Drawing.Size(150, 50);
+            this.btnNarudzbenica.TabIndex = 0;
+            this.btnNarudzbenica.Text = "Izradi narudžbenicu";
+            this.btnNarudzbenica.UseVisualStyleBackColor = true;
+            this.btnNarudzbenica.Click += new System.EventHandler(this.btnNarudzbenica_Click);
+            // 
+            // btnPrikazNarudzbi
+            // 
+            this.btnPrikazNarudzbi.Location = new System.Drawing.Point(262, 84);
+            this.btnPrikazNarudzbi.Name = "btnPrikazNarudzbi";
+            this.btnPrikazNarudzbi.Size = new System.Drawing.Size(150, 50);
+            this.btnPrikazNarudzbi.TabIndex = 1;
+            this.btnPrikazNarudzbi.Text = "Prikaži sve narudžbe";
+            this.btnPrikazNarudzbi.UseVisualStyleBackColor = true;
             // 
             // pbLogo
             // 
@@ -193,7 +218,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1100, 599);
             this.Controls.Add(this.btnKraj);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpBox);
             this.Controls.Add(this.lblKorisnik);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSwitchUser);
@@ -204,6 +229,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cvjećarna";
             this.groupBox1.ResumeLayout(false);
+            this.grpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,7 +244,7 @@
         private System.Windows.Forms.Button btnSwitchUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblKorisnik;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpBox;
         private System.Windows.Forms.Button btnStatistika;
         private System.Windows.Forms.Button btnEvidencija;
         private System.Windows.Forms.Button btnNarudzba;
@@ -226,6 +252,8 @@
         private System.Windows.Forms.Button btnProdaja;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnKraj;
+        private System.Windows.Forms.Button btnPrikazNarudzbi;
+        private System.Windows.Forms.Button btnNarudzbenica;
     }
 }
 
