@@ -57,11 +57,11 @@
             this.cmbNazivArtikla = new System.Windows.Forms.ComboBox();
             this.cmbVrstaArtikla = new System.Windows.Forms.ComboBox();
             this.cmbDobavljac = new System.Windows.Forms.ComboBox();
-            this.dobavljaciBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.dobavljaciBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnPostojeciArtikl = new System.Windows.Forms.Button();
             this.btnNoviArtikli = new System.Windows.Forms.Button();
             this.txtNaruceniArtikli = new System.Windows.Forms.TextBox();
@@ -314,18 +314,11 @@
             // 
             // cmbDobavljac
             // 
-            this.cmbDobavljac.DataSource = this.dobavljaciBindingSource1;
-            this.cmbDobavljac.DisplayMember = "Ime";
             this.cmbDobavljac.FormattingEnabled = true;
             this.cmbDobavljac.Location = new System.Drawing.Point(99, 27);
             this.cmbDobavljac.Name = "cmbDobavljac";
             this.cmbDobavljac.Size = new System.Drawing.Size(156, 21);
             this.cmbDobavljac.TabIndex = 16;
-            // 
-            // dobavljaciBindingSource1
-            // 
-            this.dobavljaciBindingSource1.DataMember = "Dobavljaci";
-            this.dobavljaciBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // label11
             // 
@@ -362,6 +355,11 @@
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Dobavljač:";
+            // 
+            // dobavljaciBindingSource1
+            // 
+            this.dobavljaciBindingSource1.DataMember = "Dobavljaci";
+            this.dobavljaciBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // btnPostojeciArtikl
             // 
@@ -420,6 +418,7 @@
             this.btnEmail.TabIndex = 6;
             this.btnEmail.Text = "Posalji Email";
             this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // fKNarudzbenicaDobavljaciBindingSource
             // 

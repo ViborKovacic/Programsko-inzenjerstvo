@@ -15,17 +15,33 @@ namespace PICvjecara
 {
     public partial class frmNarudzbenica : Form
     {
-        private DBOperacije.OperacijeNarudzba Narudzbenica = new DBOperacije.OperacijeNarudzba();
+        private DBOperacije.OperacijeNarudzba Narudzbenica;
+
+              
+        public List<string> dobavljac;
+        public List<string> NaruceniArtikli;
         
         public frmNarudzbenica()
         {
             InitializeComponent();
             grpBoxNovi.Enabled = false;
             //grpBoxPostojeci.Enabled = false;
-            grpBoxZavrseno.Enabled = false;
+            //grpBoxZavrseno.Enabled = false;
             DohvatiVrsteArtikla();
+            Narudzbenica = new DBOperacije.OperacijeNarudzba();
+            DohvatiDobavljaca();
+            //treba doraditi
+            btnEmail.Enabled = false;
+            btnPDF.Enabled = false;
+            btnNoviArtikli.Enabled = false;
             
-            
+
+            //liste
+            dobavljac = new List<string>();
+            NaruceniArtikli = new List<string>();
+           
+
+
         }
 
         private void frmNarudzbenica_Load(object sender, EventArgs e)
@@ -59,8 +75,53 @@ namespace PICvjecara
 
         private void btnIzradinalogPostojeci_Click(object sender, EventArgs e)
         {
-            //treba podesiti login da ovo radi
-            DBOperacije.OperacijeNarudzba narudzba = new DBOperacije.OperacijeNarudzba();
+            int IDdobavljaca = 0;
+            string naruceniArtikli = "";
+            grpBoxZavrseno.Enabled = true;
+
+            SqlDataReader dr;
+            string q = "select * from Dobavljaci where Ime='"+cmbDobavljac.GetItemText( cmbDobavljac.SelectedItem.ToString())+"'";
+
+            db baza = new db();
+            SqlCommand comm = new SqlCommand(q, baza.conn);
+            baza.OpenCon();
+            dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                IDdobavljaca = Convert.ToInt32(dr["ID_dobavljac"].ToString());
+                dobavljac.Add(dr["Ime"].ToString());
+                dobavljac.Add(dr["OIB"].ToString());
+                dobavljac.Add(dr["Adresa"].ToString());
+            }
+            dr.Close();
+            baza.CloseCon();
+            
+            Narudzbenica.CreateNarudzbenicaStaro(IDdobavljaca);
+
+            naruceniArtikli = "Naručeni artikli su: " + Environment.NewLine + "Naziv artikla: " + cmbNazivArtikla.SelectedItem.ToString() +
+                Environment.NewLine + "Vrsta artikla: " + cmbVrstaArtikla.SelectedItem.ToString() + Environment.NewLine +
+                "Količina: " + txtKolicinaPostojeci.Text.ToString()+Environment.NewLine;
+            NaruceniArtikli.Add(naruceniArtikli);
+            Ispis();
+            
+
+
+        }
+       private void DohvatiDobavljaca()
+        {
+            cmbDobavljac.Items.Clear();
+            SqlDataReader dr;
+            string q = "select * from Dobavljaci";
+            db baza = new db();
+            SqlCommand comm = new SqlCommand(q, baza.conn);
+            baza.OpenCon();
+            dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbDobavljac.Items.Add(dr["Ime"].ToString());
+            }
+            dr.Close();
+            baza.CloseCon();
             
         }
 
@@ -81,6 +142,7 @@ namespace PICvjecara
 
             }
             dr.Close();
+            baza.CloseCon();
 
             
         }
@@ -107,7 +169,15 @@ namespace PICvjecara
 
 
         }
+        private void Ispis()
+        {
+            foreach (string s in NaruceniArtikli)
+            {
+                txtNaruceniArtikli.Text = s.ToString()+txtNaruceniArtikli.Text;
 
+            }
+            MessageBox.Show("Narudžba je kreirana i pohranjena!");
+        }
         private void cmbVrstaArtikla_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopuniArtikle();
@@ -118,6 +188,12 @@ namespace PICvjecara
             frmCvjecarna frmCvijece = new frmCvjecarna();
             frmCvijece.Visible = true;
             this.Close();
+        }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            frmSenaEmail email = new frmSenaEmail();
+            email.Visible = true;
         }
     }
 }

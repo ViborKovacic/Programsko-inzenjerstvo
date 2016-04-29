@@ -13,10 +13,12 @@ namespace PICvjecara
 {
     public partial class Prijava : Form
     {
+       
         public Prijava()
         {
             InitializeComponent();
             ControlBox = false;
+            txtLozinka.PasswordChar = '*';
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
@@ -46,6 +48,9 @@ namespace PICvjecara
 
                 if (txtKorIme.Text == KorIme && txtLozinka.Text == Lozinka)
                 {
+                    //da znamo koji je korisnik aktivan
+                    Korisnici.TrenutnoAkrivan = KorIme;
+
                     frmCvjecarna openCvjecarna = new frmCvjecarna();                    
                     openCvjecarna.Show();
                     Visible = false;

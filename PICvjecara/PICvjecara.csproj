@@ -71,6 +71,19 @@
     <Compile Include="frmNarudzbenica.Designer.cs">
       <DependentUpon>frmNarudzbenica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPregledNarudzbi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPregledNarudzbi.Designer.cs">
+      <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSenaEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSenaEmail.Designer.cs">
+      <DependentUpon>frmSenaEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnici.cs" />
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNarudzbenica.resx">
       <DependentUpon>frmNarudzbenica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPregledNarudzbi.resx">
+      <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSenaEmail.resx">
+      <DependentUpon>frmSenaEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>

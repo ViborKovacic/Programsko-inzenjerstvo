@@ -11,13 +11,14 @@ namespace PICvjecara.DBOperacije
     {
        
 
-        public void CreateNarudzbenicaStaro(int ID_Dobavljac, int ID_Korisnici)
+        public void CreateNarudzbenicaStaro(int ID_Dobavljac)
         {
 
             Datum_vrijeme = DateTime.Now;
+            string format = "yyyy-MM-dd HH:MM:ss";
             ID_dobavljac = ID_Dobavljac;
-            ID_korisnici = ID_Korisnici;
-
+            
+            
             
             DatabaseConnection newConnection = new DatabaseConnection();
             newConnection.ConnectionDB();
@@ -26,11 +27,12 @@ namespace PICvjecara.DBOperacije
             
             SqlCommand comm = new SqlCommand();
             comm.Connection = DatabaseConnection.conn;
-            comm.CommandText = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnik) values ('"+Datum_vrijeme+"',"+ID_dobavljac+","+ID_korisnici+")";
+            comm.CommandText = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici) values ('"+Datum_vrijeme.ToString(format)+"',"+ID_dobavljac+","+Korisnici.ID_korisnik+")";
             comm.ExecuteNonQuery();
 
             DatabaseConnection.conn.Close();
             
         }
+       
     }
 }
