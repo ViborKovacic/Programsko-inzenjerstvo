@@ -53,10 +53,12 @@
     <Compile Include="AzurirajArtikl.Designer.cs">
       <DependentUpon>AzurirajArtikl.cs</DependentUpon>
     </Compile>
+    <Compile Include="db.cs" />
     <Compile Include="DBClass\Artikli.cs" />
     <Compile Include="DBClass\Dobavljaci.cs" />
     <Compile Include="DBClass\Narudzbenica.cs" />
     <Compile Include="DBClass\Vrste_artikla.cs" />
+    <Compile Include="DBOperacije\OperacijeNarudzba.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,9 +161,7 @@
   <ItemGroup>
     <Content Include="Slike\logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DBOperacije\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -30,49 +30,56 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpBoxNovi = new System.Windows.Forms.GroupBox();
-            this.btnPovratak = new System.Windows.Forms.Button();
+            this.btnIzradiNalogNovi = new System.Windows.Forms.Button();
+            this.txtKolicinaNovog = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTelefon = new System.Windows.Forms.TextBox();
+            this.txtOIB = new System.Windows.Forms.TextBox();
+            this.txtAdresa = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtProizvod = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtVrstaArtikla = new System.Windows.Forms.TextBox();
+            this.txtDobavljac = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPovratak = new System.Windows.Forms.Button();
             this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dobavljaciTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.DobavljaciTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
             this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            this.txtDobavljac = new System.Windows.Forms.TextBox();
-            this.txtVrstaArtikla = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtProizvod = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAdresa = new System.Windows.Forms.TextBox();
-            this.txtOIB = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtKolicinaNovog = new System.Windows.Forms.TextBox();
             this.grpBoxPostojeci = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmbDobavljac = new System.Windows.Forms.ComboBox();
-            this.cmbVrstaArtikla = new System.Windows.Forms.ComboBox();
-            this.cmbNazivArtikla = new System.Windows.Forms.ComboBox();
+            this.btnIzradinalogPostojeci = new System.Windows.Forms.Button();
             this.txtKolicinaPostojeci = new System.Windows.Forms.TextBox();
+            this.cmbNazivArtikla = new System.Windows.Forms.ComboBox();
+            this.cmbVrstaArtikla = new System.Windows.Forms.ComboBox();
+            this.cmbDobavljac = new System.Windows.Forms.ComboBox();
+            this.dobavljaciBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnPostojeciArtikl = new System.Windows.Forms.Button();
             this.btnNoviArtikli = new System.Windows.Forms.Button();
-            this.btnIzradinalogPostojeci = new System.Windows.Forms.Button();
-            this.btnIzradiNalogNovi = new System.Windows.Forms.Button();
             this.txtNaruceniArtikli = new System.Windows.Forms.TextBox();
             this.grpBoxZavrseno = new System.Windows.Forms.GroupBox();
-            this.btnEmail = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.fKNarudzbenicaDobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.narudzbenicaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.NarudzbenicaTableAdapter();
+            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grpBoxNovi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             this.grpBoxPostojeci.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource1)).BeginInit();
             this.grpBoxZavrseno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fKNarudzbenicaDobavljaciBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBoxNovi
@@ -99,14 +106,117 @@
             this.grpBoxNovi.TabStop = false;
             this.grpBoxNovi.Text = "Novi Proizvodi";
             // 
-            // btnPovratak
+            // btnIzradiNalogNovi
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(920, 574);
-            this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(104, 38);
-            this.btnPovratak.TabIndex = 1;
-            this.btnPovratak.Text = "Povratak";
-            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnIzradiNalogNovi.Location = new System.Drawing.Point(178, 296);
+            this.btnIzradiNalogNovi.Name = "btnIzradiNalogNovi";
+            this.btnIzradiNalogNovi.Size = new System.Drawing.Size(123, 51);
+            this.btnIzradiNalogNovi.TabIndex = 21;
+            this.btnIzradiNalogNovi.Text = "Izradi narudžbenicu";
+            this.btnIzradiNalogNovi.UseVisualStyleBackColor = true;
+            // 
+            // txtKolicinaNovog
+            // 
+            this.txtKolicinaNovog.Location = new System.Drawing.Point(98, 245);
+            this.txtKolicinaNovog.Name = "txtKolicinaNovog";
+            this.txtKolicinaNovog.Size = new System.Drawing.Size(51, 20);
+            this.txtKolicinaNovog.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(45, 245);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Količina:";
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Location = new System.Drawing.Point(98, 127);
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(165, 20);
+            this.txtTelefon.TabIndex = 12;
+            // 
+            // txtOIB
+            // 
+            this.txtOIB.Location = new System.Drawing.Point(99, 98);
+            this.txtOIB.Name = "txtOIB";
+            this.txtOIB.Size = new System.Drawing.Size(165, 20);
+            this.txtOIB.TabIndex = 11;
+            // 
+            // txtAdresa
+            // 
+            this.txtAdresa.Location = new System.Drawing.Point(99, 69);
+            this.txtAdresa.Name = "txtAdresa";
+            this.txtAdresa.Size = new System.Drawing.Size(165, 20);
+            this.txtAdresa.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Telefon:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(64, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "OIB:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(49, 69);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Adresa:";
+            // 
+            // txtProizvod
+            // 
+            this.txtProizvod.Location = new System.Drawing.Point(98, 212);
+            this.txtProizvod.Name = "txtProizvod";
+            this.txtProizvod.Size = new System.Drawing.Size(165, 20);
+            this.txtProizvod.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Naziv Proizvoda:";
+            // 
+            // txtVrstaArtikla
+            // 
+            this.txtVrstaArtikla.Location = new System.Drawing.Point(99, 178);
+            this.txtVrstaArtikla.Name = "txtVrstaArtikla";
+            this.txtVrstaArtikla.Size = new System.Drawing.Size(165, 20);
+            this.txtVrstaArtikla.TabIndex = 4;
+            // 
+            // txtDobavljac
+            // 
+            this.txtDobavljac.Location = new System.Drawing.Point(99, 41);
+            this.txtDobavljac.Name = "txtDobavljac";
+            this.txtDobavljac.Size = new System.Drawing.Size(165, 20);
+            this.txtDobavljac.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Vrsta Artikla:";
             // 
             // label1
             // 
@@ -116,6 +226,16 @@
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dobavljač:";
+            // 
+            // btnPovratak
+            // 
+            this.btnPovratak.Location = new System.Drawing.Point(920, 574);
+            this.btnPovratak.Name = "btnPovratak";
+            this.btnPovratak.Size = new System.Drawing.Size(104, 38);
+            this.btnPovratak.TabIndex = 1;
+            this.btnPovratak.Text = "Povratak";
+            this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // _16027_DBDataSet
             // 
@@ -131,15 +251,6 @@
             // 
             this.dobavljaciTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Vrsta Artikla:";
-            // 
             // vrstaartiklaBindingSource
             // 
             this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
@@ -148,100 +259,6 @@
             // vrsta_artiklaTableAdapter
             // 
             this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
-            // 
-            // txtDobavljac
-            // 
-            this.txtDobavljac.Location = new System.Drawing.Point(99, 41);
-            this.txtDobavljac.Name = "txtDobavljac";
-            this.txtDobavljac.Size = new System.Drawing.Size(165, 20);
-            this.txtDobavljac.TabIndex = 3;
-            // 
-            // txtVrstaArtikla
-            // 
-            this.txtVrstaArtikla.Location = new System.Drawing.Point(99, 178);
-            this.txtVrstaArtikla.Name = "txtVrstaArtikla";
-            this.txtVrstaArtikla.Size = new System.Drawing.Size(165, 20);
-            this.txtVrstaArtikla.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 215);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Naziv Proizvoda:";
-            // 
-            // txtProizvod
-            // 
-            this.txtProizvod.Location = new System.Drawing.Point(98, 212);
-            this.txtProizvod.Name = "txtProizvod";
-            this.txtProizvod.Size = new System.Drawing.Size(165, 20);
-            this.txtProizvod.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Adresa:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "OIB:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Telefon:";
-            // 
-            // txtAdresa
-            // 
-            this.txtAdresa.Location = new System.Drawing.Point(99, 69);
-            this.txtAdresa.Name = "txtAdresa";
-            this.txtAdresa.Size = new System.Drawing.Size(165, 20);
-            this.txtAdresa.TabIndex = 10;
-            // 
-            // txtOIB
-            // 
-            this.txtOIB.Location = new System.Drawing.Point(99, 98);
-            this.txtOIB.Name = "txtOIB";
-            this.txtOIB.Size = new System.Drawing.Size(165, 20);
-            this.txtOIB.TabIndex = 11;
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.Location = new System.Drawing.Point(98, 127);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(165, 20);
-            this.txtTelefon.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 245);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Količina:";
-            // 
-            // txtKolicinaNovog
-            // 
-            this.txtKolicinaNovog.Location = new System.Drawing.Point(98, 245);
-            this.txtKolicinaNovog.Name = "txtKolicinaNovog";
-            this.txtKolicinaNovog.Size = new System.Drawing.Size(51, 20);
-            this.txtKolicinaNovog.TabIndex = 14;
             // 
             // grpBoxPostojeci
             // 
@@ -261,32 +278,54 @@
             this.grpBoxPostojeci.TabStop = false;
             this.grpBoxPostojeci.Text = "Postojeći proizvodi";
             // 
-            // label8
+            // btnIzradinalogPostojeci
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Dobavljač:";
+            this.btnIzradinalogPostojeci.Location = new System.Drawing.Point(144, 181);
+            this.btnIzradinalogPostojeci.Name = "btnIzradinalogPostojeci";
+            this.btnIzradinalogPostojeci.Size = new System.Drawing.Size(123, 51);
+            this.btnIzradinalogPostojeci.TabIndex = 20;
+            this.btnIzradinalogPostojeci.Text = "Izradi narudžbenicu";
+            this.btnIzradinalogPostojeci.UseVisualStyleBackColor = true;
+            this.btnIzradinalogPostojeci.Click += new System.EventHandler(this.btnIzradinalogPostojeci_Click);
             // 
-            // label9
+            // txtKolicinaPostojeci
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 62);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Vrsta Artikla:";
+            this.txtKolicinaPostojeci.Location = new System.Drawing.Point(99, 117);
+            this.txtKolicinaPostojeci.Name = "txtKolicinaPostojeci";
+            this.txtKolicinaPostojeci.Size = new System.Drawing.Size(52, 20);
+            this.txtKolicinaPostojeci.TabIndex = 19;
             // 
-            // label10
+            // cmbNazivArtikla
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 91);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Naziv Proizvoda:";
+            this.cmbNazivArtikla.FormattingEnabled = true;
+            this.cmbNazivArtikla.Location = new System.Drawing.Point(99, 88);
+            this.cmbNazivArtikla.Name = "cmbNazivArtikla";
+            this.cmbNazivArtikla.Size = new System.Drawing.Size(156, 21);
+            this.cmbNazivArtikla.TabIndex = 18;
+            // 
+            // cmbVrstaArtikla
+            // 
+            this.cmbVrstaArtikla.FormattingEnabled = true;
+            this.cmbVrstaArtikla.Location = new System.Drawing.Point(99, 59);
+            this.cmbVrstaArtikla.Name = "cmbVrstaArtikla";
+            this.cmbVrstaArtikla.Size = new System.Drawing.Size(156, 21);
+            this.cmbVrstaArtikla.TabIndex = 17;
+            this.cmbVrstaArtikla.SelectedIndexChanged += new System.EventHandler(this.cmbVrstaArtikla_SelectedIndexChanged);
+            // 
+            // cmbDobavljac
+            // 
+            this.cmbDobavljac.DataSource = this.dobavljaciBindingSource1;
+            this.cmbDobavljac.DisplayMember = "Ime";
+            this.cmbDobavljac.FormattingEnabled = true;
+            this.cmbDobavljac.Location = new System.Drawing.Point(99, 27);
+            this.cmbDobavljac.Name = "cmbDobavljac";
+            this.cmbDobavljac.Size = new System.Drawing.Size(156, 21);
+            this.cmbDobavljac.TabIndex = 16;
+            // 
+            // dobavljaciBindingSource1
+            // 
+            this.dobavljaciBindingSource1.DataMember = "Dobavljaci";
+            this.dobavljaciBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // label11
             // 
@@ -297,36 +336,32 @@
             this.label11.TabIndex = 15;
             this.label11.Text = "Količina:";
             // 
-            // cmbDobavljac
+            // label10
             // 
-            this.cmbDobavljac.FormattingEnabled = true;
-            this.cmbDobavljac.Location = new System.Drawing.Point(99, 27);
-            this.cmbDobavljac.Name = "cmbDobavljac";
-            this.cmbDobavljac.Size = new System.Drawing.Size(156, 21);
-            this.cmbDobavljac.TabIndex = 16;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Naziv Proizvoda:";
             // 
-            // cmbVrstaArtikla
+            // label9
             // 
-            this.cmbVrstaArtikla.FormattingEnabled = true;
-            this.cmbVrstaArtikla.Location = new System.Drawing.Point(99, 59);
-            this.cmbVrstaArtikla.Name = "cmbVrstaArtikla";
-            this.cmbVrstaArtikla.Size = new System.Drawing.Size(156, 21);
-            this.cmbVrstaArtikla.TabIndex = 17;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Vrsta Artikla:";
             // 
-            // cmbNazivArtikla
+            // label8
             // 
-            this.cmbNazivArtikla.FormattingEnabled = true;
-            this.cmbNazivArtikla.Location = new System.Drawing.Point(99, 88);
-            this.cmbNazivArtikla.Name = "cmbNazivArtikla";
-            this.cmbNazivArtikla.Size = new System.Drawing.Size(156, 21);
-            this.cmbNazivArtikla.TabIndex = 18;
-            // 
-            // txtKolicinaPostojeci
-            // 
-            this.txtKolicinaPostojeci.Location = new System.Drawing.Point(99, 117);
-            this.txtKolicinaPostojeci.Name = "txtKolicinaPostojeci";
-            this.txtKolicinaPostojeci.Size = new System.Drawing.Size(52, 20);
-            this.txtKolicinaPostojeci.TabIndex = 19;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(35, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Dobavljač:";
             // 
             // btnPostojeciArtikl
             // 
@@ -348,24 +383,6 @@
             this.btnNoviArtikli.UseVisualStyleBackColor = true;
             this.btnNoviArtikli.Click += new System.EventHandler(this.btnNoviArtikli_Click);
             // 
-            // btnIzradinalogPostojeci
-            // 
-            this.btnIzradinalogPostojeci.Location = new System.Drawing.Point(144, 181);
-            this.btnIzradinalogPostojeci.Name = "btnIzradinalogPostojeci";
-            this.btnIzradinalogPostojeci.Size = new System.Drawing.Size(123, 51);
-            this.btnIzradinalogPostojeci.TabIndex = 20;
-            this.btnIzradinalogPostojeci.Text = "Izradi narudžbenicu";
-            this.btnIzradinalogPostojeci.UseVisualStyleBackColor = true;
-            // 
-            // btnIzradiNalogNovi
-            // 
-            this.btnIzradiNalogNovi.Location = new System.Drawing.Point(178, 296);
-            this.btnIzradiNalogNovi.Name = "btnIzradiNalogNovi";
-            this.btnIzradiNalogNovi.Size = new System.Drawing.Size(123, 51);
-            this.btnIzradiNalogNovi.TabIndex = 21;
-            this.btnIzradiNalogNovi.Text = "Izradi narudžbenicu";
-            this.btnIzradiNalogNovi.UseVisualStyleBackColor = true;
-            // 
             // txtNaruceniArtikli
             // 
             this.txtNaruceniArtikli.Location = new System.Drawing.Point(0, 19);
@@ -386,6 +403,15 @@
             this.grpBoxZavrseno.TabStop = false;
             this.grpBoxZavrseno.Text = "Popis naručenih artikla";
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Location = new System.Drawing.Point(39, 287);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(99, 51);
+            this.btnPDF.TabIndex = 7;
+            this.btnPDF.Text = "Kreiraj PDF";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            // 
             // btnEmail
             // 
             this.btnEmail.Location = new System.Drawing.Point(195, 287);
@@ -395,14 +421,19 @@
             this.btnEmail.Text = "Posalji Email";
             this.btnEmail.UseVisualStyleBackColor = true;
             // 
-            // btnPDF
+            // fKNarudzbenicaDobavljaciBindingSource
             // 
-            this.btnPDF.Location = new System.Drawing.Point(39, 287);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(99, 51);
-            this.btnPDF.TabIndex = 7;
-            this.btnPDF.Text = "Kreiraj PDF";
-            this.btnPDF.UseVisualStyleBackColor = true;
+            this.fKNarudzbenicaDobavljaciBindingSource.DataMember = "FK_Narudzbenica_Dobavljaci";
+            this.fKNarudzbenicaDobavljaciBindingSource.DataSource = this.dobavljaciBindingSource;
+            // 
+            // narudzbenicaTableAdapter
+            // 
+            this.narudzbenicaTableAdapter.ClearBeforeFill = true;
+            // 
+            // vrstaartiklaBindingSource1
+            // 
+            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // frmNarudzbenica
             // 
@@ -426,8 +457,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             this.grpBoxPostojeci.ResumeLayout(false);
             this.grpBoxPostojeci.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource1)).EndInit();
             this.grpBoxZavrseno.ResumeLayout(false);
             this.grpBoxZavrseno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fKNarudzbenicaDobavljaciBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,5 +506,9 @@
         private System.Windows.Forms.GroupBox grpBoxZavrseno;
         private System.Windows.Forms.Button btnPDF;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.BindingSource fKNarudzbenicaDobavljaciBindingSource;
+        private _16027_DBDataSetTableAdapters.NarudzbenicaTableAdapter narudzbenicaTableAdapter;
+        private System.Windows.Forms.BindingSource dobavljaciBindingSource1;
+        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource1;
     }
 }
