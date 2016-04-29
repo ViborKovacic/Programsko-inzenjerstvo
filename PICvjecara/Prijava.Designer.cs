@@ -36,6 +36,7 @@
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnIzlaz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,11 +113,22 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Cvjećarna Mak";
             // 
+            // btnIzlaz
+            // 
+            this.btnIzlaz.Location = new System.Drawing.Point(72, 259);
+            this.btnIzlaz.Name = "btnIzlaz";
+            this.btnIzlaz.Size = new System.Drawing.Size(132, 23);
+            this.btnIzlaz.TabIndex = 8;
+            this.btnIzlaz.Text = "Izlaz";
+            this.btnIzlaz.UseVisualStyleBackColor = true;
+            this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 303);
+            this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.txtLozinka);
@@ -126,6 +138,7 @@
             this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.btnPrijava);
             this.Name = "Prijava";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
@@ -143,5 +156,6 @@
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnIzlaz;
     }
 }

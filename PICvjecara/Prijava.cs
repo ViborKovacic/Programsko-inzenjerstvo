@@ -69,5 +69,10 @@ namespace PICvjecara
             openRegistracija.Show();
             Visible = false;
         }
+
+        private void btnIzlaz_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
