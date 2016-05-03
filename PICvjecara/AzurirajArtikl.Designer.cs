@@ -183,6 +183,7 @@
             this.cmbBrojArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmbBrojArtikla.TabIndex = 23;
             this.cmbBrojArtikla.ValueMember = "ID_artikla";
+            this.cmbBrojArtikla.SelectedIndexChanged += new System.EventHandler(this.cmbBrojArtikla_SelectedIndexChanged);
             // 
             // artikliBindingSource
             // 
@@ -215,7 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmboxTipArtikla);
             this.Controls.Add(this.label1);
-            this.Location = new System.Drawing.Point(840, 120);
+            this.Location = new System.Drawing.Point(885, 120);
             this.Name = "AzurirajArtikl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AzurirajArtikl";

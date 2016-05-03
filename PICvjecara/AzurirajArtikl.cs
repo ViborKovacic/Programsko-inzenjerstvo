@@ -55,7 +55,42 @@ namespace PICvjecara
             this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
             // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
             this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
+        }
 
+        public static string Vrsta { get; set; }
+        public static string Naziv { get; set; }
+        public static int Cijena { get; set; }
+        public static int Kolicina { get; set; }
+
+
+        private void cmbBrojArtikla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DatabaseConnection newConnection = new DatabaseConnection();
+            newConnection.ConnectionDB();
+
+            SqlDataReader dr;
+
+            SqlCommand comm = new SqlCommand();
+            comm.Connection = DatabaseConnection.conn;
+
+            comm.CommandText = "select Naziv, Cijena, Kolicina, Vrsta from Artikli, Vrsta_artikla where Artikli.ID_vrsta_artikla=Vrsta_artikla.ID_vrsta_artikla and ID_artikla='" + cmbBrojArtikla.Text + "'";
+            dr = comm.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Naziv = dr["Naziv"].ToString();
+                Cijena = Convert.ToInt32(dr["Cijena"]);
+                Kolicina = Convert.ToInt32(dr["Kolicina"]);
+                Vrsta = dr["Vrsta"].ToString();
+            }
+
+
+            cmboxTipArtikla.Text = Vrsta.ToString();
+            txtNaziv.Text = Naziv;
+            txtCijena.Text = Cijena.ToString();
+            txtKolicina.Text = Kolicina.ToString();
+
+            DatabaseConnection.conn.Close();
         }
     }
 }

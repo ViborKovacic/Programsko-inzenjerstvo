@@ -21,7 +21,7 @@ namespace PICvjecara
         {
             InitializeComponent();
             ControlBox = false;
-            timerRefresh.Start();
+            timerOsvijezi.Start();
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -50,12 +50,15 @@ namespace PICvjecara
 
             SqlCommand comm = new SqlCommand();
             comm.Connection = DatabaseConnection.conn;
-            comm.CommandText = "delete from Artikli where ID_artikla='" + cmbBrojArtikla.Text + "'";
+            comm.CommandText = "delete from Artikli where ID_artikla='" + txtBrisanjeArtikla.Text + "'";
+            comm.ExecuteNonQuery();
 
-            MessageBox.Show("Artikl broj " + cmbBrojArtikla.Text + ". uspiješno orbisan");
+            MessageBox.Show("Artikl broj " + txtBrisanjeArtikla.Text + ". uspiješno orbisan");
+
+            txtBrisanjeArtikla.Clear();
         }
 
-        private void timerRefresh_Tick(object sender, EventArgs e)
+        private void timerOsvijezi_Tick(object sender, EventArgs e)
         {
             DatabaseConnection newConnection = new DatabaseConnection();
             newConnection.ConnectionDB();

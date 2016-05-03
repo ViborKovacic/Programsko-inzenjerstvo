@@ -38,11 +38,15 @@
             this.btnBrisi = new System.Windows.Forms.Button();
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbBrojArtikla = new System.Windows.Forms.ComboBox();
-            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.artikliBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.artikliBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.timerOsvijezi = new System.Windows.Forms.Timer(this.components);
+            this.txtBrisanjeArtikla = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -117,25 +121,34 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Broj artikla za brisanje";
             // 
-            // cmbBrojArtikla
+            // artikliBindingSource1
             // 
-            this.cmbBrojArtikla.FormattingEnabled = true;
-            this.cmbBrojArtikla.Location = new System.Drawing.Point(137, 443);
-            this.cmbBrojArtikla.Name = "cmbBrojArtikla";
-            this.cmbBrojArtikla.Size = new System.Drawing.Size(45, 21);
-            this.cmbBrojArtikla.TabIndex = 7;
+            this.artikliBindingSource1.DataMember = "Artikli";
+            this.artikliBindingSource1.DataSource = this._16027_DBDataSet;
             // 
-            // timerRefresh
+            // artikliBindingSource2
             // 
-            this.timerRefresh.Interval = 1000;
-            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            this.artikliBindingSource2.DataMember = "Artikli";
+            this.artikliBindingSource2.DataSource = this._16027_DBDataSet;
+            // 
+            // timerOsvijezi
+            // 
+            this.timerOsvijezi.Interval = 1000;
+            this.timerOsvijezi.Tick += new System.EventHandler(this.timerOsvijezi_Tick);
+            // 
+            // txtBrisanjeArtikla
+            // 
+            this.txtBrisanjeArtikla.Location = new System.Drawing.Point(138, 443);
+            this.txtBrisanjeArtikla.Name = "txtBrisanjeArtikla";
+            this.txtBrisanjeArtikla.Size = new System.Drawing.Size(44, 20);
+            this.txtBrisanjeArtikla.TabIndex = 7;
             // 
             // PregledArtikla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 599);
-            this.Controls.Add(this.cmbBrojArtikla);
+            this.Controls.Add(this.txtBrisanjeArtikla);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnPovratak);
@@ -148,6 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +179,9 @@
         private System.Windows.Forms.BindingSource artikliBindingSource;
         private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbBrojArtikla;
-        private System.Windows.Forms.Timer timerRefresh;
+        private System.Windows.Forms.BindingSource artikliBindingSource2;
+        private System.Windows.Forms.BindingSource artikliBindingSource1;
+        private System.Windows.Forms.Timer timerOsvijezi;
+        private System.Windows.Forms.TextBox txtBrisanjeArtikla;
     }
 }
