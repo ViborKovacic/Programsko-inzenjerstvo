@@ -13,71 +13,58 @@ namespace PICvjecara
 {
     public partial class PregledArtikla : Form
     {
-        public SqlCommandBuilder builder = new SqlCommandBuilder();
-        public SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        public DataSet ds = new DataSet();
+        public void IspisArtikla()
+        {
+            List<Artikli> listaArtikla = Artikli.DohvatiArtikle();
+            dataGridView1.DataSource = listaArtikla;
+        }
 
         public PregledArtikla()
         {
             InitializeComponent();
             ControlBox = false;
-            timerOsvijezi.Start();
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             frmCvjecarna openCvjecarna = new frmCvjecarna();
             openCvjecarna.Show();
-            Visible = false;
+            this.Close();
         }
 
         private void btnUnosNovogArtikla_Click(object sender, EventArgs e)
         {
             UnosArtikla openUnosArtikla = new UnosArtikla();
-            openUnosArtikla.Show();
+            openUnosArtikla.ShowDialog();
+            IspisArtikla();
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
-            AzurirajArtikl openAzuriraj = new AzurirajArtikl();
-            openAzuriraj.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Artikli odabraniArtikli = dataGridView1.SelectedRows[0].DataBoundItem as Artikli;
+                AzurirajArtikl openAzuriraj = new AzurirajArtikl(odabraniArtikli);
+                openAzuriraj.ShowDialog();
+                IspisArtikla();
+            }
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
-
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
-            comm.CommandText = "delete from Artikli where ID_artikla='" + txtBrisanjeArtikla.Text + "'";
-            comm.ExecuteNonQuery();
-
-            MessageBox.Show("Artikl broj " + txtBrisanjeArtikla.Text + ". uspiješno orbisan");
-
-            txtBrisanjeArtikla.Clear();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    Artikli odabraniArtikl = row.DataBoundItem as Artikli;
+                    odabraniArtikl.Obrisi();
+                }
+            }
         }
 
-        private void timerOsvijezi_Tick(object sender, EventArgs e)
+        private void PregledArtikla_Load(object sender, EventArgs e)
         {
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
-
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
-            comm.CommandText = "select Artikli.ID_artikla as [Broj artikla], Artikli.Naziv, Artikli.Cijena, Artikli.Kolicina, Vrsta_artikla.Vrsta as [Vrsta artikla] from Artikli inner join Vrsta_artikla on Artikli.ID_vrsta_artikla = Vrsta_artikla.ID_vrsta_artikla";
-
-            dataAdapter = new SqlDataAdapter(comm);
-
-            builder = new SqlCommandBuilder(dataAdapter);
-
-            ds = new DataSet();
-
-            dataAdapter.Fill(ds);
-            dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = ds.Tables[0];
-
-            DatabaseConnection.conn.Close();
+            IspisArtikla();
         }
     }
 }

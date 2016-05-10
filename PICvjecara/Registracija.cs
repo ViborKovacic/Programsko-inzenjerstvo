@@ -22,38 +22,38 @@ namespace PICvjecara
         private void btnRegistriraj_Click(object sender, EventArgs e)
         {
 
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
+            //DatabaseConnection newConnection = new DatabaseConnection();
+            //newConnection.ConnectionDB();
 
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
+            //SqlCommand comm = new SqlCommand();
+            //comm.Connection = DatabaseConnection.conn;
 
-            comm.CommandText = "insert into Korisnici values (@Ime, @Prezime, @Username, @Password, @Email, @Grad, @Adresa,@Telefon, @ID_tip_korisnika)";
-            comm.Parameters.AddWithValue("Ime", txtIme.Text);
-            comm.Parameters.AddWithValue("Prezime", txtPrezime.Text);
-            comm.Parameters.AddWithValue("Username", txtKorIme.Text);
-            comm.Parameters.AddWithValue("Password", txtLozinka.Text);
-            comm.Parameters.AddWithValue("Email", txtEmail.Text);
-            comm.Parameters.AddWithValue("Grad", txtGrad.Text);
-            comm.Parameters.AddWithValue("Adresa", txtAdresa.Text);
-            comm.Parameters.AddWithValue("Telefon", txtTelefon.Text);
-            comm.Parameters.AddWithValue("ID_tip_korisnika", txtTipKorisnika.Text);
-            comm.ExecuteNonQuery();
+            //comm.CommandText = "insert into Korisnici values (@Ime, @Prezime, @Username, @Password, @Email, @Grad, @Adresa,@Telefon, @ID_tip_korisnika)";
+            //comm.Parameters.AddWithValue("Ime", txtIme.Text);
+            //comm.Parameters.AddWithValue("Prezime", txtPrezime.Text);
+            //comm.Parameters.AddWithValue("Username", txtKorIme.Text);
+            //comm.Parameters.AddWithValue("Password", txtLozinka.Text);
+            //comm.Parameters.AddWithValue("Email", txtEmail.Text);
+            //comm.Parameters.AddWithValue("Grad", txtGrad.Text);
+            //comm.Parameters.AddWithValue("Adresa", txtAdresa.Text);
+            //comm.Parameters.AddWithValue("Telefon", txtTelefon.Text);
+            //comm.Parameters.AddWithValue("ID_tip_korisnika", txtTipKorisnika.Text);
+            //comm.ExecuteNonQuery();
 
-            DatabaseConnection.conn.Close();
+            //DatabaseConnection.conn.Close();
 
-            MessageBox.Show("Uspješno ste se registrirali");
-            Prijava openPrijava = new Prijava();
-            openPrijava.Show();
-            Visible = false;
+            //MessageBox.Show("Uspješno ste se registrirali");
+            //Prijava openPrijava = new Prijava();
+            //openPrijava.Show();
+            //Visible = false;
 
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
-            Prijava openPrijava = new Prijava();
-            openPrijava.Show();
-            Visible = false;
+            //Prijava openPrijava = new Prijava();
+            //openPrijava.Show();
+            //Visible = false;
         }
     }
 }

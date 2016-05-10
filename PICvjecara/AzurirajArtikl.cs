@@ -13,9 +13,17 @@ namespace PICvjecara
 {
     public partial class AzurirajArtikl : Form
     {
+        private Artikli artikli = null;
+
         public AzurirajArtikl()
         {
             InitializeComponent();
+        }
+
+        public AzurirajArtikl(Artikli odabraniArtikli)
+        {
+            InitializeComponent();
+            artikli = odabraniArtikli;
             ControlBox = false;
         }
 
@@ -24,18 +32,17 @@ namespace PICvjecara
             int broj = 0;
             if (int.TryParse(txtCijena.Text.Trim(), out broj))
             {
-                DatabaseConnection newConnection = new DatabaseConnection();
-                newConnection.ConnectionDB();
+                if (artikli == null)
+                {
+                    artikli = new Artikli();
+                }
 
-                SqlCommand comm = new SqlCommand();
-                comm.Connection = DatabaseConnection.conn;
-
-                comm.CommandText = "update Artikli set Naziv='" + txtNaziv.Text + "',Cijena='" + txtCijena.Text + "',Kolicina='" + txtKolicina.Text + "',ID_vrsta_artikla='" + cmboxTipArtikla.Text + "'where ID_artikla = '" + cmbBrojArtikla.Text + "' ;";
-                comm.ExecuteNonQuery();
-
-                MessageBox.Show("Uspiješno ste ažurirali", "Dodano");
-
-                DatabaseConnection.conn.Close();
+                artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.Text);
+                artikli.Naziv = txtNaziv.Text;
+                artikli.Cijena = int.Parse(txtCijena.Text);
+                artikli.Kolicina = int.Parse(txtKolicina.Text);
+                artikli.Unos();
+                this.Close();
             }
 
             else
@@ -51,46 +58,20 @@ namespace PICvjecara
 
         private void AzurirajArtikl_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
+            txtNaziv.Focus();
+            if(artikli != null)
+            {
+                txtBrojArtikla.Text = artikli.ID_artikla.ToString();
+                cmboxTipArtikla.Text = artikli.ID_vrsta_artikla.ToString();
+                txtNaziv.Text = artikli.Naziv;
+                txtCijena.Text = artikli.Cijena.ToString();
+                txtKolicina.Text = artikli.Kolicina.ToString();
+            }   
         }
-
-        public static string Vrsta { get; set; }
-        public static string Naziv { get; set; }
-        public static int Cijena { get; set; }
-        public static int Kolicina { get; set; }
-
 
         private void cmbBrojArtikla_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
-
-            SqlDataReader dr;
-
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
-
-            comm.CommandText = "select Naziv, Cijena, Kolicina, Vrsta from Artikli, Vrsta_artikla where Artikli.ID_vrsta_artikla=Vrsta_artikla.ID_vrsta_artikla and ID_artikla='" + cmbBrojArtikla.Text + "'";
-            dr = comm.ExecuteReader();
-
-            while (dr.Read())
-            {
-                Naziv = dr["Naziv"].ToString();
-                Cijena = Convert.ToInt32(dr["Cijena"]);
-                Kolicina = Convert.ToInt32(dr["Kolicina"]);
-                Vrsta = dr["Vrsta"].ToString();
-            }
-
-
-            cmboxTipArtikla.Text = Vrsta.ToString();
-            txtNaziv.Text = Naziv;
-            txtCijena.Text = Cijena.ToString();
-            txtKolicina.Text = Kolicina.ToString();
-
-            DatabaseConnection.conn.Close();
+            
         }
     }
 }

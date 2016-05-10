@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.artikliBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.artikliBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.timerOsvijezi = new System.Windows.Forms.Timer(this.components);
             this.txtBrisanjeArtikla = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
@@ -54,6 +53,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(201, 21);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(545, 554);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -131,11 +131,6 @@
             this.artikliBindingSource2.DataMember = "Artikli";
             this.artikliBindingSource2.DataSource = this._16027_DBDataSet;
             // 
-            // timerOsvijezi
-            // 
-            this.timerOsvijezi.Interval = 1000;
-            this.timerOsvijezi.Tick += new System.EventHandler(this.timerOsvijezi_Tick);
-            // 
             // txtBrisanjeArtikla
             // 
             this.txtBrisanjeArtikla.Location = new System.Drawing.Point(138, 443);
@@ -158,6 +153,7 @@
             this.Name = "PregledArtikla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled artikla";
+            this.Load += new System.EventHandler(this.PregledArtikla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
@@ -181,7 +177,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource artikliBindingSource2;
         private System.Windows.Forms.BindingSource artikliBindingSource1;
-        private System.Windows.Forms.Timer timerOsvijezi;
         private System.Windows.Forms.TextBox txtBrisanjeArtikla;
     }
 }

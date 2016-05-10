@@ -43,10 +43,10 @@
             this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbBrojArtikla = new System.Windows.Forms.ComboBox();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
+            this.txtBrojArtikla = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
@@ -135,14 +135,11 @@
             // cmboxTipArtikla
             // 
             this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vrstaartiklaBindingSource, "ID_vrsta_artikla", true));
-            this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource;
-            this.cmboxTipArtikla.DisplayMember = "ID_vrsta_artikla";
             this.cmboxTipArtikla.FormattingEnabled = true;
             this.cmboxTipArtikla.Location = new System.Drawing.Point(140, 156);
             this.cmboxTipArtikla.Name = "cmboxTipArtikla";
             this.cmboxTipArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmboxTipArtikla.TabIndex = 12;
-            this.cmboxTipArtikla.ValueMember = "ID_vrsta_artikla";
             // 
             // vrstaartiklaBindingSource
             // 
@@ -172,19 +169,6 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Broj artikla:";
             // 
-            // cmbBrojArtikla
-            // 
-            this.cmbBrojArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artikliBindingSource, "ID_artikla", true));
-            this.cmbBrojArtikla.DataSource = this.artikliBindingSource;
-            this.cmbBrojArtikla.DisplayMember = "ID_artikla";
-            this.cmbBrojArtikla.FormattingEnabled = true;
-            this.cmbBrojArtikla.Location = new System.Drawing.Point(140, 117);
-            this.cmbBrojArtikla.Name = "cmbBrojArtikla";
-            this.cmbBrojArtikla.Size = new System.Drawing.Size(121, 21);
-            this.cmbBrojArtikla.TabIndex = 23;
-            this.cmbBrojArtikla.ValueMember = "ID_artikla";
-            this.cmbBrojArtikla.SelectedIndexChanged += new System.EventHandler(this.cmbBrojArtikla_SelectedIndexChanged);
-            // 
             // artikliBindingSource
             // 
             this.artikliBindingSource.DataMember = "Artikli";
@@ -198,12 +182,20 @@
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
             // 
+            // txtBrojArtikla
+            // 
+            this.txtBrojArtikla.Location = new System.Drawing.Point(140, 117);
+            this.txtBrojArtikla.Name = "txtBrojArtikla";
+            this.txtBrojArtikla.ReadOnly = true;
+            this.txtBrojArtikla.Size = new System.Drawing.Size(121, 20);
+            this.txtBrojArtikla.TabIndex = 24;
+            // 
             // AzurirajArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 439);
-            this.Controls.Add(this.cmbBrojArtikla);
+            this.Controls.Add(this.txtBrojArtikla);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnObrisi);
@@ -243,11 +235,11 @@
         private System.Windows.Forms.ComboBox cmboxTipArtikla;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbBrojArtikla;
         private _16027_DBDataSet _16027_DBDataSet;
         private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
         private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
         private System.Windows.Forms.BindingSource artikliBindingSource;
         private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
+        private System.Windows.Forms.TextBox txtBrojArtikla;
     }
 }

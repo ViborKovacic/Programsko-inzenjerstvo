@@ -15,17 +15,17 @@ namespace PICvjecara
        //public SqlDataReader dr;
         public void OpenCon()
         {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
+            //if (conn.State == ConnectionState.Closed)
+            //{
+            //    conn.Open();
+            //}
         }
         public void CloseCon()
         {
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
+            //if (conn.State == ConnectionState.Open)
+            //{
+            //    conn.Close();
+            //}
         }
     }
 }

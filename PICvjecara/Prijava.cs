@@ -13,66 +13,66 @@ namespace PICvjecara
 {
     public partial class Prijava : Form
     {
-       
+
         public Prijava()
         {
-            InitializeComponent();
-            ControlBox = false;
-            txtLozinka.PasswordChar = '*';
+            //InitializeComponent();
+            //ControlBox = false;
+            //txtLozinka.PasswordChar = '*';
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
         {
-            string KorIme = "";
-            string Lozinka = "";
-            int brojac = 0;
+            //string KorIme = "";
+            //string Lozinka = "";
+            //int brojac = 0;
 
-            DatabaseConnection newConnection = new DatabaseConnection();
-            newConnection.ConnectionDB();
+            //DatabaseConnection newConnection = new DatabaseConnection();
+            //newConnection.ConnectionDB();
 
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = DatabaseConnection.conn;
-            comm.CommandText = "select count(*), Username, Password from Korisnici where Username='" + txtKorIme.Text + "' group by Username, Password";
-            comm.ExecuteNonQuery();
+            //SqlCommand comm = new SqlCommand();
+            //comm.Connection = DatabaseConnection.conn;
+            //comm.CommandText = "select count(*), Username, Password from Korisnici where Username='" + txtKorIme.Text + "' group by Username, Password";
+            //comm.ExecuteNonQuery();
 
-            brojac = Convert.ToInt32(comm.ExecuteScalar());
+            //brojac = Convert.ToInt32(comm.ExecuteScalar());
 
-            SqlDataReader read = comm.ExecuteReader();
-            read.Read();
-            
-            if ( brojac > 0)
-            {
-                KorIme = (read["Username"].ToString());
-                Lozinka = (read["Password"].ToString());
-                read.Close();
+            //SqlDataReader read = comm.ExecuteReader();
+            //read.Read();
 
-                if (txtKorIme.Text == KorIme && txtLozinka.Text == Lozinka)
-                {
-                    //da znamo koji je korisnik aktivan
-                    Korisnici.TrenutnoAkrivan = KorIme;
+            //if (brojac > 0)
+            //{
+            //    KorIme = (read["Username"].ToString());
+            //    Lozinka = (read["Password"].ToString());
+            //    read.Close();
 
-                    frmCvjecarna openCvjecarna = new frmCvjecarna();                    
-                    openCvjecarna.Show();
-                    Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Pogrešna lozinka");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Pogrešno korisničko ime");
-            }
+            //    if (txtKorIme.Text == KorIme && txtLozinka.Text == Lozinka)
+            //    {
+            //        //da znamo koji je korisnik aktivan
+            //        Korisnici.TrenutnoAkrivan = KorIme;
 
-            DatabaseConnection.conn.Close();           
+            //        frmCvjecarna openCvjecarna = new frmCvjecarna();
+            //        openCvjecarna.Show();
+            //        Visible = false;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Pogrešna lozinka");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Pogrešno korisničko ime");
+            //}
+
+            //DatabaseConnection.conn.Close();
         }
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            Registracija openRegistracija = new Registracija();
-            openRegistracija.Show();
-            Visible = false;
+            //Registracija openRegistracija = new Registracija();
+            //openRegistracija.Show();
+            //Visible = false;
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)

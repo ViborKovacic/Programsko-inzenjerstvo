@@ -20,10 +20,10 @@ namespace PICvjecara
             btnPrikazNarudzbi.Visible = false;
             btnNarudzbenica.Visible = false;
             //prikazuje koji je korisnik aktivan
-            lblKorisnik.Text = Korisnici.TrenutnoAkrivan;
-            Korisnici.AktivanKorisnik();
+            //lblKorisnik.Text = Korisnici.TrenutnoAkrivan;
+            //Korisnici.AktivanKorisnik();
 
-            btnPrikazNarudzbi.Enabled = false; // treba podesit malo bazu podatak
+            //btnPrikazNarudzbi.Enabled = false; // treba podesit malo bazu podatak
 
         }
 

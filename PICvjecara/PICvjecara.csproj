@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikli.cs" />
     <Compile Include="AzurirajArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,7 @@
     <Compile Include="UnosArtikla.Designer.cs">
       <DependentUpon>UnosArtikla.cs</DependentUpon>
     </Compile>
+    <Compile Include="VrstaArtikla.cs" />
     <Compile Include="_16027_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

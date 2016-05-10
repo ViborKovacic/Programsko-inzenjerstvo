@@ -13,10 +13,18 @@ namespace PICvjecara
 {
     public partial class UnosArtikla : Form
     {
+        private Artikli artikli = null;
+
         public UnosArtikla()
         {
             InitializeComponent();
             ControlBox = false;
+        }
+
+        public UnosArtikla(Artikli odabraniArtikli)
+        {
+            InitializeComponent();
+            artikli = odabraniArtikli;
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
@@ -29,7 +37,7 @@ namespace PICvjecara
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            Visible = false;
+            this.Close();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -37,34 +45,22 @@ namespace PICvjecara
             int broj = 0;
             if (int.TryParse(txtCijena.Text.Trim(), out broj))
             {
-                DatabaseConnection newConnection = new DatabaseConnection();
-                newConnection.ConnectionDB();
+                if (artikli == null)
+                {
+                    artikli = new Artikli();
+                }
 
-                SqlCommand comm = new SqlCommand();
-                comm.Connection = DatabaseConnection.conn;
-
-                comm.CommandText = "insert into Artikli values (@Naziv, @Cijena, @Kolicina, @ID_vrsta_artikla)";
-                comm.Parameters.AddWithValue("Naziv", txtNaziv.Text);
-                comm.Parameters.AddWithValue("Cijena", txtCijena.Text);
-                comm.Parameters.AddWithValue("Kolicina", txtKolicina.Text);
-                comm.Parameters.AddWithValue("ID_vrsta_artikla", cmboxTipArtikla.SelectedValue);
-                comm.ExecuteNonQuery();
-
-                MessageBox.Show("Uspiješno ste unjeli artikl");
-
-                DatabaseConnection.conn.Close();
+                artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.Text);
+                artikli.Naziv = txtNaziv.Text;
+                artikli.Cijena = int.Parse(txtCijena.Text);
+                artikli.Kolicina = int.Parse(txtKolicina.Text);
+                artikli.Unos();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Cijena i količina moraju biti brojevi");
             }
-        }
-
-        private void UnosArtikla_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
-
         }
     }
 }
