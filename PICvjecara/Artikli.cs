@@ -15,7 +15,6 @@ namespace PICvjecara
         static int cijena;
         static int kolicina;
         static int id_vrsta_artikla;
-        //static string vrsta;
 
         public int ID_artikla
         {
@@ -97,22 +96,6 @@ namespace PICvjecara
             }
         }
 
-        //public string Vrsta
-        //{
-        //    get
-        //    {
-        //        return vrsta;
-        //    }
-
-        //    set
-        //    {
-        //        if (vrsta != value)
-        //        {
-        //            vrsta = value;
-        //        }
-        //    }
-        //}
-
         public Artikli()
         {
         }
@@ -126,7 +109,6 @@ namespace PICvjecara
                 Cijena = int.Parse(dr["Cijena"].ToString());
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
-                //Vrsta = dr["Vrsta"].ToString();
             }
         }
 

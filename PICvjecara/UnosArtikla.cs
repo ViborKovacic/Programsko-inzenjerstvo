@@ -62,5 +62,12 @@ namespace PICvjecara
                 MessageBox.Show("Cijena i količina moraju biti brojevi");
             }
         }
+
+        private void UnosArtikla_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
+            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
+
+        }
     }
 }

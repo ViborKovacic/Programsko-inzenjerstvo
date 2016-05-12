@@ -47,9 +47,11 @@
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
             this.txtBrojArtikla = new System.Windows.Forms.TextBox();
+            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -134,12 +136,15 @@
             // 
             // cmboxTipArtikla
             // 
-            this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vrstaartiklaBindingSource, "ID_vrsta_artikla", true));
+            this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artikliBindingSource, "ID_vrsta_artikla", true));
+            this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource1;
+            this.cmboxTipArtikla.DisplayMember = "Vrsta";
             this.cmboxTipArtikla.FormattingEnabled = true;
             this.cmboxTipArtikla.Location = new System.Drawing.Point(140, 156);
             this.cmboxTipArtikla.Name = "cmboxTipArtikla";
             this.cmboxTipArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmboxTipArtikla.TabIndex = 12;
+            this.cmboxTipArtikla.ValueMember = "ID_vrsta_artikla";
             // 
             // vrstaartiklaBindingSource
             // 
@@ -190,6 +195,11 @@
             this.txtBrojArtikla.Size = new System.Drawing.Size(121, 20);
             this.txtBrojArtikla.TabIndex = 24;
             // 
+            // vrstaartiklaBindingSource1
+            // 
+            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
+            // 
             // AzurirajArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +252,6 @@
         private System.Windows.Forms.BindingSource artikliBindingSource;
         private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
         private System.Windows.Forms.TextBox txtBrojArtikla;
+        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource1;
     }
 }

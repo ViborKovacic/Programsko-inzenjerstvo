@@ -68,10 +68,5 @@ namespace PICvjecara
                 txtKolicina.Text = artikli.Kolicina.ToString();
             }   
         }
-
-        private void cmbBrojArtikla_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
