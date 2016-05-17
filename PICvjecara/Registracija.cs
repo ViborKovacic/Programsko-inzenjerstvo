@@ -13,6 +13,7 @@ namespace PICvjecara
 {
     public partial class Registracija : Form
     {
+        private Korisnici korisnici = null;
         public Registracija()
         {
             InitializeComponent();
@@ -21,39 +22,31 @@ namespace PICvjecara
 
         private void btnRegistriraj_Click(object sender, EventArgs e)
         {
+            korisnici = new Korisnici();
 
-            //DatabaseConnection newConnection = new DatabaseConnection();
-            //newConnection.ConnectionDB();
+            korisnici.Ime = txtIme.Text;
+            korisnici.Prezime = txtPrezime.Text;
+            korisnici.Username = txtKorIme.Text;
+            korisnici.Password = txtLozinka.Text;
+            korisnici.Email = txtEmail.Text;
+            korisnici.Grad = txtGrad.Text;
+            korisnici.Adresa = txtAdresa.Text;
+            korisnici.Telefon = txtTelefon.Text;
+            korisnici.ID_tip_korisnika = int.Parse(txtTipKorisnika.Text);
+            korisnici.UnosRegistracija();
+            this.Close();
 
-            //SqlCommand comm = new SqlCommand();
-            //comm.Connection = DatabaseConnection.conn;
-
-            //comm.CommandText = "insert into Korisnici values (@Ime, @Prezime, @Username, @Password, @Email, @Grad, @Adresa,@Telefon, @ID_tip_korisnika)";
-            //comm.Parameters.AddWithValue("Ime", txtIme.Text);
-            //comm.Parameters.AddWithValue("Prezime", txtPrezime.Text);
-            //comm.Parameters.AddWithValue("Username", txtKorIme.Text);
-            //comm.Parameters.AddWithValue("Password", txtLozinka.Text);
-            //comm.Parameters.AddWithValue("Email", txtEmail.Text);
-            //comm.Parameters.AddWithValue("Grad", txtGrad.Text);
-            //comm.Parameters.AddWithValue("Adresa", txtAdresa.Text);
-            //comm.Parameters.AddWithValue("Telefon", txtTelefon.Text);
-            //comm.Parameters.AddWithValue("ID_tip_korisnika", txtTipKorisnika.Text);
-            //comm.ExecuteNonQuery();
-
-            //DatabaseConnection.conn.Close();
-
-            //MessageBox.Show("Uspješno ste se registrirali");
-            //Prijava openPrijava = new Prijava();
-            //openPrijava.Show();
-            //Visible = false;
-
+            MessageBox.Show("Uspješno ste se registrirali");
+            Prijava openPrijava = new Prijava();
+            openPrijava.Show();
+            this.Close();
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
-            //Prijava openPrijava = new Prijava();
-            //openPrijava.Show();
-            //Visible = false;
+            Prijava openPrijava = new Prijava();
+            openPrijava.Show();
+            this.Close();
         }
     }
 }
