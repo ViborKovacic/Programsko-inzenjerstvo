@@ -30,7 +30,6 @@ namespace PICvjecara
         {
             UnosArtikla openUnosArtikla = new UnosArtikla();
             openUnosArtikla.ShowDialog();
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
@@ -40,34 +39,40 @@ namespace PICvjecara
                 Artikli odabraniArtikli = artikliDataGridView.SelectedRows[0].DataBoundItem as Artikli;
                 AzurirajArtikl openAzuriraj = new AzurirajArtikl(odabraniArtikli);
                 openAzuriraj.ShowDialog();
-                this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
             }
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
+            Artikli artikli = new Artikli();
+            int obrisiArikl = 0;
+
             if (MessageBox.Show("Želite li obrisati artikl?" , "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
-                artikliDataGridView.Rows.RemoveAt(artikliDataGridView.CurrentRow.Index);
+                if (artikliDataGridView.SelectedRows.Count > 0)
+                {
+                    int selectedRowIndex = artikliDataGridView.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = artikliDataGridView.Rows[selectedRowIndex];
+                    obrisiArikl = int.Parse(selectedRow.Cells["ID_artikla"].Value.ToString());
+                }
 
-                //if (artikliDataGridView.SelectedRows.Count > 0)
-                //{
-                //    foreach (DataGridViewRow row in artikliDataGridView.SelectedRows)
-                //    {
-                //        Artikli odabraniArtikl = row.DataBoundItem as Artikli;
-                //        txtBrisanjeArtikla.Text = row.Cells[0].ToString();
-                //        odabraniArtikl.Obrisi();
-                //    }
-                //}
+                artikliDataGridView.Rows.RemoveAt(artikliDataGridView.CurrentRow.Index);   
+                artikli.Obrisi(obrisiArikl);
+            }
+        }
+
+        private void artikliDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (artikliDataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = artikliDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = artikliDataGridView.Rows[selectedRowIndex];
+                txtBrisanjeArtikla.Text = Convert.ToString(selectedRow.Cells["ID_artikla"].Value);
             }
         }
 
         private void PregledArtikla_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_16027_DBDataSet1.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
-            // TODO: This line of code loads data into the '_16027_DBDataSet1.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
             // TODO: This line of code loads data into the '_16027_DBDataSet1.Artikli' table. You can move, or remove it, as needed.
             this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
             // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.

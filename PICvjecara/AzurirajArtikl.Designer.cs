@@ -39,19 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmboxTipArtikla = new System.Windows.Forms.ComboBox();
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
             this.txtBrojArtikla = new System.Windows.Forms.TextBox();
-            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
+            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
+            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -89,7 +84,6 @@
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(121, 20);
             this.txtKolicina.TabIndex = 18;
-            this.txtKolicina.Text = "Unesite količinu";
             // 
             // txtCijena
             // 
@@ -97,7 +91,6 @@
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(121, 20);
             this.txtCijena.TabIndex = 17;
-            this.txtCijena.Text = "Unesite cijenu u kn";
             // 
             // txtNaziv
             // 
@@ -105,7 +98,6 @@
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(121, 20);
             this.txtNaziv.TabIndex = 16;
-            this.txtNaziv.Text = "Naziv artikla";
             // 
             // label4
             // 
@@ -136,8 +128,8 @@
             // 
             // cmboxTipArtikla
             // 
-            this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artikliBindingSource, "ID_vrsta_artikla", true));
-            this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource1;
+            this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vrstaartiklaBindingSource, "ID_vrsta_artikla", true));
+            this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource;
             this.cmboxTipArtikla.DisplayMember = "Vrsta";
             this.cmboxTipArtikla.FormattingEnabled = true;
             this.cmboxTipArtikla.Location = new System.Drawing.Point(140, 156);
@@ -145,16 +137,6 @@
             this.cmboxTipArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmboxTipArtikla.TabIndex = 12;
             this.cmboxTipArtikla.ValueMember = "ID_vrsta_artikla";
-            // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // _16027_DBDataSet
-            // 
-            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -174,19 +156,6 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Broj artikla:";
             // 
-            // artikliBindingSource
-            // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // vrsta_artiklaTableAdapter
-            // 
-            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
-            // 
-            // artikliTableAdapter
-            // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
-            // 
             // txtBrojArtikla
             // 
             this.txtBrojArtikla.Location = new System.Drawing.Point(140, 117);
@@ -195,10 +164,19 @@
             this.txtBrojArtikla.Size = new System.Drawing.Size(121, 20);
             this.txtBrojArtikla.TabIndex = 24;
             // 
-            // vrstaartiklaBindingSource1
+            // _16027_DBDataSet
             // 
-            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
+            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
+            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vrstaartiklaBindingSource
+            // 
+            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
+            // 
+            // vrsta_artiklaTableAdapter
+            // 
+            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
             // 
             // AzurirajArtikl
             // 
@@ -223,10 +201,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AzurirajArtikl";
             this.Load += new System.EventHandler(this.AzurirajArtikl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,12 +222,9 @@
         private System.Windows.Forms.ComboBox cmboxTipArtikla;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBrojArtikla;
         private _16027_DBDataSet _16027_DBDataSet;
         private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
         private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
-        private System.Windows.Forms.BindingSource artikliBindingSource;
-        private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
-        private System.Windows.Forms.TextBox txtBrojArtikla;
-        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource1;
     }
 }

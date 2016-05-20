@@ -50,7 +50,7 @@ namespace PICvjecara
                     artikli = new Artikli();
                 }
 
-                artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.Text);
+                artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
                 artikli.Naziv = txtNaziv.Text;
                 artikli.Cijena = int.Parse(txtCijena.Text);
                 artikli.Kolicina = int.Parse(txtKolicina.Text);
@@ -65,9 +65,10 @@ namespace PICvjecara
 
         private void UnosArtikla_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
-
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
+            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
+            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
         }
     }
 }

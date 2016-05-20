@@ -36,35 +36,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrisanjeArtikla = new System.Windows.Forms.TextBox();
             this.fKArtikliVrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
+            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
             this.artikliBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.artikliBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new PICvjecara._16027_DBDataSetTableAdapters.TableAdapterManager();
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._16027_DBDataSet1 = new PICvjecara._16027_DBDataSet();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
-            this.artikliBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.ID_artikla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.artikliBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.artikliBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fKArtikliVrstaartiklaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUnosNovogArtikla
@@ -121,6 +121,7 @@
             // 
             this.txtBrisanjeArtikla.Location = new System.Drawing.Point(138, 443);
             this.txtBrisanjeArtikla.Name = "txtBrisanjeArtikla";
+            this.txtBrisanjeArtikla.ReadOnly = true;
             this.txtBrisanjeArtikla.Size = new System.Drawing.Size(44, 20);
             this.txtBrisanjeArtikla.TabIndex = 7;
             // 
@@ -129,15 +130,20 @@
             this.fKArtikliVrstaartiklaBindingSource.DataMember = "FK_Artikli_Vrsta_artikla";
             this.fKArtikliVrstaartiklaBindingSource.DataSource = this.vrstaartiklaBindingSource;
             // 
-            // vrstaartiklaBindingSource1
+            // vrstaartiklaBindingSource
             // 
-            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
+            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
             // 
             // _16027_DBDataSet
             // 
             this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
             this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vrstaartiklaBindingSource1
+            // 
+            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // artikliBindingSource
             // 
@@ -181,11 +187,6 @@
             // 
             this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
             // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
             // _16027_DBDataSet1
             // 
             this._16027_DBDataSet1.DataSetName = "_16027_DBDataSet";
@@ -208,16 +209,7 @@
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.artikliDataGridView.Size = new System.Drawing.Size(544, 430);
             this.artikliDataGridView.TabIndex = 7;
-            // 
-            // artikliBindingSource3
-            // 
-            this.artikliBindingSource3.DataMember = "Artikli";
-            this.artikliBindingSource3.DataSource = this._16027_DBDataSet1;
-            // 
-            // artikliBindingSource4
-            // 
-            this.artikliBindingSource4.DataMember = "Artikli";
-            this.artikliBindingSource4.DataSource = this._16027_DBDataSet1;
+            this.artikliDataGridView.SelectionChanged += new System.EventHandler(this.artikliDataGridView_SelectionChanged);
             // 
             // ID_artikla
             // 
@@ -257,6 +249,16 @@
             this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn5.ValueMember = "ID_vrsta_artikla";
             // 
+            // artikliBindingSource4
+            // 
+            this.artikliBindingSource4.DataMember = "Artikli";
+            this.artikliBindingSource4.DataSource = this._16027_DBDataSet1;
+            // 
+            // artikliBindingSource3
+            // 
+            this.artikliBindingSource3.DataMember = "Artikli";
+            this.artikliBindingSource3.DataSource = this._16027_DBDataSet1;
+            // 
             // PregledArtikla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,16 +276,16 @@
             this.Text = "Pregled artikla";
             this.Load += new System.EventHandler(this.PregledArtikla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fKArtikliVrstaartiklaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
