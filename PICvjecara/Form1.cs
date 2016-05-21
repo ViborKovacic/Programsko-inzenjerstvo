@@ -17,24 +17,22 @@ namespace PICvjecara
         {
             InitializeComponent();
             ControlBox = false;
-            btnPrikazNarudzbi.Visible = false;
-            btnNarudzbenica.Visible = false;
+            //btnPrikazNarudzbi.Visible = false;
+            //btnNarudzbenica.Visible = false;
 
             //prikazuje koji je korisnik aktivan
             lblKorisnik.Text = Korisnici.TrenutnoAktivan;
-            //Korisnici.AktivanKorisnik();
-
-            //btnPrikazNarudzbi.Enabled = false; // treba podesit malo bazu podatak
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
             
+
+           
+
         }
+
+      
 
         private void btnKraj_Click(object sender, EventArgs e)
         {
+            DatabaseConnection.Instance.Connection.Close();
             Environment.Exit(0);
         }
 
@@ -63,8 +61,14 @@ namespace PICvjecara
         {
             frmNarudzbenica openNarudzbenica = new frmNarudzbenica();
             openNarudzbenica.Show();
-            Visible = false;
+            this.Close();
         }
-           
+
+        private void btnPrikazNarudzbi_Click(object sender, EventArgs e)
+        {
+            frmPregledNarudzbi openPregledNarudzbi = new frmPregledNarudzbi();
+            openPregledNarudzbi.Show();
+            this.Close();
+        }
     }
 }

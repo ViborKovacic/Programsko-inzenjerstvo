@@ -162,7 +162,12 @@ namespace PICvjecara
             }
         }
 
-        public Korisnici(){}
+        public static string TrenutnoAktivan { get; set; }
+
+        public Korisnici()
+        {
+            AktivanKorisnik();
+        }
 
         //public Korisnici(DbDataReader dr)
         //{
@@ -206,23 +211,23 @@ namespace PICvjecara
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
-        public static string TrenutnoAktivan { get; set; }
-        //public void AktivanKorisnik()
-        //{
         
-        //    string sqlUpit = "select * from Korisnici where Username='" + TrenutnoAkrivan + "'";
-        //    DbDataReader read = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
-        //    while (read.Read())
-        //    {
-        //        ID_korisnik = Convert.ToInt32(read[0].ToString());
-        //        Ime = read["Ime"].ToString();
-        //        Prezime = read["Prezime"].ToString();
-        //        Email = read["Email"].ToString();
-        //        Grad = read["Grad"].ToString();
-        //        Adresa = read["Adresa"].ToString();
-        //        Telefon = read["Telefon"].ToString();
-        //    }
-        //    read.Close();
-        //}
+       public void AktivanKorisnik()
+        {
+
+            string sqlUpit = "select * from Korisnici where Username='" + TrenutnoAktivan + "'";
+            DbDataReader read = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+            while (read.Read())
+            {
+                ID_korisnik = Convert.ToInt32(read[0].ToString());
+                Ime = read["Ime"].ToString();
+                Prezime = read["Prezime"].ToString();
+                Email = read["Email"].ToString();
+                Grad = read["Grad"].ToString();
+                Adresa = read["Adresa"].ToString();
+                Telefon = read["Telefon"].ToString();
+            }
+            read.Close();
+        }
     }
 }

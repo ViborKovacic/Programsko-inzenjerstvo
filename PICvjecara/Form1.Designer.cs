@@ -179,6 +179,7 @@
             this.btnPrikazNarudzbi.TabIndex = 1;
             this.btnPrikazNarudzbi.Text = "Prikaži sve narudžbe";
             this.btnPrikazNarudzbi.UseVisualStyleBackColor = true;
+            this.btnPrikazNarudzbi.Click += new System.EventHandler(this.btnPrikazNarudzbi_Click);
             // 
             // btnNarudzbenica
             // 
@@ -227,7 +228,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCvjecarna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cvjećarna";            
+            this.Text = "Cvjećarna";
             this.groupBox1.ResumeLayout(false);
             this.grpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();

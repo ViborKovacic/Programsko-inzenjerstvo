@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.Refresh = new System.Windows.Forms.Timer(this.components);
+            this.lblProvjera = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +61,7 @@
             this.btnPovratak.TabIndex = 2;
             this.btnPovratak.Text = "Povratak";
             this.btnPovratak.UseVisualStyleBackColor = true;
+            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // btnObrisi
             // 
@@ -71,10 +71,16 @@
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // Refresh
+            // lblProvjera
             // 
-            this.Refresh.Tick += new System.EventHandler(this.Refresh_Tick);
+            this.lblProvjera.AutoSize = true;
+            this.lblProvjera.Location = new System.Drawing.Point(212, 384);
+            this.lblProvjera.Name = "lblProvjera";
+            this.lblProvjera.Size = new System.Drawing.Size(35, 13);
+            this.lblProvjera.TabIndex = 4;
+            this.lblProvjera.Text = "label2";
             // 
             // frmPregledNarudzbi
             // 
@@ -82,12 +88,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(740, 432);
+            this.Controls.Add(this.lblProvjera);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmPregledNarudzbi";
             this.Text = "Pregled narudžbi";
+            this.Load += new System.EventHandler(this.frmPregledNarudzbi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,6 +108,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Button btnObrisi;
-        private System.Windows.Forms.Timer Refresh;
+        private System.Windows.Forms.Label lblProvjera;
     }
 }

@@ -46,11 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPovratak = new System.Windows.Forms.Button();
-            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
-            this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dobavljaciTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.DobavljaciTableAdapter();
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             this.grpBoxPostojeci = new System.Windows.Forms.GroupBox();
             this.btnIzradinalogPostojeci = new System.Windows.Forms.Button();
             this.txtKolicinaPostojeci = new System.Windows.Forms.TextBox();
@@ -71,10 +66,8 @@
             this.fKNarudzbenicaDobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.narudzbenicaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.NarudzbenicaTableAdapter();
             this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblcontrol = new System.Windows.Forms.Label();
             this.grpBoxNovi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             this.grpBoxPostojeci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource1)).BeginInit();
             this.grpBoxZavrseno.SuspendLayout();
@@ -237,29 +230,6 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
-            // _16027_DBDataSet
-            // 
-            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dobavljaciBindingSource
-            // 
-            this.dobavljaciBindingSource.DataMember = "Dobavljaci";
-            this.dobavljaciBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // dobavljaciTableAdapter
-            // 
-            this.dobavljaciTableAdapter.ClearBeforeFill = true;
-            // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // vrsta_artiklaTableAdapter
-            // 
-            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
-            // 
             // grpBoxPostojeci
             // 
             this.grpBoxPostojeci.Controls.Add(this.btnIzradinalogPostojeci);
@@ -302,6 +272,7 @@
             this.cmbNazivArtikla.Name = "cmbNazivArtikla";
             this.cmbNazivArtikla.Size = new System.Drawing.Size(156, 21);
             this.cmbNazivArtikla.TabIndex = 18;
+            this.cmbNazivArtikla.SelectedIndexChanged += new System.EventHandler(this.cmbNazivArtikla_SelectedIndexChanged);
             // 
             // cmbVrstaArtikla
             // 
@@ -319,6 +290,7 @@
             this.cmbDobavljac.Name = "cmbDobavljac";
             this.cmbDobavljac.Size = new System.Drawing.Size(156, 21);
             this.cmbDobavljac.TabIndex = 16;
+            this.cmbDobavljac.SelectedIndexChanged += new System.EventHandler(this.cmbDobavljac_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -355,11 +327,6 @@
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Dobavljač:";
-            // 
-            // dobavljaciBindingSource1
-            // 
-            this.dobavljaciBindingSource1.DataMember = "Dobavljaci";
-            this.dobavljaciBindingSource1.DataSource = this._16027_DBDataSet;
             // 
             // btnPostojeciArtikl
             // 
@@ -418,21 +385,19 @@
             this.btnEmail.TabIndex = 6;
             this.btnEmail.Text = "Posalji Email";
             this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
-            // 
-            // fKNarudzbenicaDobavljaciBindingSource
-            // 
-            this.fKNarudzbenicaDobavljaciBindingSource.DataMember = "FK_Narudzbenica_Dobavljaci";
-            this.fKNarudzbenicaDobavljaciBindingSource.DataSource = this.dobavljaciBindingSource;
             // 
             // narudzbenicaTableAdapter
             // 
             this.narudzbenicaTableAdapter.ClearBeforeFill = true;
             // 
-            // vrstaartiklaBindingSource1
+            // lblcontrol
             // 
-            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
+            this.lblcontrol.AutoSize = true;
+            this.lblcontrol.Location = new System.Drawing.Point(84, 366);
+            this.lblcontrol.Name = "lblcontrol";
+            this.lblcontrol.Size = new System.Drawing.Size(50, 13);
+            this.lblcontrol.TabIndex = 7;
+            this.lblcontrol.Text = "lblControl";
             // 
             // frmNarudzbenica
             // 
@@ -440,6 +405,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1036, 624);
+            this.Controls.Add(this.lblcontrol);
             this.Controls.Add(this.grpBoxZavrseno);
             this.Controls.Add(this.btnNoviArtikli);
             this.Controls.Add(this.btnPostojeciArtikl);
@@ -451,9 +417,6 @@
             this.Load += new System.EventHandler(this.frmNarudzbenica_Load);
             this.grpBoxNovi.ResumeLayout(false);
             this.grpBoxNovi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             this.grpBoxPostojeci.ResumeLayout(false);
             this.grpBoxPostojeci.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource1)).EndInit();
@@ -462,6 +425,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKNarudzbenicaDobavljaciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -470,12 +434,7 @@
         private System.Windows.Forms.GroupBox grpBoxNovi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPovratak;
-        private _16027_DBDataSet _16027_DBDataSet;
-        private System.Windows.Forms.BindingSource dobavljaciBindingSource;
-        private _16027_DBDataSetTableAdapters.DobavljaciTableAdapter dobavljaciTableAdapter;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
-        private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
         private System.Windows.Forms.TextBox txtProizvod;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtVrstaArtikla;
@@ -509,5 +468,6 @@
         private _16027_DBDataSetTableAdapters.NarudzbenicaTableAdapter narudzbenicaTableAdapter;
         private System.Windows.Forms.BindingSource dobavljaciBindingSource1;
         private System.Windows.Forms.BindingSource vrstaartiklaBindingSource1;
+        private System.Windows.Forms.Label lblcontrol;
     }
 }
