@@ -28,7 +28,7 @@ namespace PICvjecara
 
         private void frmPregledNarudzbi_Load(object sender, EventArgs e)
         {
-            string q = "select n.ID_narudzbenice as 'Broj Narudžbe', va.Vrsta as 'Vrsta Proizvoda', a.Naziv as 'Naziv Proizvoda',n.kolicina as 'Količina',d.Ime as 'Dobavljač', n.datum_vrijeme as 'Datum Naručivanja',k.Ime as 'Naručitelj' from Vrsta_artikla va,Artikli a,Dobavljaci d,Narudzbenica n,Korisnici k, Stavke_narudzbenice sn where k.ID_korisnik = n.ID_korisnici and n.ID_dobavljac = d.ID_dobavljac and n.ID_narudzbenice = sn.ID_narudzbenice and sn.ID_artikla = a.ID_artikla and a.ID_artikla=va.ID_vrsta_artikla";
+            string q = "select n.ID_narudzbenice as 'Broj Narudžbe',va.Vrsta as 'Vrsta Artikla',a.Naziv as 'Naziv Artikla',d.Ime as 'Dobavljač', n.datum_vrijeme as 'Datum Narudžbe',k.ime as 'korisnik', n.kolicina as 'Naručena Količina' from Narudzbenica n , Dobavljaci d, Korisnici k, Stavke_narudzbenice sn, Artikli a , Vrsta_artikla va where d.ID_dobavljac=n.ID_dobavljac and n.ID_korisnici=k.ID_korisnik and  n.ID_narudzbenice=sn.ID_narudzbenice and a.ID_artikla = sn.ID_artikla and a.ID_vrsta_artikla = va.ID_vrsta_artikla";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
             DataTable dtDetalji = new DataTable();
             dataGridView1.DataSource = null;

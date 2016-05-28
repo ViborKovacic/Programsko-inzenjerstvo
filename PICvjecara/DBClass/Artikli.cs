@@ -25,5 +25,21 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
         }
+        public int DodajArtikl()
+        {
+            string q = "insert into Artikli (Naziv,Cijena,Kolicina,ID_vrsta_artikla) values ('"+Naziv+"',"+Cijena+","+Kolicina+","+ID_vrsta_artikla+")";
+            return DatabaseConnection.Instance.IzvirsiUput(q);
+        }
+        public void DohvatiIDNovogArtikla()
+        {
+            string q = "select top 1 * from Artikli order by ID_artikla desc";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+                ID_artikla = int.Parse(dr["ID_artikla"].ToString());
+            }
+            dr.Close();
+
+        }
     }
 }

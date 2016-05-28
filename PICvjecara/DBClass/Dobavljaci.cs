@@ -11,8 +11,8 @@ namespace PICvjecara.DBClass
     {
         public int ID_dobavljac { get; set; }
         public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public int OIB { get; set; }
+        public string Telefon { get; set; }
+        public string OIB { get; set; }
         public string Adresa { get; set; }
 
         public Dobavljaci()
@@ -28,14 +28,29 @@ namespace PICvjecara.DBClass
             while(dr.Read())
             {
                 ID_dobavljac = Convert.ToInt32( dr["ID_dobavljac"].ToString());
-                Prezime = dr["Prezime"].ToString();
-                OIB = Convert.ToInt32(dr["OIB"].ToString());
+                Ime = dr["Ime"].ToString();
+                OIB = dr["OIB"].ToString();
                 Adresa = dr["Adresa"].ToString();
 
 
             }
             dr.Close();
             
+        }
+        public int DodajDobavljaca()
+        {
+            string q = "insert into Dobavljaci (Ime,OIB,Adresa,Telefon) values ('"+Ime+"','"+OIB+"','"+Adresa+"','"+Telefon+"')";
+            return DatabaseConnection.Instance.IzvirsiUput(q);
+        }
+        public void DohvatiIDDobavljaca()
+        {
+            string q = "select top 1 * from Dobavljaci order by ID_dobavljac desc";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+                ID_dobavljac = int.Parse(dr["ID_dobavljac"].ToString());
+            }
+            dr.Close();
         }
 
         /*public List<string> DobavljaciUListu()
