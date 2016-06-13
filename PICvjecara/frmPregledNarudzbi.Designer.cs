@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.lblProvjera = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,22 +72,12 @@
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // lblProvjera
-            // 
-            this.lblProvjera.AutoSize = true;
-            this.lblProvjera.Location = new System.Drawing.Point(212, 384);
-            this.lblProvjera.Name = "lblProvjera";
-            this.lblProvjera.Size = new System.Drawing.Size(35, 13);
-            this.lblProvjera.TabIndex = 4;
-            this.lblProvjera.Text = "label2";
-            // 
             // frmPregledNarudzbi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(740, 432);
-            this.Controls.Add(this.lblProvjera);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.label1);
@@ -108,6 +97,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Button btnObrisi;
-        private System.Windows.Forms.Label lblProvjera;
     }
 }

@@ -36,7 +36,7 @@
             this.txtTo = new System.Windows.Forms.TextBox();
             this.txtCC = new System.Windows.Forms.TextBox();
             this.txtSub = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPoruka = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,8 +44,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.text1 = new System.Windows.Forms.Label();
-            this.text2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,14 +112,15 @@
             this.txtSub.Name = "txtSub";
             this.txtSub.Size = new System.Drawing.Size(278, 20);
             this.txtSub.TabIndex = 7;
+            this.txtSub.Text = "Narudžbenica";
             // 
-            // textBox1
+            // txtPoruka
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(489, 280);
-            this.textBox1.TabIndex = 8;
+            this.txtPoruka.Location = new System.Drawing.Point(70, 128);
+            this.txtPoruka.Multiline = true;
+            this.txtPoruka.Name = "txtPoruka";
+            this.txtPoruka.Size = new System.Drawing.Size(489, 280);
+            this.txtPoruka.TabIndex = 8;
             // 
             // groupBox1
             // 
@@ -154,17 +153,16 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(315, 33);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "ŠALJI NA:";
+            this.label7.Text = "ŠALJI SA:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Gmail",
-            "Foi",
-            "Hotmail",
+            "Yahoo",
             "Live"});
             this.comboBox1.Location = new System.Drawing.Point(318, 56);
             this.comboBox1.Name = "comboBox1";
@@ -194,34 +192,14 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Password:";
             // 
-            // text1
-            // 
-            this.text1.AutoSize = true;
-            this.text1.Location = new System.Drawing.Point(405, 38);
-            this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(35, 13);
-            this.text1.TabIndex = 10;
-            this.text1.Text = "label8";
-            // 
-            // text2
-            // 
-            this.text2.AutoSize = true;
-            this.text2.Location = new System.Drawing.Point(406, 67);
-            this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(35, 13);
-            this.text2.TabIndex = 11;
-            this.text2.Text = "label9";
-            // 
             // frmSenaEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(606, 611);
-            this.Controls.Add(this.text2);
-            this.Controls.Add(this.text1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPoruka);
             this.Controls.Add(this.txtSub);
             this.Controls.Add(this.txtCC);
             this.Controls.Add(this.txtTo);
@@ -231,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmSenaEmail";
             this.Text = "frmSenaEmail";
+            this.Load += new System.EventHandler(this.frmSenaEmail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -248,7 +227,7 @@
         private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.TextBox txtCC;
         private System.Windows.Forms.TextBox txtSub;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPoruka;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
@@ -256,7 +235,5 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label text1;
-        private System.Windows.Forms.Label text2;
     }
 }

@@ -11,6 +11,7 @@ namespace PICvjecara.DBClass
     {
         public int ID_vrsta_artikla { get; set; }
         public string Vrsta { get; set; }
+        static List<string> listaVrsta = new List<string>();
 
 
 
@@ -41,6 +42,11 @@ namespace PICvjecara.DBClass
             dr.Close();
 
         }
+       /* public List<string> ListaVrsta()
+        {
+            listaVrsta.Add(Vrsta);
+            return listaVrsta;
+        }*/
     }
 
    

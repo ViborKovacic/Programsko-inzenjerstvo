@@ -14,6 +14,8 @@ namespace PICvjecara.DBClass
         public string Telefon { get; set; }
         public string OIB { get; set; }
         public string Adresa { get; set; }
+       // static List<string> listaDobavljaca = new List<string>();
+        
 
         public Dobavljaci()
         {
@@ -27,10 +29,11 @@ namespace PICvjecara.DBClass
 
             while(dr.Read())
             {
-                ID_dobavljac = Convert.ToInt32( dr["ID_dobavljac"].ToString());
+                ID_dobavljac = int.Parse(dr["ID_dobavljac"].ToString());
                 Ime = dr["Ime"].ToString();
                 OIB = dr["OIB"].ToString();
                 Adresa = dr["Adresa"].ToString();
+                Telefon = dr["Telefon"].ToString();
 
 
             }
@@ -52,23 +55,16 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
         }
-
-        /*public List<string> DobavljaciUListu()
+        /*public List<string> ListaDobavljacaPopuni()
         {
-            List<string> lista = new List<string>();
-            string q = "select * from Dobavljaci where Ime='" + Ime + "'";
-            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
-            while (dr.Read())
-            {
-                lista.Add(dr["Ime"].ToString());
-                lista.Add(dr["OIB"].ToString());
-                lista.Add(dr["Adresa"].ToString());
+            
+            listaDobavljaca.Add(Adresa);            
+            listaDobavljaca.Add(OIB);
+            listaDobavljaca.Add(Ime);
+            return listaDobavljaca;
 
-            }
-            dr.Close();
-            return lista;
-        }*/
-
+        }
+    */
 
 
         

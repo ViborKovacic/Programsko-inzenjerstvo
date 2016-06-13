@@ -14,65 +14,82 @@ namespace PICvjecara
 {
     public partial class frmSenaEmail : Form
     {
-        //DBClass.Dobavljaci dobavljac;
-        //public string korisnik = Korisnici.Email.ToString();
-        //public string ime = Korisnici.Ime.ToString();
-        //NetworkCredential login;
-        //SmtpClient client;
-        //MailMessage msg;
-        //public string saljePutem="";
-        //int port = 0;
+        Korisnici korisnici = new Korisnici();
+        DBClass.Dobavljaci dobavljac;
+        DBClass.Vrste_artikla vrstaArtikla;
+        DBClass.Artikli artikli;
 
-        public frmSenaEmail()
+        List<string> listaZaSlanje = new List<string>();
+
+        
+        
+        NetworkCredential login;
+        SmtpClient client;
+        MailMessage msg;
+        string saljePutem = "";
+        int  port = 0;
+       
+
+        public frmSenaEmail(List<string> lista)
         {
+            dobavljac = new DBClass.Dobavljaci();
+            vrstaArtikla = new DBClass.Vrste_artikla();
+            artikli = new DBClass.Artikli();
+            listaZaSlanje = lista;
+            
             InitializeComponent();
-            txtPassword.Text = "";
-            txtPassword.PasswordChar = '*';
 
-            
-            //btnSend.Enabled = false;
-            
-        }
-        /*private void AktivirajOpcije()
+
+
+    }
+        private void AktivirajOpcije()
         {
-            if (txtPassword.Text != null && txtUsername.Text != null && comboBox1.SelectedIndex >-1)
-            {
-                btnSend.Enabled = true;
-            }
-            if (comboBox1.SelectedText == "Gmail")
+            
+            if (comboBox1.SelectedItem.ToString() == "Gmail")
             {
                 saljePutem = "smtp.gmail.com";
                 port = 587;
+
+
             }
-            if (comboBox1.SelectedText == "Foi")
+            if (comboBox1.SelectedItem.ToString() == "Yahoo")
             {
-                saljePutem = "mail.ht.hr";
+                saljePutem = "smtp.mail.yahoo.com";
+                port = 587;
+            }
+            if (comboBox1.SelectedItem.ToString() == "Live")
+            {
+                saljePutem = "smtp.live.com";
                 port = 25;
             }
-        }*/
+        }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-           // AktivirajOpcije();
-            //text1.Text = saljePutem;
-            //text2.Text = port.ToString();
+            string korisnik = korisnici.Email.ToString();
+            string ime = korisnici.Ime.ToString();
+
+            AktivirajOpcije();
+           
+
+
+            login = new NetworkCredential(txtUsername.Text, txtPassword.Text);
+            client = new SmtpClient(saljePutem.ToString());
+            client.Port = port;
+            client.EnableSsl = true;
+            client.Credentials = login;
+            msg = new MailMessage { From = new MailAddress(korisnik, ime, Encoding.UTF8) };
+            msg.To.Add(new MailAddress(txtTo.Text));
+            msg.Subject = txtSub.Text;
+            msg.Body = txtPoruka.Text;
+            msg.BodyEncoding = Encoding.UTF8;
             
-            //login = new NetworkCredential(txtUsername.Text, txtPassword.Text);
-            //client = new SmtpClient("mail.ht.hr");
-            //client.Port = 25;
-            //client.EnableSsl = true;
-            //client.Credentials = login;
-            //msg = new MailMessage { From = new MailAddress(korisnik, ime, Encoding.UTF8) };
-            //msg.To.Add(new MailAddress(txtTo.Text));
-            //msg.Subject = txtSub.Text;
-            //msg.Body = textBox1.Text;
-            //msg.BodyEncoding = Encoding.UTF8;
-            //msg.IsBodyHtml = true;
-            //msg.Priority = MailPriority.Normal;
-            //msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-            //client.SendCompleted += new SendCompletedEventHandler(SendComplatedCallback);
-            //string userstate = "Slanje...";
-            //client.SendAsync(msg, userstate);
+            msg.IsBodyHtml = true;
+            msg.Priority = MailPriority.Normal;
+            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+            client.SendCompleted += new SendCompletedEventHandler(SendComplatedCallback);
+            string userstate = "Slanje...";
+            client.SendAsync(msg, userstate);
             
         }
         private static void SendComplatedCallback(object sender, AsyncCompletedEventArgs e)
@@ -88,6 +105,31 @@ namespace PICvjecara
             }
             else
                 MessageBox.Show("Poruka je uspješno poslana", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void frmSenaEmail_Load(object sender, EventArgs e)
+        {
+            
+
+            txtPassword.Text = "";
+            txtPassword.PasswordChar = '*';
+            
+            txtPoruka.Text = "";
+            
+            IspisZaSlanje(listaZaSlanje);
+            listaZaSlanje.Clear();
+           
+
+
+
+        }
+        private void IspisZaSlanje(List<string> lista)
+        {
+           foreach (string s in lista)
+            {
+                txtPoruka.Text = s.ToString() + txtPoruka.Text + Environment.NewLine;
+            }        
+      
         }
     }
 }

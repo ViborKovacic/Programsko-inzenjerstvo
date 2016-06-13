@@ -12,7 +12,7 @@ namespace PICvjecara
     {
         static int id_artikla;
         static string naziv;
-        static int cijena;
+        static int cijena;//ufloat
         static int kolicina;
         static int id_vrsta_artikla;
 
@@ -48,7 +48,7 @@ namespace PICvjecara
             }
         }
 
-        public int Cijena
+        public int Cijena//float
         {
             get
             {
@@ -106,7 +106,7 @@ namespace PICvjecara
             {
                 ID_artikla = int.Parse(dr["ID_artikla"].ToString());
                 Naziv = dr["Naziv"].ToString();
-                Cijena = int.Parse(dr["Cijena"].ToString());
+                Cijena = int.Parse(dr["Cijena"].ToString());//float
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
             }

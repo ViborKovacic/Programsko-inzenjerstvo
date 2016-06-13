@@ -56,8 +56,14 @@
     </Compile>
     <Compile Include="DBClass\Artikli.cs" />
     <Compile Include="DBClass\Dobavljaci.cs" />
+    <Compile Include="DBClass\Kupci.cs" />
+    <Compile Include="DBClass\Nalog_za_prodaju.cs" />
     <Compile Include="DBClass\Narudzbenica.cs" />
+    <Compile Include="DBClass\Rezervacija.cs" />
     <Compile Include="DBClass\StavkeNarudzbenice.cs" />
+    <Compile Include="DBClass\Stavke_racuna.cs" />
+    <Compile Include="DBClass\Stavke_rezervacije.cs" />
+    <Compile Include="DBClass\Tip_rezervacije.cs" />
     <Compile Include="DBClass\Vrste_artikla.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,24 @@
     </Compile>
     <Compile Include="frmPregledNarudzbi.Designer.cs">
       <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervacije.Designer.cs">
+      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRezervacijeADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervacijeADD.Designer.cs">
+      <DependentUpon>frmRezervacijeADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRezerviranjeKorisnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezerviranjeKorisnici.Designer.cs">
+      <DependentUpon>frmRezerviranjeKorisnici.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSenaEmail.cs">
       <SubType>Form</SubType>
@@ -128,6 +152,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPregledNarudzbi.resx">
       <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRezervacije.resx">
+      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRezervacijeADD.resx">
+      <DependentUpon>frmRezervacijeADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRezerviranjeKorisnici.resx">
+      <DependentUpon>frmRezerviranjeKorisnici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSenaEmail.resx">
       <DependentUpon>frmSenaEmail.cs</DependentUpon>

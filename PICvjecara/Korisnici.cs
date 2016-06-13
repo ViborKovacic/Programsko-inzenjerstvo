@@ -163,6 +163,7 @@ namespace PICvjecara
         }
 
         public static string TrenutnoAktivan { get; set; }
+        static List<string> listaKorisnika = new List<string>();
 
         public Korisnici()
         {
@@ -229,5 +230,17 @@ namespace PICvjecara
             }
             read.Close();
         }
+       /* public List<string> ListaKorisnika()
+        {
+            
+            
+            listaKorisnika.Add(Telefon);
+            listaKorisnika.Add(Prezime);
+            listaKorisnika.Add(Ime);
+
+
+
+            return listaKorisnika;
+        }*/
     }
 }
