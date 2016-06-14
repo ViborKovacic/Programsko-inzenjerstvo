@@ -11,13 +11,17 @@ using System.Windows.Forms;
 namespace PICvjecara
 {
     public partial class frmRezerviranjeKorisnici : Form
-    { Korisnici korisnik;
+    {
+        Korisnici korisnik;
         DBClass.Kupci kupci;
         DBClass.Nalog_za_prodaju NalogZaprodaju;
         DBClass.Stavke_rezervacije StavkeRezervacije;
         DBClass.Rezervacija Rezervacija;
         DBClass.Tip_rezervacije VrstaRezervacije;
-        public frmRezerviranjeKorisnici(int kolicina)
+
+        private bool provjera = false;
+        
+        public frmRezerviranjeKorisnici(int kolicina,int IdRezervacije)
         {
 
             kupci = new DBClass.Kupci();
@@ -27,6 +31,9 @@ namespace PICvjecara
             VrstaRezervacije = new DBClass.Tip_rezervacije();
             korisnik = new Korisnici();
             StavkeRezervacije.Kolicina = kolicina;
+            StavkeRezervacije.ID_rezervacija = IdRezervacije;
+            
+
             InitializeComponent();
         }
 
@@ -36,6 +43,7 @@ namespace PICvjecara
             grbKupac.Enabled = false;
             btnUnesiKupca.Enabled = true;
             
+
         }
 
         private void btnPretrazi_Click(object sender, EventArgs e)
@@ -91,11 +99,12 @@ namespace PICvjecara
         private void btnUnesiKupca_Click(object sender, EventArgs e)
         {
             //punjenje klase novim podacima
+            btnKupacPromjene.Enabled = true;
             UpdateClassVarijable();
-
-
             kupci.Insert();
+            
             MessageBox.Show("Klijent je uspješno unesen!");
+            provjera = true;
             btnRezerviraj.Enabled = true;
         }
 
@@ -123,6 +132,7 @@ namespace PICvjecara
             kupci.Email = txtEmail.Text;
             kupci.Adresa = txtAdresa.Text;
             kupci.Telefon = txtTelefon.Text;
+            
         }
 
         private void btnRezerviraj_Click(object sender, EventArgs e)
@@ -132,15 +142,19 @@ namespace PICvjecara
             NalogZaprodaju.Datum = datumNarudzbe;
             korisnik.AktivanKorisnik();
             NalogZaprodaju.ID_korisnik = korisnik.ID_korisnik;
+            if (provjera)
+            {
+                kupci.DohvatiID();
+            }
+            
             NalogZaprodaju.ID_kupci = kupci.ID_kupca;
             NalogZaprodaju.Insert();
             //punjenje klase Stavke_rezervacije
             NalogZaprodaju.DohvatiIdNaloga();
             StavkeRezervacije.ID_nalog_za_prodaju = NalogZaprodaju.ID_nalog_za_prodaju;
-            Rezervacija.DohvatiIdRezervacije();
-            StavkeRezervacije.ID_rezervacija = Rezervacija.ID_rezervacije;
-            
             StavkeRezervacije.Insert();
+
+            provjera = false;
             MessageBox.Show("Rezervacija je spremljena!");
             
 

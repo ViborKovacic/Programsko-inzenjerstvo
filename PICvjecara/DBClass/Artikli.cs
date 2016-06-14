@@ -11,7 +11,7 @@ namespace PICvjecara.DBClass
     {
         public int ID_artikla { get; set; }
         public string Naziv { get; set; }
-        public float Cijena { get; set; }
+        public decimal Cijena { get; set; }
         public int Kolicina { get; set; }
         public int ID_vrsta_artikla { get; set; }
         static List<string> listaArtikla = new List<string>();
@@ -24,7 +24,7 @@ namespace PICvjecara.DBClass
             {
                 ID_artikla = int.Parse(dr["ID_artikla"].ToString());
 
-                Cijena = float.Parse(dr["Cijena"].ToString());
+                Cijena = decimal.Parse(dr["Cijena"].ToString());
                 Kolicina = Convert.ToInt32(dr["Kolicina"].ToString());
 
 

@@ -77,5 +77,12 @@ namespace PICvjecara
             frmRez.Show();
             this.Close();
         }
+
+        private void btnPrikazRezervacija_Click(object sender, EventArgs e)
+        {
+            frmPregledRezervacija frmPregledRez = new frmPregledRezervacija();
+            frmPregledRez.Show();
+            this.Close();
+        }
     }
 }

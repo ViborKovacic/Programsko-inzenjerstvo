@@ -70,8 +70,9 @@ namespace PICvjecara
         private void btnRezerviraj_Click(object sender, EventArgs e)
         {
             int kolicina = int.Parse(txtKolicinaRezervacije.Text);
+            int IdRezervacije = Rezervacija.ID_rezervacije;
             
-            frmRezerviranjeKorisnici frmRezKor = new frmRezerviranjeKorisnici(kolicina);
+            frmRezerviranjeKorisnici frmRezKor = new frmRezerviranjeKorisnici(kolicina,IdRezervacije);
             frmRezKor.Show();
             this.Close();
         }

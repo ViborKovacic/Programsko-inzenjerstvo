@@ -305,7 +305,7 @@ namespace PICvjecara
 
                 //punjenje klase DBClass.Artikli
                 artikli.Naziv = txtProizvod.Text;
-                artikli.Cijena = float.Parse(txtCijenaArtikla.Text.ToString());
+                artikli.Cijena = decimal.Parse(txtCijenaArtikla.Text.ToString());
                 artikli.Kolicina = int.Parse(txtKolicinaNovog.Text.ToString());
                 artikli.ID_vrsta_artikla = vrstaArtikla.ID_vrsta_artikla;
                 // artikli.ListaArtikla();
@@ -322,7 +322,7 @@ namespace PICvjecara
                 vrstaArtikla.DohvatiNoviID();
 
                 artikli.Naziv = txtProizvod.Text;
-                artikli.Cijena = float.Parse(txtCijenaArtikla.Text.ToString());
+                artikli.Cijena = decimal.Parse(txtCijenaArtikla.Text.ToString());
                 artikli.Kolicina = int.Parse(txtKolicinaNovog.Text.ToString());
                 artikli.ID_vrsta_artikla = vrstaArtikla.ID_vrsta_artikla;
                 //artikli.ListaArtikla();

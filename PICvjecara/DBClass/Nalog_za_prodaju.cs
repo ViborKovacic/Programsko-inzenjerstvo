@@ -32,5 +32,10 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
         }
+        public int Brisi(int IDBrisi)
+        {
+            string q = "delete from Nalog_za_prodaju where ID_nalog_za_prodaju=" + IDBrisi;
+            return DatabaseConnection.Instance.IzvirsiUput(q);
+        }
     }
 }

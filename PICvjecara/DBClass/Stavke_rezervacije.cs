@@ -23,6 +23,11 @@ namespace PICvjecara.DBClass
 
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
+        public int Brisi(int IDBrisi)
+        {
+            string q = "delete from Stavke_rezervacije where ID_nalog_za_prodaju=" + IDBrisi;
+            return DatabaseConnection.Instance.IzvirsiUput(q);
+        }
 
 
     }

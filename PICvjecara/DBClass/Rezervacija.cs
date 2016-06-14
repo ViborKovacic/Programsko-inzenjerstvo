@@ -22,7 +22,6 @@ namespace PICvjecara.DBClass
             {
                 ID_rezervacije = int.Parse(dr["ID_rezervacije"].ToString());
                 Cijena = float.Parse(dr["Cijena"].ToString());
-                //Kolicina = int.Parse(dr["Kolicina"].ToString());
                 Opis = dr["Opis"].ToString();
             }
             dr.Close();
@@ -32,15 +31,6 @@ namespace PICvjecara.DBClass
             string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis) values ("+Cijena+","+ID_tip_rezervacije+",'"+Opis+"')";
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
-        public void DohvatiIdRezervacije()
-        {
-            string q = "select top 1 * from Rezervacija order by ID_rezervacije desc";
-            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
-            while(dr.Read())
-            {
-                ID_rezervacije = int.Parse(dr["ID_rezervacije"].ToString());
-            }
-            dr.Close();
-        }
+        
     }
 }

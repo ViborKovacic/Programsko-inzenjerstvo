@@ -12,7 +12,7 @@ namespace PICvjecara
     {
         static int id_artikla;
         static string naziv;
-        static int cijena;//ufloat
+        static int cijena;// u decimal , al jos uvijek ne radi neznam zkj ici cu na konzultacije
         static int kolicina;
         static int id_vrsta_artikla;
 

@@ -40,6 +40,17 @@ namespace PICvjecara.DBClass
            
 
         }
+        public void DohvatiID()
+        {
+            string q = "select top 1 * from Kupci order by ID_kupca desc";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+                ID_kupca = int.Parse(dr["ID_kupca"].ToString());
+                
+            }
+            dr.Close();
+        }
         public int Insert()
         {
             string q = "insert into Kupci (Ime,Prezime,Adresa,Email,Telefon,OIB) values ('"+Ime
@@ -52,6 +63,7 @@ namespace PICvjecara.DBClass
 
 
         }
+
         public void BrisiSadrzajClasse()
         {
             ID_kupca = 0;
