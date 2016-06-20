@@ -1,6 +1,6 @@
 ﻿namespace PICvjecara
 {
-    partial class AzurirajArtikl
+    partial class frmAzurirajArtikl
     {
         /// <summary>
         /// Required designer variable.

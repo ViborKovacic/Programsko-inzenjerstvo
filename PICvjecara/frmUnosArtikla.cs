@@ -11,17 +11,17 @@ using System.Data.SqlClient;
 
 namespace PICvjecara
 {
-    public partial class UnosArtikla : Form
+    public partial class frmUnosArtikla : Form
     {
-        private Artikli artikli = null;
+        private DBClass.Artikli artikli = null;
 
-        public UnosArtikla()
+        public frmUnosArtikla()
         {
             InitializeComponent();
             ControlBox = false;
         }
 
-        public UnosArtikla(Artikli odabraniArtikli)
+        public frmUnosArtikla(DBClass.Artikli odabraniArtikli)
         {
             InitializeComponent();
             artikli = odabraniArtikli;
@@ -47,7 +47,7 @@ namespace PICvjecara
             {
                 if (artikli == null)
                 {
-                    artikli = new Artikli();
+                    artikli = new DBClass.Artikli();
                 }
 
                 artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());

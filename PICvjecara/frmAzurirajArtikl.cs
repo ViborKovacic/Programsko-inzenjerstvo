@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace PICvjecara
 {
-    public partial class AzurirajArtikl : Form
+    public partial class frmAzurirajArtikl : Form
     {
-        private Artikli artikli = null;
+        private DBClass.Artikli artikli;
 
-        public AzurirajArtikl()
+        public frmAzurirajArtikl()
         {
             InitializeComponent();
         }
 
-        public AzurirajArtikl(Artikli odabraniArtikli)
+        public frmAzurirajArtikl(DBClass.Artikli odabraniArtikli)
         {
             InitializeComponent();
             artikli = odabraniArtikli;
@@ -34,7 +34,7 @@ namespace PICvjecara
             {
                 if (artikli == null)
                 {
-                    artikli = new Artikli();
+                    artikli = new DBClass.Artikli();
                 }
 
                 artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
@@ -60,7 +60,7 @@ namespace PICvjecara
         {
             // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
             this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
-            txtNaziv.Focus();
+
             if(artikli != null)
             {
                 txtBrojArtikla.Text = artikli.ID_artikla.ToString();

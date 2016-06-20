@@ -128,10 +128,10 @@ namespace PICvjecara
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
-        public int Obrisi(int obrisiArikl)
+        public int Obrisi(int obrisiArtikl)
         {
             string sqlUpit = "";
-            sqlUpit = "DELETE FROM Artikli WHERE ID_artikla=" + obrisiArikl;
+            sqlUpit = "DELETE FROM Artikli WHERE ID_artikla=" + obrisiArtikl;
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 

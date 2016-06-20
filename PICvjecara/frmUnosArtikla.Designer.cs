@@ -1,6 +1,6 @@
 ﻿namespace PICvjecara
 {
-    partial class UnosArtikla
+    partial class frmUnosArtikla
     {
         /// <summary>
         /// Required designer variable.

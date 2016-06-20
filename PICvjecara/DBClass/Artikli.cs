@@ -13,7 +13,7 @@ namespace PICvjecara.DBClass
     {
         public int ID_artikla { get; set; }
         public string Naziv { get; set; }
-        public decimal Cijena { get; set; }
+        public float Cijena { get; set; }
         public int Kolicina { get; set; }
         public int ID_vrsta_artikla { get; set; }
 
@@ -27,7 +27,7 @@ namespace PICvjecara.DBClass
             {
                 ID_artikla = int.Parse(dr["ID_artikla"].ToString());
                 Naziv = dr["Naziv"].ToString();
-                Cijena = decimal.Parse(dr["Cijena"].ToString());
+                Cijena = float.Parse(dr["Cijena"].ToString());
                 Kolicina = Convert.ToInt32(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
 
@@ -64,5 +64,57 @@ namespace PICvjecara.DBClass
              listaArtikla.Add(Naziv);
              return listaArtikla;
          }*/
+        public Artikli()
+        {
+        }
+
+        public Artikli(DbDataReader dr)
+        {
+            if (dr != null)
+            {
+                ID_artikla = int.Parse(dr["ID_artikla"].ToString());
+                Naziv = dr["Naziv"].ToString();
+                Cijena = float.Parse(dr["Cijena"].ToString());//float
+                Kolicina = int.Parse(dr["Kolicina"].ToString());
+                ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
+            }
+        }
+
+        public int Unos()
+        {
+            string sqlUpit = "";
+            if (ID_artikla == 0)
+            {
+                sqlUpit = "INSERT INTO Artikli (Naziv, Cijena, Kolicina, ID_vrsta_artikla) VALUES ('" + Naziv + "','" + Cijena + "','" + Kolicina + "','" + ID_vrsta_artikla + "')";
+            }
+
+            else
+            {
+                sqlUpit = "UPDATE Artikli SET Naziv='" + Naziv + "', Cijena='" + Cijena + "', Kolicina='" + Kolicina + "', ID_vrsta_artikla='" + ID_vrsta_artikla + "' WHERE ID_artikla=" + ID_artikla;
+            }
+
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+        }
+
+        public int Obrisi(int obrisiArtikl)
+        {
+            string sqlUpit = "";
+            sqlUpit = "DELETE FROM Artikli WHERE ID_artikla=" + obrisiArtikl;
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+        }
+
+        public static List<Artikli> DohvatiArtikle()
+        {
+            List<Artikli> lista = new List<Artikli>();
+            string sqlUpit = "SELECT * FROM Artikli";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+            while (dr.Read())
+            {
+                Artikli artikli = new Artikli(dr);
+                lista.Add(artikli);
+            }
+            dr.Close();
+            return lista;
+        }
     }
 }

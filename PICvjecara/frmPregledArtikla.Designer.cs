@@ -1,6 +1,6 @@
 ﻿namespace PICvjecara
 {
-    partial class PregledArtikla
+    partial class frmPregledArtikla
     {
         /// <summary>
         /// Required designer variable.

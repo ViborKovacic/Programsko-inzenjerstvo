@@ -11,40 +11,46 @@ using System.Data.SqlClient;
 
 namespace PICvjecara
 {
-    public partial class PregledArtikla : Form
+    public partial class frmPregledArtikla : Form
     {
-        public PregledArtikla()
+        public DBClass.Artikli artikli;
+        public frmPregledArtikla()
         {
             InitializeComponent();
             ControlBox = false;
         }
 
+        public void OvijeziArtikle()
+        {
+        }
+
         private void btnPovratak_Click(object sender, EventArgs e)
         {
             frmCvjecarna openCvjecarna = new frmCvjecarna();
-            openCvjecarna.Show();
+            openCvjecarna.ShowDialog();
             this.Close();
         }
 
         private void btnUnosNovogArtikla_Click(object sender, EventArgs e)
         {
-            UnosArtikla openUnosArtikla = new UnosArtikla();
+            frmUnosArtikla openUnosArtikla = new frmUnosArtikla();
             openUnosArtikla.ShowDialog();
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
+            artikli = new DBClass.Artikli();
             if (artikliDataGridView.SelectedRows.Count > 0)
             {
-                Artikli odabraniArtikli = artikliDataGridView.SelectedRows[0].DataBoundItem as Artikli;
-                AzurirajArtikl openAzuriraj = new AzurirajArtikl(odabraniArtikli);
+                artikli = artikliDataGridView.SelectedRows[0].DataBoundItem as DBClass.Artikli;
+                frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(artikli);
                 openAzuriraj.ShowDialog();
             }
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
-            Artikli artikli = new Artikli();
+            artikli = new DBClass.Artikli();
             int obrisiArikl = 0;
 
             if (MessageBox.Show("Želite li obrisati artikl?" , "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)

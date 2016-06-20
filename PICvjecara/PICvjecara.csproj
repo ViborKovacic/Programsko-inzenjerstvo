@@ -55,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artikli.cs" />
-    <Compile Include="AzurirajArtikl.cs">
+    <Compile Include="frmAzurirajArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AzurirajArtikl.Designer.cs">
-      <DependentUpon>AzurirajArtikl.cs</DependentUpon>
+    <Compile Include="frmAzurirajArtikl.Designer.cs">
+      <DependentUpon>frmAzurirajArtikl.cs</DependentUpon>
     </Compile>
     <Compile Include="DBClass\Artikli.cs" />
     <Compile Include="DBClass\Dobavljaci.cs" />
@@ -160,11 +160,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PregledArtikla.cs">
+    <Compile Include="frmPregledArtikla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PregledArtikla.Designer.cs">
-      <DependentUpon>PregledArtikla.cs</DependentUpon>
+    <Compile Include="frmPregledArtikla.Designer.cs">
+      <DependentUpon>frmPregledArtikla.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Registracija.cs">
@@ -173,18 +173,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportNarudzbenica.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportNarudzbenica.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SqlCommandsGrid.cs" />
-    <Compile Include="UnosArtikla.cs">
+    <Compile Include="frmUnosArtikla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnosArtikla.Designer.cs">
-      <DependentUpon>UnosArtikla.cs</DependentUpon>
+    <Compile Include="frmUnosArtikla.Designer.cs">
+      <DependentUpon>frmUnosArtikla.cs</DependentUpon>
     </Compile>
     <Compile Include="VrstaArtikla.cs" />
     <Compile Include="_16027_DBDataSet.Designer.cs">
@@ -192,8 +186,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_16027_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AzurirajArtikl.resx">
-      <DependentUpon>AzurirajArtikl.cs</DependentUpon>
+    <EmbeddedResource Include="frmAzurirajArtikl.resx">
+      <DependentUpon>frmAzurirajArtikl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -247,18 +241,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="PregledArtikla.resx">
-      <DependentUpon>PregledArtikla.cs</DependentUpon>
+    <EmbeddedResource Include="frmPregledArtikla.resx">
+      <DependentUpon>frmPregledArtikla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportNarudzbenica.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportNarudzbenica.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UnosArtikla.resx">
-      <DependentUpon>UnosArtikla.cs</DependentUpon>
+    <EmbeddedResource Include="frmUnosArtikla.resx">
+      <DependentUpon>frmUnosArtikla.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
