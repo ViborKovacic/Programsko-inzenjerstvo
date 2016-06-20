@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnKlijenti = new System.Windows.Forms.Button();
             this.btnStatistika = new System.Windows.Forms.Button();
             this.btnEvidencija = new System.Windows.Forms.Button();
             this.btnNarudzba = new System.Windows.Forms.Button();
@@ -40,12 +41,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.grpBox = new System.Windows.Forms.GroupBox();
+            this.btnPrikazRezervacija = new System.Windows.Forms.Button();
             this.btnRezervacije = new System.Windows.Forms.Button();
             this.btnPrikazNarudzbi = new System.Windows.Forms.Button();
             this.btnNarudzbenica = new System.Windows.Forms.Button();
             this.btnKraj = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnPrikazRezervacija = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnKlijenti);
             this.groupBox1.Controls.Add(this.btnStatistika);
             this.groupBox1.Controls.Add(this.btnEvidencija);
             this.groupBox1.Controls.Add(this.btnNarudzba);
@@ -66,9 +68,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opcije";
             // 
+            // btnKlijenti
+            // 
+            this.btnKlijenti.Location = new System.Drawing.Point(6, 244);
+            this.btnKlijenti.Name = "btnKlijenti";
+            this.btnKlijenti.Size = new System.Drawing.Size(249, 29);
+            this.btnKlijenti.TabIndex = 6;
+            this.btnKlijenti.Text = "Popis Klijenata";
+            this.btnKlijenti.UseVisualStyleBackColor = true;
+            this.btnKlijenti.Click += new System.EventHandler(this.btnKlijenti_Click);
+            // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(6, 244);
+            this.btnStatistika.Location = new System.Drawing.Point(6, 276);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(249, 29);
             this.btnStatistika.TabIndex = 5;
@@ -175,6 +187,16 @@
             this.grpBox.TabStop = false;
             this.grpBox.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
             // 
+            // btnPrikazRezervacija
+            // 
+            this.btnPrikazRezervacija.Location = new System.Drawing.Point(262, 200);
+            this.btnPrikazRezervacija.Name = "btnPrikazRezervacija";
+            this.btnPrikazRezervacija.Size = new System.Drawing.Size(150, 48);
+            this.btnPrikazRezervacija.TabIndex = 3;
+            this.btnPrikazRezervacija.Text = "Prikaži sve rezervacije";
+            this.btnPrikazRezervacija.UseVisualStyleBackColor = true;
+            this.btnPrikazRezervacija.Click += new System.EventHandler(this.btnPrikazRezervacija_Click);
+            // 
             // btnRezervacije
             // 
             this.btnRezervacije.Location = new System.Drawing.Point(64, 200);
@@ -226,16 +248,6 @@
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
-            // btnPrikazRezervacija
-            // 
-            this.btnPrikazRezervacija.Location = new System.Drawing.Point(262, 200);
-            this.btnPrikazRezervacija.Name = "btnPrikazRezervacija";
-            this.btnPrikazRezervacija.Size = new System.Drawing.Size(150, 48);
-            this.btnPrikazRezervacija.TabIndex = 3;
-            this.btnPrikazRezervacija.Text = "Prikaži sve rezervacije";
-            this.btnPrikazRezervacija.UseVisualStyleBackColor = true;
-            this.btnPrikazRezervacija.Click += new System.EventHandler(this.btnPrikazRezervacija_Click);
-            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +293,7 @@
         private System.Windows.Forms.Button btnNarudzbenica;
         private System.Windows.Forms.Button btnRezervacije;
         private System.Windows.Forms.Button btnPrikazRezervacija;
+        private System.Windows.Forms.Button btnKlijenti;
     }
 }
 

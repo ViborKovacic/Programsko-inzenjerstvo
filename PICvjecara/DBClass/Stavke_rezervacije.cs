@@ -8,18 +8,21 @@ namespace PICvjecara.DBClass
 {
    public class Stavke_rezervacije
     {
-       
 
+        private string datumFormat = "yyyy-MM-dd HH:MM:ss";
         public int ID_stavke_rezervacije { get; set; }
         public int Kolicina { get; set; }
         public int ID_rezervacija { get; set; }
         public int ID_nalog_za_prodaju { get; set; }
+        public DateTime Datum_izrade { get; set; }
+        public DateTime Datum_izvrsavanja { get; set; }
 
         public int Insert()
         {
-            string q = "insert into Stavke_rezervacije (Kolicina,ID_rezervacija,ID_nalog_za_prodaju ) values ("+ Kolicina
-            + "," + ID_rezervacija
-            + "," + ID_nalog_za_prodaju+")";
+            string q = "insert into Stavke_rezervacije (ID_rezervacija,ID_nalog_za_prodaju,Datum_izrade,Datum_izvrsavanja ) values ("+ ID_rezervacija
+            + "," + ID_nalog_za_prodaju
+            +",'"+Datum_izrade.ToString(datumFormat)
+            +"','" + Datum_izvrsavanja.ToString(datumFormat) + "')";
 
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }

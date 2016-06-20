@@ -12,7 +12,7 @@ namespace PICvjecara
     {
         static int id_artikla;
         static string naziv;
-        static int cijena;// u decimal , al jos uvijek ne radi neznam zkj ici cu na konzultacije
+        static float cijena;// u decimal , al jos uvijek ne radi neznam zkj ici cu na konzultacije
         static int kolicina;
         static int id_vrsta_artikla;
 
@@ -48,7 +48,7 @@ namespace PICvjecara
             }
         }
 
-        public int Cijena//float
+        public float Cijena//float
         {
             get
             {
@@ -106,7 +106,7 @@ namespace PICvjecara
             {
                 ID_artikla = int.Parse(dr["ID_artikla"].ToString());
                 Naziv = dr["Naziv"].ToString();
-                Cijena = int.Parse(dr["Cijena"].ToString());//float
+                Cijena = float.Parse(dr["Cijena"].ToString());//float
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
             }

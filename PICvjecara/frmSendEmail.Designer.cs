@@ -1,6 +1,6 @@
 ﻿namespace PICvjecara
 {
-    partial class frmSenaEmail
+    partial class frmSendEmail
     {
         /// <summary>
         /// Required designer variable.

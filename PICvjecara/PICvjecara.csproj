@@ -33,9 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="GridLoad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\pokusaji10vjezba\GridLoad\GridLoad\bin\Debug\GridLoad.dll</HintPath>
+      <HintPath>.\GridLoad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,17 +78,59 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAzurirajKlijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAzurirajKlijenta.Designer.cs">
+      <DependentUpon>frmAzurirajKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDobavljaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDobavljaci.Designer.cs">
+      <DependentUpon>frmDobavljaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDodajDobavljaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajDobavljaca.Designer.cs">
+      <DependentUpon>frmDodajDobavljaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDodajKlijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajKlijenta.Designer.cs">
+      <DependentUpon>frmDodajKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDodajVrstuRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDodajVrstuRezervacije.Designer.cs">
+      <DependentUpon>frmDodajVrstuRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKlijenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKlijenti.Designer.cs">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNarudzbaArtikli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNarudzbaArtikli.Designer.cs">
+      <DependentUpon>frmNarudzbaArtikli.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNarudzbenica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNarudzbenica.Designer.cs">
       <DependentUpon>frmNarudzbenica.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPregledNarudzbi.cs">
+    <Compile Include="frmPregledNarudzbenica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPregledNarudzbi.Designer.cs">
-      <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    <Compile Include="frmPregledNarudzbenica.Designer.cs">
+      <DependentUpon>frmPregledNarudzbenica.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPregledRezervacija.cs">
       <SubType>Form</SubType>
@@ -93,31 +138,20 @@
     <Compile Include="frmPregledRezervacija.Designer.cs">
       <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRezervacije.cs">
+    <Compile Include="frmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRezervacije.Designer.cs">
-      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    <Compile Include="frmRezervacija.Designer.cs">
+      <DependentUpon>frmRezervacija.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRezervacijeADD.cs">
+    <Compile Include="frmSendEmail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRezervacijeADD.Designer.cs">
-      <DependentUpon>frmRezervacijeADD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRezerviranjeKorisnici.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRezerviranjeKorisnici.Designer.cs">
-      <DependentUpon>frmRezerviranjeKorisnici.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSenaEmail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSenaEmail.Designer.cs">
-      <DependentUpon>frmSenaEmail.cs</DependentUpon>
+    <Compile Include="frmSendEmail.Designer.cs">
+      <DependentUpon>frmSendEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Korisnici.cs" />
+    <Compile Include="ListClass.cs" />
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +173,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportNarudzbenica.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportNarudzbenica.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SqlCommandsGrid.cs" />
     <Compile Include="UnosArtikla.cs">
       <SubType>Form</SubType>
@@ -158,26 +198,41 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAzurirajKlijenta.resx">
+      <DependentUpon>frmAzurirajKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDobavljaci.resx">
+      <DependentUpon>frmDobavljaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajDobavljaca.resx">
+      <DependentUpon>frmDodajDobavljaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajKlijenta.resx">
+      <DependentUpon>frmDodajKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDodajVrstuRezervacije.resx">
+      <DependentUpon>frmDodajVrstuRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKlijenti.resx">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNarudzbaArtikli.resx">
+      <DependentUpon>frmNarudzbaArtikli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNarudzbenica.resx">
       <DependentUpon>frmNarudzbenica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPregledNarudzbi.resx">
-      <DependentUpon>frmPregledNarudzbi.cs</DependentUpon>
+    <EmbeddedResource Include="frmPregledNarudzbenica.resx">
+      <DependentUpon>frmPregledNarudzbenica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPregledRezervacija.resx">
       <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRezervacije.resx">
-      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    <EmbeddedResource Include="frmRezervacija.resx">
+      <DependentUpon>frmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRezervacijeADD.resx">
-      <DependentUpon>frmRezervacijeADD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRezerviranjeKorisnici.resx">
-      <DependentUpon>frmRezerviranjeKorisnici.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSenaEmail.resx">
-      <DependentUpon>frmSenaEmail.cs</DependentUpon>
+    <EmbeddedResource Include="frmSendEmail.resx">
+      <DependentUpon>frmSendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
@@ -197,6 +252,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNarudzbenica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportNarudzbenica.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosArtikla.resx">
       <DependentUpon>UnosArtikla.cs</DependentUpon>
@@ -226,9 +285,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GridLoad.dll" />
     <Content Include="Slike\logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

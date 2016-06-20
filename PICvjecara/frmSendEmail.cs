@@ -12,7 +12,7 @@ using System.Net.Mail;
 
 namespace PICvjecara
 {
-    public partial class frmSenaEmail : Form
+    public partial class frmSendEmail : Form
     {
         Korisnici korisnici = new Korisnici();
         DBClass.Dobavljaci dobavljac;
@@ -30,7 +30,7 @@ namespace PICvjecara
         int  port = 0;
        
 
-        public frmSenaEmail(List<string> lista)
+        public frmSendEmail(List<string> lista)
         {
             dobavljac = new DBClass.Dobavljaci();
             vrstaArtikla = new DBClass.Vrste_artikla();

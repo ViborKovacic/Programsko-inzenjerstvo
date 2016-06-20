@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
+using System.ComponentModel;
 
 namespace PICvjecara.DBClass
 {
@@ -18,8 +19,26 @@ namespace PICvjecara.DBClass
         public string OIB { get; set; }
 
         public int broj = 0;
+        public static BindingList<Kupci> listaKlijenta = new BindingList<Kupci>();
 
-        public void DohvatiIzBaze()
+
+        public void DohvatiKlijenta(int iDKlijenta)
+        {
+            string q = "select ID_kupca as 'Broj Kupca', Ime,Prezime,OIB,Adresa,Email,Telefon from Kupci where ID_kupca="+iDKlijenta;
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+                ID_kupca = iDKlijenta;
+                Ime = dr["Ime"].ToString();
+                Prezime = dr["Prezime"].ToString();
+                Adresa = dr["Adresa"].ToString();
+                Email = dr["Email"].ToString();
+                OIB = dr["OIB"].ToString();
+                Telefon = dr["Telefon"].ToString();
+            }
+            dr.Close();
+        }
+        public void DohvatiIzBazeOIB()
         {
             
                 string q = "select *, count(*) as 'broj' from Kupci k where k.OIB ='"+OIB+"' group by  k.ID_kupca,k.Ime,k.Prezime,k.Adresa,k.Email,k.Telefon, k.OIB";
@@ -40,7 +59,7 @@ namespace PICvjecara.DBClass
            
 
         }
-        public void DohvatiID()
+       /* public void DohvatiID()
         {
             string q = "select top 1 * from Kupci order by ID_kupca desc";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
@@ -50,7 +69,7 @@ namespace PICvjecara.DBClass
                 
             }
             dr.Close();
-        }
+        }*/
         public int Insert()
         {
             string q = "insert into Kupci (Ime,Prezime,Adresa,Email,Telefon,OIB) values ('"+Ime
@@ -64,16 +83,7 @@ namespace PICvjecara.DBClass
 
         }
 
-        public void BrisiSadrzajClasse()
-        {
-            ID_kupca = 0;
-            Ime = null;
-            Prezime = null; 
-            Adresa = null;
-            Email = null;
-            Telefon = null;
-            OIB = null;
-        }
+        
         public int Update()
         {
             string q = "UPDATE Kupci SET Ime='"+Ime
@@ -85,6 +95,13 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(q);
 
         }
-        
+        public BindingList<Kupci> ListaKlijenta(Kupci klijent)
+        {
+
+
+            listaKlijenta.Add(klijent);
+            return listaKlijenta;
+        }
+
     }
 }

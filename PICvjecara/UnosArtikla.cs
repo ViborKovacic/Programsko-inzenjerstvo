@@ -42,8 +42,8 @@ namespace PICvjecara
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            int broj = 0;
-            if (int.TryParse(txtCijena.Text.Trim(), out broj))
+            float broj = 0;
+            if (float.TryParse(txtCijena.Text.Trim(), out broj))
             {
                 if (artikli == null)
                 {
@@ -52,7 +52,7 @@ namespace PICvjecara
 
                 artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
                 artikli.Naziv = txtNaziv.Text;
-                artikli.Cijena = int.Parse(txtCijena.Text);
+                artikli.Cijena = float.Parse(txtCijena.Text);
                 artikli.Kolicina = int.Parse(txtKolicina.Text);
                 artikli.Unos();
                 this.Close();

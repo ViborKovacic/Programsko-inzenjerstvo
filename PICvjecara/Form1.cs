@@ -59,29 +59,41 @@ namespace PICvjecara
 
         private void btnNarudzbenica_Click(object sender, EventArgs e)
         {
-            frmNarudzbenica openNarudzbenica = new frmNarudzbenica();
-            openNarudzbenica.Show();
+            ListClass.listaDobavljaca.Clear();
+            ListClass.listaArtikla.Clear();
+            frmNarudzbenica frmNarudzbe = new frmNarudzbenica();
+            frmNarudzbe.Show();
             this.Close();
         }
 
         private void btnPrikazNarudzbi_Click(object sender, EventArgs e)
         {
-            frmPregledNarudzbi openPregledNarudzbi = new frmPregledNarudzbi();
-            openPregledNarudzbi.Show();
+            frmPregledNarudzbenica frmPregledNar = new frmPregledNarudzbenica();
+            frmPregledNar.Show();
             this.Close();
         }
 
         private void btnRezervacije_Click(object sender, EventArgs e)
         {
-            frmRezervacije frmRez = new frmRezervacije();
+            frmRezervacija frmRez = new frmRezervacija();
             frmRez.Show();
             this.Close();
         }
+
+                    
 
         private void btnPrikazRezervacija_Click(object sender, EventArgs e)
         {
             frmPregledRezervacija frmPregledRez = new frmPregledRezervacija();
             frmPregledRez.Show();
+            this.Close();
+
+        }
+
+        private void btnKlijenti_Click(object sender, EventArgs e)
+        {
+            frmKlijenti frmKlijent = new frmKlijenti();
+            frmKlijent.Show();
             this.Close();
         }
     }

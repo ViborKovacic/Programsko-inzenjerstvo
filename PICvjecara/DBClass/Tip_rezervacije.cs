@@ -12,6 +12,8 @@ namespace PICvjecara.DBClass
         public int ID_tip_rezervacije { get; set; }
         public string Vrsta { get; set; }
 
+        public int broj { get; set; }
+
         public int DodajVrstuRezervacije()
         {
             string q = "insert into Tip_rezervacije (Vrsta) values ('" + Vrsta + "')";
@@ -38,6 +40,19 @@ namespace PICvjecara.DBClass
                 ID_tip_rezervacije = int.Parse(dr["ID_tip_rezervacije"].ToString());
             }
             dr.Close();
+        }
+        public void DohvatiIzBazeVrsta()
+        {
+
+            string q = "select count(*) as 'broj' from Tip_rezervacije tv where tv.Vrsta ='" +Vrsta + "' group by  tv.Vrsta";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+
+                broj = int.Parse(dr["broj"].ToString());
+            }
+            dr.Close();
+
         }
     }
 }

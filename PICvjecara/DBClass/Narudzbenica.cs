@@ -9,12 +9,13 @@ namespace PICvjecara.DBClass
 {
    public  class Narudzbenica
     {
-        public string datumFormat = "yyyy-MM-dd HH:MM:ss";
+        private string datumFormat = "yyyy-MM-dd HH:MM:ss";
         public int ID_narudzbenica { get; set; }
         public DateTime Datum_vrijeme { get; set; }
         public int ID_dobavljac { get; set; }
         public int ID_korisnici { get; set; }
         public int kolicina { get; set; }
+        public string Naziv { get; set; }
         
        
 
@@ -22,14 +23,24 @@ namespace PICvjecara.DBClass
         {
             
         }
-        
+        public void DohvatiImeNarudzbenice(string naziv)
+        {
+            string q = "select Naziv from Narudzbenica where Naziv='" + naziv + "'";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while(dr.Read())
+            {
+                Naziv = dr["Naziv"].ToString();
+            }
+            dr.Close();
+        }
         public int Spremi()
         {
-            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina) values ('" + Datum_vrijeme.ToString(datumFormat) 
+            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina,Naziv) values ('" + Datum_vrijeme.ToString(datumFormat) 
                 + "',"+ID_dobavljac
                 +","+ID_korisnici
-                +","+kolicina+")";
-          
+                +","+kolicina
+                +",'" + Naziv + "')";
+
 
             return DatabaseConnection.Instance.IzvirsiUput(q);  
         }
@@ -44,6 +55,7 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
         }
+        
         public int Brisi(int IDBrisi)
         {
             string q = "delete from Narudzbenica where ID_narudzbenice=" + IDBrisi;

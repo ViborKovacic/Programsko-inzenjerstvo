@@ -10,27 +10,41 @@ namespace PICvjecara.DBClass
     public class Rezervacija
     {
         public int ID_rezervacije { get; set; }
-        public float Cijena { get; set; }    
+        public float Cijena { get; set; }
         public int ID_tip_rezervacije { get; set; }
         public string Opis { get; set; }
+        public string Naziv { get; set; }
 
-        public void DohvatiIzBaze()
+     
+
+        public void DohvatiIzBaze(int iDRezervacije)
         {
-            string q = "select * from Rezervacija where ID_tip_rezervacije =" + ID_tip_rezervacije + "";
+            string q = "select * from Rezervacija where ID_rezervacije =" + iDRezervacije + "";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
             while (dr.Read())
             {
                 ID_rezervacije = int.Parse(dr["ID_rezervacije"].ToString());
                 Cijena = float.Parse(dr["Cijena"].ToString());
                 Opis = dr["Opis"].ToString();
+                Naziv = dr["Naziv"].ToString();
             }
             dr.Close();
         }
         public int Insert()
         {
-            string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis) values ("+Cijena+","+ID_tip_rezervacije+",'"+Opis+"')";
+            string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis,Naziv) values (" + Cijena + "," + ID_tip_rezervacije + ",'" + Opis + "','" + Naziv + "')";
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
-        
+        public void DohvatiIDRezervacije()
+        {
+            string q = "select top 1 * from Rezervacija order by ID_rezervacije desc ";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
+            while (dr.Read())
+            {
+                ID_rezervacije = int.Parse(dr["ID_rezervacije"].ToString());
+            }
+            dr.Close();
+        }
     }
+        
 }
