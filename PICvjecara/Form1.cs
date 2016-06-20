@@ -38,7 +38,7 @@ namespace PICvjecara
 
         private void btnArtikli_Click(object sender, EventArgs e)
         {
-            PregledArtikla openPregledArtikla = new PregledArtikla();
+            frmPregledArtikla openPregledArtikla = new frmPregledArtikla();
             openPregledArtikla.Show();
             Visible = false;
         }
