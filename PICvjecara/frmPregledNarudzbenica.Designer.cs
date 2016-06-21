@@ -71,6 +71,7 @@
             this.btnPdf.TabIndex = 3;
             this.btnPdf.Text = "Kreiraj PDF";
             this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
             // btnObrisi
             // 

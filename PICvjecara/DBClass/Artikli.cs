@@ -28,7 +28,7 @@ namespace PICvjecara.DBClass
                 ID_artikla = int.Parse(dr["ID_artikla"].ToString());
                 Naziv = dr["Naziv"].ToString();
                 Cijena = float.Parse(dr["Cijena"].ToString());
-                Kolicina = Convert.ToInt32(dr["Kolicina"].ToString());
+                Kolicina = int.Parse(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
 
 

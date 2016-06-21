@@ -161,7 +161,6 @@
             this.txtNazivNarudzbenice.Name = "txtNazivNarudzbenice";
             this.txtNazivNarudzbenice.Size = new System.Drawing.Size(138, 20);
             this.txtNazivNarudzbenice.TabIndex = 8;
-            
             // 
             // frmNarudzbenica
             // 

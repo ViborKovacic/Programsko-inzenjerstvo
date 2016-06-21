@@ -62,6 +62,7 @@ namespace PICvjecara
             if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
             {
                 artikl = new DBClass.Artikli();
+                
                 int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
                 artikl.DohvatiArtikl(odabriArtikla);
                 listaArtikla = artikl.DohvatiListu(artikl);

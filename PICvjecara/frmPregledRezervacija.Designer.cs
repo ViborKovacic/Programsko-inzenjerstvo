@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvRezervacija = new System.Windows.Forms.DataGridView();
-            this.txtOpis = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvRezervacijeDetalji = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtOpis = new System.Windows.Forms.TextBox();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacija)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacijeDetalji)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,6 +52,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ime rezervacije";
             // 
+            // dgvRezervacija
+            // 
+            this.dgvRezervacija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRezervacija.Location = new System.Drawing.Point(6, 19);
+            this.dgvRezervacija.Name = "dgvRezervacija";
+            this.dgvRezervacija.Size = new System.Drawing.Size(380, 150);
+            this.dgvRezervacija.TabIndex = 0;
+            this.dgvRezervacija.SelectionChanged += new System.EventHandler(this.dgvRezervacija_SelectionChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvRezervacijeDetalji);
@@ -61,6 +70,14 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalji rezervacije";
+            // 
+            // dgvRezervacijeDetalji
+            // 
+            this.dgvRezervacijeDetalji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRezervacijeDetalji.Location = new System.Drawing.Point(6, 17);
+            this.dgvRezervacijeDetalji.Name = "dgvRezervacijeDetalji";
+            this.dgvRezervacijeDetalji.Size = new System.Drawing.Size(665, 95);
+            this.dgvRezervacijeDetalji.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -72,15 +89,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Opis usluga";
             // 
-            // dgvRezervacija
-            // 
-            this.dgvRezervacija.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRezervacija.Location = new System.Drawing.Point(6, 19);
-            this.dgvRezervacija.Name = "dgvRezervacija";
-            this.dgvRezervacija.Size = new System.Drawing.Size(380, 150);
-            this.dgvRezervacija.TabIndex = 0;
-            this.dgvRezervacija.SelectionChanged += new System.EventHandler(this.dgvRezervacija_SelectionChanged);
-            // 
             // txtOpis
             // 
             this.txtOpis.Location = new System.Drawing.Point(6, 19);
@@ -88,14 +96,6 @@
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(479, 180);
             this.txtOpis.TabIndex = 0;
-            // 
-            // dgvRezervacijeDetalji
-            // 
-            this.dgvRezervacijeDetalji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRezervacijeDetalji.Location = new System.Drawing.Point(6, 17);
-            this.dgvRezervacijeDetalji.Name = "dgvRezervacijeDetalji";
-            this.dgvRezervacijeDetalji.Size = new System.Drawing.Size(665, 95);
-            this.dgvRezervacijeDetalji.TabIndex = 0;
             // 
             // btnPovratak
             // 
@@ -121,11 +121,11 @@
             this.Text = "Pregled rezervacija";
             this.Load += new System.EventHandler(this.frmPregledRezervacija_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacija)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacijeDetalji)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacija)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacijeDetalji)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -16,6 +16,7 @@ namespace PICvjecara
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
         DBClass.Narudzbenica narudzbenica;
         DBClass.StavkeNarudzbenice stavkeNarudzbenice;
+        public int odabir;
         public frmPregledNarudzbenica()
         {
             narudzbenica = new DBClass.Narudzbenica();
@@ -47,6 +48,7 @@ namespace PICvjecara
                 string qNarudzbeArtikli = "select a.Naziv as 'Naziv artikla', a.Cijena as 'Pojedinačna cijena' from Artikli a, Stavke_narudzbenice sn where sn.ID_artikla = a.ID_artikla and  sn.ID_narudzbenice=" + odabirNarudzbe;
                 
                 dgvArtikli.DataSource = gridLoad.GridDataLoad(qNarudzbeArtikli);
+                odabir = odabirNarudzbe;
                 
             }
         }
@@ -60,10 +62,19 @@ namespace PICvjecara
                 stavkeNarudzbenice.Brisi(odabirNarudzbe);
                 int indexNazivaNar = dgvNazivNarudzbenica.CurrentRow.Index;
                 dgvNazivNarudzbenica.Rows.RemoveAt(dgvNazivNarudzbenica.CurrentRow.Index);
+                
 
                 
             }
             
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+
+            frmPDF frmPdf = new frmPDF(odabir);
+            frmPdf.Show();
+            this.Close();
         }
     }
 }

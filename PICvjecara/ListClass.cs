@@ -14,5 +14,6 @@ namespace PICvjecara
         public static BindingList<DBClass.Kupci> listaKlijenta = new BindingList<DBClass.Kupci>();
         public static int iDDovacljaca;
         public static int iDKlijenta;
+        public static int iDNarudzbenica;
     }
 }

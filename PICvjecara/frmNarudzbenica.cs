@@ -62,6 +62,9 @@ namespace PICvjecara
         {
             dataGridView1.DataSource = ListClass.listaDobavljaca;
             dgvArtikli.DataSource = ListClass.listaArtikla;
+           
+            
+            
         }
 
         private void btnUkloniArtikl_Click(object sender, EventArgs e)
