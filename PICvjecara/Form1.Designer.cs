@@ -47,6 +47,7 @@
             this.btnNarudzbenica = new System.Windows.Forms.Button();
             this.btnKraj = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -248,12 +249,23 @@
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(320, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1100, 599);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnKraj);
             this.Controls.Add(this.grpBox);
             this.Controls.Add(this.lblKorisnik);
@@ -294,6 +306,7 @@
         private System.Windows.Forms.Button btnRezervacije;
         private System.Windows.Forms.Button btnPrikazRezervacija;
         private System.Windows.Forms.Button btnKlijenti;
+        private System.Windows.Forms.Label label2;
     }
 }
 
