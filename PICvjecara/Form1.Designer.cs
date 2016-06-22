@@ -42,6 +42,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnPregledRezervacije = new System.Windows.Forms.Button();
+            this.btnRezervacija = new System.Windows.Forms.Button();
+            this.btnIzradiNarudzbenicu = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnKraj = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -52,7 +55,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnIzradiNarudzbenicu = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             // btnKlijenti
             // 
-            this.btnKlijenti.Location = new System.Drawing.Point(25, 194);
+            this.btnKlijenti.Location = new System.Drawing.Point(26, 262);
             this.btnKlijenti.Name = "btnKlijenti";
             this.btnKlijenti.Size = new System.Drawing.Size(129, 29);
             this.btnKlijenti.TabIndex = 6;
@@ -74,7 +76,7 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(26, 229);
+            this.btnStatistika.Location = new System.Drawing.Point(25, 297);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(129, 29);
             this.btnStatistika.TabIndex = 5;
@@ -83,7 +85,7 @@
             // 
             // btnEvidencija
             // 
-            this.btnEvidencija.Location = new System.Drawing.Point(25, 157);
+            this.btnEvidencija.Location = new System.Drawing.Point(25, 227);
             this.btnEvidencija.Name = "btnEvidencija";
             this.btnEvidencija.Size = new System.Drawing.Size(129, 29);
             this.btnEvidencija.TabIndex = 4;
@@ -189,6 +191,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnPregledRezervacije);
+            this.panel4.Controls.Add(this.btnRezervacija);
             this.panel4.Controls.Add(this.btnIzradiNarudzbenicu);
             this.panel4.Controls.Add(this.btnStatistika);
             this.panel4.Controls.Add(this.btnEvidencija);
@@ -198,8 +202,38 @@
             this.panel4.Controls.Add(this.btnProdaja);
             this.panel4.Location = new System.Drawing.Point(3, 108);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(169, 286);
+            this.panel4.Size = new System.Drawing.Size(169, 339);
             this.panel4.TabIndex = 16;
+            // 
+            // btnPregledRezervacije
+            // 
+            this.btnPregledRezervacije.Location = new System.Drawing.Point(26, 192);
+            this.btnPregledRezervacije.Name = "btnPregledRezervacije";
+            this.btnPregledRezervacije.Size = new System.Drawing.Size(129, 29);
+            this.btnPregledRezervacije.TabIndex = 9;
+            this.btnPregledRezervacije.Text = "Pregled rezervacija";
+            this.btnPregledRezervacije.UseVisualStyleBackColor = true;
+            this.btnPregledRezervacije.Click += new System.EventHandler(this.btnPregledRezervacije_Click);
+            // 
+            // btnRezervacija
+            // 
+            this.btnRezervacija.Location = new System.Drawing.Point(26, 157);
+            this.btnRezervacija.Name = "btnRezervacija";
+            this.btnRezervacija.Size = new System.Drawing.Size(129, 29);
+            this.btnRezervacija.TabIndex = 8;
+            this.btnRezervacija.Text = "Izradi rezervaciju";
+            this.btnRezervacija.UseVisualStyleBackColor = true;
+            this.btnRezervacija.Click += new System.EventHandler(this.btnRezervacija_Click);
+            // 
+            // btnIzradiNarudzbenicu
+            // 
+            this.btnIzradiNarudzbenicu.Location = new System.Drawing.Point(26, 87);
+            this.btnIzradiNarudzbenicu.Name = "btnIzradiNarudzbenicu";
+            this.btnIzradiNarudzbenicu.Size = new System.Drawing.Size(129, 29);
+            this.btnIzradiNarudzbenicu.TabIndex = 7;
+            this.btnIzradiNarudzbenicu.Text = "Izradi narudžbenicu";
+            this.btnIzradiNarudzbenicu.UseVisualStyleBackColor = true;
+            this.btnIzradiNarudzbenicu.Click += new System.EventHandler(this.btnIzradiNarudzbenicu_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -295,16 +329,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
-            // btnIzradiNarudzbenicu
-            // 
-            this.btnIzradiNarudzbenicu.Location = new System.Drawing.Point(26, 87);
-            this.btnIzradiNarudzbenicu.Name = "btnIzradiNarudzbenicu";
-            this.btnIzradiNarudzbenicu.Size = new System.Drawing.Size(129, 29);
-            this.btnIzradiNarudzbenicu.TabIndex = 7;
-            this.btnIzradiNarudzbenicu.Text = "Izradi narudžbenicu";
-            this.btnIzradiNarudzbenicu.UseVisualStyleBackColor = true;
-            this.btnIzradiNarudzbenicu.Click += new System.EventHandler(this.btnIzradiNarudzbenicu_Click);
-            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +392,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnKraj;
         private System.Windows.Forms.Button btnIzradiNarudzbenicu;
+        private System.Windows.Forms.Button btnPregledRezervacije;
+        private System.Windows.Forms.Button btnRezervacija;
     }
 }
 

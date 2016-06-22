@@ -31,14 +31,16 @@
             this.dgvKlijent = new System.Windows.Forms.DataGridView();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnOdabirKlijenta = new System.Windows.Forms.Button();
             this.btnTrazi = new System.Windows.Forms.Button();
             this.txtTrazi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDodajKlijenta = new System.Windows.Forms.Button();
             this.btnAzuriraj = new System.Windows.Forms.Button();
-            this.btnOdabirKlijenta = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijent)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvKlijent
@@ -51,7 +53,7 @@
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(718, 435);
+            this.btnPovratak.Location = new System.Drawing.Point(703, 407);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(78, 32);
             this.btnPovratak.TabIndex = 1;
@@ -68,12 +70,22 @@
             this.groupBox1.Controls.Add(this.btnDodajKlijenta);
             this.groupBox1.Controls.Add(this.btnAzuriraj);
             this.groupBox1.Controls.Add(this.dgvKlijent);
-            this.groupBox1.Location = new System.Drawing.Point(27, 3);
+            this.groupBox1.Location = new System.Drawing.Point(46, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(735, 398);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Popis Klijenta";
+            // 
+            // btnOdabirKlijenta
+            // 
+            this.btnOdabirKlijenta.Location = new System.Drawing.Point(16, 358);
+            this.btnOdabirKlijenta.Name = "btnOdabirKlijenta";
+            this.btnOdabirKlijenta.Size = new System.Drawing.Size(76, 34);
+            this.btnOdabirKlijenta.TabIndex = 7;
+            this.btnOdabirKlijenta.Text = "Odabir klijenta";
+            this.btnOdabirKlijenta.UseVisualStyleBackColor = true;
+            this.btnOdabirKlijenta.Click += new System.EventHandler(this.btnOdabirKlijenta_Click);
             // 
             // btnTrazi
             // 
@@ -121,15 +133,15 @@
             this.btnAzuriraj.UseVisualStyleBackColor = true;
             this.btnAzuriraj.Click += new System.EventHandler(this.btnAzuriraj_Click);
             // 
-            // btnOdabirKlijenta
+            // flowLayoutPanel1
             // 
-            this.btnOdabirKlijenta.Location = new System.Drawing.Point(16, 358);
-            this.btnOdabirKlijenta.Name = "btnOdabirKlijenta";
-            this.btnOdabirKlijenta.Size = new System.Drawing.Size(76, 34);
-            this.btnOdabirKlijenta.TabIndex = 7;
-            this.btnOdabirKlijenta.Text = "Odabir klijenta";
-            this.btnOdabirKlijenta.UseVisualStyleBackColor = true;
-            this.btnOdabirKlijenta.Click += new System.EventHandler(this.btnOdabirKlijenta_Click);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btnPovratak);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(784, 455);
+            this.flowLayoutPanel1.TabIndex = 3;
             // 
             // frmKlijenti
             // 
@@ -137,14 +149,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(808, 479);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnPovratak);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmKlijenti";
             this.Text = "Popis klijenata";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKlijenti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijent)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,5 +173,6 @@
         private System.Windows.Forms.TextBox txtTrazi;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOdabirKlijenta;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

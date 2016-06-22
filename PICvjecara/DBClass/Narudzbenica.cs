@@ -26,7 +26,7 @@ namespace PICvjecara.DBClass
        
         public int Spremi()
         {
-            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina,Naziv) values ('" + Datum_vrijeme.ToString(datumFormat)
+            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina) values ('" + Datum_vrijeme.ToString(datumFormat)
                 + "'," + ID_dobavljac
                 + "," + ID_korisnici
                 + "," + kolicina + ")";

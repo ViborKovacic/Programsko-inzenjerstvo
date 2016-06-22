@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOIB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnDodajKlijenta = new System.Windows.Forms.Button();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -41,9 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPovratak = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtOIB = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,16 +65,32 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(37, 14);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(238, 305);
+            this.groupBox1.Size = new System.Drawing.Size(278, 314);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Klijent";
             // 
+            // txtOIB
+            // 
+            this.txtOIB.Location = new System.Drawing.Point(71, 97);
+            this.txtOIB.Name = "txtOIB";
+            this.txtOIB.Size = new System.Drawing.Size(100, 20);
+            this.txtOIB.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "OIB*:";
+            // 
             // btnDodajKlijenta
             // 
-            this.btnDodajKlijenta.Location = new System.Drawing.Point(161, 246);
+            this.btnDodajKlijenta.Location = new System.Drawing.Point(201, 263);
             this.btnDodajKlijenta.Name = "btnDodajKlijenta";
             this.btnDodajKlijenta.Size = new System.Drawing.Size(71, 45);
             this.btnDodajKlijenta.TabIndex = 20;
@@ -160,7 +180,7 @@
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(252, 346);
+            this.btnPovratak.Location = new System.Drawing.Point(246, 3);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(70, 35);
             this.btnPovratak.TabIndex = 13;
@@ -168,34 +188,40 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
-            // label6
+            // flowLayoutPanel1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "OIB*:";
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(295, 335);
+            this.flowLayoutPanel1.TabIndex = 14;
             // 
-            // txtOIB
+            // flowLayoutPanel2
             // 
-            this.txtOIB.Location = new System.Drawing.Point(71, 97);
-            this.txtOIB.Name = "txtOIB";
-            this.txtOIB.Size = new System.Drawing.Size(100, 20);
-            this.txtOIB.TabIndex = 22;
+            this.flowLayoutPanel2.Controls.Add(this.btnPovratak);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 353);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(319, 43);
+            this.flowLayoutPanel2.TabIndex = 15;
             // 
             // frmDodajKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(334, 393);
-            this.Controls.Add(this.btnPovratak);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(319, 396);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmDodajKlijenta";
             this.Text = "Dodaj novog Klijenta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDodajKlijenta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -217,5 +243,7 @@
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.TextBox txtOIB;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

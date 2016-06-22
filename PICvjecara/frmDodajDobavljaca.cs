@@ -16,13 +16,18 @@ namespace PICvjecara
         public frmDodajDobavljaca()
         {
             dobavljac = new DBClass.Dobavljaci();
+            ControlBox = false;
             InitializeComponent();
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-            frmDobavljaci frmDob = new frmDobavljaci();
-            frmDob.Show();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmDobavljaci frmDobavljac = new frmDobavljaci();
+            frmDobavljac.MdiParent = frmDobavljaci.ActiveForm;
             this.Close();
         }
 
@@ -42,6 +47,12 @@ namespace PICvjecara
             {
                 MessageBox.Show("Krivo unesen OIB!");
             }
+            MessageBox.Show("Dobavljač je kreiran!");
+        }
+
+        private void frmDodajDobavljaca_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

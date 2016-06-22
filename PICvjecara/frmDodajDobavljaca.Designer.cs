@@ -40,13 +40,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblOib
             // 
             this.lblOib.AutoSize = true;
             this.lblOib.ForeColor = System.Drawing.Color.Red;
-            this.lblOib.Location = new System.Drawing.Point(209, 44);
+            this.lblOib.Location = new System.Drawing.Point(191, 78);
             this.lblOib.Name = "lblOib";
             this.lblOib.Size = new System.Drawing.Size(55, 13);
             this.lblOib.TabIndex = 23;
@@ -56,7 +60,7 @@
             // 
             this.lblIme.AutoSize = true;
             this.lblIme.ForeColor = System.Drawing.Color.Red;
-            this.lblIme.Location = new System.Drawing.Point(209, 17);
+            this.lblIme.Location = new System.Drawing.Point(191, 51);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(53, 13);
             this.lblIme.TabIndex = 22;
@@ -64,7 +68,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(20, 214);
+            this.btnDodaj.Location = new System.Drawing.Point(92, 233);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(83, 32);
             this.btnDodaj.TabIndex = 21;
@@ -74,7 +78,7 @@
             // 
             // btnPovratak
             // 
-            this.btnPovratak.Location = new System.Drawing.Point(165, 214);
+            this.btnPovratak.Location = new System.Drawing.Point(3, 233);
             this.btnPovratak.Name = "btnPovratak";
             this.btnPovratak.Size = new System.Drawing.Size(83, 32);
             this.btnPovratak.TabIndex = 20;
@@ -84,28 +88,28 @@
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(91, 99);
+            this.txtTelefon.Location = new System.Drawing.Point(73, 133);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(100, 20);
             this.txtTelefon.TabIndex = 19;
             // 
             // txtAdresa
             // 
-            this.txtAdresa.Location = new System.Drawing.Point(91, 71);
+            this.txtAdresa.Location = new System.Drawing.Point(73, 105);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(100, 20);
             this.txtAdresa.TabIndex = 18;
             // 
             // txtOIB
             // 
-            this.txtOIB.Location = new System.Drawing.Point(91, 41);
+            this.txtOIB.Location = new System.Drawing.Point(73, 75);
             this.txtOIB.Name = "txtOIB";
             this.txtOIB.Size = new System.Drawing.Size(100, 20);
             this.txtOIB.TabIndex = 17;
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(91, 14);
+            this.txtIme.Location = new System.Drawing.Point(73, 48);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(100, 20);
             this.txtIme.TabIndex = 16;
@@ -113,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 102);
+            this.label4.Location = new System.Drawing.Point(15, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 15;
@@ -122,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 74);
+            this.label3.Location = new System.Drawing.Point(18, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 14;
@@ -131,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 44);
+            this.label2.Location = new System.Drawing.Point(30, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 13;
@@ -140,33 +144,56 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 17);
+            this.label1.Location = new System.Drawing.Point(31, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Ime:";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btnPovratak);
+            this.flowLayoutPanel1.Controls.Add(this.btnDodaj);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 313);
+            this.flowLayoutPanel1.TabIndex = 24;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblOib);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblIme);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtIme);
+            this.groupBox1.Controls.Add(this.txtOIB);
+            this.groupBox1.Controls.Add(this.txtTelefon);
+            this.groupBox1.Controls.Add(this.txtAdresa);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(264, 224);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dobavljač";
+            // 
             // frmDodajDobavljaca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.lblOib);
-            this.Controls.Add(this.lblIme);
-            this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.btnPovratak);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.txtAdresa);
-            this.Controls.Add(this.txtOIB);
-            this.Controls.Add(this.txtIme);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(399, 385);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmDodajDobavljaca";
             this.Text = "frmDodajDobavljaca";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDodajDobavljaca_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -184,5 +211,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

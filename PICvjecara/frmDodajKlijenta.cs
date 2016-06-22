@@ -15,6 +15,7 @@ namespace PICvjecara
         DBClass.Kupci klijent;
         public frmDodajKlijenta()
         {
+            ControlBox = false;
             InitializeComponent();
         }
 
@@ -50,9 +51,19 @@ namespace PICvjecara
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmKlijenti frmKlijent = new frmKlijenti();
+            frmKlijent.MdiParent = frmKlijenti.ActiveForm;
             frmKlijent.Show();
-            this.Close();
+          
+        }
+
+        private void frmDodajKlijenta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

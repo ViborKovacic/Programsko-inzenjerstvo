@@ -28,10 +28,7 @@ namespace PICvjecara
         {
             dgvVrstaArtikla.DataSource = grid.GridDataLoad(SqlCommandsGrid.qVrstaArtikla);
             dgvOdabraniArtikli.DataSource = ListClass.listaArtikla;
-            if (ListClass.listaArtikla.Count == 0)
-            {
-                btnBrisi.Enabled = false;
-            }
+           
         }
 
         private void dgvVrstaArtikla_SelectionChanged(object sender, EventArgs e)
@@ -46,39 +43,44 @@ namespace PICvjecara
             }
         }
 
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-            if (provjera)
-            {
-                ListClass.listaArtikla = listaArtikla;
-            }
-            frmNarudzbenica frmDobavljac = new frmNarudzbenica();
-            frmDobavljac.Show();
-            this.Close();
-        }
+       
 
-        private void btnOdaberiArtikl_Click(object sender, EventArgs e)
-        {
-            if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
-            {
-                artikl = new DBClass.Artikli();
-                
-                int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
-                artikl.DohvatiArtikl(odabriArtikla);
-                listaArtikla = artikl.DohvatiListu(artikl);
-                dgvOdabraniArtikli.DataSource = listaArtikla;
-                btnBrisi.Enabled = true;
-                provjera = true;
-                
-
-            }
-        }
+        
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
             
             dgvOdabraniArtikli.Rows.RemoveAt(dgvOdabraniArtikli.SelectedCells[0].RowIndex);
             
+        }
+
+        private void btnOdaberiArtikl_Click_1(object sender, EventArgs e)
+        {
+            if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
+            {
+                artikl = new DBClass.Artikli();
+
+                int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
+                artikl.DohvatiArtikl(odabriArtikla);
+                listaArtikla = artikl.DohvatiListu(artikl);
+                dgvOdabraniArtikli.DataSource = listaArtikla;
+
+                provjera = true;
+
+
+            }
+        }
+
+        private void btnPovratak_Click_1(object sender, EventArgs e)
+        {
+            if (provjera)
+            {
+                ListClass.listaArtikla = listaArtikla;
+            }
+            frmNarudzbenica frmNarudzbenica = new frmNarudzbenica();
+            frmNarudzbenica.MdiParent = frmNarudzbenica.ActiveForm;
+            frmNarudzbenica.Show();
+           
         }
     }
 }
