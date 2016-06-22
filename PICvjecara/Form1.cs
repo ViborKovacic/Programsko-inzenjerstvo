@@ -39,8 +39,10 @@ namespace PICvjecara
         private void btnArtikli_Click(object sender, EventArgs e)
         {
             frmPregledArtikla openPregledArtikla = new frmPregledArtikla();
+            openPregledArtikla.MdiParent = this;
             openPregledArtikla.Show();
-            Visible = false;
+
+            
         }
         
         private void btnSwitchUser_Click(object sender, EventArgs e)
@@ -50,12 +52,7 @@ namespace PICvjecara
             Visible = false;
         }
 
-        private void btnNarudzba_Click(object sender, EventArgs e)
-        {
-            btnNarudzbenica.Visible = true;
-            btnPrikazNarudzbi.Visible = true;
-            grpBox.Text = "Narudžbe i Rezervacije";
-        }
+        
 
         private void btnNarudzbenica_Click(object sender, EventArgs e)
         {
@@ -96,5 +93,7 @@ namespace PICvjecara
             frmKlijent.Show();
             this.Close();
         }
+
+       
     }
 }

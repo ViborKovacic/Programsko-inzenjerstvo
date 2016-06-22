@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnKraj = new System.Windows.Forms.Button();
             this.btnKlijenti = new System.Windows.Forms.Button();
             this.btnStatistika = new System.Windows.Forms.Button();
             this.btnEvidencija = new System.Windows.Forms.Button();
@@ -36,43 +36,42 @@
             this.btnArtikli = new System.Windows.Forms.Button();
             this.btnProdaja = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.lblNaslov = new System.Windows.Forms.Label();
             this.btnSwitchUser = new System.Windows.Forms.Button();
+            this.lblNaslov = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
-            this.grpBox = new System.Windows.Forms.GroupBox();
-            this.btnPrikazRezervacija = new System.Windows.Forms.Button();
-            this.btnRezervacije = new System.Windows.Forms.Button();
-            this.btnPrikazNarudzbi = new System.Windows.Forms.Button();
-            this.btnNarudzbenica = new System.Windows.Forms.Button();
-            this.btnKraj = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.grpBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // btnKraj
             // 
-            this.groupBox1.Controls.Add(this.btnKlijenti);
-            this.groupBox1.Controls.Add(this.btnStatistika);
-            this.groupBox1.Controls.Add(this.btnEvidencija);
-            this.groupBox1.Controls.Add(this.btnNarudzba);
-            this.groupBox1.Controls.Add(this.btnArtikli);
-            this.groupBox1.Controls.Add(this.btnProdaja);
-            this.groupBox1.Controls.Add(this.btnHome);
-            this.groupBox1.Location = new System.Drawing.Point(22, 93);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 469);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opcije";
+            this.btnKraj.AutoSize = true;
+            this.btnKraj.Location = new System.Drawing.Point(782, 3);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(129, 35);
+            this.btnKraj.TabIndex = 7;
+            this.btnKraj.Text = "Kraj";
+            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
             // 
             // btnKlijenti
             // 
-            this.btnKlijenti.Location = new System.Drawing.Point(6, 244);
+            this.btnKlijenti.Location = new System.Drawing.Point(25, 179);
             this.btnKlijenti.Name = "btnKlijenti";
-            this.btnKlijenti.Size = new System.Drawing.Size(249, 29);
+            this.btnKlijenti.Size = new System.Drawing.Size(129, 29);
             this.btnKlijenti.TabIndex = 6;
             this.btnKlijenti.Text = "Popis Klijenata";
             this.btnKlijenti.UseVisualStyleBackColor = true;
@@ -80,37 +79,36 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(6, 276);
+            this.btnStatistika.Location = new System.Drawing.Point(25, 214);
             this.btnStatistika.Name = "btnStatistika";
-            this.btnStatistika.Size = new System.Drawing.Size(249, 29);
+            this.btnStatistika.Size = new System.Drawing.Size(129, 29);
             this.btnStatistika.TabIndex = 5;
             this.btnStatistika.Text = "Statistika poslvanja";
             this.btnStatistika.UseVisualStyleBackColor = true;
             // 
             // btnEvidencija
             // 
-            this.btnEvidencija.Location = new System.Drawing.Point(6, 209);
+            this.btnEvidencija.Location = new System.Drawing.Point(25, 144);
             this.btnEvidencija.Name = "btnEvidencija";
-            this.btnEvidencija.Size = new System.Drawing.Size(249, 29);
+            this.btnEvidencija.Size = new System.Drawing.Size(129, 29);
             this.btnEvidencija.TabIndex = 4;
             this.btnEvidencija.Text = "Evidencija zaposlenika";
             this.btnEvidencija.UseVisualStyleBackColor = true;
             // 
             // btnNarudzba
             // 
-            this.btnNarudzba.Location = new System.Drawing.Point(6, 174);
+            this.btnNarudzba.Location = new System.Drawing.Point(25, 109);
             this.btnNarudzba.Name = "btnNarudzba";
-            this.btnNarudzba.Size = new System.Drawing.Size(249, 29);
+            this.btnNarudzba.Size = new System.Drawing.Size(129, 29);
             this.btnNarudzba.TabIndex = 3;
             this.btnNarudzba.Text = "Narudžba";
             this.btnNarudzba.UseVisualStyleBackColor = true;
-            this.btnNarudzba.Click += new System.EventHandler(this.btnNarudzba_Click);
             // 
             // btnArtikli
             // 
-            this.btnArtikli.Location = new System.Drawing.Point(6, 139);
+            this.btnArtikli.Location = new System.Drawing.Point(25, 39);
             this.btnArtikli.Name = "btnArtikli";
-            this.btnArtikli.Size = new System.Drawing.Size(249, 29);
+            this.btnArtikli.Size = new System.Drawing.Size(129, 29);
             this.btnArtikli.TabIndex = 2;
             this.btnArtikli.Text = "Artikli";
             this.btnArtikli.UseVisualStyleBackColor = true;
@@ -118,37 +116,25 @@
             // 
             // btnProdaja
             // 
-            this.btnProdaja.Location = new System.Drawing.Point(6, 104);
+            this.btnProdaja.Location = new System.Drawing.Point(25, 74);
             this.btnProdaja.Name = "btnProdaja";
-            this.btnProdaja.Size = new System.Drawing.Size(249, 29);
+            this.btnProdaja.Size = new System.Drawing.Size(129, 29);
             this.btnProdaja.TabIndex = 1;
             this.btnProdaja.Text = "Prodaja";
             this.btnProdaja.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(6, 19);
+            this.btnHome.Location = new System.Drawing.Point(3, 22);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(249, 43);
+            this.btnHome.Size = new System.Drawing.Size(129, 49);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // lblNaslov
-            // 
-            this.lblNaslov.AutoSize = true;
-            this.lblNaslov.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNaslov.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblNaslov.Location = new System.Drawing.Point(500, 22);
-            this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(194, 27);
-            this.lblNaslov.TabIndex = 1;
-            this.lblNaslov.Text = "Cvjećarna Mak";
-            this.lblNaslov.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // btnSwitchUser
             // 
-            this.btnSwitchUser.Location = new System.Drawing.Point(843, 63);
+            this.btnSwitchUser.Location = new System.Drawing.Point(3, 14);
             this.btnSwitchUser.Name = "btnSwitchUser";
             this.btnSwitchUser.Size = new System.Drawing.Size(102, 24);
             this.btnSwitchUser.TabIndex = 3;
@@ -156,10 +142,22 @@
             this.btnSwitchUser.UseVisualStyleBackColor = true;
             this.btnSwitchUser.Click += new System.EventHandler(this.btnSwitchUser_Click);
             // 
+            // lblNaslov
+            // 
+            this.lblNaslov.AutoSize = true;
+            this.lblNaslov.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNaslov.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblNaslov.Location = new System.Drawing.Point(20, 10);
+            this.lblNaslov.Name = "lblNaslov";
+            this.lblNaslov.Size = new System.Drawing.Size(194, 27);
+            this.lblNaslov.TabIndex = 1;
+            this.lblNaslov.Text = "Cvjećarna Mak";
+            this.lblNaslov.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(840, 22);
+            this.label1.Location = new System.Drawing.Point(111, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 4;
@@ -168,120 +166,115 @@
             // lblKorisnik
             // 
             this.lblKorisnik.AutoSize = true;
-            this.lblKorisnik.Location = new System.Drawing.Point(893, 22);
+            this.lblKorisnik.Location = new System.Drawing.Point(164, 20);
             this.lblKorisnik.Name = "lblKorisnik";
-            this.lblKorisnik.Size = new System.Drawing.Size(165, 13);
-            this.lblKorisnik.TabIndex = 5;
-            this.lblKorisnik.Text = "\"Ovdje ide trenutno aktivan user\"";
+            this.lblKorisnik.Size = new System.Drawing.Size(35, 13);
+            this.lblKorisnik.TabIndex = 9;
+            this.lblKorisnik.Text = "label2";
             // 
-            // grpBox
+            // flowLayoutPanel1
             // 
-            this.grpBox.Controls.Add(this.btnPrikazRezervacija);
-            this.grpBox.Controls.Add(this.btnRezervacije);
-            this.grpBox.Controls.Add(this.btnPrikazNarudzbi);
-            this.grpBox.Controls.Add(this.btnNarudzbenica);
-            this.grpBox.Location = new System.Drawing.Point(320, 137);
-            this.grpBox.Name = "grpBox";
-            this.grpBox.Size = new System.Drawing.Size(625, 425);
-            this.grpBox.TabIndex = 6;
-            this.grpBox.TabStop = false;
-            this.grpBox.Text = "\"Prikaz dodatnih gumbova il prometa nekog\"";
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 517);
+            this.flowLayoutPanel1.TabIndex = 11;
             // 
-            // btnPrikazRezervacija
+            // flowLayoutPanel2
             // 
-            this.btnPrikazRezervacija.Location = new System.Drawing.Point(262, 200);
-            this.btnPrikazRezervacija.Name = "btnPrikazRezervacija";
-            this.btnPrikazRezervacija.Size = new System.Drawing.Size(150, 48);
-            this.btnPrikazRezervacija.TabIndex = 3;
-            this.btnPrikazRezervacija.Text = "Prikaži sve rezervacije";
-            this.btnPrikazRezervacija.UseVisualStyleBackColor = true;
-            this.btnPrikazRezervacija.Click += new System.EventHandler(this.btnPrikazRezervacija_Click);
+            this.flowLayoutPanel2.Controls.Add(this.btnKraj);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(179, 469);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(914, 48);
+            this.flowLayoutPanel2.TabIndex = 12;
             // 
-            // btnRezervacije
+            // flowLayoutPanel4
             // 
-            this.btnRezervacije.Location = new System.Drawing.Point(64, 200);
-            this.btnRezervacije.Name = "btnRezervacije";
-            this.btnRezervacije.Size = new System.Drawing.Size(150, 48);
-            this.btnRezervacije.TabIndex = 2;
-            this.btnRezervacije.Text = "Rezervacije";
-            this.btnRezervacije.UseVisualStyleBackColor = true;
-            this.btnRezervacije.Click += new System.EventHandler(this.btnRezervacije_Click);
+            this.flowLayoutPanel4.Controls.Add(this.panel2);
+            this.flowLayoutPanel4.Controls.Add(this.panel1);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(179, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(914, 59);
+            this.flowLayoutPanel4.TabIndex = 14;
             // 
-            // btnPrikazNarudzbi
+            // panel1
             // 
-            this.btnPrikazNarudzbi.Location = new System.Drawing.Point(262, 84);
-            this.btnPrikazNarudzbi.Name = "btnPrikazNarudzbi";
-            this.btnPrikazNarudzbi.Size = new System.Drawing.Size(150, 50);
-            this.btnPrikazNarudzbi.TabIndex = 1;
-            this.btnPrikazNarudzbi.Text = "Prikaži sve narudžbe";
-            this.btnPrikazNarudzbi.UseVisualStyleBackColor = true;
-            this.btnPrikazNarudzbi.Click += new System.EventHandler(this.btnPrikazNarudzbi_Click);
+            this.panel1.Controls.Add(this.lblNaslov);
+            this.panel1.Location = new System.Drawing.Point(122, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(509, 51);
+            this.panel1.TabIndex = 15;
             // 
-            // btnNarudzbenica
+            // panel2
             // 
-            this.btnNarudzbenica.Location = new System.Drawing.Point(64, 84);
-            this.btnNarudzbenica.Name = "btnNarudzbenica";
-            this.btnNarudzbenica.Size = new System.Drawing.Size(150, 50);
-            this.btnNarudzbenica.TabIndex = 0;
-            this.btnNarudzbenica.Text = "Izradi narudžbenicu";
-            this.btnNarudzbenica.UseVisualStyleBackColor = true;
-            this.btnNarudzbenica.Click += new System.EventHandler(this.btnNarudzbenica_Click);
+            this.panel2.Controls.Add(this.lblKorisnik);
+            this.panel2.Controls.Add(this.btnSwitchUser);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(637, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(274, 51);
+            this.panel2.TabIndex = 16;
             // 
-            // btnKraj
+            // panel3
             // 
-            this.btnKraj.Location = new System.Drawing.Point(998, 552);
-            this.btnKraj.Name = "btnKraj";
-            this.btnKraj.Size = new System.Drawing.Size(90, 35);
-            this.btnKraj.TabIndex = 7;
-            this.btnKraj.Text = "Kraj";
-            this.btnKraj.UseVisualStyleBackColor = true;
-            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
+            this.panel3.Controls.Add(this.btnHome);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(169, 99);
+            this.panel3.TabIndex = 15;
             // 
-            // pbLogo
+            // panel4
             // 
-            this.pbLogo.Image = global::PICvjecara.Properties.Resources.logo;
-            this.pbLogo.InitialImage = global::PICvjecara.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(977, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(123, 124);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 2;
-            this.pbLogo.TabStop = false;
+            this.panel4.Controls.Add(this.btnStatistika);
+            this.panel4.Controls.Add(this.btnEvidencija);
+            this.panel4.Controls.Add(this.btnNarudzba);
+            this.panel4.Controls.Add(this.btnArtikli);
+            this.panel4.Controls.Add(this.btnKlijenti);
+            this.panel4.Controls.Add(this.btnProdaja);
+            this.panel4.Location = new System.Drawing.Point(3, 108);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(169, 256);
+            this.panel4.TabIndex = 16;
             // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1100, 599);
-            this.Controls.Add(this.btnKraj);
-            this.Controls.Add(this.grpBox);
-            this.Controls.Add(this.lblKorisnik);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSwitchUser);
-            this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.lblNaslov);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1093, 517);
+            this.Controls.Add(this.flowLayoutPanel4);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.IsMdiContainer = true;
             this.Name = "frmCvjecarna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cvjećarna";
-            this.groupBox1.ResumeLayout(false);
-            this.grpBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNaslov;
-        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnSwitchUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblKorisnik;
-        private System.Windows.Forms.GroupBox grpBox;
         private System.Windows.Forms.Button btnStatistika;
         private System.Windows.Forms.Button btnEvidencija;
         private System.Windows.Forms.Button btnNarudzba;
@@ -289,11 +282,15 @@
         private System.Windows.Forms.Button btnProdaja;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnKraj;
-        private System.Windows.Forms.Button btnPrikazNarudzbi;
-        private System.Windows.Forms.Button btnNarudzbenica;
-        private System.Windows.Forms.Button btnRezervacije;
-        private System.Windows.Forms.Button btnPrikazRezervacija;
         private System.Windows.Forms.Button btnKlijenti;
+        private System.Windows.Forms.Label lblKorisnik;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

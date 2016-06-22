@@ -37,6 +37,7 @@
             this.btnBrisi = new System.Windows.Forms.Button();
             this.dgvOdabraniArtikli = new System.Windows.Forms.DataGridView();
             this.grbOdabirArtikla = new System.Windows.Forms.GroupBox();
+            this.Broj_artikla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -116,6 +117,8 @@
             // dgvOdabraniArtikli
             // 
             this.dgvOdabraniArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOdabraniArtikli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Broj_artikla});
             this.dgvOdabraniArtikli.Location = new System.Drawing.Point(6, 19);
             this.dgvOdabraniArtikli.Name = "dgvOdabraniArtikli";
             this.dgvOdabraniArtikli.Size = new System.Drawing.Size(688, 150);
@@ -130,6 +133,11 @@
             this.grbOdabirArtikla.TabIndex = 10;
             this.grbOdabirArtikla.TabStop = false;
             this.grbOdabirArtikla.Text = "Odabrani artikli";
+            // 
+            // Broj_artikla
+            // 
+            this.Broj_artikla.HeaderText = "Broj artikla";
+            this.Broj_artikla.Name = "Broj_artikla";
             // 
             // frmNarudzbaArtikli
             // 
@@ -166,5 +174,6 @@
         private System.Windows.Forms.Button btnBrisi;
         private System.Windows.Forms.DataGridView dgvOdabraniArtikli;
         private System.Windows.Forms.GroupBox grbOdabirArtikla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Broj_artikla;
     }
 }
