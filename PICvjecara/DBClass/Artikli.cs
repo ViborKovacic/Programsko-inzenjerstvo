@@ -103,6 +103,20 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
+        public static List<DBClass.Artikli> DohvatiSveArtikle()
+        {
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            string sqlUpit = "SELECT * FROM Artikli";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+            while (dr.Read())
+            {
+                DBClass.Artikli artikli = new DBClass.Artikli(dr);
+                lista.Add(artikli);
+            }
+            dr.Close();
+            return lista;
+        }
+
         public static List<DBClass.Artikli> DohvatiArtikle(int ID_Artikla)
         {
             List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
@@ -117,28 +131,49 @@ namespace PICvjecara.DBClass
             return lista;
         }
 
-        public static List<DBClass.Artikli> DohvatiartikleProdaja(string vrstaArtikla)
+        public static List<DBClass.Artikli> DohvatiArtikleProdaja(string vrstaArtikla)
         {
             List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
-            string sqlUpit = "SELECT a.ID_artikla, a.Naziv, a.Cijena, a.Kolicina, a.ID_vrsta_artikla, v.Vrsta FROM Artikli a, Vrsta_artikla v  WHERE a.ID_vrsta_artikla=v.ID_vrsta_artikla AND v.Vrsta ='" + vrstaArtikla + "'";
-            //int pomocna = DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+            string sqlUpit = "SELECT a.ID_artikla, a.Naziv, a.Cijena, a.Kolicina, a.ID_vrsta_artikla FROM Artikli a, Vrsta_artikla v  WHERE a.ID_vrsta_artikla=v.ID_vrsta_artikla AND v.Vrsta ='" + vrstaArtikla + "'";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
 
-                
-                while (dr.Read())
-                {
-                    DBClass.Artikli artikli = new DBClass.Artikli(dr);
-                    lista.Add(artikli);
-                }
-                dr.Close();
-                return lista;
-            //}
+            while (dr.Read())
+            {
+                DBClass.Artikli artikli = new DBClass.Artikli(dr);
+                lista.Add(artikli);
+            }
+            dr.Close();
+            return lista;           
+        }
 
-            //else
-            //{
-            //    return lista = null;
-            //}
-            
+        public static List<DBClass.Artikli> DohvatiBrojArtikla(int brojArtikla)
+        {
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            string sqlUpit = "SELECT a.ID_artikla, a.Naziv, a.Cijena, a.Kolicina, a.ID_vrsta_artikla FROM Artikli a, Vrsta_artikla v  WHERE a.ID_vrsta_artikla=v.ID_vrsta_artikla AND a.ID_artikla LIKE('" + brojArtikla + "%')";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+
+            while (dr.Read())
+            {
+                DBClass.Artikli artikli = new DBClass.Artikli(dr);
+                lista.Add(artikli);
+            }
+            dr.Close();
+            return lista;
+        }
+
+        public static List<DBClass.Artikli> DohvatiNazivArtikla(string nazivArtikla)
+        {
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            string sqlUpit = "SELECT a.ID_artikla, a.Naziv, a.Cijena, a.Kolicina, a.ID_vrsta_artikla FROM Artikli a, Vrsta_artikla v  WHERE a.ID_vrsta_artikla=v.ID_vrsta_artikla AND a.Naziv LIKE('" + nazivArtikla + "%')";
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+
+            while (dr.Read())
+            {
+                DBClass.Artikli artikli = new DBClass.Artikli(dr);
+                lista.Add(artikli);
+            }
+            dr.Close();
+            return lista;
         }
 
     }

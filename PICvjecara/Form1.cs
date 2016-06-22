@@ -17,19 +17,8 @@ namespace PICvjecara
         {
             InitializeComponent();
             ControlBox = false;
-            //btnPrikazNarudzbi.Visible = false;
-            //btnNarudzbenica.Visible = false;
-
-            //prikazuje koji je korisnik aktivan
-            label5.Text = Korisnici.TrenutnoAktivan;
-            
-            
-
-           
-
-        }
-
-      
+            label5.Text = Korisnici.TrenutnoAktivan;    
+        }      
 
         private void btnKraj_Click(object sender, EventArgs e)
         {
@@ -45,9 +34,7 @@ namespace PICvjecara
             }
             frmPregledArtikla openPregledArtikla = new frmPregledArtikla();
             openPregledArtikla.MdiParent = this;
-            openPregledArtikla.Show();
-
-            
+            openPregledArtikla.Show();            
         }
         
         private void btnSwitchUser_Click(object sender, EventArgs e)
@@ -55,9 +42,7 @@ namespace PICvjecara
             Prijava openPrijava = new Prijava();
             openPrijava.Show();
             Visible = false;
-        }
-
-        
+        }        
 
         private void btnNarudzbenica_Click(object sender, EventArgs e)
         {
@@ -71,12 +56,6 @@ namespace PICvjecara
             frmNarudzbe.Show();
             this.Close();
         }
-
-
-     
-
-                    
-
 
         private void btnKlijenti_Click(object sender, EventArgs e)
         {
@@ -147,6 +126,17 @@ namespace PICvjecara
             frmPregledRezervacija frmPregledRez = new frmPregledRezervacija();
             frmPregledRez.MdiParent = frmPregledRezervacija.ActiveForm;
             frmPregledRez.Show();
+        }
+
+        private void btnProdaja_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmProdaja frmProdaja = new frmProdaja();
+            frmProdaja.MdiParent = frmProdaja.ActiveForm;
+            frmProdaja.Show();
         }
     }
 }

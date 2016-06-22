@@ -55,6 +55,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -62,13 +64,15 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKlijenti
             // 
-            this.btnKlijenti.Location = new System.Drawing.Point(26, 262);
+            this.btnKlijenti.Location = new System.Drawing.Point(13, 404);
             this.btnKlijenti.Name = "btnKlijenti";
-            this.btnKlijenti.Size = new System.Drawing.Size(129, 29);
+            this.btnKlijenti.Size = new System.Drawing.Size(130, 37);
             this.btnKlijenti.TabIndex = 6;
             this.btnKlijenti.Text = "Popis Klijenata";
             this.btnKlijenti.UseVisualStyleBackColor = true;
@@ -76,27 +80,27 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(25, 297);
+            this.btnStatistika.Location = new System.Drawing.Point(13, 454);
             this.btnStatistika.Name = "btnStatistika";
-            this.btnStatistika.Size = new System.Drawing.Size(129, 29);
+            this.btnStatistika.Size = new System.Drawing.Size(129, 36);
             this.btnStatistika.TabIndex = 5;
             this.btnStatistika.Text = "Statistika poslvanja";
             this.btnStatistika.UseVisualStyleBackColor = true;
             // 
             // btnEvidencija
             // 
-            this.btnEvidencija.Location = new System.Drawing.Point(25, 227);
+            this.btnEvidencija.Location = new System.Drawing.Point(13, 348);
             this.btnEvidencija.Name = "btnEvidencija";
-            this.btnEvidencija.Size = new System.Drawing.Size(129, 29);
+            this.btnEvidencija.Size = new System.Drawing.Size(130, 38);
             this.btnEvidencija.TabIndex = 4;
             this.btnEvidencija.Text = "Evidencija zaposlenika";
             this.btnEvidencija.UseVisualStyleBackColor = true;
             // 
             // btnNarudzba
             // 
-            this.btnNarudzba.Location = new System.Drawing.Point(25, 122);
+            this.btnNarudzba.Location = new System.Drawing.Point(13, 184);
             this.btnNarudzba.Name = "btnNarudzba";
-            this.btnNarudzba.Size = new System.Drawing.Size(129, 29);
+            this.btnNarudzba.Size = new System.Drawing.Size(130, 39);
             this.btnNarudzba.TabIndex = 3;
             this.btnNarudzba.Text = "Pregled narudžbenica";
             this.btnNarudzba.UseVisualStyleBackColor = true;
@@ -104,9 +108,9 @@
             // 
             // btnArtikli
             // 
-            this.btnArtikli.Location = new System.Drawing.Point(25, 17);
+            this.btnArtikli.Location = new System.Drawing.Point(13, 14);
             this.btnArtikli.Name = "btnArtikli";
-            this.btnArtikli.Size = new System.Drawing.Size(129, 29);
+            this.btnArtikli.Size = new System.Drawing.Size(130, 39);
             this.btnArtikli.TabIndex = 2;
             this.btnArtikli.Text = "Artikli";
             this.btnArtikli.UseVisualStyleBackColor = true;
@@ -114,16 +118,17 @@
             // 
             // btnProdaja
             // 
-            this.btnProdaja.Location = new System.Drawing.Point(25, 52);
+            this.btnProdaja.Location = new System.Drawing.Point(13, 70);
             this.btnProdaja.Name = "btnProdaja";
-            this.btnProdaja.Size = new System.Drawing.Size(129, 29);
+            this.btnProdaja.Size = new System.Drawing.Size(130, 39);
             this.btnProdaja.TabIndex = 1;
             this.btnProdaja.Text = "Prodaja";
             this.btnProdaja.UseVisualStyleBackColor = true;
+            this.btnProdaja.Click += new System.EventHandler(this.btnProdaja_Click);
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(3, 22);
+            this.btnHome.Location = new System.Drawing.Point(17, 14);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(129, 49);
             this.btnHome.TabIndex = 0;
@@ -178,12 +183,12 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 599);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 723);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnHome);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(169, 99);
@@ -191,25 +196,18 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnPregledRezervacije);
-            this.panel4.Controls.Add(this.btnRezervacija);
-            this.panel4.Controls.Add(this.btnIzradiNarudzbenicu);
-            this.panel4.Controls.Add(this.btnStatistika);
-            this.panel4.Controls.Add(this.btnEvidencija);
-            this.panel4.Controls.Add(this.btnNarudzba);
-            this.panel4.Controls.Add(this.btnArtikli);
-            this.panel4.Controls.Add(this.btnKlijenti);
-            this.panel4.Controls.Add(this.btnProdaja);
+            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(3, 108);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(169, 339);
+            this.panel4.Size = new System.Drawing.Size(169, 567);
             this.panel4.TabIndex = 16;
             // 
             // btnPregledRezervacije
             // 
-            this.btnPregledRezervacije.Location = new System.Drawing.Point(26, 192);
+            this.btnPregledRezervacije.Location = new System.Drawing.Point(13, 295);
             this.btnPregledRezervacije.Name = "btnPregledRezervacije";
-            this.btnPregledRezervacije.Size = new System.Drawing.Size(129, 29);
+            this.btnPregledRezervacije.Size = new System.Drawing.Size(130, 37);
             this.btnPregledRezervacije.TabIndex = 9;
             this.btnPregledRezervacije.Text = "Pregled rezervacija";
             this.btnPregledRezervacije.UseVisualStyleBackColor = true;
@@ -217,9 +215,9 @@
             // 
             // btnRezervacija
             // 
-            this.btnRezervacija.Location = new System.Drawing.Point(26, 157);
+            this.btnRezervacija.Location = new System.Drawing.Point(13, 240);
             this.btnRezervacija.Name = "btnRezervacija";
-            this.btnRezervacija.Size = new System.Drawing.Size(129, 29);
+            this.btnRezervacija.Size = new System.Drawing.Size(130, 38);
             this.btnRezervacija.TabIndex = 8;
             this.btnRezervacija.Text = "Izradi rezervaciju";
             this.btnRezervacija.UseVisualStyleBackColor = true;
@@ -227,9 +225,9 @@
             // 
             // btnIzradiNarudzbenicu
             // 
-            this.btnIzradiNarudzbenicu.Location = new System.Drawing.Point(26, 87);
+            this.btnIzradiNarudzbenicu.Location = new System.Drawing.Point(13, 126);
             this.btnIzradiNarudzbenicu.Name = "btnIzradiNarudzbenicu";
-            this.btnIzradiNarudzbenicu.Size = new System.Drawing.Size(129, 29);
+            this.btnIzradiNarudzbenicu.Size = new System.Drawing.Size(130, 41);
             this.btnIzradiNarudzbenicu.TabIndex = 7;
             this.btnIzradiNarudzbenicu.Text = "Izradi narudžbenicu";
             this.btnIzradiNarudzbenicu.UseVisualStyleBackColor = true;
@@ -240,7 +238,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnKraj);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(179, 551);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(179, 675);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(921, 48);
             this.flowLayoutPanel2.TabIndex = 12;
@@ -329,12 +327,40 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnPregledRezervacije);
+            this.panel5.Controls.Add(this.btnArtikli);
+            this.panel5.Controls.Add(this.btnRezervacija);
+            this.panel5.Controls.Add(this.btnProdaja);
+            this.panel5.Controls.Add(this.btnIzradiNarudzbenicu);
+            this.panel5.Controls.Add(this.btnKlijenti);
+            this.panel5.Controls.Add(this.btnStatistika);
+            this.panel5.Controls.Add(this.btnNarudzba);
+            this.panel5.Controls.Add(this.btnEvidencija);
+            this.panel5.Location = new System.Drawing.Point(6, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(158, 508);
+            this.panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.btnHome);
+            this.panel6.Location = new System.Drawing.Point(7, 11);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(158, 79);
+            this.panel6.TabIndex = 11;
+            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1100, 599);
+            this.ClientSize = new System.Drawing.Size(1100, 723);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -358,6 +384,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,6 +422,8 @@
         private System.Windows.Forms.Button btnIzradiNarudzbenicu;
         private System.Windows.Forms.Button btnPregledRezervacije;
         private System.Windows.Forms.Button btnRezervacija;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 
