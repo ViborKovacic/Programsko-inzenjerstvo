@@ -40,6 +40,7 @@
             this.lblNaslov = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,6 +55,19 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+=======
+            this.grpBox = new System.Windows.Forms.GroupBox();
+            this.btnPrikazRezervacija = new System.Windows.Forms.Button();
+            this.btnRezervacije = new System.Windows.Forms.Button();
+            this.btnPrikazNarudzbi = new System.Windows.Forms.Button();
+            this.btnNarudzbenica = new System.Windows.Forms.Button();
+            this.btnKraj = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.grpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+>>>>>>> origin/master
             this.SuspendLayout();
             // 
             // btnKraj
@@ -243,16 +257,38 @@
             this.panel4.Size = new System.Drawing.Size(169, 256);
             this.panel4.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(320, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1093, 517);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.IsMdiContainer = true;
+=======
+            this.ClientSize = new System.Drawing.Size(1100, 599);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnKraj);
+            this.Controls.Add(this.grpBox);
+            this.Controls.Add(this.lblKorisnik);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSwitchUser);
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.lblNaslov);
+            this.Controls.Add(this.groupBox1);
+>>>>>>> origin/master
             this.Name = "frmCvjecarna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cvjećarna";
@@ -283,6 +319,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnKraj;
         private System.Windows.Forms.Button btnKlijenti;
+<<<<<<< HEAD
         private System.Windows.Forms.Label lblKorisnik;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -291,6 +328,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+=======
+        private System.Windows.Forms.Label label2;
+>>>>>>> origin/master
     }
 }
 

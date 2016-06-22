@@ -94,6 +94,9 @@ namespace PICvjecara
             this.Close();
         }
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> origin/master
     }
 }
