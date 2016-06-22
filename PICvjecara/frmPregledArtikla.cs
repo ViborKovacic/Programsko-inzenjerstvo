@@ -20,8 +20,12 @@ namespace PICvjecara
             ControlBox = false;
         }
 
-        public void OvijeziArtikle()
+        public void OsvijeziArtikle()
         {
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
+            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
+            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -35,6 +39,7 @@ namespace PICvjecara
         {
             frmUnosArtikla openUnosArtikla = new frmUnosArtikla();
             openUnosArtikla.ShowDialog();
+            OsvijeziArtikle();
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
@@ -47,6 +52,7 @@ namespace PICvjecara
                 frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(lista);
                 openAzuriraj.ShowDialog();
             }
+            OsvijeziArtikle();
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
@@ -66,6 +72,7 @@ namespace PICvjecara
                 artikliDataGridView.Rows.RemoveAt(artikliDataGridView.CurrentRow.Index);   
                 artikli.Obrisi(obrisiArikl);
             }
+            OsvijeziArtikle();
         }
 
         private void artikliDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -80,10 +87,7 @@ namespace PICvjecara
 
         private void PregledArtikla_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
+            OsvijeziArtikle();
         }
     }
 }

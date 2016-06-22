@@ -158,6 +158,12 @@
     <Compile Include="frmPregledRezervacija.Designer.cs">
       <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProdaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdaja.Designer.cs">
+      <DependentUpon>frmProdaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="frmPregledRezervacija.resx">
       <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProdaja.resx">
+      <DependentUpon>frmProdaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRezervacija.resx">
       <DependentUpon>frmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,10 +313,15 @@
   <ItemGroup>
     <Content Include="GridLoad.dll" />
     <Content Include="Slike\logo.png" />
+    <Content Include="Slike\SlikeArtikla\aranzmani.jpg" />
+    <Content Include="Slike\SlikeArtikla\buketi.jpg" />
+    <Content Include="Slike\SlikeArtikla\cvijece.jpg" />
+    <Content Include="Slike\SlikeArtikla\sadnice.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

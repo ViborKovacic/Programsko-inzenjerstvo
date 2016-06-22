@@ -38,6 +38,7 @@ namespace PICvjecara
                     artikli = new DBClass.Artikli();
                 }
 
+                artikli.ID_artikla = int.Parse(txtBrojArtikla.Text);
                 artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
                 artikli.Naziv = txtNaziv.Text;
                 artikli.Cijena = int.Parse(txtCijena.Text);
@@ -61,12 +62,12 @@ namespace PICvjecara
         {
             // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
             this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
-
+            
             if(lista != null)
             {
 
                 txtBrojArtikla.Text = lista[0].ID_artikla.ToString();
-                cmboxTipArtikla.Text = lista[0].ID_vrsta_artikla.ToString();
+                cmboxTipArtikla.DisplayMember = lista[0].ID_vrsta_artikla.ToString();
                 txtNaziv.Text = lista[0].Naziv.ToString();
                 txtCijena.Text = lista[0].Cijena.ToString();
                 txtKolicina.Text = lista[0].Kolicina.ToString();

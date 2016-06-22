@@ -116,5 +116,30 @@ namespace PICvjecara.DBClass
             dr.Close();
             return lista;
         }
+
+        public static List<DBClass.Artikli> DohvatiartikleProdaja(string vrstaArtikla)
+        {
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            string sqlUpit = "SELECT a.ID_artikla, a.Naziv, a.Cijena, a.Kolicina, a.ID_vrsta_artikla, v.Vrsta FROM Artikli a, Vrsta_artikla v  WHERE a.ID_vrsta_artikla=v.ID_vrsta_artikla AND v.Vrsta ='" + vrstaArtikla + "'";
+            //int pomocna = DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
+
+                
+                while (dr.Read())
+                {
+                    DBClass.Artikli artikli = new DBClass.Artikli(dr);
+                    lista.Add(artikli);
+                }
+                dr.Close();
+                return lista;
+            //}
+
+            //else
+            //{
+            //    return lista = null;
+            //}
+            
+        }
+
     }
 }
