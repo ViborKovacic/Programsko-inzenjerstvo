@@ -20,7 +20,7 @@ namespace PICvjecara
         public static string qVrstaArtikla = "select vr.ID_vrsta_artikla as 'Broj vrste artikla' , vr.Vrsta as 'Vrsta'  from Vrsta_artikla vr ";
         public static string qKlijenti = "select ID_kupca as 'Broj Klijenta', Ime,Prezime,Email,Telefon,OIB,Adresa from Kupci";
         public static string qVrstaRezervacije = "select ID_tip_rezervacije as 'Broj vreste rezervacije', Vrsta from Tip_rezervacije";
-        public static string qPrikazRezervacije = "select r.ID_rezervacije as 'Broj rezervacije', r.Naziv, sr.Datum_izvrsavanja as 'Datum održavanja' from Rezervacija r , Stavke_rezervacije sr where r.ID_rezervacije = sr.ID_rezervacija";
+        public static string qPrikazRezervacije = "select r.ID_rezervacije as 'Broj rezervacije',  sr.Datum_izvrsavanja as 'Datum održavanja',k.Ime as 'Klijent' from Kupci k, Rezervacija r , Stavke_rezervacije sr, Nalog_za_prodaju nzp where r.ID_rezervacije = sr.ID_rezervacija and k.ID_kupca = nzp.ID_kupci and nzp.ID_nalog_za_prodaju = sr.ID_nalog_za_prodaju";
         
         
 

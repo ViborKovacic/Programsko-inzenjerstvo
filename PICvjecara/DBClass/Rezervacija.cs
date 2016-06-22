@@ -13,7 +13,7 @@ namespace PICvjecara.DBClass
         public float Cijena { get; set; }
         public int ID_tip_rezervacije { get; set; }
         public string Opis { get; set; }
-        public string Naziv { get; set; }
+        
 
      
 
@@ -26,13 +26,13 @@ namespace PICvjecara.DBClass
                 ID_rezervacije = int.Parse(dr["ID_rezervacije"].ToString());
                 Cijena = float.Parse(dr["Cijena"].ToString());
                 Opis = dr["Opis"].ToString();
-                Naziv = dr["Naziv"].ToString();
+                
             }
             dr.Close();
         }
         public int Insert()
         {
-            string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis,Naziv) values (" + Cijena + "," + ID_tip_rezervacije + ",'" + Opis + "','" + Naziv + "')";
+            string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis) values (" + Cijena + "," + ID_tip_rezervacije + ",'" + Opis + "')";
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
         public void DohvatiIDRezervacije()

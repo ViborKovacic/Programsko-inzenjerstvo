@@ -37,13 +37,45 @@ namespace PICvjecara
 
         }
 
-        private void btnRezerviraj_Click(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmDodajVrstuRezervacije frmDodajRez = new frmDodajVrstuRezervacije();
+            frmDodajRez.MdiParent = frmDodajVrstuRezervacije.ActiveForm;
+            frmDodajRez.Show();
+
+        }
+
+        private void frmRezervacija_Load(object sender, EventArgs e)
+        {
+            dgvVrstaRezervacije.DataSource = gridLoad.GridDataLoad(SqlCommandsGrid.qVrstaRezervacije);
+            dgvKlijent.DataSource = ListClass.listaKlijenta;
+        }
+
+        private void brnOdaberiKlijenta_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmKlijenti frmKlijent = new frmKlijenti();
+            frmKlijent.MdiParent = frmKlijenti.ActiveForm;
+            frmKlijent.Show();
+            
+        }
+
+        private void btnRezerviraj_Click_1(object sender, EventArgs e)
         {
             DateTime datumrezervacije = DateTime.Now;
             if (dgvVrstaRezervacije.SelectedRows.Count > 0)
             {
                 int odabrani = int.Parse(dgvVrstaRezervacije.SelectedCells[0].Value.ToString());
-                rezervacija.Naziv = txtNazivRezervacije.Text;
+
                 rezervacija.Opis = txtOpis.Text;
                 rezervacija.Cijena = int.Parse(txtOkvirnaCijena.Text);
                 rezervacija.ID_tip_rezervacije = odabrani;
@@ -69,27 +101,6 @@ namespace PICvjecara
             {
                 MessageBox.Show("Niste odabrali vrstu rezervacije!");
             }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmDodajVrstuRezervacije frmDodajRez = new frmDodajVrstuRezervacije();
-            frmDodajRez.ShowDialog();
-
-        }
-
-        private void frmRezervacija_Load(object sender, EventArgs e)
-        {
-            dgvVrstaRezervacije.DataSource = gridLoad.GridDataLoad(SqlCommandsGrid.qVrstaRezervacije);
-            dgvKlijent.DataSource = ListClass.listaKlijenta;
-        }
-
-        private void brnOdaberiKlijenta_Click(object sender, EventArgs e)
-        {
-            frmKlijenti frmKlijent = new frmKlijenti();
-            frmKlijent.Show();
-            this.Close();
         }
     }
 }

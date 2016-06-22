@@ -17,6 +17,7 @@ namespace PICvjecara
         DBClass.Kupci klijent;
         public frmKlijenti()
         {
+            ControlBox = false;
            
             InitializeComponent();
         }
@@ -47,9 +48,9 @@ namespace PICvjecara
                 klijent.DohvatiKlijenta(odabrani);
                 
                 frmAzurirajKlijenta frmAzurirajKlijenta = new frmAzurirajKlijenta(klijent);
+                frmAzurirajKlijenta.MdiParent = frmDodajKlijenta.ActiveForm;
                 frmAzurirajKlijenta.Show();
-                this.Close();
-
+               
 
 
             }
@@ -61,9 +62,14 @@ namespace PICvjecara
 
         private void btnDodajKlijenta_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmDodajKlijenta frmDodajKlijenta = new frmDodajKlijenta();
+            frmDodajKlijenta.MdiParent = frmDodajKlijenta.ActiveForm;
             frmDodajKlijenta.Show();
-            this.Close();
+            
         }
 
         private void btnTrazi_Click(object sender, EventArgs e)
@@ -76,9 +82,14 @@ namespace PICvjecara
                 klijent.DohvatiIzBazeOIB();
                 if (klijent.broj > 0)
                 {
+                    if (ActiveMdiChild != null)
+                    {
+                        ActiveMdiChild.Close();
+                    }
                     frmAzurirajKlijenta frmAzurajKlijenta = new frmAzurirajKlijenta(klijent);
+                    frmAzurajKlijenta.MdiParent = frmAzurirajKlijenta.ActiveForm;
                     frmAzurajKlijenta.Show();
-                    this.Close();
+                    
 
                 }
                 else
@@ -106,9 +117,14 @@ namespace PICvjecara
                 ListClass.iDKlijenta = odabrani;
 
                 ListClass.listaKlijenta = klijent.ListaKlijenta(klijent);
+                if (ActiveMdiChild != null)
+                {
+                    ActiveMdiChild.Close();
+                }
                 frmRezervacija frmRez = new frmRezervacija();
+                frmRez.MdiParent = frmRezervacija.ActiveForm;
                 frmRez.Show();
-                this.Close();
+             
             }
             else
             {

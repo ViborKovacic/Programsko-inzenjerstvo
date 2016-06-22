@@ -80,9 +80,14 @@ namespace PICvjecara
 
         private void btnKlijenti_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmKlijenti frmKlijent = new frmKlijenti();
+            frmKlijent.MdiParent = this;
             frmKlijent.Show();
-            this.Close();
+            
         }
 
         private void btnKraj_Click_1(object sender, EventArgs e)
@@ -117,6 +122,31 @@ namespace PICvjecara
             frmnarudzbenica.MdiParent = this;
             frmnarudzbenica.Show();
 
+        }
+
+        private void btnRezervacija_Click(object sender, EventArgs e)
+        {
+            ListClass.listaKlijenta.Clear();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmRezervacija frmRezervacija = new frmRezervacija();
+            frmRezervacija.MdiParent = this;
+            frmRezervacija.Show();
+            
+        }
+
+        private void btnPregledRezervacije_Click(object sender, EventArgs e)
+        {
+
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmPregledRezervacija frmPregledRez = new frmPregledRezervacija();
+            frmPregledRez.MdiParent = frmPregledRezervacija.ActiveForm;
+            frmPregledRez.Show();
         }
     }
 }

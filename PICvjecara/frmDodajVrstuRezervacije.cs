@@ -17,9 +17,9 @@ namespace PICvjecara
         public int broj = 0;
         public frmDodajVrstuRezervacije( )
         {
-            
-            
 
+
+            ControlBox = false;
             InitializeComponent();
         }
 
@@ -42,8 +42,18 @@ namespace PICvjecara
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
-           
-            this.Close();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmRezervacija frmRez = new frmRezervacija();
+            frmRez.MdiParent = frmRezervacija.ActiveForm;
+            frmRez.Show();
+        }
+
+        private void frmDodajVrstuRezervacije_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

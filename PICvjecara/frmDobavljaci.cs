@@ -28,6 +28,8 @@ namespace PICvjecara
 
         private void frmDobavljaci_Load(object sender, EventArgs e)
         {
+            dataGridView1.Update();
+            
             dataGridView1.DataSource = grid.GridDataLoad(SqlCommandsGrid.qDobavljaci);
             
         }
@@ -60,16 +62,15 @@ namespace PICvjecara
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmDodajDobavljaca frmDodaj = new frmDodajDobavljaca();
+            frmDodaj.MdiParent = frmDodajDobavljaca.ActiveForm;
             frmDodaj.Show();
-            this.Close();
+            
         }
 
-        private void btnPovarakta_Click(object sender, EventArgs e)
-        {
-            frmNarudzbenica frmNar = new frmNarudzbenica();
-            frmNar.Show();
-            this.Close();
-        }
     }
 }

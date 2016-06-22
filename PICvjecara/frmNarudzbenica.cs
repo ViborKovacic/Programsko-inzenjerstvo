@@ -61,16 +61,28 @@ namespace PICvjecara
 
         private void btnIzaberiArtikle_Click(object sender, EventArgs e)
         {
-            frmNarudzbaArtikli frmArtikl = new frmNarudzbaArtikli();
-            frmArtikl.Show();
-            this.Close();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmNarudzbaArtikli frmNazArtikli = new frmNarudzbaArtikli();
+            frmNazArtikli.MdiParent = frmNarudzbaArtikli.ActiveForm;
+            frmNazArtikli.Show();
+            
+
         }
 
         private void frmNarudzbenica_Load(object sender, EventArgs e)
         {
+            korisnik.AktivanKorisnik();
             dataGridView1.Update();
             dataGridView1.DataSource = ListClass.listaDobavljaca;
             dgvArtikli.DataSource = ListClass.listaArtikla;
+
+            lblIme.Text = korisnik.Ime;
+            lblPrezime.Text = korisnik.Prezime;
+            lblOIB.Text = korisnik.Telefon;
+            lblDatumKreiranja.Text = DateTime.Now.ToString();
 
            
             
@@ -82,12 +94,7 @@ namespace PICvjecara
             dgvArtikli.Rows.RemoveAt(dgvArtikli.SelectedCells[0].RowIndex);
         }
 
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-            frmCvjecarna frmHome = new frmCvjecarna();
-            frmHome.Show();
-            this.Close();
-        }
+        
 
         private void btnIzradiNarudzbenicu_Click(object sender, EventArgs e)
         {
