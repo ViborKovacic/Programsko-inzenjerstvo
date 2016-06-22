@@ -43,6 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnKraj = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnKraj = new System.Windows.Forms.Button();
+            this.btnIzradiNarudzbenicu = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             // btnKlijenti
             // 
-            this.btnKlijenti.Location = new System.Drawing.Point(25, 179);
+            this.btnKlijenti.Location = new System.Drawing.Point(25, 194);
             this.btnKlijenti.Name = "btnKlijenti";
             this.btnKlijenti.Size = new System.Drawing.Size(129, 29);
             this.btnKlijenti.TabIndex = 6;
@@ -73,7 +74,7 @@
             // 
             // btnStatistika
             // 
-            this.btnStatistika.Location = new System.Drawing.Point(25, 214);
+            this.btnStatistika.Location = new System.Drawing.Point(26, 229);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(129, 29);
             this.btnStatistika.TabIndex = 5;
@@ -82,7 +83,7 @@
             // 
             // btnEvidencija
             // 
-            this.btnEvidencija.Location = new System.Drawing.Point(25, 144);
+            this.btnEvidencija.Location = new System.Drawing.Point(25, 157);
             this.btnEvidencija.Name = "btnEvidencija";
             this.btnEvidencija.Size = new System.Drawing.Size(129, 29);
             this.btnEvidencija.TabIndex = 4;
@@ -91,16 +92,17 @@
             // 
             // btnNarudzba
             // 
-            this.btnNarudzba.Location = new System.Drawing.Point(25, 109);
+            this.btnNarudzba.Location = new System.Drawing.Point(25, 122);
             this.btnNarudzba.Name = "btnNarudzba";
             this.btnNarudzba.Size = new System.Drawing.Size(129, 29);
             this.btnNarudzba.TabIndex = 3;
-            this.btnNarudzba.Text = "Narudžba";
+            this.btnNarudzba.Text = "Pregled narudžbenica";
             this.btnNarudzba.UseVisualStyleBackColor = true;
+            this.btnNarudzba.Click += new System.EventHandler(this.btnNarudzba_Click);
             // 
             // btnArtikli
             // 
-            this.btnArtikli.Location = new System.Drawing.Point(25, 39);
+            this.btnArtikli.Location = new System.Drawing.Point(25, 17);
             this.btnArtikli.Name = "btnArtikli";
             this.btnArtikli.Size = new System.Drawing.Size(129, 29);
             this.btnArtikli.TabIndex = 2;
@@ -110,7 +112,7 @@
             // 
             // btnProdaja
             // 
-            this.btnProdaja.Location = new System.Drawing.Point(25, 74);
+            this.btnProdaja.Location = new System.Drawing.Point(25, 52);
             this.btnProdaja.Name = "btnProdaja";
             this.btnProdaja.Size = new System.Drawing.Size(129, 29);
             this.btnProdaja.TabIndex = 1;
@@ -187,6 +189,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnIzradiNarudzbenicu);
             this.panel4.Controls.Add(this.btnStatistika);
             this.panel4.Controls.Add(this.btnEvidencija);
             this.panel4.Controls.Add(this.btnNarudzba);
@@ -195,7 +198,7 @@
             this.panel4.Controls.Add(this.btnProdaja);
             this.panel4.Location = new System.Drawing.Point(3, 108);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(169, 256);
+            this.panel4.Size = new System.Drawing.Size(169, 286);
             this.panel4.TabIndex = 16;
             // 
             // flowLayoutPanel2
@@ -207,6 +210,16 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(921, 48);
             this.flowLayoutPanel2.TabIndex = 12;
+            // 
+            // btnKraj
+            // 
+            this.btnKraj.Location = new System.Drawing.Point(810, 3);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(108, 38);
+            this.btnKraj.TabIndex = 1;
+            this.btnKraj.Text = "Kraj";
+            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click_1);
             // 
             // flowLayoutPanel4
             // 
@@ -282,15 +295,15 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
-            // btnKraj
+            // btnIzradiNarudzbenicu
             // 
-            this.btnKraj.Location = new System.Drawing.Point(810, 3);
-            this.btnKraj.Name = "btnKraj";
-            this.btnKraj.Size = new System.Drawing.Size(108, 38);
-            this.btnKraj.TabIndex = 1;
-            this.btnKraj.Text = "Kraj";
-            this.btnKraj.UseVisualStyleBackColor = true;
-            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click_1);
+            this.btnIzradiNarudzbenicu.Location = new System.Drawing.Point(26, 87);
+            this.btnIzradiNarudzbenicu.Name = "btnIzradiNarudzbenicu";
+            this.btnIzradiNarudzbenicu.Size = new System.Drawing.Size(129, 29);
+            this.btnIzradiNarudzbenicu.TabIndex = 7;
+            this.btnIzradiNarudzbenicu.Text = "Izradi narudžbenicu";
+            this.btnIzradiNarudzbenicu.UseVisualStyleBackColor = true;
+            this.btnIzradiNarudzbenicu.Click += new System.EventHandler(this.btnIzradiNarudzbenicu_Click);
             // 
             // frmCvjecarna
             // 
@@ -354,6 +367,7 @@
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnKraj;
+        private System.Windows.Forms.Button btnIzradiNarudzbenicu;
     }
 }
 

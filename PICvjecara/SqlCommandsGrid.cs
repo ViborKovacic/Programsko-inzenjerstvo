@@ -12,7 +12,7 @@ namespace PICvjecara
         public static int ID_narudzbenice;
         
 
-        public static string qNarudzbe = "select n.ID_narudzbenice as 'Broj narudzbenice', n.Naziv as 'Naziv narudžbenice',n.datum_vrijeme as 'Datum kreiranja narudžbenice',d.Ime as 'Ime dobavljača' from Narudzbenica n, Dobavljaci d where n.ID_dobavljac = d.ID_dobavljac";
+        public static string qNarudzbe = "select n.ID_narudzbenice as 'Broj narudzbenice', n.datum_vrijeme as 'Datum kreiranja narudžbenice',d.Ime as 'Ime dobavljača' from Narudzbenica n, Dobavljaci d where n.ID_dobavljac = d.ID_dobavljac";
         
 
         

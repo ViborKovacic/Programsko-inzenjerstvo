@@ -21,6 +21,7 @@ namespace PICvjecara
         {
             narudzbenica = new DBClass.Narudzbenica();
             stavkeNarudzbenice = new DBClass.StavkeNarudzbenice();
+            ControlBox = false;
             InitializeComponent();
         }
 
@@ -34,7 +35,7 @@ namespace PICvjecara
         private void frmPregledNarudzbenica_Load(object sender, EventArgs e)
         {
             dgvNazivNarudzbenica.DataSource = gridLoad.GridDataLoad(SqlCommandsGrid.qNarudzbe);
-            
+           
         }
 
         private void dgvNazivNarudzbenica_SelectionChanged(object sender, EventArgs e)
@@ -45,9 +46,7 @@ namespace PICvjecara
 
 
 
-                string qNarudzbeArtikli = "select a.Naziv as 'Naziv artikla', a.Cijena as 'Pojedinačna cijena' from Artikli a, Stavke_narudzbenice sn where sn.ID_artikla = a.ID_artikla and  sn.ID_narudzbenice=" + odabirNarudzbe;
-                
-                dgvArtikli.DataSource = gridLoad.GridDataLoad(qNarudzbeArtikli);
+               
                 odabir = odabirNarudzbe;
                 
             }

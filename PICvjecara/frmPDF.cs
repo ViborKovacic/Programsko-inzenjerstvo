@@ -25,6 +25,7 @@ namespace PICvjecara
          public frmPDF(int odabir)
         {
             iDNarudzbenica = odabir;
+            ControlBox = false;
             InitializeComponent();
         }
 
@@ -55,6 +56,8 @@ namespace PICvjecara
                 cmd.Parameters.AddWithValue("@iDNarudzbenica", iDNarudzbenica);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dtData.Load(dr);
+                dr.Close();
+                con.Close();
 
 
             }
@@ -65,6 +68,7 @@ namespace PICvjecara
 
         private void btnPovratak_Click(object sender, EventArgs e)
         {
+            DatabaseConnection.Instance.Connection.Close();
             frmCvjecarna frmHome = new frmCvjecarna();
             frmHome.Show();
             this.Close();

@@ -24,6 +24,7 @@ namespace PICvjecara
             narudzbenica = new DBClass.Narudzbenica();
             stavkeNarudzbenice = new DBClass.StavkeNarudzbenice();
             korisnik = new Korisnici();
+            ControlBox = false;
             InitializeComponent();
         }     
         
@@ -33,10 +34,17 @@ namespace PICvjecara
 
         private void btnIzaberiDobavljaca_Click(object sender, EventArgs e)
         {
+            
             ListClass.listaDobavljaca.Clear();
+            
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmDobavljaci frmDobavljaci = new frmDobavljaci();
+            frmDobavljaci.MdiParent = frmDobavljaci.ActiveForm;
             frmDobavljaci.Show();
-            this.Close();
+            
         }
 
         private void btnUkloniDobavljaca_Click(object sender, EventArgs e)
@@ -60,8 +68,10 @@ namespace PICvjecara
 
         private void frmNarudzbenica_Load(object sender, EventArgs e)
         {
+            dataGridView1.Update();
             dataGridView1.DataSource = ListClass.listaDobavljaca;
             dgvArtikli.DataSource = ListClass.listaArtikla;
+
            
             
             
@@ -89,23 +99,15 @@ namespace PICvjecara
             narudzbenica.ID_korisnici = korisnik.ID_korisnik;
             narudzbenica.Datum_vrijeme = datumNarudzbe;
            
-            if (txtNazivNarudzbenice.Text == "" )
-            {
-                MessageBox.Show("Nisu uneseni svi podaci");
-            }
-            else
-            {
-                //provjera se da li naruzdbenica istog naziva vec postiji u bazi
-                narudzbenica.DohvatiImeNarudzbenice(txtNazivNarudzbenice.Text);
+           
+            
+                
+               
 
-                if (narudzbenica.Naziv == txtNazivNarudzbenice.Text)
-                {
-                    MessageBox.Show("Naziv narudžbenice več postoji!");
-
-                }
-                else
-                {
-                    narudzbenica.Naziv = txtNazivNarudzbenice.Text;
+                
+                
+                
+                   
                     narudzbenica.Spremi();
                     narudzbenica.DohvatiIDNaruzbe();
                     //punjenje clase stavke_narudzbenice
@@ -124,10 +126,10 @@ namespace PICvjecara
                         }
                         catch { }
 
-                    }
+                    
                     MessageBox.Show("Narudžbenica je uspješno kreirana!");
                     
-                }
+                
             }
         }
        

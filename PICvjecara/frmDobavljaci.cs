@@ -21,7 +21,7 @@ namespace PICvjecara
 
         public frmDobavljaci()
         {
-          
+            ControlBox = false;
             
             InitializeComponent();
         }
@@ -43,9 +43,14 @@ namespace PICvjecara
                 ListClass.iDDovacljaca = odabrani;
 
                 ListClass.listaDobavljaca = dobavljac.ListaDobavljaca(dobavljac);
-                frmNarudzbenica frm = new frmNarudzbenica();
-                frm.Show();
-                this.Close();
+                if (ActiveMdiChild != null)
+                {
+                    ActiveMdiChild.Close();
+                }
+                frmNarudzbenica frmNar = new frmNarudzbenica();
+                frmNar.MdiParent = frmNarudzbenica.ActiveForm;
+                frmNar.Show();
+                
             }
             else
             {

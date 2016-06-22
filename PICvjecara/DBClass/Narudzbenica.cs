@@ -15,7 +15,7 @@ namespace PICvjecara.DBClass
         public int ID_dobavljac { get; set; }
         public int ID_korisnici { get; set; }
         public int kolicina { get; set; }
-        public string Naziv { get; set; }
+        
         
        
 
@@ -23,23 +23,14 @@ namespace PICvjecara.DBClass
         {
             
         }
-        public void DohvatiImeNarudzbenice(string naziv)
-        {
-            string q = "select Naziv from Narudzbenica where Naziv='" + naziv + "'";
-            DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
-            while(dr.Read())
-            {
-                Naziv = dr["Naziv"].ToString();
-            }
-            dr.Close();
-        }
+       
         public int Spremi()
         {
-            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina,Naziv) values ('" + Datum_vrijeme.ToString(datumFormat) 
-                + "',"+ID_dobavljac
-                +","+ID_korisnici
-                +","+kolicina
-                +",'" + Naziv + "')";
+            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina,Naziv) values ('" + Datum_vrijeme.ToString(datumFormat)
+                + "'," + ID_dobavljac
+                + "," + ID_korisnici
+                + "," + kolicina + ")";
+                
 
 
             return DatabaseConnection.Instance.IzvirsiUput(q);  

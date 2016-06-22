@@ -39,6 +39,10 @@ namespace PICvjecara
 
         private void btnArtikli_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             frmPregledArtikla openPregledArtikla = new frmPregledArtikla();
             openPregledArtikla.MdiParent = this;
             openPregledArtikla.Show();
@@ -57,6 +61,10 @@ namespace PICvjecara
 
         private void btnNarudzbenica_Click(object sender, EventArgs e)
         {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
             ListClass.listaDobavljaca.Clear();
             ListClass.listaArtikla.Clear();
             frmNarudzbenica frmNarudzbe = new frmNarudzbenica();
@@ -64,29 +72,11 @@ namespace PICvjecara
             this.Close();
         }
 
-        private void btnPrikazNarudzbi_Click(object sender, EventArgs e)
-        {
-            frmPregledNarudzbenica frmPregledNar = new frmPregledNarudzbenica();
-            frmPregledNar.Show();
-            this.Close();
-        }
 
-        private void btnRezervacije_Click(object sender, EventArgs e)
-        {
-            frmRezervacija frmRez = new frmRezervacija();
-            frmRez.Show();
-            this.Close();
-        }
+     
 
                     
 
-        private void btnPrikazRezervacija_Click(object sender, EventArgs e)
-        {
-            frmPregledRezervacija frmPregledRez = new frmPregledRezervacija();
-            frmPregledRez.Show();
-            this.Close();
-
-        }
 
         private void btnKlijenti_Click(object sender, EventArgs e)
         {
@@ -103,6 +93,29 @@ namespace PICvjecara
 
         private void frmCvjecarna_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnNarudzba_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmPregledNarudzbenica frmPregledNar = new frmPregledNarudzbenica();
+            frmPregledNar.MdiParent = this;
+            frmPregledNar.Show();
+        }
+
+        private void btnIzradiNarudzbenicu_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            frmNarudzbenica frmnarudzbenica = new frmNarudzbenica();
+            frmnarudzbenica.MdiParent = this;
+            frmnarudzbenica.Show();
 
         }
     }
