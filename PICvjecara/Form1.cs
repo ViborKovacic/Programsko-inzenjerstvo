@@ -21,7 +21,8 @@ namespace PICvjecara
             //btnNarudzbenica.Visible = false;
 
             //prikazuje koji je korisnik aktivan
-            lblKorisnik.Text = Korisnici.TrenutnoAktivan;
+            label5.Text = Korisnici.TrenutnoAktivan;
+            
             
 
            
@@ -94,5 +95,15 @@ namespace PICvjecara
             this.Close();
         }
 
+        private void btnKraj_Click_1(object sender, EventArgs e)
+        {
+            DatabaseConnection.Instance.Connection.Close();
+            Environment.Exit(0);
+        }
+
+        private void frmCvjecarna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

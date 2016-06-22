@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
-
             this.btnKlijenti = new System.Windows.Forms.Button();
             this.btnStatistika = new System.Windows.Forms.Button();
             this.btnEvidencija = new System.Windows.Forms.Button();
@@ -41,31 +39,27 @@
             this.lblNaslov = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblKorisnik = new System.Windows.Forms.Label();
-
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnUser = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnKraj = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-
-
-
-            this.label2 = new System.Windows.Forms.Label();
-
-
-
-
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            
             // 
             // btnKlijenti
             // 
@@ -180,47 +174,8 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 517);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 599);
             this.flowLayoutPanel1.TabIndex = 11;
-            // 
-            // flowLayoutPanel2
-            // 
-
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(179, 469);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(914, 48);
-            this.flowLayoutPanel2.TabIndex = 12;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.panel2);
-            this.flowLayoutPanel4.Controls.Add(this.panel1);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(179, 0);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(914, 59);
-            this.flowLayoutPanel4.TabIndex = 14;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblNaslov);
-            this.panel1.Location = new System.Drawing.Point(122, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(509, 51);
-            this.panel1.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblKorisnik);
-            this.panel2.Controls.Add(this.btnSwitchUser);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(637, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 51);
-            this.panel2.TabIndex = 16;
             // 
             // panel3
             // 
@@ -243,6 +198,81 @@
             this.panel4.Size = new System.Drawing.Size(169, 256);
             this.panel4.TabIndex = 16;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnKraj);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(179, 551);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(921, 48);
+            this.flowLayoutPanel2.TabIndex = 12;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.panel2);
+            this.flowLayoutPanel4.Controls.Add(this.panel1);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(179, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(921, 59);
+            this.flowLayoutPanel4.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnUser);
+            this.panel2.Location = new System.Drawing.Point(644, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(274, 51);
+            this.panel2.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(147, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(94, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Korisnik:";
+            // 
+            // btnUser
+            // 
+            this.btnUser.Location = new System.Drawing.Point(3, 9);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(85, 29);
+            this.btnUser.TabIndex = 7;
+            this.btnUser.Text = "Swtich ";
+            this.btnUser.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(129, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(509, 51);
+            this.panel1.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Matura MT Script Capitals", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(9, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cvjećarna Mak";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -252,43 +282,47 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
+            // btnKraj
+            // 
+            this.btnKraj.Location = new System.Drawing.Point(810, 3);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(108, 38);
+            this.btnKraj.TabIndex = 1;
+            this.btnKraj.Text = "Kraj";
+            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click_1);
+            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-
-            this.ClientSize = new System.Drawing.Size(1093, 517);
+            this.ClientSize = new System.Drawing.Size(1100, 599);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.IsMdiContainer = true;
-
-            this.ClientSize = new System.Drawing.Size(1100, 599);
             this.Controls.Add(this.label2);
-
-
             this.Controls.Add(this.lblKorisnik);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSwitchUser);
             this.Controls.Add(this.lblNaslov);
-
-
+            this.IsMdiContainer = true;
             this.Name = "frmCvjecarna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cvjećarna";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmCvjecarna_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -315,7 +349,11 @@
         private System.Windows.Forms.Panel panel4;
 
         private System.Windows.Forms.Label label2;
-
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnKraj;
     }
 }
 
