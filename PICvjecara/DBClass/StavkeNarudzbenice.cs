@@ -10,11 +10,12 @@ namespace PICvjecara.DBClass
     {
         public int ID_narudzbenice { get; set; }
         public int ID_artikla { get; set; }
+        public int Kolicina { get; set; }
 
 
         public int Insert()
         {
-            string q = "insert into Stavke_narudzbenice (ID_artikla,ID_narudzbenice) values ("+ ID_artikla+", "+ID_narudzbenice+")";
+            string q = "insert into Stavke_narudzbenice (ID_artikla,ID_narudzbenice,Kolicina) values (" + ID_artikla + ", " + ID_narudzbenice + "," + Kolicina + ")";
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
 

@@ -56,18 +56,30 @@ namespace PICvjecara
 
         private void btnOdaberiArtikl_Click_1(object sender, EventArgs e)
         {
-            if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
+            uint broj;
+            if (uint.TryParse(txtKolicina.Text, out broj) && txtKolicina.Text != "")
             {
-                artikl = new DBClass.Artikli();
+                if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
+                {
 
-                int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
-                artikl.DohvatiArtikl(odabriArtikla);
-                listaArtikla = artikl.DohvatiListu(artikl);
-                dgvOdabraniArtikli.DataSource = listaArtikla;
+                    artikl = new DBClass.Artikli();
+                    artikl.Kolicina = int.Parse(txtKolicina.Text.ToString());
+                    int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
+                    artikl.DodajNarucenuKolicinu(odabriArtikla);
+                    artikl.DohvatiArtikl(odabriArtikla);
+                    listaArtikla = artikl.DohvatiListu(artikl);
+                    dgvOdabraniArtikli.DataSource = listaArtikla;
 
-                provjera = true;
 
 
+                    provjera = true;
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unesite točnu količinu!");
             }
         }
 

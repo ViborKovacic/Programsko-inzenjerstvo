@@ -12,6 +12,7 @@ namespace PICvjecara
 {
     public partial class frmNarudzbenica : Form
     {
+        DBClass.Artikli artikl;
         DBClass.Dobavljaci dobavljac;
         DBClass.Narudzbenica narudzbenica;
         DBClass.StavkeNarudzbenice  stavkeNarudzbenice;
@@ -105,39 +106,31 @@ namespace PICvjecara
             narudzbenica.ID_dobavljac = ListClass.iDDovacljaca;
             narudzbenica.ID_korisnici = korisnik.ID_korisnik;
             narudzbenica.Datum_vrijeme = datumNarudzbe;
-           
-           
-            
-                
-               
+            narudzbenica.Spremi();
+            narudzbenica.DohvatiIDNaruzbe();
+            //punjenje clase stavke_narudzbenice
 
-                
-                
-                
-                   
-                    narudzbenica.Spremi();
-                    narudzbenica.DohvatiIDNaruzbe();
-                    //punjenje clase stavke_narudzbenice
-
-                    stavkeNarudzbenice.ID_narudzbenice = narudzbenica.ID_narudzbenica;
-                    foreach (DataGridViewRow s in dgvArtikli.Rows)
+            stavkeNarudzbenice.ID_narudzbenice = narudzbenica.ID_narudzbenica;
+            foreach (DataGridViewRow s in dgvArtikli.Rows)
+            {
+                int iDArtikla = 0;
+                try
+                {
+                    artikl = new DBClass.Artikli();
+                    if (int.TryParse(s.Cells["ID_artikla"].Value.ToString(), out iDArtikla))
                     {
-                        int iDArtikla = 0;
-                        try
-                        {
-                            if (int.TryParse(s.Cells["ID_artikla"].Value.ToString(), out iDArtikla))
-                            {
-                                stavkeNarudzbenice.ID_artikla = iDArtikla;
-                                stavkeNarudzbenice.Insert();
-                            }
-                        }
-                        catch { }
+                        artikl.DohvatiArtikl(iDArtikla);
+                        stavkeNarudzbenice.Kolicina = artikl.Narucena_kolicina;
 
-                    
-                    MessageBox.Show("Narudžbenica je uspješno kreirana!");
-                    
-                
+                        stavkeNarudzbenice.ID_artikla = iDArtikla;
+                        stavkeNarudzbenice.Insert();
+                    }
+                }
+                catch { }
             }
+
+
+            MessageBox.Show("Narudžbenica je uspješno kreirana!");
         }
        
 

@@ -35,6 +35,8 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOdaberiArtikl = new System.Windows.Forms.Button();
             this.btnPovratak = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVrstaArtikla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdabraniArtikli)).BeginInit();
@@ -73,7 +75,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dgvOdabraniArtikli);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 358);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(832, 214);
@@ -85,10 +86,9 @@
             this.flowLayoutPanel2.Controls.Add(this.dgvArtikli);
             this.flowLayoutPanel2.Controls.Add(this.btnOdaberiArtikl);
             this.flowLayoutPanel2.Controls.Add(this.btnPovratak);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(833, 358);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(833, 297);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
             // btnOdaberiArtikl
@@ -111,12 +111,30 @@
             this.btnPovratak.UseVisualStyleBackColor = true;
             this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Količina:";
+            // 
+            // txtKolicina
+            // 
+            this.txtKolicina.Location = new System.Drawing.Point(65, 322);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(100, 20);
+            this.txtKolicina.TabIndex = 17;
+            // 
             // frmNarudzbaArtikli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(832, 572);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmNarudzbaArtikli";
@@ -128,6 +146,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,5 +158,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btnOdaberiArtikl;
         private System.Windows.Forms.Button btnPovratak;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtKolicina;
     }
 }

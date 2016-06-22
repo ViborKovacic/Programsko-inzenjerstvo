@@ -17,6 +17,7 @@ namespace PICvjecara.DBClass
         public int Kolicina { get; set; }
         public int ID_vrsta_artikla { get; set; }
 
+        public int Narucena_kolicina { get; set; }
         public static BindingList<Artikli> listaArtikla = new BindingList<Artikli>();
 
         public void DohvatiArtikl(int IdArtikla)
@@ -30,6 +31,7 @@ namespace PICvjecara.DBClass
                 Cijena = float.Parse(dr["Cijena"].ToString());
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
                 ID_vrsta_artikla = int.Parse(dr["ID_vrsta_artikla"].ToString());
+                Narucena_kolicina = int.Parse(dr["Narucena_kolicina"].ToString());
 
 
 
@@ -40,6 +42,11 @@ namespace PICvjecara.DBClass
         {
             listaArtikla.Add(artikli);
             return listaArtikla;
+        }
+        public int DodajNarucenuKolicinu(int iDArtikla)
+        {
+            string q = "update Artikli set Narucena_kolicina =" + Kolicina + " where ID_artikla=" + iDArtikla;
+            return DatabaseConnection.Instance.IzvirsiUput(q);
         }
         //public int DodajArtikl()
         //{
