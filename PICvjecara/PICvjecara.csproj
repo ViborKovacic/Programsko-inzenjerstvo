@@ -62,7 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artikli.cs" />
     <Compile Include="CrystalReport4.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,7 +200,6 @@
     <Compile Include="frmUnosArtikla.Designer.cs">
       <DependentUpon>frmUnosArtikla.cs</DependentUpon>
     </Compile>
-    <Compile Include="VrstaArtikla.cs" />
     <Compile Include="_16027_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

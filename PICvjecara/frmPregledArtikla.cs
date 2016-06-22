@@ -39,11 +39,12 @@ namespace PICvjecara
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
-            artikli = new DBClass.Artikli();
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
             if (artikliDataGridView.SelectedRows.Count > 0)
             {
-                artikli = artikliDataGridView.SelectedRows[0].DataBoundItem as DBClass.Artikli;
-                frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(artikli);
+                int odabraniArtikl = int.Parse(artikliDataGridView.SelectedCells[0].Value.ToString());                
+                lista = DBClass.Artikli.DohvatiArtikle(odabraniArtikl);
+                frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(lista);
                 openAzuriraj.ShowDialog();
             }
         }
@@ -59,7 +60,7 @@ namespace PICvjecara
                 {
                     int selectedRowIndex = artikliDataGridView.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = artikliDataGridView.Rows[selectedRowIndex];
-                    obrisiArikl = int.Parse(selectedRow.Cells["ID_artikla"].Value.ToString());
+                    obrisiArikl = int.Parse(selectedRow.Cells[0].Value.ToString());
                 }
 
                 artikliDataGridView.Rows.RemoveAt(artikliDataGridView.CurrentRow.Index);   
@@ -73,16 +74,16 @@ namespace PICvjecara
             {
                 int selectedRowIndex = artikliDataGridView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = artikliDataGridView.Rows[selectedRowIndex];
-                txtBrisanjeArtikla.Text = Convert.ToString(selectedRow.Cells["ID_artikla"].Value);
+                txtBrisanjeArtikla.Text = Convert.ToString(selectedRow.Cells[0].Value);
             }
         }
 
         private void PregledArtikla_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_16027_DBDataSet1.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet1.Artikli);
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
+            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
+            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
         }
     }
 }

@@ -39,14 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmboxTipArtikla = new System.Windows.Forms.ComboBox();
+            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBrojArtikla = new System.Windows.Forms.TextBox();
-            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -128,7 +128,6 @@
             // 
             // cmboxTipArtikla
             // 
-            this.cmboxTipArtikla.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vrstaartiklaBindingSource, "ID_vrsta_artikla", true));
             this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource;
             this.cmboxTipArtikla.DisplayMember = "Vrsta";
             this.cmboxTipArtikla.FormattingEnabled = true;
@@ -137,6 +136,16 @@
             this.cmboxTipArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmboxTipArtikla.TabIndex = 12;
             this.cmboxTipArtikla.ValueMember = "ID_vrsta_artikla";
+            // 
+            // vrstaartiklaBindingSource
+            // 
+            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
+            // 
+            // _16027_DBDataSet
+            // 
+            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
+            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -164,21 +173,11 @@
             this.txtBrojArtikla.Size = new System.Drawing.Size(121, 20);
             this.txtBrojArtikla.TabIndex = 24;
             // 
-            // _16027_DBDataSet
-            // 
-            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
             // vrsta_artiklaTableAdapter
             // 
             this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
             // 
-            // AzurirajArtikl
+            // frmAzurirajArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,12 +196,12 @@
             this.Controls.Add(this.cmboxTipArtikla);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(885, 120);
-            this.Name = "AzurirajArtikl";
+            this.Name = "frmAzurirajArtikl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AzurirajArtikl";
             this.Load += new System.EventHandler(this.AzurirajArtikl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

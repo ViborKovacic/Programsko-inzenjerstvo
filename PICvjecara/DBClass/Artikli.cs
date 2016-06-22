@@ -103,14 +103,14 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
-        public static List<Artikli> DohvatiArtikle()
+        public static List<DBClass.Artikli> DohvatiArtikle(int ID_Artikla)
         {
-            List<Artikli> lista = new List<Artikli>();
-            string sqlUpit = "SELECT * FROM Artikli";
+            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            string sqlUpit = "SELECT * FROM Artikli WHERE ID_artikla=" + ID_Artikla;
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                Artikli artikli = new Artikli(dr);
+                DBClass.Artikli artikli = new DBClass.Artikli(dr);
                 lista.Add(artikli);
             }
             dr.Close();

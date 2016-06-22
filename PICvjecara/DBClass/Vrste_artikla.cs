@@ -60,14 +60,14 @@ namespace PICvjecara.DBClass
             }
         }
 
-        public static List<VrstaArtikla> DohvatiVrstuArtikla()
+        public static List<Vrste_artikla> DohvatiVrstuArtikla()
         {
-            List<VrstaArtikla> lista = new List<VrstaArtikla>();
+            List<Vrste_artikla> lista = new List<Vrste_artikla>();
             string sqlUpit = "SELECT Vrsta FROM Vrsta_artikla";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                VrstaArtikla vrsta = new VrstaArtikla(dr);
+                Vrste_artikla vrsta = new Vrste_artikla(dr);
                 lista.Add(vrsta);
             }
             dr.Close();

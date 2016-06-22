@@ -35,36 +35,23 @@
             this.btnBrisi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrisanjeArtikla = new System.Windows.Forms.TextBox();
-            this.fKArtikliVrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
-            this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
-            this.artikliBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new PICvjecara._16027_DBDataSetTableAdapters.TableAdapterManager();
-            this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            this._16027_DBDataSet1 = new PICvjecara._16027_DBDataSet();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
-            this.ID_artikla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.artikliBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.fKArtikliVrstaartiklaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
+            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._16027_DBDataSet1 = new PICvjecara._16027_DBDataSet();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
+            this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
+            this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
+            this.iDartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDvrstaartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUnosNovogArtikla
@@ -125,85 +112,18 @@
             this.txtBrisanjeArtikla.Size = new System.Drawing.Size(44, 20);
             this.txtBrisanjeArtikla.TabIndex = 7;
             // 
-            // fKArtikliVrstaartiklaBindingSource
-            // 
-            this.fKArtikliVrstaartiklaBindingSource.DataMember = "FK_Artikli_Vrsta_artikla";
-            this.fKArtikliVrstaartiklaBindingSource.DataSource = this.vrstaartiklaBindingSource;
-            // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // _16027_DBDataSet
-            // 
-            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vrstaartiklaBindingSource1
-            // 
-            this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource1.DataSource = this._16027_DBDataSet;
-            // 
-            // artikliBindingSource
-            // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // artikliTableAdapter
-            // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
-            // 
-            // artikliBindingSource1
-            // 
-            this.artikliBindingSource1.DataMember = "Artikli";
-            this.artikliBindingSource1.DataSource = this._16027_DBDataSet;
-            // 
-            // artikliBindingSource2
-            // 
-            this.artikliBindingSource2.DataMember = "Artikli";
-            this.artikliBindingSource2.DataSource = this._16027_DBDataSet;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArtikliTableAdapter = this.artikliTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DobavljaciTableAdapter = null;
-            this.tableAdapterManager.KorisniciTableAdapter = null;
-            this.tableAdapterManager.KupciTableAdapter = null;
-            this.tableAdapterManager.Nalog_za_prodajuTableAdapter = null;
-            this.tableAdapterManager.NarudzbenicaTableAdapter = null;
-            this.tableAdapterManager.RezervacijaTableAdapter = null;
-            this.tableAdapterManager.Statistika_radaTableAdapter = null;
-            this.tableAdapterManager.Stavke_narudzbeniceTableAdapter = null;
-            this.tableAdapterManager.Stavke_racunaTableAdapter = null;
-            this.tableAdapterManager.Stavke_rezervacijeTableAdapter = null;
-            this.tableAdapterManager.Tip_korisnikaTableAdapter = null;
-            this.tableAdapterManager.Tip_rezervacijeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PICvjecara._16027_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.Vrsta_artiklaTableAdapter = this.vrsta_artiklaTableAdapter;
-            // 
-            // vrsta_artiklaTableAdapter
-            // 
-            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
-            // 
-            // _16027_DBDataSet1
-            // 
-            this._16027_DBDataSet1.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // artikliDataGridView
             // 
             this.artikliDataGridView.AllowUserToAddRows = false;
             this.artikliDataGridView.AutoGenerateColumns = false;
             this.artikliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.artikliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_artikla,
-            this.Naziv,
-            this.Cijena,
-            this.Kolicina,
-            this.dataGridViewTextBoxColumn5});
-            this.artikliDataGridView.DataSource = this.artikliBindingSource4;
+            this.iDartiklaDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.cijenaDataGridViewTextBoxColumn,
+            this.kolicinaDataGridViewTextBoxColumn,
+            this.iDvrstaartiklaDataGridViewTextBoxColumn});
+            this.artikliDataGridView.DataSource = this.artikliBindingSource;
             this.artikliDataGridView.Location = new System.Drawing.Point(239, 70);
             this.artikliDataGridView.Name = "artikliDataGridView";
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -211,55 +131,72 @@
             this.artikliDataGridView.TabIndex = 7;
             this.artikliDataGridView.SelectionChanged += new System.EventHandler(this.artikliDataGridView_SelectionChanged);
             // 
-            // ID_artikla
+            // vrstaartiklaBindingSource
             // 
-            this.ID_artikla.DataPropertyName = "ID_artikla";
-            this.ID_artikla.HeaderText = "Broj artikla";
-            this.ID_artikla.Name = "ID_artikla";
-            this.ID_artikla.ReadOnly = true;
+            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet1;
             // 
-            // Naziv
+            // _16027_DBDataSet1
             // 
-            this.Naziv.DataPropertyName = "Naziv";
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
+            this._16027_DBDataSet1.DataSetName = "_16027_DBDataSet";
+            this._16027_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Cijena
+            // artikliBindingSource
             // 
-            this.Cijena.DataPropertyName = "Cijena";
-            this.Cijena.HeaderText = "Cijena";
-            this.Cijena.Name = "Cijena";
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this._16027_DBDataSet;
             // 
-            // Kolicina
+            // _16027_DBDataSet
             // 
-            this.Kolicina.DataPropertyName = "Kolicina";
-            this.Kolicina.HeaderText = "Kolicina";
-            this.Kolicina.Name = "Kolicina";
+            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
+            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn5
+            // artikliTableAdapter
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_vrsta_artikla";
-            this.dataGridViewTextBoxColumn5.DataSource = this.vrstaartiklaBindingSource1;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "Vrsta";
-            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Vrsta artikla";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "ID_vrsta_artikla";
+            this.artikliTableAdapter.ClearBeforeFill = true;
             // 
-            // artikliBindingSource4
+            // vrsta_artiklaTableAdapter
             // 
-            this.artikliBindingSource4.DataMember = "Artikli";
-            this.artikliBindingSource4.DataSource = this._16027_DBDataSet1;
+            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
             // 
-            // artikliBindingSource3
+            // iDartiklaDataGridViewTextBoxColumn
             // 
-            this.artikliBindingSource3.DataMember = "Artikli";
-            this.artikliBindingSource3.DataSource = this._16027_DBDataSet1;
+            this.iDartiklaDataGridViewTextBoxColumn.DataPropertyName = "ID_artikla";
+            this.iDartiklaDataGridViewTextBoxColumn.HeaderText = "Broj artikla";
+            this.iDartiklaDataGridViewTextBoxColumn.Name = "iDartiklaDataGridViewTextBoxColumn";
+            this.iDartiklaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // PregledArtikla
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // cijenaDataGridViewTextBoxColumn
+            // 
+            this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "Cijena";
+            this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
+            this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            // 
+            // iDvrstaartiklaDataGridViewTextBoxColumn
+            // 
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.DataPropertyName = "ID_vrsta_artikla";
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.DataSource = this.vrstaartiklaBindingSource;
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.DisplayMember = "Vrsta";
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.HeaderText = "Vrsta";
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.Name = "iDvrstaartiklaDataGridViewTextBoxColumn";
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDvrstaartiklaDataGridViewTextBoxColumn.ValueMember = "ID_vrsta_artikla";
+            // 
+            // frmPregledArtikla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,21 +208,15 @@
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.btnAzuriraj);
             this.Controls.Add(this.btnUnosNovogArtikla);
-            this.Name = "PregledArtikla";
+            this.Name = "frmPregledArtikla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled artikla";
             this.Load += new System.EventHandler(this.PregledArtikla_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fKArtikliVrstaartiklaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,26 +227,19 @@
         private System.Windows.Forms.Button btnAzuriraj;
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Button btnBrisi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBrisanjeArtikla;
+        private System.Windows.Forms.DataGridView artikliDataGridView;
         private _16027_DBDataSet _16027_DBDataSet;
         private System.Windows.Forms.BindingSource artikliBindingSource;
         private _16027_DBDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource artikliBindingSource2;
-        private System.Windows.Forms.BindingSource artikliBindingSource1;
-        private System.Windows.Forms.TextBox txtBrisanjeArtikla;
-        private _16027_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
-        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
-        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource1;
-        private System.Windows.Forms.BindingSource fKArtikliVrstaartiklaBindingSource;
         private _16027_DBDataSet _16027_DBDataSet1;
-        private System.Windows.Forms.DataGridView artikliDataGridView;
-        private System.Windows.Forms.BindingSource artikliBindingSource3;
-        private System.Windows.Forms.BindingSource artikliBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_artikla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
+        private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDartiklaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn iDvrstaartiklaDataGridViewTextBoxColumn;
     }
 }
