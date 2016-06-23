@@ -5,26 +5,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PICvjecara", "PICvjecara\PICvjecara.csproj", "{6A7E817D-7996-4493-8B1B-A22C42148C57}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50775F0A-BE76-4328-A7B7-99939BF5B526}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Desktop\dll\CrystalDecisions.CrystalReports.Engine.dll = ..\..\..\Desktop\dll\CrystalDecisions.CrystalReports.Engine.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ClientDoc.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ClientDoc.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommLayer.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommLayer.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommonControls.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommonControls.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommonObjectModel.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CubeDefModel.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.DataDefModel.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.DataDefModel.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.DataSetConversion.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ObjectFactory.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.Prompting.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.Prompting.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ReportDefModel.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.XmlSerialize.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-		..\..\..\Desktop\dll\CrystalDecisions.ReportSource.dll = ..\..\..\Desktop\dll\CrystalDecisions.ReportSource.dll
-		..\..\..\Desktop\dll\CrystalDecisions.Shared.dll = ..\..\..\Desktop\dll\CrystalDecisions.Shared.dll
-		..\..\..\Desktop\dll\CrystalDecisions.Windows.Forms.dll = ..\..\..\Desktop\dll\CrystalDecisions.Windows.Forms.dll
-		..\..\..\Desktop\dll\FlashControlV71.dll = ..\..\..\Desktop\dll\FlashControlV71.dll
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
