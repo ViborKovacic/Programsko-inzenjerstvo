@@ -80,5 +80,11 @@ namespace PICvjecara
             
            
         }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            frmSendEmail frmMail = new frmSendEmail();
+            frmMail.Show();
+        }
     }
 }

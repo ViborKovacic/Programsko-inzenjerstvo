@@ -99,6 +99,7 @@
             this.btnEmail.TabIndex = 4;
             this.btnEmail.Text = "Pošalji Email";
             this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // frmPregledRezervacija
             // 

@@ -14,15 +14,7 @@ namespace PICvjecara
 {
     public partial class frmSendEmail : Form
     {
-        Korisnici korisnici = new Korisnici();
-        DBClass.Dobavljaci dobavljac;
-        DBClass.Vrste_artikla vrstaArtikla;
-        DBClass.Artikli artikli;
-
-        List<string> listaZaSlanje = new List<string>();
-
-        
-        
+        Korisnici korisnici = new Korisnici();      
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
@@ -30,12 +22,10 @@ namespace PICvjecara
         int  port = 0;
        
 
-        public frmSendEmail(List<string> lista)
+        public frmSendEmail()
         {
-            dobavljac = new DBClass.Dobavljaci();
-            vrstaArtikla = new DBClass.Vrste_artikla();
-            artikli = new DBClass.Artikli();
-            listaZaSlanje = lista;
+            
+            
             
             InitializeComponent();
 
@@ -70,7 +60,7 @@ namespace PICvjecara
             string ime = korisnici.Ime.ToString();
 
             AktivirajOpcije();
-           
+
 
 
             login = new NetworkCredential(txtUsername.Text, txtPassword.Text);
@@ -82,15 +72,18 @@ namespace PICvjecara
             msg.To.Add(new MailAddress(txtTo.Text));
             msg.Subject = txtSub.Text;
             msg.Body = txtPoruka.Text;
+            System.Net.Mail.Attachment datoteka;
+            datoteka = new System.Net.Mail.Attachment(txtDatoteka.Text.ToString());
+            msg.Attachments.Add(datoteka);
             msg.BodyEncoding = Encoding.UTF8;
-            
+
             msg.IsBodyHtml = true;
             msg.Priority = MailPriority.Normal;
             msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
             client.SendCompleted += new SendCompletedEventHandler(SendComplatedCallback);
             string userstate = "Slanje...";
             client.SendAsync(msg, userstate);
-            
+
         }
         private static void SendComplatedCallback(object sender, AsyncCompletedEventArgs e)
         {
@@ -115,9 +108,7 @@ namespace PICvjecara
             txtPassword.PasswordChar = '*';
             
             txtPoruka.Text = "";
-            
-            IspisZaSlanje(listaZaSlanje);
-            listaZaSlanje.Clear();
+        
            
 
 
@@ -130,6 +121,14 @@ namespace PICvjecara
                 txtPoruka.Text = s.ToString() + txtPoruka.Text + Environment.NewLine;
             }        
       
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtDatoteka.Text = openFileDialog1.FileName;
+            }
         }
     }
 }

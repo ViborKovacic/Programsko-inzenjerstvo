@@ -44,6 +44,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtDatoteka = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +123,7 @@
             this.txtPoruka.Location = new System.Drawing.Point(70, 128);
             this.txtPoruka.Multiline = true;
             this.txtPoruka.Name = "txtPoruka";
-            this.txtPoruka.Size = new System.Drawing.Size(489, 280);
+            this.txtPoruka.Size = new System.Drawing.Size(489, 248);
             this.txtPoruka.TabIndex = 8;
             // 
             // groupBox1
@@ -192,12 +196,46 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Password:";
             // 
-            // frmSenaEmail
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(417, 388);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.TabIndex = 15;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtDatoteka
+            // 
+            this.txtDatoteka.Location = new System.Drawing.Point(70, 391);
+            this.txtDatoteka.Name = "txtDatoteka";
+            this.txtDatoteka.ReadOnly = true;
+            this.txtDatoteka.Size = new System.Drawing.Size(311, 20);
+            this.txtDatoteka.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 393);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Datoteka:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // frmSendEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(606, 611);
+            this.Controls.Add(this.btnBrowse);
+            this.Controls.Add(this.txtDatoteka);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPoruka);
             this.Controls.Add(this.txtSub);
@@ -207,7 +245,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmSenaEmail";
+            this.Name = "frmSendEmail";
             this.Text = "frmSenaEmail";
             this.Load += new System.EventHandler(this.frmSenaEmail_Load);
             this.groupBox1.ResumeLayout(false);
@@ -235,5 +273,9 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtDatoteka;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
