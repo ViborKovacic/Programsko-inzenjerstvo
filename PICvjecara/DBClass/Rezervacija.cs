@@ -35,6 +35,11 @@ namespace PICvjecara.DBClass
             string q = "insert into Rezervacija (Cijena,ID_tip_rezervacije,Opis) values (" + Cijena + "," + ID_tip_rezervacije + ",'" + Opis + "')";
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
+        public int Brisi(int iDBrisi)
+        {
+            string q = "delete from Rezervacija where ID_rezervacije=" + iDBrisi;
+            return DatabaseConnection.Instance.IzvirsiUput(q);
+        }
         public void DohvatiIDRezervacije()
         {
             string q = "select top 1 * from Rezervacija order by ID_rezervacije desc ";

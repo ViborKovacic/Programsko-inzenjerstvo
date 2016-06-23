@@ -79,6 +79,7 @@
             this.btnPDF.TabIndex = 3;
             this.btnPDF.Text = "Detalji rezervacije";
             this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // btnObrisi
             // 
@@ -88,6 +89,7 @@
             this.btnObrisi.TabIndex = 2;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnEmail
             // 
@@ -103,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(875, 437);
+            this.ClientSize = new System.Drawing.Size(871, 433);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPregledRezervacija";

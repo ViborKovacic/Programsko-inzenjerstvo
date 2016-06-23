@@ -16,11 +16,17 @@ namespace PICvjecara
 {
     public partial class frmPregledRezervacija : Form
     {
+        public int odabir;
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
         DBClass.Rezervacija rezervacija;
+        DBClass.Stavke_rezervacije stavkeRezervacije;
+        DBClass.Nalog_za_prodaju nalogZaProdaju;
+
         public frmPregledRezervacija()
         {
             rezervacija = new DBClass.Rezervacija();
+            stavkeRezervacije = new DBClass.Stavke_rezervacije();
+            nalogZaProdaju = new DBClass.Nalog_za_prodaju();
             ControlBox = false;
             InitializeComponent();
         }
@@ -34,18 +40,37 @@ namespace PICvjecara
         {
             if (dgvRezervacija.SelectedRows.Count > 0)
             {
-                int odabir = int.Parse(dgvRezervacija.SelectedCells[0].Value.ToString());
-                
-                
-               
-                rezervacija.DohvatiIzBaze(odabir);
-               
+                int odabirRezervacije = int.Parse(dgvRezervacija.SelectedCells[0].Value.ToString());
+
+
+
+                odabir = odabirRezervacije;
+
             }
             
         }
 
-       
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            frmRezervacijePDF frmPregledRez = new frmRezervacijePDF(odabir);
+            frmPregledRez.Show();
+        }
 
-        
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            if (dgvRezervacija.SelectedRows.Count > 0)
+            {
+                int odabirRezervacije = int.Parse(dgvRezervacija.SelectedCells[0].Value.ToString());
+                nalogZaProdaju.Brisi(odabirRezervacije);
+                stavkeRezervacije.Brisi(odabirRezervacije);
+                rezervacija.Brisi(odabirRezervacije);
+                dgvRezervacija.Rows.RemoveAt(dgvRezervacija.CurrentRow.Index);
+
+
+
+
+            }
+
+        }
     }
 }

@@ -35,17 +35,16 @@
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.dTimer = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPovratak = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRezerviraj = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtOkvirnaCijena = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRezerviraj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVrstaRezervacije)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijent)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -119,16 +118,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Datum održavanja:";
             // 
-            // btnPovratak
-            // 
-            this.btnPovratak.Location = new System.Drawing.Point(588, 714);
-            this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(82, 36);
-            this.btnPovratak.TabIndex = 4;
-            this.btnPovratak.Text = "Povratak";
-            this.btnPovratak.UseVisualStyleBackColor = true;
-            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dgvVrstaRezervacije);
@@ -171,10 +160,20 @@
             this.flowLayoutPanel5.Controls.Add(this.btnRezerviraj);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 666);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 643);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(589, 45);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(583, 45);
             this.flowLayoutPanel5.TabIndex = 9;
+            // 
+            // btnRezerviraj
+            // 
+            this.btnRezerviraj.Location = new System.Drawing.Point(484, 3);
+            this.btnRezerviraj.Name = "btnRezerviraj";
+            this.btnRezerviraj.Size = new System.Drawing.Size(96, 40);
+            this.btnRezerviraj.TabIndex = 0;
+            this.btnRezerviraj.Text = "Rezerviraj";
+            this.btnRezerviraj.UseVisualStyleBackColor = true;
+            this.btnRezerviraj.Click += new System.EventHandler(this.btnRezerviraj_Click_1);
             // 
             // flowLayoutPanel6
             // 
@@ -183,6 +182,16 @@
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(512, 55);
             this.flowLayoutPanel6.TabIndex = 10;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtOkvirnaCijena);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(213, 42);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
             // 
             // label1
             // 
@@ -200,39 +209,18 @@
             this.txtOkvirnaCijena.Size = new System.Drawing.Size(100, 20);
             this.txtOkvirnaCijena.TabIndex = 1;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtOkvirnaCijena);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 42);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnRezerviraj
-            // 
-            this.btnRezerviraj.Location = new System.Drawing.Point(490, 3);
-            this.btnRezerviraj.Name = "btnRezerviraj";
-            this.btnRezerviraj.Size = new System.Drawing.Size(96, 40);
-            this.btnRezerviraj.TabIndex = 0;
-            this.btnRezerviraj.Text = "Rezerviraj";
-            this.btnRezerviraj.UseVisualStyleBackColor = true;
-            this.btnRezerviraj.Click += new System.EventHandler(this.btnRezerviraj_Click_1);
-            // 
             // frmRezervacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(589, 711);
+            this.ClientSize = new System.Drawing.Size(583, 688);
             this.Controls.Add(this.flowLayoutPanel6);
             this.Controls.Add(this.flowLayoutPanel5);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.btnPovratak);
             this.Name = "frmRezervacija";
             this.Text = "Izradi rezervaciju";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -258,7 +246,6 @@
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.DateTimePicker dTimer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button brnOdaberiKlijenta;
         private System.Windows.Forms.DataGridView dgvKlijent;
