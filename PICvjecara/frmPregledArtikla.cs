@@ -113,12 +113,12 @@ namespace PICvjecara
         {
             vrstaArtikla = new DBClass.Vrste_artikla();
             int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
-            if (broj != -1)
+            if (broj == 0)
             {
                 vrstaArtikla.Vrsta = txtVrsta.Text;
                 vrstaArtikla.Url = fileDialog.FileName;
                 vrstaArtikla.Unos();
-                OsvijeziArtikle();
+                OsvijeziArtikle(); 
             }
             else
             {

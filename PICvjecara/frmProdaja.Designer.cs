@@ -29,21 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdaja));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCvijece = new System.Windows.Forms.Label();
-            this.picCvijece = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblBuketi = new System.Windows.Forms.Label();
-            this.picBuketi = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblAranzmani = new System.Windows.Forms.Label();
-            this.picAranzmani = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.picSadnica = new System.Windows.Forms.PictureBox();
-            this.lblSadnice = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvPopisArtikla = new System.Windows.Forms.DataGridView();
             this.iDartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,29 +49,22 @@
             this.btnBrisi = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.dgvStavkeRacuna = new System.Windows.Forms.DataGridView();
-            this.iDstavkeracunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDartikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDkorisnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkeracunaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.artikliTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.ArtikliTableAdapter();
             this.stavke_racunaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Stavke_racunaTableAdapter();
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCvijece)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuketi)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAranzmani)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSadnica)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.korisniciTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.KorisniciTableAdapter();
+            this.iDstavkeracunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDartikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDkorisnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
@@ -95,146 +74,16 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkeracunaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(386, 555);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblCvijece);
-            this.panel1.Controls.Add(this.picCvijece);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(122, 189);
-            this.panel1.TabIndex = 3;
-            // 
-            // lblCvijece
-            // 
-            this.lblCvijece.AutoSize = true;
-            this.lblCvijece.Location = new System.Drawing.Point(38, 160);
-            this.lblCvijece.Name = "lblCvijece";
-            this.lblCvijece.Size = new System.Drawing.Size(42, 13);
-            this.lblCvijece.TabIndex = 2;
-            this.lblCvijece.Text = "Cvijeće";
-            // 
-            // picCvijece
-            // 
-            this.picCvijece.Image = global::PICvjecara.Properties.Resources.cvijece;
-            this.picCvijece.Location = new System.Drawing.Point(3, 3);
-            this.picCvijece.Name = "picCvijece";
-            this.picCvijece.Size = new System.Drawing.Size(114, 139);
-            this.picCvijece.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCvijece.TabIndex = 1;
-            this.picCvijece.TabStop = false;
-            this.picCvijece.Click += new System.EventHandler(this.picCvijece_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblBuketi);
-            this.panel2.Controls.Add(this.picBuketi);
-            this.panel2.Location = new System.Drawing.Point(131, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(122, 189);
-            this.panel2.TabIndex = 4;
-            // 
-            // lblBuketi
-            // 
-            this.lblBuketi.AutoSize = true;
-            this.lblBuketi.Location = new System.Drawing.Point(41, 160);
-            this.lblBuketi.Name = "lblBuketi";
-            this.lblBuketi.Size = new System.Drawing.Size(37, 13);
-            this.lblBuketi.TabIndex = 3;
-            this.lblBuketi.Text = "Buketi";
-            // 
-            // picBuketi
-            // 
-            this.picBuketi.Image = global::PICvjecara.Properties.Resources.buketi;
-            this.picBuketi.Location = new System.Drawing.Point(3, 3);
-            this.picBuketi.Name = "picBuketi";
-            this.picBuketi.Size = new System.Drawing.Size(114, 139);
-            this.picBuketi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBuketi.TabIndex = 2;
-            this.picBuketi.TabStop = false;
-            this.picBuketi.Click += new System.EventHandler(this.picBuketi_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblAranzmani);
-            this.panel3.Controls.Add(this.picAranzmani);
-            this.panel3.Location = new System.Drawing.Point(259, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(122, 189);
-            this.panel3.TabIndex = 5;
-            // 
-            // lblAranzmani
-            // 
-            this.lblAranzmani.AutoSize = true;
-            this.lblAranzmani.Location = new System.Drawing.Point(32, 160);
-            this.lblAranzmani.Name = "lblAranzmani";
-            this.lblAranzmani.Size = new System.Drawing.Size(56, 13);
-            this.lblAranzmani.TabIndex = 4;
-            this.lblAranzmani.Text = "Aranžmani";
-            // 
-            // picAranzmani
-            // 
-            this.picAranzmani.Image = global::PICvjecara.Properties.Resources.aranzmani;
-            this.picAranzmani.Location = new System.Drawing.Point(3, 3);
-            this.picAranzmani.Name = "picAranzmani";
-            this.picAranzmani.Size = new System.Drawing.Size(114, 139);
-            this.picAranzmani.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAranzmani.TabIndex = 2;
-            this.picAranzmani.TabStop = false;
-            this.picAranzmani.Click += new System.EventHandler(this.picAranzmani_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lblSadnice);
-            this.panel5.Controls.Add(this.picSadnica);
-            this.panel5.Location = new System.Drawing.Point(3, 198);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(122, 189);
-            this.panel5.TabIndex = 6;
-            // 
-            // picSadnica
-            // 
-            this.picSadnica.Image = global::PICvjecara.Properties.Resources.sadnice;
-            this.picSadnica.Location = new System.Drawing.Point(3, 3);
-            this.picSadnica.Name = "picSadnica";
-            this.picSadnica.Size = new System.Drawing.Size(116, 139);
-            this.picSadnica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSadnica.TabIndex = 1;
-            this.picSadnica.TabStop = false;
-            this.picSadnica.Click += new System.EventHandler(this.picSadnica_Click);
-            // 
-            // lblSadnice
-            // 
-            this.lblSadnice.AutoSize = true;
-            this.lblSadnice.Location = new System.Drawing.Point(34, 162);
-            this.lblSadnice.Name = "lblSadnice";
-            this.lblSadnice.Size = new System.Drawing.Size(46, 13);
-            this.lblSadnice.TabIndex = 5;
-            this.lblSadnice.Text = "Sadnice";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(131, 198);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 0);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // dgvPopisArtikla
             // 
@@ -404,12 +253,12 @@
             this.dgvStavkeRacuna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeRacuna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDstavkeracunaDataGridViewTextBoxColumn,
-            this.kolicinaDataGridViewTextBoxColumn1,
-            this.iznosDataGridViewTextBoxColumn,
-            this.iDartikliDataGridViewTextBoxColumn,
             this.iDnalogzaprodajuDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn1,
+            this.kolicinaDataGridViewTextBoxColumn1,
             this.datumDataGridViewTextBoxColumn,
+            this.iznosDataGridViewTextBoxColumn,
+            this.iDartikliDataGridViewTextBoxColumn,
             this.iDkorisnikaDataGridViewTextBoxColumn});
             this.dgvStavkeRacuna.DataSource = this.stavkeracunaBindingSource;
             this.dgvStavkeRacuna.Location = new System.Drawing.Point(404, 373);
@@ -419,33 +268,56 @@
             this.dgvStavkeRacuna.Size = new System.Drawing.Size(752, 194);
             this.dgvStavkeRacuna.TabIndex = 11;
             // 
+            // stavkeracunaBindingSource
+            // 
+            this.stavkeracunaBindingSource.DataMember = "Stavke_racuna";
+            this.stavkeracunaBindingSource.DataSource = this._16027_DBDataSet;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(464, 181);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // artikliTableAdapter
+            // 
+            this.artikliTableAdapter.ClearBeforeFill = true;
+            // 
+            // stavke_racunaTableAdapter
+            // 
+            this.stavke_racunaTableAdapter.ClearBeforeFill = true;
+            // 
+            // vrsta_artiklaTableAdapter
+            // 
+            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(499, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "label2";
+            // 
+            // korisniciBindingSource
+            // 
+            this.korisniciBindingSource.DataMember = "Korisnici";
+            this.korisniciBindingSource.DataSource = this._16027_DBDataSet1;
+            // 
+            // korisniciTableAdapter
+            // 
+            this.korisniciTableAdapter.ClearBeforeFill = true;
+            // 
             // iDstavkeracunaDataGridViewTextBoxColumn
             // 
             this.iDstavkeracunaDataGridViewTextBoxColumn.DataPropertyName = "ID_stavke_racuna";
             this.iDstavkeracunaDataGridViewTextBoxColumn.HeaderText = "ID_stavke_racuna";
             this.iDstavkeracunaDataGridViewTextBoxColumn.Name = "iDstavkeracunaDataGridViewTextBoxColumn";
             this.iDstavkeracunaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kolicinaDataGridViewTextBoxColumn1
-            // 
-            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
-            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // iznosDataGridViewTextBoxColumn
-            // 
-            this.iznosDataGridViewTextBoxColumn.DataPropertyName = "Iznos";
-            this.iznosDataGridViewTextBoxColumn.HeaderText = "Iznos";
-            this.iznosDataGridViewTextBoxColumn.Name = "iznosDataGridViewTextBoxColumn";
-            this.iznosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDartikliDataGridViewTextBoxColumn
-            // 
-            this.iDartikliDataGridViewTextBoxColumn.DataPropertyName = "ID_artikli";
-            this.iDartikliDataGridViewTextBoxColumn.HeaderText = "ID_artikli";
-            this.iDartikliDataGridViewTextBoxColumn.Name = "iDartikliDataGridViewTextBoxColumn";
-            this.iDartikliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // iDnalogzaprodajuDataGridViewTextBoxColumn
             // 
@@ -462,6 +334,13 @@
             this.nazivDataGridViewTextBoxColumn1.Name = "nazivDataGridViewTextBoxColumn1";
             this.nazivDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // kolicinaDataGridViewTextBoxColumn1
+            // 
+            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
+            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // datumDataGridViewTextBoxColumn
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
@@ -469,45 +348,39 @@
             this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
             this.datumDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // iznosDataGridViewTextBoxColumn
+            // 
+            this.iznosDataGridViewTextBoxColumn.DataPropertyName = "Iznos";
+            this.iznosDataGridViewTextBoxColumn.HeaderText = "Iznos";
+            this.iznosDataGridViewTextBoxColumn.Name = "iznosDataGridViewTextBoxColumn";
+            this.iznosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDartikliDataGridViewTextBoxColumn
+            // 
+            this.iDartikliDataGridViewTextBoxColumn.DataPropertyName = "ID_artikli";
+            this.iDartikliDataGridViewTextBoxColumn.HeaderText = "Broj artikla";
+            this.iDartikliDataGridViewTextBoxColumn.Name = "iDartikliDataGridViewTextBoxColumn";
+            this.iDartikliDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // iDkorisnikaDataGridViewTextBoxColumn
             // 
             this.iDkorisnikaDataGridViewTextBoxColumn.DataPropertyName = "ID_korisnika";
-            this.iDkorisnikaDataGridViewTextBoxColumn.HeaderText = "ID_korisnika";
+            this.iDkorisnikaDataGridViewTextBoxColumn.DataSource = this.korisniciBindingSource;
+            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayMember = "ime";
+            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.iDkorisnikaDataGridViewTextBoxColumn.HeaderText = "Korisnik";
             this.iDkorisnikaDataGridViewTextBoxColumn.Name = "iDkorisnikaDataGridViewTextBoxColumn";
             this.iDkorisnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stavkeracunaBindingSource
-            // 
-            this.stavkeracunaBindingSource.DataMember = "Stavke_racuna";
-            this.stavkeracunaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(464, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // artikliTableAdapter
-            // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
-            // 
-            // stavke_racunaTableAdapter
-            // 
-            this.stavke_racunaTableAdapter.ClearBeforeFill = true;
-            // 
-            // vrsta_artiklaTableAdapter
-            // 
-            this.vrsta_artiklaTableAdapter.ClearBeforeFill = true;
+            this.iDkorisnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDkorisnikaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDkorisnikaDataGridViewTextBoxColumn.ValueMember = "ID_korisnik";
             // 
             // frmProdaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1299, 657);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvStavkeRacuna);
             this.Controls.Add(this.btnDodaj);
@@ -519,20 +392,6 @@
             this.Text = "frmProdaja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProdaja_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCvijece)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBuketi)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAranzmani)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSadnica)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).EndInit();
@@ -543,26 +402,15 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stavkeracunaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox picCvijece;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox picBuketi;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox picAranzmani;
-        private System.Windows.Forms.PictureBox picSadnica;
-        private System.Windows.Forms.Label lblCvijece;
-        private System.Windows.Forms.Label lblBuketi;
-        private System.Windows.Forms.Label lblAranzmani;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lblSadnice;
         private System.Windows.Forms.DataGridView dgvPopisArtikla;
         private System.Windows.Forms.TextBox txtBrojArtikla;
         private System.Windows.Forms.Label label1;
@@ -578,14 +426,6 @@
         private System.Windows.Forms.DataGridView dgvStavkeRacuna;
         private System.Windows.Forms.BindingSource stavkeracunaBindingSource;
         private _16027_DBDataSetTableAdapters.Stavke_racunaTableAdapter stavke_racunaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDstavkeracunaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iznosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDartikliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDnalogzaprodajuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDkorisnikaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
         private _16027_DBDataSet _16027_DBDataSet1;
         private System.Windows.Forms.BindingSource vrstaartiklaBindingSource;
@@ -595,5 +435,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn iDvrstaartiklaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource korisniciBindingSource;
+        private _16027_DBDataSetTableAdapters.KorisniciTableAdapter korisniciTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDstavkeracunaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDnalogzaprodajuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iznosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDartikliDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn iDkorisnikaDataGridViewTextBoxColumn;
     }
 }

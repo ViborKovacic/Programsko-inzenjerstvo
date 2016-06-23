@@ -48,29 +48,7 @@ namespace PICvjecara.DBClass
             string q = "update Artikli set Narucena_kolicina =" + Kolicina + " where ID_artikla=" + iDArtikla;
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
-        //public int DodajArtikl()
-        //{
-        //    string q = "insert into Artikli (Naziv,Cijena,Kolicina,ID_vrsta_artikla) values ('" + Naziv + "'," + Cijena + "," + Kolicina + "," + ID_vrsta_artikla + ")";
-        //    return DatabaseConnection.Instance.IzvirsiUput(q);
-        //}
-        //public void DohvatiIDNovogArtikla()
-        //{
-        //    string q = "select top 1 * from Artikli order by ID_artikla desc";
-        //    DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(q);
-        //    while (dr.Read())
-        //    {
-        //        ID_artikla = int.Parse(dr["ID_artikla"].ToString());
-        //    }
-        //    dr.Close();
 
-        //}
-        /* public List<string> ListaArtikla()
-         {
-             listaArtikla.Add(Cijena.ToString());
-             listaArtikla.Add(Kolicina.ToString());
-             listaArtikla.Add(Naziv);
-             return listaArtikla;
-         }*/
         public Artikli()
         {
         }

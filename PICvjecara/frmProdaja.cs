@@ -18,6 +18,9 @@ namespace PICvjecara
         public List<DBClass.Artikli> lista;
         public DBClass.Stavke_racuna stavke;
         public List<DBClass.Stavke_racuna> listaStavke;
+        public DBClass.Vrste_artikla vrsteArtikla;
+        public List<DBClass.Vrste_artikla> listaVrste;
+
         public frmProdaja()
         {
             InitializeComponent();
@@ -40,17 +43,30 @@ namespace PICvjecara
 
         private void frmProdaja_Load(object sender, EventArgs e)
         {
+
+            Slike();
             OsvijeziStavke();
+            
         }
 
         public void Slike()
         {
-            listaStavke = new List<DBClass.Stavke_racuna>();
+            listaVrste = new List<DBClass.Vrste_artikla>();
+            vrsteArtikla = new DBClass.Vrste_artikla();
+            listaVrste = vrsteArtikla.DohvatiVrstuUrlArtikla();
+
+            foreach (DBClass.Vrste_artikla item in listaVrste)
+            {
+                flowLayoutPanel1.Controls.Add(StvaranjePanela(item.Vrsta.ToString(), item.Url.ToString()));
+            }
 
         }
 
         public void OsvijeziStavke()
         {
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Korisnici' table. You can move, or remove it, as needed.
+            this.korisniciTableAdapter.Fill(this._16027_DBDataSet1.Korisnici);
+
             // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
             this.vrsta_artiklaTableAdapter.FillByVrsta(this._16027_DBDataSet1.Vrsta_artikla);
 
@@ -60,32 +76,9 @@ namespace PICvjecara
             // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
             this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
             this.stavke_racunaTableAdapter.Fill(this._16027_DBDataSet.Stavke_racuna);
+            
         }
-
-        private void picCvijece_Click(object sender, EventArgs e)
-        {
-            string proslijedi = "Cvijece";//lblCvijece.Text;
-            listaArtikla(proslijedi);
-        }
-
-        private void picBuketi_Click(object sender, EventArgs e)
-        {
-            string proslijedi = lblBuketi.Text;
-            listaArtikla(proslijedi);
-        }
-
-        private void picAranzmani_Click(object sender, EventArgs e)
-        {
-            string proslijedi = lblAranzmani.Text;
-            listaArtikla(proslijedi);
-        }
-
-        private void picSadnica_Click(object sender, EventArgs e)
-        {
-            string proslijedi = lblSadnice.Text;
-            listaArtikla(proslijedi);
-        }
-        
+       
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             lista = new List<DBClass.Artikli>();
@@ -136,18 +129,30 @@ namespace PICvjecara
             }
         }
 
-        private Panel StvaranjePanela()
+        private Panel StvaranjePanela(string listaVrste, string url)
         {
-            var panel = new Panel { BackColor = Color.Red };
+            Panel panel = new Panel();
             panel.Size = new Size(122, 189);
-            panel.Controls.Add(new PictureBox { });
-            panel.Controls.Add(new Label { Text = "Proba" });
-            return panel;
-        }
+            panel.Location = new Point(0, 0);
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Add(StvaranjePanela());
+            Label label = new Label();
+            label.Text = listaVrste;
+            label.Location = new Point(38, 160);
+
+            PictureBox picture = new PictureBox();
+            picture.Name = "pictureBox1";
+            picture.Location = new Point(3,3);
+            picture.Size = new Size(114, 139);
+            picture.SizeMode = PictureBoxSizeMode.Zoom;
+            picture.Load(url);
+            picture.Refresh();
+            picture.Visible = true;
+
+            label2.Text = picture.Name;
+
+            panel.Controls.Add(picture);         
+            panel.Controls.Add(label);
+            return panel;
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
@@ -162,10 +167,17 @@ namespace PICvjecara
                     int selectedRowIndex = dgvStavkeRacuna.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvStavkeRacuna.Rows[selectedRowIndex];
                     obrisiStavke = int.Parse(selectedRow.Cells[0].Value.ToString());
+                    stavke.Obrisi(obrisiStavke);
+                    OsvijeziStavke();
                 }
-                stavke.Obrisi(obrisiStavke);
-                OsvijeziStavke();
+                else
+                {
+                    MessageBox.Show("Nema podataka u tablici");
+                }
+                
             }
         }
+
+        
     }
 }
