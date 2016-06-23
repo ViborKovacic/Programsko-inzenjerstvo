@@ -61,6 +61,12 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
+        public int ObrisiSve()
+        {
+            string sqlUpit = "DELETE FROM Stavke_racuna WHERE ID_stavke_racuna=ID_stavke_racuna";
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+        }
+
         public static List<DBClass.Stavka_racuna> DohvatiSveStavke()
         {
             List<DBClass.Stavka_racuna> lista = new List<DBClass.Stavka_racuna>();

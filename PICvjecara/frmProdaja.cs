@@ -246,6 +246,11 @@ namespace PICvjecara
             doc.Add(tablica);
 
             doc.Close();
+
+            stavke = new DBClass.Stavka_racuna();
+            stavke.ObrisiSve();
+
+            OsvijeziStavke();
         }
     }
 }
