@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace PICvjecara
 {
     public partial class frmPregledArtikla : Form
     {
         public DBClass.Artikli artikli;
+        public DBClass.Vrste_artikla vrstaArtikla;
+        public OpenFileDialog fileDialog;
+        Image file;
         public frmPregledArtikla()
         {
             InitializeComponent();
@@ -23,9 +27,9 @@ namespace PICvjecara
         public void OsvijeziArtikle()
         {
             // TODO: This line of code loads data into the '_16027_DBDataSet1.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet1.Vrsta_artikla);
-            // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
-            this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
+            this.vrsta_artiklaTableAdapter1.FillByVrsta(this._16027_DBDataSet1.Vrsta_artikla);
+            // TODO: This line of code loads data into the '_16027_DBDataSet1.Artikli' table. You can move, or remove it, as needed.
+            this.artikliTableAdapter1.FillByVrsta(this._16027_DBDataSet1.Artikli);
         }
 
         private void btnPovratak_Click(object sender, EventArgs e)
@@ -88,6 +92,39 @@ namespace PICvjecara
         private void PregledArtikla_Load(object sender, EventArgs e)
         {
             OsvijeziArtikle();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                file = Image.FromFile(fileDialog.FileName);
+                pictureBox1.Image = file;
+                Uri uri = new Uri(fileDialog.FileName);
+                string imeSlike = System.IO.Path.GetFileName(uri.LocalPath);
+                lblPutanjaSlike.Text = imeSlike;
+            }
+        }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            vrstaArtikla = new DBClass.Vrste_artikla();
+            int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
+            if (broj != -1)
+            {
+                vrstaArtikla.Vrsta = txtVrsta.Text;
+                vrstaArtikla.Url = fileDialog.FileName;
+                vrstaArtikla.Unos();
+                OsvijeziArtikle();
+            }
+            else
+            {
+                MessageBox.Show("Kategorija vec postoji");
+            }
+            
         }
     }
 }

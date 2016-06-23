@@ -11,6 +11,7 @@ namespace PICvjecara.DBClass
     {
         public int ID_vrsta_artikla { get; set; }
         public string Vrsta { get; set; }
+        public string Url { get; set; }
         static List<string> listaVrsta = new List<string>();
 
 
@@ -57,7 +58,24 @@ namespace PICvjecara.DBClass
             if (dr != null)
             {
                 Vrsta = dr["Vrsta"].ToString();
+                Url = dr["Url"].ToString();
             }
+        }
+
+        public int Unos()
+        {
+            string sqlUpit = "";
+            if (ID_vrsta_artikla == 0)
+            {
+                sqlUpit = "INSERT INTO Vrsta_artikla (Vrsta, Url) VALUES ('" + Vrsta + "','" + Url + "')";
+            }
+
+            else
+            {
+                sqlUpit = "UPDATE Vrsta_artikla SET Vrsta='" + Vrsta + "', Url='" + Url + "' WHERE ID_artikla=" + ID_vrsta_artikla;
+            }
+
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
         public static List<Vrste_artikla> DohvatiVrstuArtikla()
@@ -72,6 +90,12 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
             return lista;
+        }
+
+        public int DohvatiVrstuPoID(string vrstaArtikla)
+        {
+            string sqlUpit = "SELECT ID_vrsta_artikla FROM Vrsta_artikla WHERE Vrsta='" + vrstaArtikla + "'";
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
     }
 }

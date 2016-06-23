@@ -5046,6 +5046,8 @@ namespace PICvjecara {
             
             private global::System.Data.DataColumn columnVrsta;
             
+            private global::System.Data.DataColumn columnUrl;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Vrsta_artiklaDataTable() {
@@ -5097,6 +5099,14 @@ namespace PICvjecara {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlColumn {
+                get {
+                    return this.columnUrl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5132,11 +5142,12 @@ namespace PICvjecara {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vrsta_artiklaRow AddVrsta_artiklaRow(string Vrsta) {
+            public Vrsta_artiklaRow AddVrsta_artiklaRow(string Vrsta, string Url) {
                 Vrsta_artiklaRow rowVrsta_artiklaRow = ((Vrsta_artiklaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Vrsta};
+                        Vrsta,
+                        Url};
                 rowVrsta_artiklaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVrsta_artiklaRow);
                 return rowVrsta_artiklaRow;
@@ -5168,6 +5179,7 @@ namespace PICvjecara {
             internal void InitVars() {
                 this.columnID_vrsta_artikla = base.Columns["ID_vrsta_artikla"];
                 this.columnVrsta = base.Columns["Vrsta"];
+                this.columnUrl = base.Columns["Url"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5177,6 +5189,8 @@ namespace PICvjecara {
                 base.Columns.Add(this.columnID_vrsta_artikla);
                 this.columnVrsta = new global::System.Data.DataColumn("Vrsta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVrsta);
+                this.columnUrl = new global::System.Data.DataColumn("Url", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrl);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_vrsta_artikla}, true));
                 this.columnID_vrsta_artikla.AutoIncrement = true;
@@ -5186,6 +5200,7 @@ namespace PICvjecara {
                 this.columnID_vrsta_artikla.ReadOnly = true;
                 this.columnID_vrsta_artikla.Unique = true;
                 this.columnVrsta.MaxLength = 45;
+                this.columnUrl.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7475,6 +7490,22 @@ namespace PICvjecara {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Url {
+                get {
+                    try {
+                        return ((string)(this[this.tableVrsta_artikla.UrlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Url\' in table \'Vrsta_artikla\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVrsta_artikla.UrlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVrstaNull() {
                 return this.IsNull(this.tableVrsta_artikla.VrstaColumn);
             }
@@ -7483,6 +7514,18 @@ namespace PICvjecara {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVrstaNull() {
                 this[this.tableVrsta_artikla.VrstaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlNull() {
+                return this.IsNull(this.tableVrsta_artikla.UrlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlNull() {
+                this[this.tableVrsta_artikla.UrlColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8164,12 +8207,18 @@ SELECT ID_artikla, Naziv, Cijena, Kolicina, ID_vrsta_artikla, Narucena_kolicina 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_artikla, Naziv, Cijena, Kolicina, ID_vrsta_artikla, Narucena_kolicina F" +
                 "ROM Artikli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Artikli.Naziv, Artikli.Cijena, Artikli.Kolicina, Artikli.ID_artikla" +
+                ", Vrsta_artikla.Vrsta\r\nFROM            Artikli INNER JOIN\r\n                     " +
+                "    Vrsta_artikla ON Artikli.ID_vrsta_artikla = Vrsta_artikla.ID_vrsta_artikla";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8191,6 +8240,30 @@ SELECT ID_artikla, Naziv, Cijena, Kolicina, ID_vrsta_artikla, Narucena_kolicina 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _16027_DBDataSet.ArtikliDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _16027_DBDataSet.ArtikliDataTable dataTable = new _16027_DBDataSet.ArtikliDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByVrsta(_16027_DBDataSet.ArtikliDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _16027_DBDataSet.ArtikliDataTable GetDataByVrsta() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             _16027_DBDataSet.ArtikliDataTable dataTable = new _16027_DBDataSet.ArtikliDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13743,31 +13816,39 @@ SELECT ID_tip_rezervacije, Vrsta FROM Tip_rezervacije WHERE (ID_tip_rezervacije 
             tableMapping.DataSetTable = "Vrsta_artikla";
             tableMapping.ColumnMappings.Add("ID_vrsta_artikla", "ID_vrsta_artikla");
             tableMapping.ColumnMappings.Add("Vrsta", "Vrsta");
+            tableMapping.ColumnMappings.Add("Url", "Url");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Vrsta_artikla] WHERE (([ID_vrsta_artikla] = @Original_ID_vrsta" +
-                "_artikla) AND ((@IsNull_Vrsta = 1 AND [Vrsta] IS NULL) OR ([Vrsta] = @Original_V" +
-                "rsta)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Vrsta_artikla] WHERE (([ID_vrsta_artikla] = @Original_ID_vrsta_artik" +
+                "la) AND ((@IsNull_Vrsta = 1 AND [Vrsta] IS NULL) OR ([Vrsta] = @Original_Vrsta))" +
+                " AND ((@IsNull_Url = 1 AND [Url] IS NULL) OR ([Url] = @Original_Url)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_vrsta_artikla", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_vrsta_artikla", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vrsta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vrsta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Url", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Url", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vrsta_artikla] ([Vrsta]) VALUES (@Vrsta);\r\nSELECT ID_vrsta_art" +
-                "ikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Vrsta_artikla] ([Vrsta], [Url]) VALUES (@Vrsta, @Url);\r\nSELECT ID_vr" +
+                "sta_artikla, Vrsta, Url FROM Vrsta_artikla WHERE (ID_vrsta_artikla = SCOPE_IDENT" +
+                "ITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vrsta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Url", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vrsta_artikla] SET [Vrsta] = @Vrsta WHERE (([ID_vrsta_artikla] = @Original_ID_vrsta_artikla) AND ((@IsNull_Vrsta = 1 AND [Vrsta] IS NULL) OR ([Vrsta] = @Original_Vrsta)));
-SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_vrsta_artikla)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Vrsta_artikla] SET [Vrsta] = @Vrsta, [Url] = @Url WHERE (([ID_vrsta_artikla] = @Original_ID_vrsta_artikla) AND ((@IsNull_Vrsta = 1 AND [Vrsta] IS NULL) OR ([Vrsta] = @Original_Vrsta)) AND ((@IsNull_Url = 1 AND [Url] IS NULL) OR ([Url] = @Original_Url)));
+SELECT ID_vrsta_artikla, Vrsta, Url FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_vrsta_artikla)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vrsta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Url", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_vrsta_artikla", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_vrsta_artikla", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vrsta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vrsta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vrsta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Url", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Url", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Url", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_vrsta_artikla", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_vrsta_artikla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -13781,11 +13862,15 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_vrsta_artikla, Vrsta FROM dbo.Vrsta_artikla";
+            this._commandCollection[0].CommandText = "SELECT ID_vrsta_artikla, Vrsta, Url FROM Vrsta_artikla";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ID_vrsta_artikla, Vrsta\r\nFROM            Vrsta_artikla";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13807,6 +13892,30 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual _16027_DBDataSet.Vrsta_artiklaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            _16027_DBDataSet.Vrsta_artiklaDataTable dataTable = new _16027_DBDataSet.Vrsta_artiklaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByVrsta(_16027_DBDataSet.Vrsta_artiklaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual _16027_DBDataSet.Vrsta_artiklaDataTable GetDataByVrsta() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             _16027_DBDataSet.Vrsta_artiklaDataTable dataTable = new _16027_DBDataSet.Vrsta_artiklaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13845,7 +13954,7 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_vrsta_artikla, string Original_Vrsta) {
+        public virtual int Delete(int Original_ID_vrsta_artikla, string Original_Vrsta, string Original_Url) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_vrsta_artikla));
             if ((Original_Vrsta == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -13854,6 +13963,14 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Vrsta));
+            }
+            if ((Original_Url == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Url));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13875,12 +13992,18 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Vrsta) {
+        public virtual int Insert(string Vrsta, string Url) {
             if ((Vrsta == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Vrsta));
+            }
+            if ((Url == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Url));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13902,23 +14025,37 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Vrsta, int Original_ID_vrsta_artikla, string Original_Vrsta, int ID_vrsta_artikla) {
+        public virtual int Update(string Vrsta, string Url, int Original_ID_vrsta_artikla, string Original_Vrsta, string Original_Url, int ID_vrsta_artikla) {
             if ((Vrsta == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Vrsta));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ID_vrsta_artikla));
-            if ((Original_Vrsta == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Url == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Vrsta));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Url));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_vrsta_artikla));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID_vrsta_artikla));
+            if ((Original_Vrsta == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Vrsta));
+            }
+            if ((Original_Url == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Url));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID_vrsta_artikla));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13939,8 +14076,8 @@ SELECT ID_vrsta_artikla, Vrsta FROM Vrsta_artikla WHERE (ID_vrsta_artikla = @ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Vrsta, int Original_ID_vrsta_artikla, string Original_Vrsta) {
-            return this.Update(Vrsta, Original_ID_vrsta_artikla, Original_Vrsta, Original_ID_vrsta_artikla);
+        public virtual int Update(string Vrsta, string Url, int Original_ID_vrsta_artikla, string Original_Vrsta, string Original_Url) {
+            return this.Update(Vrsta, Url, Original_ID_vrsta_artikla, Original_Vrsta, Original_Url, Original_ID_vrsta_artikla);
         }
     }
     

@@ -39,14 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmboxTipArtikla = new System.Windows.Forms.ComboBox();
-            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBrojArtikla = new System.Windows.Forms.TextBox();
+            this._16027_DBDataSet = new PICvjecara._16027_DBDataSet();
+            this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPovratak
@@ -61,7 +61,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(197, 364);
+            this.btnObrisi.Location = new System.Drawing.Point(196, 265);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(89, 53);
             this.btnObrisi.TabIndex = 20;
@@ -70,7 +70,7 @@
             // 
             // btnAzuriraj
             // 
-            this.btnAzuriraj.Location = new System.Drawing.Point(33, 364);
+            this.btnAzuriraj.Location = new System.Drawing.Point(32, 265);
             this.btnAzuriraj.Name = "btnAzuriraj";
             this.btnAzuriraj.Size = new System.Drawing.Size(89, 53);
             this.btnAzuriraj.TabIndex = 19;
@@ -80,21 +80,21 @@
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(140, 264);
+            this.txtKolicina.Location = new System.Drawing.Point(133, 211);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(121, 20);
             this.txtKolicina.TabIndex = 18;
             // 
             // txtCijena
             // 
-            this.txtCijena.Location = new System.Drawing.Point(140, 228);
+            this.txtCijena.Location = new System.Drawing.Point(133, 175);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(121, 20);
             this.txtCijena.TabIndex = 17;
             // 
             // txtNaziv
             // 
-            this.txtNaziv.Location = new System.Drawing.Point(140, 192);
+            this.txtNaziv.Location = new System.Drawing.Point(133, 139);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(121, 20);
             this.txtNaziv.TabIndex = 16;
@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 267);
+            this.label4.Location = new System.Drawing.Point(62, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 15;
@@ -111,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 231);
+            this.label3.Location = new System.Drawing.Point(62, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 14;
@@ -120,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 195);
+            this.label2.Location = new System.Drawing.Point(62, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 13;
@@ -131,26 +131,16 @@
             this.cmboxTipArtikla.DataSource = this.vrstaartiklaBindingSource;
             this.cmboxTipArtikla.DisplayMember = "Vrsta";
             this.cmboxTipArtikla.FormattingEnabled = true;
-            this.cmboxTipArtikla.Location = new System.Drawing.Point(140, 156);
+            this.cmboxTipArtikla.Location = new System.Drawing.Point(133, 103);
             this.cmboxTipArtikla.Name = "cmboxTipArtikla";
             this.cmboxTipArtikla.Size = new System.Drawing.Size(121, 21);
             this.cmboxTipArtikla.TabIndex = 12;
             this.cmboxTipArtikla.ValueMember = "ID_vrsta_artikla";
             // 
-            // vrstaartiklaBindingSource
-            // 
-            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
-            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
-            // 
-            // _16027_DBDataSet
-            // 
-            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
-            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 159);
+            this.label1.Location = new System.Drawing.Point(62, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 11;
@@ -159,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(69, 120);
+            this.label5.Location = new System.Drawing.Point(62, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 22;
@@ -167,11 +157,21 @@
             // 
             // txtBrojArtikla
             // 
-            this.txtBrojArtikla.Location = new System.Drawing.Point(140, 117);
+            this.txtBrojArtikla.Location = new System.Drawing.Point(133, 64);
             this.txtBrojArtikla.Name = "txtBrojArtikla";
             this.txtBrojArtikla.ReadOnly = true;
             this.txtBrojArtikla.Size = new System.Drawing.Size(121, 20);
             this.txtBrojArtikla.TabIndex = 24;
+            // 
+            // _16027_DBDataSet
+            // 
+            this._16027_DBDataSet.DataSetName = "_16027_DBDataSet";
+            this._16027_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vrstaartiklaBindingSource
+            // 
+            this.vrstaartiklaBindingSource.DataMember = "Vrsta_artikla";
+            this.vrstaartiklaBindingSource.DataSource = this._16027_DBDataSet;
             // 
             // vrsta_artiklaTableAdapter
             // 
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 439);
+            this.ClientSize = new System.Drawing.Size(325, 341);
             this.Controls.Add(this.txtBrojArtikla);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnPovratak);
@@ -195,13 +195,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmboxTipArtikla);
             this.Controls.Add(this.label1);
-            this.Location = new System.Drawing.Point(885, 120);
+            this.Location = new System.Drawing.Point(400, 290);
             this.Name = "frmAzurirajArtikl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AzurirajArtikl";
             this.Load += new System.EventHandler(this.AzurirajArtikl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

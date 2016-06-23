@@ -13,7 +13,7 @@ namespace PICvjecara.DBClass
         public string Naziv { get; set; }
         public int Kolicina { get; set; }
         public float Cijena { get; set; }
-        public DateTime Datum { get; set; }
+        public DateTime Datum { get; }
         public int ID_korisnika { get; set; }
         public int ID_artikli { get; set; }
         public int ID_nalog_za_prodaju { get; set; }
@@ -33,7 +33,7 @@ namespace PICvjecara.DBClass
                 Datum = Convert.ToDateTime(dr["Datum"].ToString());
                 ID_korisnika = int.Parse(dr["ID_korisnika"].ToString());
                 ID_artikli = int.Parse(dr["ID_artikli"].ToString());
-                ID_nalog_za_prodaju = int.Parse(dr["ID_nalog_za_prodaju"].ToString());
+                //ID_nalog_za_prodaju = int.Parse(dr["ID_nalog_za_prodaju"].ToString());
 
             }
         }
@@ -78,7 +78,7 @@ namespace PICvjecara.DBClass
         public static List<DBClass.Stavke_racuna> DohvatiOznaceneArtikle(int ID_stavke)
         {
             List<DBClass.Stavke_racuna> lista = new List<DBClass.Stavke_racuna>();
-            string sqlUpit = "SELECT * FROM Stavke_racuna WHERE ID_stavke_racuna=" + ID_stavke;
+            string sqlUpit = "SELECT * FROM Artikli WHERE ID_artikla=" + ID_stavke;
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {

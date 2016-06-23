@@ -61,9 +61,9 @@ namespace PICvjecara
         private void AzurirajArtikl_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_16027_DBDataSet.Vrsta_artikla' table. You can move, or remove it, as needed.
-            this.vrsta_artiklaTableAdapter.Fill(this._16027_DBDataSet.Vrsta_artikla);
+            this.vrsta_artiklaTableAdapter.FillByVrsta(this._16027_DBDataSet.Vrsta_artikla);
             
-            if(lista != null)
+            if (lista != null)
             {
 
                 txtBrojArtikla.Text = lista[0].ID_artikla.ToString();
