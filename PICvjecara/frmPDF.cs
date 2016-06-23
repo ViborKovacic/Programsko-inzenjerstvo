@@ -21,7 +21,7 @@ namespace PICvjecara
     {
 
         SqlConnection con = new SqlConnection(DatabaseConnection.Instance.ConnectionString);
-        int iDNarudzbenica = 0;
+        int iDNarudzbenica;
         public frmPDF(int odabir)
         {
             iDNarudzbenica = odabir;
@@ -32,72 +32,26 @@ namespace PICvjecara
         private void frmPDF_Load(object sender, EventArgs e)
         {
 
-            DataTable dtReportData = GetData();
-            DataTable dtRepDob = GetDobavljac();
-            DataTable dtRepID = GetNarID();
-            DataTable dtKorisnik = GetKorisnik();
+            //
+            DataTable dtRepDob = GetArtikli();
+            DataTable dtKorisnik = GetDataDobavljacKorisnik();
 
-            ShowReportArtikli(dtReportData, dtRepDob, dtRepID, dtKorisnik);
+
+            ShowReportArtikli(dtRepDob, dtKorisnik);
             //ShowDobavljac(dtRepDob);
             //ShowID(dtRepID);
 
 
         }
 
-        private DataTable GetKorisnik()
+        private DataTable GetDataDobavljacKorisnik()
         {
             DataTable dtData = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("usp_korisnik", con))
+            using (SqlCommand cmd = new SqlCommand("ups_NarudzbenicaKorDobavljac", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                cmd.Parameters.AddWithValue("@iDNarudzbenica", iDNarudzbenica);
-                SqlDataReader dr = cmd.ExecuteReader();
-                dtData.Load(dr);
-                dr.Close();
-                con.Close();
-
-
-
-            }
-            return dtData;
-
-        }
-
-        private void ShowReportArtikli(DataTable dtReportData, DataTable dtRepDob, DataTable dtRepID, DataTable dtKorisnik)
-        {
-            ReportDocument rdoc = new ReportDocument();
-            rdoc.Load(@"C:\Users\Mario\Documents\GitHub\r16027\PICvjecara\CrystalReport4.rpt");
-            rdoc.Database.Tables[0].SetDataSource(dtReportData);
-            rdoc.Database.Tables[1].SetDataSource(dtRepDob);
-            rdoc.Database.Tables[2].SetDataSource(dtRepID);
-            rdoc.Database.Tables[3].SetDataSource(dtKorisnik);
-            crystalReportViewer1.ReportSource = rdoc;
-        }
-        //private void ShowDobavljac(DataTable dtRepDob)
-        //{
-        //    ReportDocument rdoc = new ReportDocument();
-        //    rdoc.Load(@"CrystalReport4.rpt");
-        //    rdoc.SetDataSource(dtRepDob);
-        //    crystalReportViewer1.ReportSource = rdoc;
-        //}
-        //private void ShowID(DataTable dtRepID)
-        //{
-        //    ReportDocument rdoc = new ReportDocument();
-        //    rdoc.Load(@"CrystalReport4.rpt");
-        //    rdoc.SetDataSource(dtRepID);
-        //    crystalReportViewer1.ReportSource = rdoc;
-        //}
-
-
-        private DataTable GetData()
-        {
-            DataTable dtData = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("usp_ReportArtikli", con))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                con.Open();
-                cmd.Parameters.AddWithValue("@iDNarudzbenica", iDNarudzbenica);
+                cmd.Parameters.AddWithValue("@ID_Narudzbenica", iDNarudzbenica);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dtData.Load(dr);
                 dr.Close();
@@ -110,14 +64,14 @@ namespace PICvjecara
 
 
         }
-        private DataTable GetDobavljac()
+        private DataTable GetArtikli()
         {
             DataTable dtData = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("usp_ReportDobavljac", con))
+            using (SqlCommand cmd = new SqlCommand("ups_NarudzbenicaArikli", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                cmd.Parameters.AddWithValue("@iDNarudzbenica", iDNarudzbenica);
+                cmd.Parameters.AddWithValue("@ID_Narudzbenica", iDNarudzbenica);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dtData.Load(dr);
                 dr.Close();
@@ -129,35 +83,44 @@ namespace PICvjecara
             return dtData;
 
         }
-        private DataTable GetNarID()
-        {
-            DataTable dtData = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("usp_SifraNarudzbenice", con))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                con.Open();
-                cmd.Parameters.AddWithValue("@iDNarudzbenica", iDNarudzbenica);
-                SqlDataReader dr = cmd.ExecuteReader();
-                dtData.Load(dr);
-                dr.Close();
-                con.Close();
 
 
+        private void ShowReportArtikli( DataTable dtArtikli,DataTable dtKorisnik)
+    {
+        ReportDocument rdoc = new ReportDocument();
+        rdoc.Load(@"C:\Users\Mario\Documents\GitHub\r16027\PICvjecara\CrystalReport2.rpt");
+        rdoc.Database.Tables[0].SetDataSource(dtArtikli);//
+        rdoc.Database.Tables[1].SetDataSource(dtKorisnik);
 
-            }
-
-            return dtData;
-        }
-
-
-
-
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-
-            con.Close();
-
-            this.Close();
-        }
+        crystalReportViewer1.ReportSource = rdoc;
     }
+    //private void ShowDobavljac(DataTable dtRepDob)
+    //{
+    //    ReportDocument rdoc = new ReportDocument();
+    //    rdoc.Load(@"CrystalReport4.rpt");
+    //    rdoc.SetDataSource(dtRepDob);
+    //    crystalReportViewer1.ReportSource = rdoc;
+    //}
+    //private void ShowID(DataTable dtRepID)
+    //{
+    //    ReportDocument rdoc = new ReportDocument();
+    //    rdoc.Load(@"CrystalReport4.rpt");
+    //    rdoc.SetDataSource(dtRepID);
+    //    crystalReportViewer1.ReportSource = rdoc;
+    //}
+
+
+   
+
+
+
+    private void btnPovratak_Click(object sender, EventArgs e)
+    {
+
+        con.Close();
+
+        this.Close();
+    }
+}
+    
 }

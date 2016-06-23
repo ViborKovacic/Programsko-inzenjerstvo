@@ -14,7 +14,7 @@ namespace PICvjecara.DBClass
         public DateTime Datum_vrijeme { get; set; }
         public int ID_dobavljac { get; set; }
         public int ID_korisnici { get; set; }
-        public int kolicina { get; set; }
+        
         
         
        
@@ -26,11 +26,10 @@ namespace PICvjecara.DBClass
        
         public int Spremi()
         {
-            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici,kolicina) values ('" + Datum_vrijeme.ToString(datumFormat)
+            string q = "insert into Narudzbenica (datum_vrijeme,ID_dobavljac,ID_korisnici) values ('" + Datum_vrijeme.ToString(datumFormat)
                 + "'," + ID_dobavljac
-                + "," + ID_korisnici
-                + "," + kolicina + ")";
-                
+                + "," + ID_korisnici+")";
+           
 
 
             return DatabaseConnection.Instance.IzvirsiUput(q);  

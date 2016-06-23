@@ -70,12 +70,14 @@ namespace PICvjecara
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-           /* if (ActiveMdiChild != null)
-            {
-                ActiveMdiChild.Close();
-            }*/
+            /* if (ActiveMdiChild != null)
+             {
+                 ActiveMdiChild.Close();
+             }*/
             frmPDF frmPdf = new frmPDF(odabir);
             frmPdf.Show();
+            label1.Text = odabir.ToString();
+            
            
         }
     }

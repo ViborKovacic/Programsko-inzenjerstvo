@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvNazivNarudzbenica = new System.Windows.Forms.DataGridView();
             this.btnEmail = new System.Windows.Forms.Button();
             this.btnPdf = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.dgvNazivNarudzbenica = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNazivNarudzbenica)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -48,6 +49,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kreirane narudžbenice";
+            // 
+            // dgvNazivNarudzbenica
+            // 
+            this.dgvNazivNarudzbenica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNazivNarudzbenica.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvNazivNarudzbenica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNazivNarudzbenica.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNazivNarudzbenica.Location = new System.Drawing.Point(3, 16);
+            this.dgvNazivNarudzbenica.Name = "dgvNazivNarudzbenica";
+            this.dgvNazivNarudzbenica.Size = new System.Drawing.Size(606, 283);
+            this.dgvNazivNarudzbenica.TabIndex = 0;
+            this.dgvNazivNarudzbenica.SelectionChanged += new System.EventHandler(this.dgvNazivNarudzbenica_SelectionChanged);
             // 
             // btnEmail
             // 
@@ -78,18 +91,6 @@
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
-            // dgvNazivNarudzbenica
-            // 
-            this.dgvNazivNarudzbenica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNazivNarudzbenica.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvNazivNarudzbenica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNazivNarudzbenica.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNazivNarudzbenica.Location = new System.Drawing.Point(3, 16);
-            this.dgvNazivNarudzbenica.Name = "dgvNazivNarudzbenica";
-            this.dgvNazivNarudzbenica.Size = new System.Drawing.Size(606, 283);
-            this.dgvNazivNarudzbenica.TabIndex = 0;
-            this.dgvNazivNarudzbenica.SelectionChanged += new System.EventHandler(this.dgvNazivNarudzbenica_SelectionChanged);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnPdf);
@@ -102,12 +103,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operacije";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(423, 382);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
             // frmPregledNarudzbenica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(973, 501);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPregledNarudzbenica";
@@ -118,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNazivNarudzbenica)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.DataGridView dgvNazivNarudzbenica;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
