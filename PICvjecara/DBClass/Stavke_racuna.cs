@@ -12,8 +12,8 @@ namespace PICvjecara.DBClass
         public int ID_stavke_racuna { get; set; }
         public string Naziv { get; set; }
         public int Kolicina { get; set; }
-        public float Cijena { get; set; }
-        public DateTime Datum { get; }
+        public float Iznos { get; set; }
+        public DateTime Datum;
         public int ID_korisnika { get; set; }
         public int ID_artikli { get; set; }
         public int ID_nalog_za_prodaju { get; set; }
@@ -28,9 +28,9 @@ namespace PICvjecara.DBClass
             {
                 ID_stavke_racuna = int.Parse(dr["ID_stavke_racuna"].ToString());
                 Naziv = dr["Naziv"].ToString();
-                Cijena = float.Parse(dr["Iznos"].ToString());//float
+                Iznos = float.Parse(dr["Iznos"].ToString());//float
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
-                Datum = Convert.ToDateTime(dr["Datum"].ToString());
+                Datum = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
                 ID_korisnika = int.Parse(dr["ID_korisnika"].ToString());
                 ID_artikli = int.Parse(dr["ID_artikli"].ToString());
                 //ID_nalog_za_prodaju = int.Parse(dr["ID_nalog_za_prodaju"].ToString());
@@ -43,12 +43,12 @@ namespace PICvjecara.DBClass
             string sqlUpit = "";
             if (ID_stavke_racuna == 0)
             {
-                sqlUpit = "INSERT INTO Stavke_racuna (Naziv, Iznos, Kolicina, Datum, ID_korisnika, ID_artikli) VALUES ('" + Naziv + "','" + Cijena + "','" + Kolicina + "','" + Datum + "','" + ID_korisnika + "','" + ID_artikli + "')";
+                sqlUpit = "INSERT INTO Stavke_racuna (Naziv, Iznos, Kolicina, Datum, ID_korisnika, ID_artikli) VALUES ('" + Naziv + "','" + Iznos + "','" + Kolicina + "','" + Datum + "','" + ID_korisnika + "','" + ID_artikli + "')";
             }
 
             else
             {
-                sqlUpit = "UPDATE Stavke_racuna SET Naziv='" + Naziv + "', Iznos='" + Cijena + "', Kolicina='" + Kolicina + "', Datum='" + Datum + "', ID_korisnika='" + ID_korisnika + "', ID_artikli='" + ID_artikli + "' WHERE ID_stavke_racuna=" + ID_stavke_racuna;
+                sqlUpit = "UPDATE Stavke_racuna SET Naziv='" + Naziv + "', Iznos='" + Iznos + "', Kolicina='" + Kolicina + "', Datum='" + Datum + "', ID_korisnika='" + ID_korisnika + "', ID_artikli='" + ID_artikli + "' WHERE ID_stavke_racuna=" + ID_stavke_racuna;
             }
 
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);

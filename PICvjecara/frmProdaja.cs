@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace PICvjecara
 {
@@ -20,10 +22,14 @@ namespace PICvjecara
         public List<DBClass.Stavke_racuna> listaStavke;
         public DBClass.Vrste_artikla vrsteArtikla;
         public List<DBClass.Vrste_artikla> listaVrste;
+        public Korisnici korisnik = new Korisnici();
+        public List<Korisnici> listaKorisnika;
 
         public frmProdaja()
         {
+            korisnik = new Korisnici();
             InitializeComponent();
+            ControlBox = false;
         }
 
         private void listaArtikla(string listaProdaja)
@@ -99,12 +105,11 @@ namespace PICvjecara
             if (dgvPopisArtikla.SelectedRows.Count > 0)
             {
                 int odabraniArtikl = int.Parse(dgvPopisArtikla.SelectedCells[0].Value.ToString());
-                button1.Text = odabraniArtikl.ToString();
                 lista = DBClass.Artikli.DohvatiArtikle(odabraniArtikl);
             }
             stavke = new DBClass.Stavke_racuna();           
             stavke.Naziv = lista[0].Naziv;
-            stavke.Cijena = int.Parse(lista[0].Cijena.ToString());
+            stavke.Iznos = int.Parse(lista[0].Cijena.ToString());
             stavke.Kolicina = lista[0].Kolicina;
             stavke.ID_korisnika = 1;
             stavke.ID_artikli = lista[0].ID_artikla;
@@ -148,8 +153,6 @@ namespace PICvjecara
             picture.Refresh();
             picture.Visible = true;
 
-            label2.Text = picture.Name;
-
             panel.Controls.Add(picture);         
             panel.Controls.Add(label);
             return panel;
@@ -178,6 +181,71 @@ namespace PICvjecara
             }
         }
 
-        
+        private void btnGotovo_Click_1(object sender, EventArgs e)
+        {
+            listaStavke = new List<DBClass.Stavke_racuna>();
+            listaStavke = DBClass.Stavke_racuna.DohvatiSveStavke();
+            int broj = 2256;
+            int suma = 0;
+
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
+            doc.Open();
+
+            iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/fox/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
+            slika.ScalePercent(25f);
+            doc.Add(slika);
+
+            Paragraph paragraph = new Paragraph("This is my firs line using Paragraph: \n Novi red");
+            paragraph.Alignment = 2;
+
+            doc.Add(paragraph);
+
+            korisnik.AktivanKorisnik();
+            
+            List list = new List();
+            list.Add("Ime izdavaca: " + korisnik.Ime);
+            list.Add("Prezime izdavaca: " + korisnik.Prezime);
+            list.Add("Datum" + listaStavke[0].Datum.ToString());
+            doc.Add(list);
+
+
+            PdfPTable tablica = new PdfPTable(5);
+
+            PdfPCell cell = new PdfPCell(new Phrase("Racun br: " + broj));
+            cell.Colspan = 5;
+            cell.HorizontalAlignment = 1; // 0 - lijevo 1 - sredina 2 - desno
+            tablica.AddCell(cell);
+
+            tablica.AddCell("Broj stavke");
+            tablica.AddCell("Broj artikla");
+            tablica.AddCell("Naziv");
+            tablica.AddCell("Kolicina");
+            tablica.AddCell("Iznos");
+            
+
+            for (int i = 0; i < listaStavke.Count; i++)
+            {
+                tablica.AddCell(listaStavke[i].ID_stavke_racuna.ToString());
+                tablica.AddCell(listaStavke[i].ID_artikli.ToString());
+                tablica.AddCell(listaStavke[i].Naziv);
+                tablica.AddCell(listaStavke[i].Kolicina.ToString());
+                tablica.AddCell(listaStavke[i].Iznos.ToString() + " kn");
+                suma = suma + int.Parse(listaStavke[i].Iznos.ToString());
+            }
+                 
+            tablica.HorizontalAlignment = 1;
+
+            PdfPCell cellUkupno = new PdfPCell(new Phrase("Ukupno:"));
+            cellUkupno.Colspan = 4;
+            cellUkupno.HorizontalAlignment = 2; // 0 - lijevo 1 - sredina 2 - desno
+            tablica.AddCell(cellUkupno);
+
+            tablica.AddCell(suma.ToString() + " kn");
+
+            doc.Add(tablica);
+
+            doc.Close();
+        }
     }
 }
