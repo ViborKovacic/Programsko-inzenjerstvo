@@ -41,7 +41,9 @@
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnPregledRezervacije = new System.Windows.Forms.Button();
             this.btnRezervacija = new System.Windows.Forms.Button();
             this.btnIzradiNarudzbenicu = new System.Windows.Forms.Button();
@@ -55,17 +57,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKlijenti
@@ -134,6 +134,7 @@
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnSwitchUser
             // 
@@ -194,6 +195,16 @@
             this.panel3.Size = new System.Drawing.Size(169, 99);
             this.panel3.TabIndex = 15;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.btnHome);
+            this.panel6.Location = new System.Drawing.Point(7, 11);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(158, 79);
+            this.panel6.TabIndex = 11;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -202,6 +213,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(169, 567);
             this.panel4.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnPregledRezervacije);
+            this.panel5.Controls.Add(this.btnArtikli);
+            this.panel5.Controls.Add(this.btnRezervacija);
+            this.panel5.Controls.Add(this.btnProdaja);
+            this.panel5.Controls.Add(this.btnIzradiNarudzbenicu);
+            this.panel5.Controls.Add(this.btnKlijenti);
+            this.panel5.Controls.Add(this.btnStatistika);
+            this.panel5.Controls.Add(this.btnNarudzba);
+            this.panel5.Controls.Add(this.btnEvidencija);
+            this.panel5.Location = new System.Drawing.Point(6, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(158, 508);
+            this.panel5.TabIndex = 10;
             // 
             // btnPregledRezervacije
             // 
@@ -327,34 +356,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.btnPregledRezervacije);
-            this.panel5.Controls.Add(this.btnArtikli);
-            this.panel5.Controls.Add(this.btnRezervacija);
-            this.panel5.Controls.Add(this.btnProdaja);
-            this.panel5.Controls.Add(this.btnIzradiNarudzbenicu);
-            this.panel5.Controls.Add(this.btnKlijenti);
-            this.panel5.Controls.Add(this.btnStatistika);
-            this.panel5.Controls.Add(this.btnNarudzba);
-            this.panel5.Controls.Add(this.btnEvidencija);
-            this.panel5.Location = new System.Drawing.Point(6, 24);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(158, 508);
-            this.panel5.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.btnHome);
-            this.panel6.Location = new System.Drawing.Point(7, 11);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(158, 79);
-            this.panel6.TabIndex = 11;
-            // 
             // frmCvjecarna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,15 +378,15 @@
             this.Load += new System.EventHandler(this.frmCvjecarna_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

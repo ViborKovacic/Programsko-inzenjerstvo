@@ -34,20 +34,23 @@ namespace PICvjecara
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             UInt64 OIB = 0;
+            UInt64 Telefon = 0;
             string uneseniOIB = txtOIB.Text;
-            if (ulong.TryParse(uneseniOIB, out OIB))
+            string uneseniTelefon = txtTelefon.Text;
+            if (ulong.TryParse(uneseniOIB, out OIB)&&ulong.TryParse(uneseniTelefon,out Telefon))
             {
                 dobavljac.Ime = txtIme.Text;
                 dobavljac.OIB = txtOIB.Text;
                 dobavljac.Adresa = txtAdresa.Text;
                 dobavljac.Telefon = txtTelefon.Text;
                 dobavljac.DodajDobavljaca();
+                MessageBox.Show("Dobavljač je kreiran!");
             }
             else
             {
-                MessageBox.Show("Krivo unesen OIB!");
+                MessageBox.Show("Krivo unesen OIB ili broj telefona");
             }
-            MessageBox.Show("Dobavljač je kreiran!");
+            
         }
 
         private void frmDodajDobavljaca_Load(object sender, EventArgs e)

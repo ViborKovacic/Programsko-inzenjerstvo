@@ -72,7 +72,8 @@ namespace PICvjecara
         private void btnKraj_Click_1(object sender, EventArgs e)
         {
             DatabaseConnection.Instance.Connection.Close();
-            Environment.Exit(0);
+            DatabaseConnection.Instance.Connection.Dispose();
+            Environment.Exit(-1);
         }
 
         private void frmCvjecarna_Load(object sender, EventArgs e)
@@ -97,6 +98,8 @@ namespace PICvjecara
             {
                 ActiveMdiChild.Close();
             }
+            ListClass.listaArtikla.Clear();
+            ListClass.listaDobavljaca.Clear();
             frmNarudzbenica frmnarudzbenica = new frmNarudzbenica();
             frmnarudzbenica.MdiParent = this;
             frmnarudzbenica.Show();
@@ -137,6 +140,16 @@ namespace PICvjecara
             frmProdaja frmProdaja = new frmProdaja();
             frmProdaja.MdiParent = frmProdaja.ActiveForm;
             frmProdaja.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+            
+
         }
     }
 }

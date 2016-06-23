@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvKlijent = new System.Windows.Forms.DataGridView();
-            this.btnPovratak = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnOdabirKlijenta = new System.Windows.Forms.Button();
             this.btnTrazi = new System.Windows.Forms.Button();
@@ -50,16 +49,6 @@
             this.dgvKlijent.Name = "dgvKlijent";
             this.dgvKlijent.Size = new System.Drawing.Size(689, 273);
             this.dgvKlijent.TabIndex = 0;
-            // 
-            // btnPovratak
-            // 
-            this.btnPovratak.Location = new System.Drawing.Point(703, 407);
-            this.btnPovratak.Name = "btnPovratak";
-            this.btnPovratak.Size = new System.Drawing.Size(78, 32);
-            this.btnPovratak.TabIndex = 1;
-            this.btnPovratak.Text = "Povratak";
-            this.btnPovratak.UseVisualStyleBackColor = true;
-            this.btnPovratak.Click += new System.EventHandler(this.btnPovratak_Click);
             // 
             // groupBox1
             // 
@@ -136,7 +125,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Controls.Add(this.btnPovratak);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -165,7 +153,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKlijent;
-        private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDodajKlijenta;
         private System.Windows.Forms.Button btnAzuriraj;

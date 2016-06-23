@@ -72,12 +72,13 @@ namespace PICvjecara
         private void btnRezerviraj_Click_1(object sender, EventArgs e)
         {
             DateTime datumrezervacije = DateTime.Now;
+            
             if (dgvVrstaRezervacije.SelectedRows.Count > 0)
             {
                 int odabrani = int.Parse(dgvVrstaRezervacije.SelectedCells[0].Value.ToString());
 
                 rezervacija.Opis = txtOpis.Text;
-                rezervacija.Cijena = int.Parse(txtOkvirnaCijena.Text);
+                rezervacija.Cijena = float.Parse(txtOkvirnaCijena.Text);
                 rezervacija.ID_tip_rezervacije = odabrani;
                 rezervacija.Insert();
                 rezervacija.DohvatiIDRezervacije();

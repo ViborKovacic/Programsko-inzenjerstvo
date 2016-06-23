@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
+using System.Data;
 
 namespace PICvjecara.DBClass
 {
     public class Rezervacija
     {
         public int ID_rezervacije { get; set; }
-        public float Cijena { get; set; }
+        public float  Cijena { get; set; }
         public int ID_tip_rezervacije { get; set; }
         public string Opis { get; set; }
         

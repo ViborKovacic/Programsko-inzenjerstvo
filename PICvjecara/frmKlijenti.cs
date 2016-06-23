@@ -29,12 +29,7 @@ namespace PICvjecara
 
         }
 
-        private void btnPovratak_Click(object sender, EventArgs e)
-        {
-            frmCvjecarna frmHome = new frmCvjecarna();
-            frmHome.Show();
-            this.Close();
-        }
+        
 
        
 

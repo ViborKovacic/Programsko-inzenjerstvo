@@ -25,7 +25,7 @@ namespace PICvjecara
         public frmPDF(int odabir)
         {
             iDNarudzbenica = odabir;
-            ControlBox = false;
+            
             InitializeComponent();
         }
 

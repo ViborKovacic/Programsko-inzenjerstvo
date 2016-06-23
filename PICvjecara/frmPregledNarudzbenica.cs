@@ -76,7 +76,7 @@ namespace PICvjecara
              }*/
             frmPDF frmPdf = new frmPDF(odabir);
             frmPdf.Show();
-            label1.Text = odabir.ToString();
+           
             
            
         }
