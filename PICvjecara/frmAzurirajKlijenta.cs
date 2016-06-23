@@ -12,10 +12,10 @@ namespace PICvjecara
 {
     public partial class frmAzurirajKlijenta : Form
     {
-        DBClass.Kupci klijent;
-        public frmAzurirajKlijenta(DBClass.Kupci Kupac)
+        DBClass.Kupac klijent;
+        public frmAzurirajKlijenta(DBClass.Kupac Kupac)
         {
-            klijent = new DBClass.Kupci();
+            klijent = new DBClass.Kupac();
             klijent = Kupac;
             InitializeComponent();
         }

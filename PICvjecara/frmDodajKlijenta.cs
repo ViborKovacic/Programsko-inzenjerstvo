@@ -12,7 +12,7 @@ namespace PICvjecara
 {
     public partial class frmDodajKlijenta : Form
     {
-        DBClass.Kupci klijent;
+        DBClass.Kupac klijent;
         public frmDodajKlijenta()
         {
             ControlBox = false;
@@ -21,7 +21,7 @@ namespace PICvjecara
 
         private void btnDodajKlijenta_Click(object sender, EventArgs e)
         {
-            klijent = new DBClass.Kupci();
+            klijent = new DBClass.Kupac();
             if (txtIme.Text == "" && txtprezime.Text == "" && txtOIB.Text == "")
             {
                 MessageBox.Show("Nisu uneseni svi potrebni podaci!");

@@ -39,7 +39,7 @@ namespace PICvjecara
             
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                DBClass.Dobavljaci dobavljac = new DBClass.Dobavljaci();
+                DBClass.Dobavljac dobavljac = new DBClass.Dobavljac();
                 int odabrani = int.Parse(dataGridView1.SelectedCells[0].Value.ToString());
                 dobavljac.DohvatiDobavljace(odabrani);
                 ListClass.iDDovacljaca = odabrani;

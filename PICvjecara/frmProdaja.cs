@@ -16,12 +16,12 @@ namespace PICvjecara
 {
     public partial class frmProdaja : Form
     {
-        public DBClass.Artikli artikli;
-        public List<DBClass.Artikli> lista;
-        public DBClass.Stavke_racuna stavke;
-        public List<DBClass.Stavke_racuna> listaStavke;
-        public DBClass.Vrste_artikla vrsteArtikla;
-        public List<DBClass.Vrste_artikla> listaVrste;
+        public DBClass.Artikl artikli;
+        public List<DBClass.Artikl> lista;
+        public DBClass.Stavka_racuna stavke;
+        public List<DBClass.Stavka_racuna> listaStavke;
+        public DBClass.Vrsta_artikla vrsteArtikla;
+        public List<DBClass.Vrsta_artikla> listaVrste;
         public Korisnici korisnik = new Korisnici();
         public List<Korisnici> listaKorisnika;
 
@@ -34,8 +34,8 @@ namespace PICvjecara
 
         private void listaArtikla(string listaProdaja)
         {
-            lista = new List<DBClass.Artikli>();
-            lista = DBClass.Artikli.DohvatiArtikleProdaja(listaProdaja);
+            lista = new List<DBClass.Artikl>();
+            lista = DBClass.Artikl.DohvatiArtikleProdaja(listaProdaja);
 
             if (lista.Count != 0)
             {
@@ -57,11 +57,11 @@ namespace PICvjecara
 
         public void Slike()
         {
-            listaVrste = new List<DBClass.Vrste_artikla>();
-            vrsteArtikla = new DBClass.Vrste_artikla();
+            listaVrste = new List<DBClass.Vrsta_artikla>();
+            vrsteArtikla = new DBClass.Vrsta_artikla();
             listaVrste = vrsteArtikla.DohvatiVrstuUrlArtikla();
 
-            foreach (DBClass.Vrste_artikla item in listaVrste)
+            foreach (DBClass.Vrsta_artikla item in listaVrste)
             {
                 flowLayoutPanel1.Controls.Add(StvaranjePanela(item.Vrsta.ToString(), item.Url.ToString()));
             }
@@ -87,27 +87,27 @@ namespace PICvjecara
        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            lista = new List<DBClass.Artikli>();
+            lista = new List<DBClass.Artikl>();
             if (txtBrojArtikla.Text != "") { 
-                lista = DBClass.Artikli.DohvatiBrojArtikla(int.Parse(txtBrojArtikla.Text));
+                lista = DBClass.Artikl.DohvatiBrojArtikla(int.Parse(txtBrojArtikla.Text));
                 dgvPopisArtikla.DataSource = lista;                
             }
             else
             {
-                lista = DBClass.Artikli.DohvatiSveArtikle();
+                lista = DBClass.Artikl.DohvatiSveArtikle();
                 dgvPopisArtikla.DataSource = lista;
             }
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            lista = new List<DBClass.Artikli>();
+            lista = new List<DBClass.Artikl>();
             if (dgvPopisArtikla.SelectedRows.Count > 0)
             {
                 int odabraniArtikl = int.Parse(dgvPopisArtikla.SelectedCells[0].Value.ToString());
-                lista = DBClass.Artikli.DohvatiArtikle(odabraniArtikl);
+                lista = DBClass.Artikl.DohvatiArtikle(odabraniArtikl);
             }
-            stavke = new DBClass.Stavke_racuna();           
+            stavke = new DBClass.Stavka_racuna();           
             stavke.Naziv = lista[0].Naziv;
             stavke.Iznos = int.Parse(lista[0].Cijena.ToString());
             stavke.Kolicina = lista[0].Kolicina;
@@ -115,21 +115,21 @@ namespace PICvjecara
             stavke.ID_artikli = lista[0].ID_artikla;
             stavke.Unos();
 
-            listaStavke = DBClass.Stavke_racuna.DohvatiSveStavke();
+            listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
             dgvStavkeRacuna.DataSource = listaStavke;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            lista = new List<DBClass.Artikli>();
+            lista = new List<DBClass.Artikl>();
             if (txtNazivArtikla.Text != "")
             {
-                lista = DBClass.Artikli.DohvatiNazivArtikla(txtNazivArtikla.Text);
+                lista = DBClass.Artikl.DohvatiNazivArtikla(txtNazivArtikla.Text);
                 dgvPopisArtikla.DataSource = lista;
             }
             else
             {
-                lista = DBClass.Artikli.DohvatiSveArtikle();
+                lista = DBClass.Artikl.DohvatiSveArtikle();
                 dgvPopisArtikla.DataSource = lista;
             }
         }
@@ -160,7 +160,7 @@ namespace PICvjecara
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
-            stavke = new DBClass.Stavke_racuna();
+            stavke = new DBClass.Stavka_racuna();
             int obrisiStavke = 0;
 
             if (MessageBox.Show("Želite li obrisati artikl?", "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -183,8 +183,8 @@ namespace PICvjecara
 
         private void btnGotovo_Click_1(object sender, EventArgs e)
         {
-            listaStavke = new List<DBClass.Stavke_racuna>();
-            listaStavke = DBClass.Stavke_racuna.DohvatiSveStavke();
+            listaStavke = new List<DBClass.Stavka_racuna>();
+            listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
             int broj = 2256;
             int suma = 0;
 

@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace PICvjecara.DBClass
 {
-    public class Kupci
+    public class Kupac
     {
         public int ID_kupca { get; set; }
         public string Ime { get; set; }
@@ -19,7 +19,7 @@ namespace PICvjecara.DBClass
         public string OIB { get; set; }
 
         public int broj = 0;
-        public static BindingList<Kupci> listaKlijenta = new BindingList<Kupci>();
+        public static BindingList<Kupac> listaKlijenta = new BindingList<Kupac>();
 
 
         public void DohvatiKlijenta(int iDKlijenta)
@@ -95,7 +95,7 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(q);
 
         }
-        public BindingList<Kupci> ListaKlijenta(Kupci klijent)
+        public BindingList<Kupac> ListaKlijenta(Kupac klijent)
         {
 
 

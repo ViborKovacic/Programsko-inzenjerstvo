@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PICvjecara.DBClass
 {
-   public class StavkeNarudzbenice
+   public class StavkaNarudzbenice
     {
         public int ID_narudzbenice { get; set; }
         public int ID_artikla { get; set; }

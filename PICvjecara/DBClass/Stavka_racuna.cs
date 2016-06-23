@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PICvjecara.DBClass
 {
-    public class Stavke_racuna
+    public class Stavka_racuna
     {
         public int ID_stavke_racuna { get; set; }
         public string Naziv { get; set; }
@@ -18,11 +18,11 @@ namespace PICvjecara.DBClass
         public int ID_artikli { get; set; }
         public int ID_nalog_za_prodaju { get; set; }
 
-        public Stavke_racuna()
+        public Stavka_racuna()
         {
         }
 
-        public Stavke_racuna(DbDataReader dr)
+        public Stavka_racuna(DbDataReader dr)
         {
             if (dr != null)
             {
@@ -61,28 +61,28 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
-        public static List<DBClass.Stavke_racuna> DohvatiSveStavke()
+        public static List<DBClass.Stavka_racuna> DohvatiSveStavke()
         {
-            List<DBClass.Stavke_racuna> lista = new List<DBClass.Stavke_racuna>();
+            List<DBClass.Stavka_racuna> lista = new List<DBClass.Stavka_racuna>();
             string sqlUpit = "SELECT * FROM Stavke_racuna";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                DBClass.Stavke_racuna stavke = new DBClass.Stavke_racuna(dr);
+                DBClass.Stavka_racuna stavke = new DBClass.Stavka_racuna(dr);
                 lista.Add(stavke);
             }
             dr.Close();
             return lista;
         }
 
-        public static List<DBClass.Stavke_racuna> DohvatiOznaceneArtikle(int ID_stavke)
+        public static List<DBClass.Stavka_racuna> DohvatiOznaceneArtikle(int ID_stavke)
         {
-            List<DBClass.Stavke_racuna> lista = new List<DBClass.Stavke_racuna>();
+            List<DBClass.Stavka_racuna> lista = new List<DBClass.Stavka_racuna>();
             string sqlUpit = "SELECT * FROM Artikli WHERE ID_artikla=" + ID_stavke;
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                DBClass.Stavke_racuna stavke = new DBClass.Stavke_racuna(dr);
+                DBClass.Stavka_racuna stavke = new DBClass.Stavka_racuna(dr);
                 lista.Add(stavke);
             }
             dr.Close();

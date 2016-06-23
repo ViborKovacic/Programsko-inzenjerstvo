@@ -14,13 +14,13 @@ namespace PICvjecara
     public partial class frmNarudzbaArtikli : Form
     {
         GridLoad.GridLoad grid = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
-        DBClass.Artikli artikl;
-        public BindingList<DBClass.Artikli> listaArtikla;
+        DBClass.Artikl artikl;
+        public BindingList<DBClass.Artikl> listaArtikla;
         private bool provjera = false;
         public frmNarudzbaArtikli()
         {
 
-            listaArtikla = new BindingList<DBClass.Artikli>();
+            listaArtikla = new BindingList<DBClass.Artikl>();
             InitializeComponent();
         }
 
@@ -62,7 +62,7 @@ namespace PICvjecara
                 if (dgvVrstaArtikla.SelectedRows.Count > 0 && dgvArtikli.SelectedRows.Count > 0)
                 {
 
-                    artikl = new DBClass.Artikli();
+                    artikl = new DBClass.Artikl();
                     artikl.Kolicina = int.Parse(txtKolicina.Text.ToString());
                     int odabriArtikla = int.Parse(dgvArtikli.SelectedCells[0].Value.ToString());
                     artikl.DodajNarucenuKolicinu(odabriArtikla);

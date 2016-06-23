@@ -14,7 +14,7 @@ namespace PICvjecara
     public partial class frmKlijenti : Form
     {
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
-        DBClass.Kupci klijent;
+        DBClass.Kupac klijent;
         public frmKlijenti()
         {
             ControlBox = false;
@@ -37,7 +37,7 @@ namespace PICvjecara
         {
             if (dgvKlijent.SelectedRows.Count > 0)
             {
-                klijent = new DBClass.Kupci();
+                klijent = new DBClass.Kupac();
 
                 int odabrani = int.Parse(dgvKlijent.SelectedCells[0].Value.ToString());
                 klijent.DohvatiKlijenta(odabrani);
@@ -69,7 +69,7 @@ namespace PICvjecara
 
         private void btnTrazi_Click(object sender, EventArgs e)
         {
-               klijent = new DBClass.Kupci();
+               klijent = new DBClass.Kupac();
                 ulong broj = 0;
                 if (ulong.TryParse(txtTrazi.Text, out broj))
                 {
@@ -106,7 +106,7 @@ namespace PICvjecara
 
             if (dgvKlijent.SelectedRows.Count > 0)
             {
-                DBClass.Kupci klijent = new DBClass.Kupci();
+                DBClass.Kupac klijent = new DBClass.Kupac();
                 int odabrani = int.Parse(dgvKlijent.SelectedCells[0].Value.ToString());
                 klijent.DohvatiKlijenta(odabrani);
                 ListClass.iDKlijenta = odabrani;

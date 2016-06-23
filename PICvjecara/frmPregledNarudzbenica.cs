@@ -15,12 +15,12 @@ namespace PICvjecara
     {
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
         DBClass.Narudzbenica narudzbenica;
-        DBClass.StavkeNarudzbenice stavkeNarudzbenice;
+        DBClass.StavkaNarudzbenice stavkeNarudzbenice;
         public int odabir;
         public frmPregledNarudzbenica()
         {
             narudzbenica = new DBClass.Narudzbenica();
-            stavkeNarudzbenice = new DBClass.StavkeNarudzbenice();
+            stavkeNarudzbenice = new DBClass.StavkaNarudzbenice();
             ControlBox = false;
             InitializeComponent();
         }

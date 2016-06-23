@@ -19,13 +19,13 @@ namespace PICvjecara
         public int odabir;
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
         DBClass.Rezervacija rezervacija;
-        DBClass.Stavke_rezervacije stavkeRezervacije;
+        DBClass.Stavka_rezervacije stavkeRezervacije;
         DBClass.Nalog_za_prodaju nalogZaProdaju;
 
         public frmPregledRezervacija()
         {
             rezervacija = new DBClass.Rezervacija();
-            stavkeRezervacije = new DBClass.Stavke_rezervacije();
+            stavkeRezervacije = new DBClass.Stavka_rezervacije();
             nalogZaProdaju = new DBClass.Nalog_za_prodaju();
             ControlBox = false;
             InitializeComponent();

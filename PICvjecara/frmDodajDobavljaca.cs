@@ -12,10 +12,10 @@ namespace PICvjecara
 {
     public partial class frmDodajDobavljaca : Form
     {
-        DBClass.Dobavljaci dobavljac;
+        DBClass.Dobavljac dobavljac;
         public frmDodajDobavljaca()
         {
-            dobavljac = new DBClass.Dobavljaci();
+            dobavljac = new DBClass.Dobavljac();
             ControlBox = false;
             InitializeComponent();
         }

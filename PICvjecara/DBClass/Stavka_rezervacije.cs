@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PICvjecara.DBClass
 {
-   public class Stavke_rezervacije
+   public class Stavka_rezervacije
     {
 
         private string datumFormat = "yyyy-MM-dd HH:MM:ss";

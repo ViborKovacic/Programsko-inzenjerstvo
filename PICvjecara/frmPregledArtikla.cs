@@ -14,8 +14,8 @@ namespace PICvjecara
 {
     public partial class frmPregledArtikla : Form
     {
-        public DBClass.Artikli artikli;
-        public DBClass.Vrste_artikla vrstaArtikla;
+        public DBClass.Artikl artikli;
+        public DBClass.Vrsta_artikla vrstaArtikla;
         public OpenFileDialog fileDialog;
         Image file;
         public frmPregledArtikla()
@@ -48,11 +48,11 @@ namespace PICvjecara
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
-            List<DBClass.Artikli> lista = new List<DBClass.Artikli>();
+            List<DBClass.Artikl> lista = new List<DBClass.Artikl>();
             if (artikliDataGridView.SelectedRows.Count > 0)
             {
                 int odabraniArtikl = int.Parse(artikliDataGridView.SelectedCells[0].Value.ToString());                
-                lista = DBClass.Artikli.DohvatiArtikle(odabraniArtikl);
+                lista = DBClass.Artikl.DohvatiArtikle(odabraniArtikl);
                 frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(lista);
                 openAzuriraj.ShowDialog();
             }
@@ -61,7 +61,7 @@ namespace PICvjecara
 
         private void btnBrisi_Click(object sender, EventArgs e)
         {
-            artikli = new DBClass.Artikli();
+            artikli = new DBClass.Artikl();
             int obrisiArikl = 0;
 
             if (MessageBox.Show("Želite li obrisati artikl?" , "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -111,7 +111,7 @@ namespace PICvjecara
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            vrstaArtikla = new DBClass.Vrste_artikla();
+            vrstaArtikla = new DBClass.Vrsta_artikla();
             int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
             if (broj == 0)
             {

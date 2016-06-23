@@ -12,18 +12,18 @@ namespace PICvjecara
 {
     public partial class frmNarudzbenica : Form
     {
-        DBClass.Artikli artikl;
-        DBClass.Dobavljaci dobavljac;
+        DBClass.Artikl artikl;
+        DBClass.Dobavljac dobavljac;
         DBClass.Narudzbenica narudzbenica;
-        DBClass.StavkeNarudzbenice  stavkeNarudzbenice;
+        DBClass.StavkaNarudzbenice  stavkeNarudzbenice;
         Korisnici korisnik;
       
         
         public frmNarudzbenica()
         {
-            dobavljac = new DBClass.Dobavljaci();
+            dobavljac = new DBClass.Dobavljac();
             narudzbenica = new DBClass.Narudzbenica();
-            stavkeNarudzbenice = new DBClass.StavkeNarudzbenice();
+            stavkeNarudzbenice = new DBClass.StavkaNarudzbenice();
             korisnik = new Korisnici();
             ControlBox = false;
             InitializeComponent();
@@ -116,7 +116,7 @@ namespace PICvjecara
                 int iDArtikla = 0;
                 try
                 {
-                    artikl = new DBClass.Artikli();
+                    artikl = new DBClass.Artikl();
                     if (int.TryParse(s.Cells["ID_artikla"].Value.ToString(), out iDArtikla))
                     {
                         artikl.DohvatiArtikl(iDArtikla);

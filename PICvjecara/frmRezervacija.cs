@@ -15,7 +15,7 @@ namespace PICvjecara
     {
         GridLoad.GridLoad gridLoad = new GridLoad.GridLoad(DatabaseConnection.Instance.ConnectionString);
         DBClass.Rezervacija rezervacija;
-        DBClass.Stavke_rezervacije stavkeRezervacije;
+        DBClass.Stavka_rezervacije stavkeRezervacije;
         DBClass.Tip_rezervacije vrstaArtikla;
         DBClass.Nalog_za_prodaju nalogZaProdaju;
         Korisnici korisnik = new Korisnici();
@@ -24,7 +24,7 @@ namespace PICvjecara
         {
             vrstaArtikla = new DBClass.Tip_rezervacije();
             rezervacija = new DBClass.Rezervacija();
-            stavkeRezervacije = new DBClass.Stavke_rezervacije();
+            stavkeRezervacije = new DBClass.Stavka_rezervacije();
             nalogZaProdaju = new DBClass.Nalog_za_prodaju();
             InitializeComponent();
         }

@@ -13,15 +13,15 @@ namespace PICvjecara
 {
     public partial class frmAzurirajArtikl : Form
     {
-        private DBClass.Artikli artikli;
-        public List<DBClass.Artikli> lista;
+        private DBClass.Artikl artikli;
+        public List<DBClass.Artikl> lista;
 
         public frmAzurirajArtikl()
         {
             InitializeComponent();
         }
 
-        public frmAzurirajArtikl(List<DBClass.Artikli> lista)
+        public frmAzurirajArtikl(List<DBClass.Artikl> lista)
         {
             InitializeComponent();
             this.lista = lista;
@@ -35,7 +35,7 @@ namespace PICvjecara
             {
                 if (artikli == null)
                 {
-                    artikli = new DBClass.Artikli();
+                    artikli = new DBClass.Artikl();
                 }
 
                 artikli.ID_artikla = int.Parse(txtBrojArtikla.Text);

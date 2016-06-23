@@ -7,7 +7,7 @@ using System.Data.Common;
 
 namespace PICvjecara.DBClass
 {
-    public class Vrste_artikla
+    public class Vrsta_artikla
     {
         public int ID_vrsta_artikla { get; set; }
         public string Vrsta { get; set; }
@@ -34,10 +34,10 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(q);
         }
 
-        public Vrste_artikla()
+        public Vrsta_artikla()
         { }
 
-        public Vrste_artikla(DbDataReader dr)
+        public Vrsta_artikla(DbDataReader dr)
         {
             if (dr != null)
             {
@@ -62,14 +62,14 @@ namespace PICvjecara.DBClass
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 
-        public  List<Vrste_artikla> DohvatiVrstuArtikla()
+        public  List<Vrsta_artikla> DohvatiVrstuArtikla()
         {
-            List<Vrste_artikla> lista = new List<Vrste_artikla>();
+            List<Vrsta_artikla> lista = new List<Vrsta_artikla>();
             string sqlUpit = "SELECT Vrsta FROM Vrsta_artikla";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                Vrste_artikla vrsta = new Vrste_artikla(dr);
+                Vrsta_artikla vrsta = new Vrsta_artikla(dr);
                 lista.Add(vrsta);
                 
             }
@@ -79,7 +79,7 @@ namespace PICvjecara.DBClass
 
         public int DohvatiVrstuPoID(string vrstaArtikla)
         {
-            List<Vrste_artikla> lista = new List<Vrste_artikla>();
+            List<Vrsta_artikla> lista = new List<Vrsta_artikla>();
             string sqlUpit = "SELECT ID_vrsta_artikla FROM Vrsta_artikla WHERE Vrsta='" + vrstaArtikla + "'";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             dr.Read();
@@ -89,14 +89,14 @@ namespace PICvjecara.DBClass
             return broj;
         }
 
-        public List<Vrste_artikla> DohvatiVrstuUrlArtikla()
+        public List<Vrsta_artikla> DohvatiVrstuUrlArtikla()
         {
-            List<Vrste_artikla> lista = new List<Vrste_artikla>();
+            List<Vrsta_artikla> lista = new List<Vrsta_artikla>();
             string sqlUpit = "SELECT Vrsta, Url FROM Vrsta_artikla";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
-                Vrste_artikla vrsta = new Vrste_artikla(dr);
+                Vrsta_artikla vrsta = new Vrsta_artikla(dr);
                 lista.Add(vrsta);
 
             }

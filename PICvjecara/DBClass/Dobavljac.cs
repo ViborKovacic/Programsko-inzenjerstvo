@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace PICvjecara.DBClass
 {
-    public class Dobavljaci
+    public class Dobavljac
     {
         public int ID_dobavljac { get; set; }
         public string Ime { get; set; }
@@ -16,12 +16,12 @@ namespace PICvjecara.DBClass
         public string OIB { get; set; }
         public string Adresa { get; set; }
         
-       public static  BindingList<Dobavljaci> listaDobavljaca = new BindingList<Dobavljaci>();
+       public static  BindingList<Dobavljac> listaDobavljaca = new BindingList<Dobavljac>();
        
 
 
 
-        public Dobavljaci()
+        public Dobavljac()
         {
 
         }
@@ -44,7 +44,7 @@ namespace PICvjecara.DBClass
             dr.Close();
 
         }
-       public BindingList<Dobavljaci> ListaDobavljaca(Dobavljaci dobavljac)
+       public BindingList<Dobavljac> ListaDobavljaca(Dobavljac dobavljac)
         {
 
            

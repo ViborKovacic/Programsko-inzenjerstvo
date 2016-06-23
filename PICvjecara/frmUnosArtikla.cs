@@ -13,7 +13,7 @@ namespace PICvjecara
 {
     public partial class frmUnosArtikla : Form
     {
-        private DBClass.Artikli artikli = null;
+        private DBClass.Artikl artikli = null;
 
         public frmUnosArtikla()
         {
@@ -21,7 +21,7 @@ namespace PICvjecara
             ControlBox = false;
         }
 
-        public frmUnosArtikla(DBClass.Artikli odabraniArtikli)
+        public frmUnosArtikla(DBClass.Artikl odabraniArtikli)
         {
             InitializeComponent();
             artikli = odabraniArtikli;
@@ -47,7 +47,7 @@ namespace PICvjecara
             {
                 if (artikli == null)
                 {
-                    artikli = new DBClass.Artikli();
+                    artikli = new DBClass.Artikl();
                 }
 
                 artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());

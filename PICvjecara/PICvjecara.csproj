@@ -87,17 +87,17 @@
     <Compile Include="frmAzurirajArtikl.Designer.cs">
       <DependentUpon>frmAzurirajArtikl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBClass\Artikli.cs" />
-    <Compile Include="DBClass\Dobavljaci.cs" />
-    <Compile Include="DBClass\Kupci.cs" />
+    <Compile Include="DBClass\Artikl.cs" />
+    <Compile Include="DBClass\Dobavljac.cs" />
+    <Compile Include="DBClass\Kupac.cs" />
     <Compile Include="DBClass\Nalog_za_prodaju.cs" />
     <Compile Include="DBClass\Narudzbenica.cs" />
     <Compile Include="DBClass\Rezervacija.cs" />
-    <Compile Include="DBClass\StavkeNarudzbenice.cs" />
-    <Compile Include="DBClass\Stavke_racuna.cs" />
-    <Compile Include="DBClass\Stavke_rezervacije.cs" />
+    <Compile Include="DBClass\StavkaNarudzbenice.cs" />
+    <Compile Include="DBClass\Stavka_racuna.cs" />
+    <Compile Include="DBClass\Stavka_rezervacije.cs" />
     <Compile Include="DBClass\Tip_rezervacije.cs" />
-    <Compile Include="DBClass\Vrste_artikla.cs" />
+    <Compile Include="DBClass\Vrsta_artikla.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +336,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GridLoad.dll" />
+    <Content Include="itextsharp.dll" />
+    <Content Include="itextsharp.pdfa.dll" />
+    <Content Include="iTextSharp.xml" />
+    <Content Include="itextsharp.xtra.dll" />
     <Content Include="Slike\logo.png" />
     <Content Include="Slike\SlikeArtikla\aranzmani.jpg" />
     <Content Include="Slike\SlikeArtikla\buketi.jpg" />
