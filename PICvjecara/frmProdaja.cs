@@ -50,23 +50,23 @@ namespace PICvjecara
         private void frmProdaja_Load(object sender, EventArgs e)
         {
 
-            Slike();
+            //Slike();
             OsvijeziStavke();
             
         }
 
-        public void Slike()
-        {
-            listaVrste = new List<DBClass.Vrsta_artikla>();
-            vrsteArtikla = new DBClass.Vrsta_artikla();
-            listaVrste = vrsteArtikla.DohvatiVrstuUrlArtikla();
+        //public void Slike()
+        //{
+        //    listaVrste = new List<DBClass.Vrsta_artikla>();
+        //    vrsteArtikla = new DBClass.Vrsta_artikla();
+        //    listaVrste = vrsteArtikla.DohvatiVrstuUrlArtikla();
 
-            foreach (DBClass.Vrsta_artikla item in listaVrste)
-            {
-                flowLayoutPanel1.Controls.Add(StvaranjePanela(item.Vrsta.ToString(), item.Url.ToString()));
-            }
+        //    foreach (DBClass.Vrsta_artikla item in listaVrste)
+        //    {
+        //        flowLayoutPanel1.Controls.Add(StvaranjePanela(item.Vrsta.ToString(), item.Url.ToString()));
+        //    }
 
-        }
+        //}
 
         public void OsvijeziStavke()
         {
@@ -132,30 +132,6 @@ namespace PICvjecara
                 lista = DBClass.Artikl.DohvatiSveArtikle();
                 dgvPopisArtikla.DataSource = lista;
             }
-        }
-
-        private Panel StvaranjePanela(string listaVrste, string url)
-        {
-            Panel panel = new Panel();
-            panel.Size = new Size(122, 189);
-            panel.Location = new Point(0, 0);
-
-            Label label = new Label();
-            label.Text = listaVrste;
-            label.Location = new Point(38, 160);
-
-            PictureBox picture = new PictureBox();
-            picture.Name = "pictureBox1";
-            picture.Location = new Point(3,3);
-            picture.Size = new Size(114, 139);
-            picture.SizeMode = PictureBoxSizeMode.Zoom;
-            picture.Load(url);
-            picture.Refresh();
-            picture.Visible = true;
-
-            panel.Controls.Add(picture);         
-            panel.Controls.Add(label);
-            return panel;
         }
 
         private void btnBrisi_Click(object sender, EventArgs e)
@@ -251,6 +227,13 @@ namespace PICvjecara
             stavke.ObrisiSve();
 
             OsvijeziStavke();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            stavke = new DBClass.Stavka_racuna();
+            stavke.ObrisiSve();
+            OsvijeziStavke(); 
         }
     }
 }

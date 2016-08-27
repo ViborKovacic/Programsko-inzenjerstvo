@@ -13,7 +13,7 @@ namespace PICvjecara.DBClass
         public string Naziv { get; set; }
         public int Kolicina { get; set; }
         public float Iznos { get; set; }
-        public DateTime Datum;
+        public string Datum { get; set; }
         public int ID_korisnika { get; set; }
         public int ID_artikli { get; set; }
         public int ID_nalog_za_prodaju { get; set; }
@@ -30,7 +30,7 @@ namespace PICvjecara.DBClass
                 Naziv = dr["Naziv"].ToString();
                 Iznos = float.Parse(dr["Iznos"].ToString());//float
                 Kolicina = int.Parse(dr["Kolicina"].ToString());
-                Datum = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+                Datum = DateTime.Now.ToString("dd/MM/yyyy");
                 ID_korisnika = int.Parse(dr["ID_korisnika"].ToString());
                 ID_artikli = int.Parse(dr["ID_artikli"].ToString());
                 //ID_nalog_za_prodaju = int.Parse(dr["ID_nalog_za_prodaju"].ToString());

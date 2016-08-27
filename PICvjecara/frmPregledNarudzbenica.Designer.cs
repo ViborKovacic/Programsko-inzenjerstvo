@@ -54,7 +54,6 @@
             this.dgvNazivNarudzbenica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNazivNarudzbenica.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNazivNarudzbenica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNazivNarudzbenica.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNazivNarudzbenica.Location = new System.Drawing.Point(3, 16);
             this.dgvNazivNarudzbenica.Name = "dgvNazivNarudzbenica";
             this.dgvNazivNarudzbenica.Size = new System.Drawing.Size(606, 283);

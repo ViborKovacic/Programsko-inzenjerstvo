@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPopisArtikla = new System.Windows.Forms.DataGridView();
             this.iDartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,14 +52,6 @@
             this.btnBrisi = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.dgvStavkeRacuna = new System.Windows.Forms.DataGridView();
-            this.iDstavkeracunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDartikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDkorisnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stavkeracunaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnGotovo = new System.Windows.Forms.Button();
@@ -64,6 +59,15 @@
             this.stavke_racunaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Stavke_racunaTableAdapter();
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             this.korisniciTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.KorisniciTableAdapter();
+            this.iDstavkeracunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDartikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iznosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDkorisnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
@@ -76,20 +80,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.stavkeracunaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(386, 555);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // dgvPopisArtikla
             // 
             this.dgvPopisArtikla.AllowUserToAddRows = false;
             this.dgvPopisArtikla.AutoGenerateColumns = false;
-            this.dgvPopisArtikla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPopisArtikla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPopisArtikla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPopisArtikla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPopisArtikla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPopisArtikla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDartiklaDataGridViewTextBoxColumn,
@@ -98,11 +102,20 @@
             this.kolicinaDataGridViewTextBoxColumn,
             this.iDvrstaartiklaDataGridViewTextBoxColumn});
             this.dgvPopisArtikla.DataSource = this.artikliBindingSource;
-            this.dgvPopisArtikla.Location = new System.Drawing.Point(14, 13);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPopisArtikla.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPopisArtikla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPopisArtikla.Location = new System.Drawing.Point(0, 0);
             this.dgvPopisArtikla.Name = "dgvPopisArtikla";
             this.dgvPopisArtikla.ReadOnly = true;
             this.dgvPopisArtikla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisArtikla.Size = new System.Drawing.Size(383, 321);
+            this.dgvPopisArtikla.Size = new System.Drawing.Size(845, 241);
             this.dgvPopisArtikla.TabIndex = 1;
             // 
             // iDartiklaDataGridViewTextBoxColumn
@@ -111,7 +124,6 @@
             this.iDartiklaDataGridViewTextBoxColumn.HeaderText = "Broj Artikla";
             this.iDartiklaDataGridViewTextBoxColumn.Name = "iDartiklaDataGridViewTextBoxColumn";
             this.iDartiklaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDartiklaDataGridViewTextBoxColumn.Width = 82;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
@@ -119,7 +131,6 @@
             this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nazivDataGridViewTextBoxColumn.Width = 59;
             // 
             // cijenaDataGridViewTextBoxColumn
             // 
@@ -127,7 +138,6 @@
             this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
             this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
             this.cijenaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cijenaDataGridViewTextBoxColumn.Width = 61;
             // 
             // kolicinaDataGridViewTextBoxColumn
             // 
@@ -135,7 +145,6 @@
             this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
             this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
             this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kolicinaDataGridViewTextBoxColumn.Width = 69;
             // 
             // iDvrstaartiklaDataGridViewTextBoxColumn
             // 
@@ -149,7 +158,6 @@
             this.iDvrstaartiklaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDvrstaartiklaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDvrstaartiklaDataGridViewTextBoxColumn.ValueMember = "ID_vrsta_artikla";
-            this.iDvrstaartiklaDataGridViewTextBoxColumn.Width = 56;
             // 
             // vrstaartiklaBindingSource
             // 
@@ -209,9 +217,9 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.dgvPopisArtikla);
-            this.panel4.Location = new System.Drawing.Point(746, 18);
+            this.panel4.Location = new System.Drawing.Point(234, 12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(410, 349);
+            this.panel4.Size = new System.Drawing.Size(847, 243);
             this.panel4.TabIndex = 6;
             // 
             // panel6
@@ -221,14 +229,14 @@
             this.panel6.Controls.Add(this.txtBrojArtikla);
             this.panel6.Controls.Add(this.txtNazivArtikla);
             this.panel6.Controls.Add(this.lblNaziv);
-            this.panel6.Location = new System.Drawing.Point(499, 51);
+            this.panel6.Location = new System.Drawing.Point(12, 12);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(202, 79);
             this.panel6.TabIndex = 7;
             // 
             // btnBrisi
             // 
-            this.btnBrisi.Location = new System.Drawing.Point(595, 302);
+            this.btnBrisi.Location = new System.Drawing.Point(12, 243);
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(115, 51);
             this.btnBrisi.TabIndex = 9;
@@ -238,7 +246,7 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(443, 302);
+            this.btnDodaj.Location = new System.Drawing.Point(12, 186);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(115, 51);
             this.btnDodaj.TabIndex = 10;
@@ -249,88 +257,41 @@
             // dgvStavkeRacuna
             // 
             this.dgvStavkeRacuna.AutoGenerateColumns = false;
+            this.dgvStavkeRacuna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStavkeRacuna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeRacuna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvStavkeRacuna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeRacuna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDstavkeracunaDataGridViewTextBoxColumn,
             this.iDnalogzaprodajuDataGridViewTextBoxColumn,
+            this.iDartikliDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn1,
             this.kolicinaDataGridViewTextBoxColumn1,
             this.datumDataGridViewTextBoxColumn,
             this.iznosDataGridViewTextBoxColumn,
-            this.iDartikliDataGridViewTextBoxColumn,
             this.iDkorisnikaDataGridViewTextBoxColumn});
             this.dgvStavkeRacuna.DataSource = this.stavkeracunaBindingSource;
-            this.dgvStavkeRacuna.Location = new System.Drawing.Point(404, 373);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStavkeRacuna.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvStavkeRacuna.Location = new System.Drawing.Point(249, 296);
             this.dgvStavkeRacuna.Name = "dgvStavkeRacuna";
             this.dgvStavkeRacuna.ReadOnly = true;
             this.dgvStavkeRacuna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStavkeRacuna.Size = new System.Drawing.Size(578, 194);
+            this.dgvStavkeRacuna.Size = new System.Drawing.Size(812, 274);
             this.dgvStavkeRacuna.TabIndex = 11;
-            // 
-            // iDstavkeracunaDataGridViewTextBoxColumn
-            // 
-            this.iDstavkeracunaDataGridViewTextBoxColumn.DataPropertyName = "ID_stavke_racuna";
-            this.iDstavkeracunaDataGridViewTextBoxColumn.HeaderText = "Broj stavke";
-            this.iDstavkeracunaDataGridViewTextBoxColumn.Name = "iDstavkeracunaDataGridViewTextBoxColumn";
-            this.iDstavkeracunaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDnalogzaprodajuDataGridViewTextBoxColumn
-            // 
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn.DataPropertyName = "ID_nalog_za_prodaju";
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn.HeaderText = "ID_nalog_za_prodaju";
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn.Name = "iDnalogzaprodajuDataGridViewTextBoxColumn";
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDnalogzaprodajuDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nazivDataGridViewTextBoxColumn1
-            // 
-            this.nazivDataGridViewTextBoxColumn1.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn1.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn1.Name = "nazivDataGridViewTextBoxColumn1";
-            this.nazivDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // kolicinaDataGridViewTextBoxColumn1
-            // 
-            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
-            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iznosDataGridViewTextBoxColumn
-            // 
-            this.iznosDataGridViewTextBoxColumn.DataPropertyName = "Iznos";
-            this.iznosDataGridViewTextBoxColumn.HeaderText = "Iznos";
-            this.iznosDataGridViewTextBoxColumn.Name = "iznosDataGridViewTextBoxColumn";
-            this.iznosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDartikliDataGridViewTextBoxColumn
-            // 
-            this.iDartikliDataGridViewTextBoxColumn.DataPropertyName = "ID_artikli";
-            this.iDartikliDataGridViewTextBoxColumn.HeaderText = "Broj artikla";
-            this.iDartikliDataGridViewTextBoxColumn.Name = "iDartikliDataGridViewTextBoxColumn";
-            this.iDartikliDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDkorisnikaDataGridViewTextBoxColumn
-            // 
-            this.iDkorisnikaDataGridViewTextBoxColumn.DataPropertyName = "ID_korisnika";
-            this.iDkorisnikaDataGridViewTextBoxColumn.DataSource = this.korisniciBindingSource;
-            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayMember = "ime";
-            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.iDkorisnikaDataGridViewTextBoxColumn.HeaderText = "Korisnik";
-            this.iDkorisnikaDataGridViewTextBoxColumn.Name = "iDkorisnikaDataGridViewTextBoxColumn";
-            this.iDkorisnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDkorisnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.iDkorisnikaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.iDkorisnikaDataGridViewTextBoxColumn.ValueMember = "ID_korisnik";
-            this.iDkorisnikaDataGridViewTextBoxColumn.Visible = false;
             // 
             // korisniciBindingSource
             // 
@@ -344,7 +305,7 @@
             // 
             // btnGotovo
             // 
-            this.btnGotovo.Location = new System.Drawing.Point(1041, 487);
+            this.btnGotovo.Location = new System.Drawing.Point(888, 588);
             this.btnGotovo.Name = "btnGotovo";
             this.btnGotovo.Size = new System.Drawing.Size(115, 57);
             this.btnGotovo.TabIndex = 12;
@@ -367,18 +328,93 @@
             // 
             this.korisniciTableAdapter.ClearBeforeFill = true;
             // 
+            // iDstavkeracunaDataGridViewTextBoxColumn
+            // 
+            this.iDstavkeracunaDataGridViewTextBoxColumn.DataPropertyName = "ID_stavke_racuna";
+            this.iDstavkeracunaDataGridViewTextBoxColumn.HeaderText = "Broj stavke";
+            this.iDstavkeracunaDataGridViewTextBoxColumn.Name = "iDstavkeracunaDataGridViewTextBoxColumn";
+            this.iDstavkeracunaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDstavkeracunaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDnalogzaprodajuDataGridViewTextBoxColumn
+            // 
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn.DataPropertyName = "ID_nalog_za_prodaju";
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn.HeaderText = "ID_nalog_za_prodaju";
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn.Name = "iDnalogzaprodajuDataGridViewTextBoxColumn";
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDnalogzaprodajuDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDartikliDataGridViewTextBoxColumn
+            // 
+            this.iDartikliDataGridViewTextBoxColumn.DataPropertyName = "ID_artikli";
+            this.iDartikliDataGridViewTextBoxColumn.HeaderText = "Broj artikla";
+            this.iDartikliDataGridViewTextBoxColumn.Name = "iDartikliDataGridViewTextBoxColumn";
+            this.iDartikliDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn1
+            // 
+            this.nazivDataGridViewTextBoxColumn1.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn1.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn1.Name = "nazivDataGridViewTextBoxColumn1";
+            this.nazivDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kolicinaDataGridViewTextBoxColumn1
+            // 
+            this.kolicinaDataGridViewTextBoxColumn1.DataPropertyName = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn1.HeaderText = "Kolicina";
+            this.kolicinaDataGridViewTextBoxColumn1.Name = "kolicinaDataGridViewTextBoxColumn1";
+            this.kolicinaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iznosDataGridViewTextBoxColumn
+            // 
+            this.iznosDataGridViewTextBoxColumn.DataPropertyName = "Iznos";
+            this.iznosDataGridViewTextBoxColumn.HeaderText = "Iznos";
+            this.iznosDataGridViewTextBoxColumn.Name = "iznosDataGridViewTextBoxColumn";
+            this.iznosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDkorisnikaDataGridViewTextBoxColumn
+            // 
+            this.iDkorisnikaDataGridViewTextBoxColumn.DataPropertyName = "ID_korisnika";
+            this.iDkorisnikaDataGridViewTextBoxColumn.DataSource = this.korisniciBindingSource;
+            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayMember = "ime";
+            this.iDkorisnikaDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.iDkorisnikaDataGridViewTextBoxColumn.HeaderText = "Korisnik";
+            this.iDkorisnikaDataGridViewTextBoxColumn.Name = "iDkorisnikaDataGridViewTextBoxColumn";
+            this.iDkorisnikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDkorisnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDkorisnikaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDkorisnikaDataGridViewTextBoxColumn.ValueMember = "ID_korisnik";
+            this.iDkorisnikaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(79, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProdaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1299, 657);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGotovo);
             this.Controls.Add(this.dgvStavkeRacuna);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frmProdaja";
             this.Text = "frmProdaja";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -399,8 +435,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvPopisArtikla;
         private System.Windows.Forms.TextBox txtBrojArtikla;
         private System.Windows.Forms.Label label1;
@@ -429,11 +463,12 @@
         private _16027_DBDataSetTableAdapters.KorisniciTableAdapter korisniciTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDstavkeracunaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDnalogzaprodajuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDartikliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iznosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDartikliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn iDkorisnikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
