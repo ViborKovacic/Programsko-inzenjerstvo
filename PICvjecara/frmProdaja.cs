@@ -24,6 +24,7 @@ namespace PICvjecara
         public List<DBClass.Vrsta_artikla> listaVrste;
         public Korisnici korisnik = new Korisnici();
         public List<Korisnici> listaKorisnika;
+        public List<int> pomocna = new List<int>();
 
         public frmProdaja()
         {
@@ -81,8 +82,8 @@ namespace PICvjecara
 
             // TODO: This line of code loads data into the '_16027_DBDataSet.Artikli' table. You can move, or remove it, as needed.
             this.artikliTableAdapter.Fill(this._16027_DBDataSet.Artikli);
-            this.stavke_racunaTableAdapter.Fill(this._16027_DBDataSet.Stavke_racuna);
-            
+            //this.stavke_racunaTableAdapter.Fill(this._16027_DBDataSet.Stavke_racuna);
+
         }
        
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -101,21 +102,51 @@ namespace PICvjecara
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            int kolicina = 1;
+            int brojac = 0;
             lista = new List<DBClass.Artikl>();
             if (dgvPopisArtikla.SelectedRows.Count > 0)
             {
                 int odabraniArtikl = int.Parse(dgvPopisArtikla.SelectedCells[0].Value.ToString());
                 lista = DBClass.Artikl.DohvatiArtikle(odabraniArtikl);
             }
-            stavke = new DBClass.Stavka_racuna();           
+
+            stavke = new DBClass.Stavka_racuna();                    
             stavke.Naziv = lista[0].Naziv;
             stavke.Iznos = int.Parse(lista[0].Cijena.ToString());
-            stavke.Kolicina = lista[0].Kolicina;
             stavke.ID_korisnika = 1;
             stavke.ID_artikli = lista[0].ID_artikla;
-            stavke.Unos();
 
-            listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+            if (pomocna.Count > 0)
+            {
+                for (int i = 0; i < pomocna.Count; i++)
+                {
+                    if (pomocna[i] == lista[0].ID_artikla)
+                    {
+                        stavke.Update();
+                        brojac++;
+                        listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();                        
+                    }
+                }
+
+                if (brojac<=0)
+                {
+                    stavke.Kolicina = kolicina;
+                    stavke.Unos();
+                    pomocna.Add(lista[0].ID_artikla);
+                    listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+                }      
+            }
+
+            else
+            {
+                stavke.Kolicina = kolicina;
+                stavke.Unos();
+                pomocna.Add(lista[0].ID_artikla);
+                listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+            }           
+            
+            
             dgvStavkeRacuna.DataSource = listaStavke;
         }
 
@@ -161,8 +192,12 @@ namespace PICvjecara
         {
             listaStavke = new List<DBClass.Stavka_racuna>();
             listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+
+ 
             int broj = 2256;
             int suma = 0;
+
+
 
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
@@ -233,7 +268,17 @@ namespace PICvjecara
         {
             stavke = new DBClass.Stavka_racuna();
             stavke.ObrisiSve();
-            OsvijeziStavke(); 
+
+            //int kolicinaRrobe;
+            //int brojArtikla;
+
+            //for (int i = 0; i < listaStavke.Count; i++)
+            //{
+            //    kolicinaRrobe = listaStavke[i].Kolicina;
+            //    brojArtikla = listaStavke[i].ID_artikli;
+            //    stavke.UmanjiKolicinuArtikli(kolicinaRrobe, brojArtikla);
+            //}
+            OsvijeziStavke();
         }
     }
 }

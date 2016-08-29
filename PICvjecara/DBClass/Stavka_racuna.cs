@@ -70,7 +70,7 @@ namespace PICvjecara.DBClass
         public static List<DBClass.Stavka_racuna> DohvatiSveStavke()
         {
             List<DBClass.Stavka_racuna> lista = new List<DBClass.Stavka_racuna>();
-            string sqlUpit = "SELECT * FROM Stavke_racuna";
+            string sqlUpit = "SELECT DISTINCT * FROM Stavke_racuna";
             DbDataReader dr = DatabaseConnection.Instance.DohvatiDataReader(sqlUpit);
             while (dr.Read())
             {
@@ -93,6 +93,18 @@ namespace PICvjecara.DBClass
             }
             dr.Close();
             return lista;
+        }
+
+        public int UmanjiKolicinuArtikli(int kolicina, int broj)
+        {
+            string sqlUpit = "UPDATE Artikli SET Kolicina = Kolicina - '" + kolicina + "' WHERE ID_artikla = " + broj;
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+        }
+
+        public int Update()
+        {
+            string sqlUpit = "UPDATE Stavke_racuna SET Kolicina = Kolicina + 1 WHERE ID_artikli=" + ID_artikli;
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
     }
 }
