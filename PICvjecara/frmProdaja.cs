@@ -104,6 +104,11 @@ namespace PICvjecara
         {
             int kolicina = 1;
             int brojac = 0;
+            int kolicinaIznos = 0;
+            int iznos = 0;
+            int suma = 0;
+            int ukupno = 0;
+
             lista = new List<DBClass.Artikl>();
             if (dgvPopisArtikla.SelectedRows.Count > 0)
             {
@@ -148,6 +153,16 @@ namespace PICvjecara
             
             
             dgvStavkeRacuna.DataSource = listaStavke;
+
+            for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
+            {
+                kolicinaIznos = int.Parse(dgvStavkeRacuna.Rows[i].Cells[4].Value.ToString());
+                iznos = int.Parse(dgvStavkeRacuna.Rows[i].Cells[6].Value.ToString());
+                suma = kolicinaIznos * iznos;
+                ukupno = ukupno + suma;
+            }
+
+            lblIznos.Text = ukupno.ToString();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -170,7 +185,7 @@ namespace PICvjecara
             stavke = new DBClass.Stavka_racuna();
             int obrisiStavke = 0;
 
-            if (MessageBox.Show("Želite li obrisati artikl?", "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Želite li obrisati stavku?", "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 if (dgvStavkeRacuna.SelectedRows.Count > 0)
                 {
@@ -203,7 +218,7 @@ namespace PICvjecara
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
             doc.Open();
 
-            iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/fox/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
+            iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/Raingla/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
             slika.ScalePercent(25f);
             doc.Add(slika);
 
@@ -217,7 +232,8 @@ namespace PICvjecara
             List list = new List();
             list.Add("Ime izdavaca: " + korisnik.Ime);
             list.Add("Prezime izdavaca: " + korisnik.Prezime);
-            list.Add("Datum" + listaStavke[0].Datum.ToString());
+            list.Add("Datum: " + listaStavke[0].Datum.ToString());
+            list.Add("Način plaćanja: " + "Gotovina");
             doc.Add(list);
 
 
