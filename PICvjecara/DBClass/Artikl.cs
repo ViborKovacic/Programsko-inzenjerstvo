@@ -161,5 +161,10 @@ namespace PICvjecara.DBClass
             return lista;
         }
 
+        public static int SmanjnjeKolicine(int brojArtikla, int kolicina)
+        {
+            string sqlUpit = "UPDATE Artikli SET Kolicina = Kolicina - '" + kolicina + "' WHERE ID_artikla = " + brojArtikla;
+            return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
+        }
     }
 }

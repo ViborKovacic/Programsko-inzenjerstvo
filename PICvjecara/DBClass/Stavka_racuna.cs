@@ -95,9 +95,9 @@ namespace PICvjecara.DBClass
             return lista;
         }
 
-        public int UmanjiKolicinuArtikli(int kolicina, int broj)
+        public int UmanjiKolicinuArtikli(int brojArtikla)
         {
-            string sqlUpit = "UPDATE Artikli SET Kolicina = Kolicina - '" + kolicina + "' WHERE ID_artikla = " + broj;
+            string sqlUpit = "UPDATE Stavke_racuna SET Kolicina = Kolicina - 1 WHERE ID_artikli=" + brojArtikla; 
             return DatabaseConnection.Instance.IzvirsiUput(sqlUpit);
         }
 

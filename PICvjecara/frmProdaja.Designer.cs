@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._16027_DBDataSet1 = new PICvjecara._16027_DBDataSet();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,7 +60,7 @@
             this.stavke_racunaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Stavke_racunaTableAdapter();
             this.vrsta_artiklaTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter();
             this.korisniciTableAdapter = new PICvjecara._16027_DBDataSetTableAdapters.KorisniciTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OcistiRacun = new System.Windows.Forms.Button();
             this.dgvPopisArtikla = new System.Windows.Forms.DataGridView();
             this.iDartiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,7 +157,7 @@
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(115, 51);
             this.btnBrisi.TabIndex = 9;
-            this.btnBrisi.Text = "Obrisi";
+            this.btnBrisi.Text = "Obriši";
             this.btnBrisi.UseVisualStyleBackColor = true;
             this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
             // 
@@ -176,14 +176,14 @@
             this.dgvStavkeRacuna.AutoGenerateColumns = false;
             this.dgvStavkeRacuna.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStavkeRacuna.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStavkeRacuna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeRacuna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStavkeRacuna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeRacuna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDstavkeracunaDataGridViewTextBoxColumn,
@@ -195,19 +195,19 @@
             this.iznosDataGridViewTextBoxColumn,
             this.iDkorisnikaDataGridViewTextBoxColumn});
             this.dgvStavkeRacuna.DataSource = this.stavkeracunaBindingSource;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStavkeRacuna.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvStavkeRacuna.Location = new System.Drawing.Point(246, 302);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStavkeRacuna.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvStavkeRacuna.Location = new System.Drawing.Point(246, 271);
             this.dgvStavkeRacuna.Name = "dgvStavkeRacuna";
             this.dgvStavkeRacuna.ReadOnly = true;
             this.dgvStavkeRacuna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStavkeRacuna.Size = new System.Drawing.Size(845, 280);
+            this.dgvStavkeRacuna.Size = new System.Drawing.Size(845, 255);
             this.dgvStavkeRacuna.TabIndex = 11;
             // 
             // iDstavkeracunaDataGridViewTextBoxColumn
@@ -287,7 +287,7 @@
             // 
             // btnGotovo
             // 
-            this.btnGotovo.Location = new System.Drawing.Point(976, 592);
+            this.btnGotovo.Location = new System.Drawing.Point(975, 545);
             this.btnGotovo.Name = "btnGotovo";
             this.btnGotovo.Size = new System.Drawing.Size(115, 57);
             this.btnGotovo.TabIndex = 12;
@@ -310,15 +310,15 @@
             // 
             this.korisniciTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // OcistiRacun
             // 
-            this.button1.Location = new System.Drawing.Point(73, 542);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OcistiRacun.Location = new System.Drawing.Point(57, 531);
+            this.OcistiRacun.Name = "OcistiRacun";
+            this.OcistiRacun.Size = new System.Drawing.Size(115, 51);
+            this.OcistiRacun.TabIndex = 13;
+            this.OcistiRacun.Text = "Očisti račun";
+            this.OcistiRacun.UseVisualStyleBackColor = true;
+            this.OcistiRacun.Click += new System.EventHandler(this.OcistiRacun_Click_1);
             // 
             // dgvPopisArtikla
             // 
@@ -326,14 +326,14 @@
             this.dgvPopisArtikla.AutoGenerateColumns = false;
             this.dgvPopisArtikla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPopisArtikla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPopisArtikla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPopisArtikla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPopisArtikla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPopisArtikla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDartiklaDataGridViewTextBoxColumn,
@@ -342,19 +342,19 @@
             this.kolicinaDataGridViewTextBoxColumn,
             this.iDvrstaartiklaDataGridViewTextBoxColumn});
             this.dgvPopisArtikla.DataSource = this.artikliBindingSource;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPopisArtikla.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPopisArtikla.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPopisArtikla.Location = new System.Drawing.Point(11, 16);
             this.dgvPopisArtikla.Name = "dgvPopisArtikla";
             this.dgvPopisArtikla.ReadOnly = true;
             this.dgvPopisArtikla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPopisArtikla.Size = new System.Drawing.Size(845, 241);
+            this.dgvPopisArtikla.Size = new System.Drawing.Size(845, 210);
             this.dgvPopisArtikla.TabIndex = 1;
             // 
             // iDartiklaDataGridViewTextBoxColumn
@@ -404,14 +404,14 @@
             this.panel4.Controls.Add(this.dgvPopisArtikla);
             this.panel4.Location = new System.Drawing.Point(234, 12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(870, 272);
+            this.panel4.Size = new System.Drawing.Size(870, 241);
             this.panel4.TabIndex = 6;
             // 
             // lblIznos
             // 
             this.lblIznos.AutoSize = true;
             this.lblIznos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIznos.Location = new System.Drawing.Point(775, 612);
+            this.lblIznos.Location = new System.Drawing.Point(774, 565);
             this.lblIznos.Name = "lblIznos";
             this.lblIznos.Size = new System.Drawing.Size(84, 37);
             this.lblIznos.TabIndex = 14;
@@ -421,7 +421,7 @@
             // 
             this.lblKn.AutoSize = true;
             this.lblKn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKn.Location = new System.Drawing.Point(865, 611);
+            this.lblKn.Location = new System.Drawing.Point(864, 564);
             this.lblKn.Name = "lblKn";
             this.lblKn.Size = new System.Drawing.Size(53, 37);
             this.lblKn.TabIndex = 15;
@@ -431,7 +431,7 @@
             // 
             this.lblUkupno.AutoSize = true;
             this.lblUkupno.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUkupno.Location = new System.Drawing.Point(576, 611);
+            this.lblUkupno.Location = new System.Drawing.Point(575, 564);
             this.lblUkupno.Name = "lblUkupno";
             this.lblUkupno.Size = new System.Drawing.Size(144, 37);
             this.lblUkupno.TabIndex = 16;
@@ -466,7 +466,7 @@
             this.Controls.Add(this.lblUkupno);
             this.Controls.Add(this.lblKn);
             this.Controls.Add(this.lblIznos);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OcistiRacun);
             this.Controls.Add(this.btnGotovo);
             this.Controls.Add(this.dgvStavkeRacuna);
             this.Controls.Add(this.btnDodaj);
@@ -513,7 +513,7 @@
         private _16027_DBDataSetTableAdapters.Vrsta_artiklaTableAdapter vrsta_artiklaTableAdapter;
         private System.Windows.Forms.BindingSource korisniciBindingSource;
         private _16027_DBDataSetTableAdapters.KorisniciTableAdapter korisniciTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OcistiRacun;
         private System.Windows.Forms.DataGridView dgvPopisArtikla;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDartiklaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;

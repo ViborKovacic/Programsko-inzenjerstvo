@@ -50,24 +50,9 @@ namespace PICvjecara
 
         private void frmProdaja_Load(object sender, EventArgs e)
         {
-
-            //Slike();
-            OsvijeziStavke();
-            
+            OsvijeziStavke();            
         }
 
-        //public void Slike()
-        //{
-        //    listaVrste = new List<DBClass.Vrsta_artikla>();
-        //    vrsteArtikla = new DBClass.Vrsta_artikla();
-        //    listaVrste = vrsteArtikla.DohvatiVrstuUrlArtikla();
-
-        //    foreach (DBClass.Vrsta_artikla item in listaVrste)
-        //    {
-        //        flowLayoutPanel1.Controls.Add(StvaranjePanela(item.Vrsta.ToString(), item.Url.ToString()));
-        //    }
-
-        //}
 
         public void OsvijeziStavke()
         {
@@ -103,7 +88,7 @@ namespace PICvjecara
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             int kolicina = 1;
-            int brojac = 0;
+            bool zastavica = false;
             int kolicinaIznos = 0;
             int iznos = 0;
             int suma = 0;
@@ -129,12 +114,12 @@ namespace PICvjecara
                     if (pomocna[i] == lista[0].ID_artikla)
                     {
                         stavke.Update();
-                        brojac++;
+                        zastavica = true;
                         listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();                        
                     }
                 }
 
-                if (brojac<=0)
+                if (zastavica != true)
                 {
                     stavke.Kolicina = kolicina;
                     stavke.Unos();
@@ -187,13 +172,43 @@ namespace PICvjecara
 
             if (MessageBox.Show("Želite li obrisati stavku?", "Provjera", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
+                int kolicinaIznos = 0;
+                int iznos = 0;
+                int suma = 0;
+                int ukupno = 0;
+                int brojArtikla = 0;
+
                 if (dgvStavkeRacuna.SelectedRows.Count > 0)
                 {
                     int selectedRowIndex = dgvStavkeRacuna.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvStavkeRacuna.Rows[selectedRowIndex];
                     obrisiStavke = int.Parse(selectedRow.Cells[0].Value.ToString());
-                    stavke.Obrisi(obrisiStavke);
-                    OsvijeziStavke();
+
+                    if (int.Parse(selectedRow.Cells[4].Value.ToString()) > 1)
+                    {
+                        brojArtikla = int.Parse(selectedRow.Cells[2].Value.ToString());
+                        stavke.UmanjiKolicinuArtikli(brojArtikla);
+                        listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+                        OcistiRacun.Text = dgvStavkeRacuna.Rows[0].Cells[4].Value.ToString();
+                    }
+                    else
+                    {
+                        stavke.Obrisi(obrisiStavke);    
+                    }
+
+                    listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+                    dgvStavkeRacuna.DataSource = listaStavke;
+
+                    for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
+                    {
+                        kolicinaIznos = int.Parse(dgvStavkeRacuna.Rows[i].Cells[4].Value.ToString());
+                        iznos = int.Parse(dgvStavkeRacuna.Rows[i].Cells[6].Value.ToString());
+                        suma = kolicinaIznos * iznos;
+                        ukupno = ukupno + suma;
+                    }
+
+                    
+                    lblIznos.Text = ukupno.ToString();
                 }
                 else
                 {
@@ -212,15 +227,24 @@ namespace PICvjecara
             int broj = 2256;
             int suma = 0;
 
+            for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
+            {
+                int brojArtikla = 0;
+                int kolicina = 0;
 
+                brojArtikla = int.Parse(dgvStavkeRacuna.Rows[i].Cells[2].Value.ToString());
+                kolicina = int.Parse(dgvStavkeRacuna.Rows[i].Cells[4].Value.ToString());
+
+                DBClass.Artikl.SmanjnjeKolicine(brojArtikla, kolicina);
+            }
 
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
             doc.Open();
 
-            iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/Raingla/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
-            slika.ScalePercent(25f);
-            doc.Add(slika);
+            //iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/Raingla/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
+            //slika.ScalePercent(25f);
+            //doc.Add(slika);
 
             Paragraph paragraph = new Paragraph("This is my firs line using Paragraph: \n Novi red");
             paragraph.Alignment = 2;
@@ -258,7 +282,7 @@ namespace PICvjecara
                 tablica.AddCell(listaStavke[i].Naziv);
                 tablica.AddCell(listaStavke[i].Kolicina.ToString());
                 tablica.AddCell(listaStavke[i].Iznos.ToString() + " kn");
-                suma = suma + int.Parse(listaStavke[i].Iznos.ToString());
+                suma = int.Parse(lblIznos.Text);
             }
                  
             tablica.HorizontalAlignment = 1;
@@ -276,25 +300,16 @@ namespace PICvjecara
 
             stavke = new DBClass.Stavka_racuna();
             stavke.ObrisiSve();
+            dgvStavkeRacuna.DataSource = listaStavke;
 
             OsvijeziStavke();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OcistiRacun_Click_1(object sender, EventArgs e)
         {
             stavke = new DBClass.Stavka_racuna();
             stavke.ObrisiSve();
-
-            //int kolicinaRrobe;
-            //int brojArtikla;
-
-            //for (int i = 0; i < listaStavke.Count; i++)
-            //{
-            //    kolicinaRrobe = listaStavke[i].Kolicina;
-            //    brojArtikla = listaStavke[i].ID_artikli;
-            //    stavke.UmanjiKolicinuArtikli(kolicinaRrobe, brojArtikla);
-            //}
-            OsvijeziStavke();
+            dgvStavkeRacuna.DataSource = listaStavke;
         }
     }
 }
