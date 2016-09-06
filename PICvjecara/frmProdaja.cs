@@ -11,6 +11,7 @@ using System.IO;
 using System.Collections;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.draw;
 
 namespace PICvjecara
 {
@@ -50,7 +51,8 @@ namespace PICvjecara
 
         private void frmProdaja_Load(object sender, EventArgs e)
         {
-            OsvijeziStavke();            
+            OsvijeziStavke();
+            lblBrRacuna.Text = 2234.ToString();
         }
 
 
@@ -115,7 +117,12 @@ namespace PICvjecara
                     {
                         stavke.Update();
                         zastavica = true;
-                        listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();                        
+                        listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+
+                        
+                        int brojArtikla = int.Parse(lista[0].ID_artikla.ToString());
+                        DBClass.Artikl.SmanjnjeKolicine(brojArtikla);
+                        lista = DBClass.Artikl.DohvatiSveArtikle();
                     }
                 }
 
@@ -125,6 +132,10 @@ namespace PICvjecara
                     stavke.Unos();
                     pomocna.Add(lista[0].ID_artikla);
                     listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+
+                    int brojArtikla = int.Parse(lista[0].ID_artikla.ToString());
+                    DBClass.Artikl.SmanjnjeKolicine(brojArtikla);
+                    lista = DBClass.Artikl.DohvatiSveArtikle();
                 }      
             }
 
@@ -134,10 +145,15 @@ namespace PICvjecara
                 stavke.Unos();
                 pomocna.Add(lista[0].ID_artikla);
                 listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+
+                int brojArtikla = int.Parse(lista[0].ID_artikla.ToString());
+                DBClass.Artikl.SmanjnjeKolicine(brojArtikla);
+                lista = DBClass.Artikl.DohvatiSveArtikle();
             }           
             
             
             dgvStavkeRacuna.DataSource = listaStavke;
+            dgvPopisArtikla.DataSource = lista;
 
             for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
             {
@@ -189,15 +205,23 @@ namespace PICvjecara
                         brojArtikla = int.Parse(selectedRow.Cells[2].Value.ToString());
                         stavke.UmanjiKolicinuArtikli(brojArtikla);
                         listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
-                        OcistiRacun.Text = dgvStavkeRacuna.Rows[0].Cells[4].Value.ToString();
+
+                        DBClass.Artikl.PovecanjeKolicine(brojArtikla);
+                        lista = DBClass.Artikl.DohvatiSveArtikle();
                     }
                     else
                     {
-                        stavke.Obrisi(obrisiStavke);    
+                        stavke.Obrisi(obrisiStavke);
+
+                        brojArtikla = int.Parse(selectedRow.Cells[2].Value.ToString());
+                        DBClass.Artikl.PovecanjeKolicine(brojArtikla);
+                        lista = DBClass.Artikl.DohvatiSveArtikle();
                     }
 
                     listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
                     dgvStavkeRacuna.DataSource = listaStavke;
+
+                    dgvPopisArtikla.DataSource = lista;
 
                     for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
                     {
@@ -207,7 +231,6 @@ namespace PICvjecara
                         ukupno = ukupno + suma;
                     }
 
-                    
                     lblIznos.Text = ukupno.ToString();
                 }
                 else
@@ -223,31 +246,23 @@ namespace PICvjecara
             listaStavke = new List<DBClass.Stavka_racuna>();
             listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
 
+            lista = DBClass.Artikl.DohvatiSveArtikle();
  
             int broj = 2256;
             int suma = 0;
 
-            for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
-            {
-                int brojArtikla = 0;
-                int kolicina = 0;
-
-                brojArtikla = int.Parse(dgvStavkeRacuna.Rows[i].Cells[2].Value.ToString());
-                kolicina = int.Parse(dgvStavkeRacuna.Rows[i].Cells[4].Value.ToString());
-
-                DBClass.Artikl.SmanjnjeKolicine(brojArtikla, kolicina);
-            }
-
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
             doc.Open();
+    
+            iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C:/Users/vibor/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
+            slika.ScalePercent(25f);
+            slika.Alignment = 2;
+            doc.Add(slika);
 
-            //iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C: /Users/Raingla/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
-            //slika.ScalePercent(25f);
-            //doc.Add(slika);
-
-            Paragraph paragraph = new Paragraph("This is my firs line using Paragraph: \n Novi red");
-            paragraph.Alignment = 2;
+            Paragraph paragraph = new Paragraph("Cvijecarna Mak");
+            paragraph.Alignment = 1;
+            paragraph.Font.SetStyle("bold");
 
             doc.Add(paragraph);
 
@@ -260,56 +275,92 @@ namespace PICvjecara
             list.Add("Način plaćanja: " + "Gotovina");
             doc.Add(list);
 
+            Paragraph noviRed = new Paragraph("\n\n");
+            doc.Add(noviRed);
 
-            PdfPTable tablica = new PdfPTable(5);
+            PdfPTable tablica = new PdfPTable(6);
 
             PdfPCell cell = new PdfPCell(new Phrase("Racun br: " + broj));
-            cell.Colspan = 5;
+            cell.Colspan = 6;
             cell.HorizontalAlignment = 1; // 0 - lijevo 1 - sredina 2 - desno
             tablica.AddCell(cell);
 
+            tablica.AddCell("Redni broj");
             tablica.AddCell("Broj stavke");
             tablica.AddCell("Broj artikla");
             tablica.AddCell("Naziv");
             tablica.AddCell("Kolicina");
             tablica.AddCell("Iznos");
-            
+
+            int brojac = 0;
 
             for (int i = 0; i < listaStavke.Count; i++)
             {
+                brojac++;
+                tablica.AddCell(brojac.ToString());
                 tablica.AddCell(listaStavke[i].ID_stavke_racuna.ToString());
                 tablica.AddCell(listaStavke[i].ID_artikli.ToString());
                 tablica.AddCell(listaStavke[i].Naziv);
                 tablica.AddCell(listaStavke[i].Kolicina.ToString());
                 tablica.AddCell(listaStavke[i].Iznos.ToString() + " kn");
-                suma = int.Parse(lblIznos.Text);
             }
                  
             tablica.HorizontalAlignment = 1;
 
             PdfPCell cellUkupno = new PdfPCell(new Phrase("Ukupno:"));
-            cellUkupno.Colspan = 4;
+            cellUkupno.Colspan = 5;
             cellUkupno.HorizontalAlignment = 2; // 0 - lijevo 1 - sredina 2 - desno
             tablica.AddCell(cellUkupno);
 
-            tablica.AddCell(suma.ToString() + " kn");
+            tablica.AddCell(lblIznos.Text + " kn");
 
             doc.Add(tablica);
+
+            Chunk razmak = new Chunk(new VerticalPositionMark());
+            PdfPTable ispodTablice = new PdfPTable(1);
+            Phrase p = new Phrase();
+
+            p.Add("\n\nPotpis kupca:");
+            p.Add(razmak);
+            p.Add("Potpis prodavaca:");
+
+            p.Add("\n_____________");
+            p.Add(razmak);
+            p.Add("_______________");
+
+            ispodTablice.AddCell(p);
+            doc.Add(ispodTablice);
 
             doc.Close();
 
             stavke = new DBClass.Stavka_racuna();
             stavke.ObrisiSve();
+
+            listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
             dgvStavkeRacuna.DataSource = listaStavke;
 
-            OsvijeziStavke();
+            lblIznos.Text = "0,00";
         }
 
         private void OcistiRacun_Click_1(object sender, EventArgs e)
         {
             stavke = new DBClass.Stavka_racuna();
+
+            for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
+            {
+                int brojArtiklaS = int.Parse(listaStavke[i].ID_artikli.ToString());
+                int kolicinaArtiklaS = int.Parse(listaStavke[i].Kolicina.ToString());
+
+                DBClass.Artikl.PovecanjeKolicineSve(brojArtiklaS, kolicinaArtiklaS);
+            }
+
             stavke.ObrisiSve();
+
+            lista = DBClass.Artikl.DohvatiSveArtikle();
+            listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
+            dgvPopisArtikla.DataSource = lista;
             dgvStavkeRacuna.DataSource = listaStavke;
+            lblIznos.Text = "0,00";
         }
     }
 }
