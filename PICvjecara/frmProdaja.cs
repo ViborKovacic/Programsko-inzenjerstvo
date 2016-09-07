@@ -249,97 +249,157 @@ namespace PICvjecara
             lista = DBClass.Artikl.DohvatiSveArtikle();
  
             int broj = 2256;
-            int suma = 0;
 
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun.pdf", FileMode.Create));
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Racun'" + lblBrRacuna.Text + "'.pdf", FileMode.Create));
             doc.Open();
-    
+
+            var naslovFont = FontFactory.GetFont("Arial", 20, BaseColor.BLACK);
+            var tablicaFont = FontFactory.GetFont("Arial", 12, BaseColor.BLACK);
+            var textFont = FontFactory.GetFont("Arial", 10, BaseColor.BLACK);
+
+            Paragraph firma = new Paragraph("Cvjecarna Mak d.o.o.", textFont);
+            Paragraph ulica = new Paragraph("Koprivnicka 7", textFont);
+            Paragraph grad = new Paragraph("Varazdin", textFont);
+            Paragraph oib = new Paragraph("2873467382912", textFont);
+
+            Paragraph crta = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_LEFT, 1)));
+
             iTextSharp.text.Image slika = iTextSharp.text.Image.GetInstance("C:/Users/vibor/Documents/GitHub/r16027/PICvjecara/Slike/logo.png");
             slika.ScalePercent(25f);
             slika.Alignment = 2;
-            doc.Add(slika);
+            slika.SetAbsolutePosition(500, 690);
 
-            Paragraph paragraph = new Paragraph("Cvijecarna Mak");
+            doc.Add(firma);
+            doc.Add(slika);
+            doc.Add(ulica);
+            doc.Add(grad);
+            doc.Add(oib);
+            doc.Add(crta);            
+
+            Paragraph ime = new Paragraph("\n\nIme izdavaca: " + korisnik.Ime, textFont);
+            ime.Alignment = 2;
+            Paragraph prezime = new Paragraph("Prezime izdavaca: " + korisnik.Prezime, textFont);
+            prezime.Alignment = 2;
+            Paragraph datum = new Paragraph("Datum: " + listaStavke[0].Datum.ToString(), textFont);
+            datum.Alignment = 2;
+            Paragraph placanje = new Paragraph("Način placanja: " + "Gotovina", textFont);
+            placanje.Alignment = 2;
+
+            doc.Add(ime);
+            doc.Add(prezime);
+            doc.Add(datum);
+            doc.Add(placanje);
+
+            Paragraph paragraph = new Paragraph("\n\nRacun br: " + broj, naslovFont);
             paragraph.Alignment = 1;
             paragraph.Font.SetStyle("bold");
 
             doc.Add(paragraph);
 
-            korisnik.AktivanKorisnik();
-            
-            List list = new List();
-            list.Add("Ime izdavaca: " + korisnik.Ime);
-            list.Add("Prezime izdavaca: " + korisnik.Prezime);
-            list.Add("Datum: " + listaStavke[0].Datum.ToString());
-            list.Add("Način plaćanja: " + "Gotovina");
-            doc.Add(list);
-
             Paragraph noviRed = new Paragraph("\n\n");
             doc.Add(noviRed);
 
-            PdfPTable tablica = new PdfPTable(6);
+            PdfPTable tablica = new PdfPTable(7);
 
-            PdfPCell cell = new PdfPCell(new Phrase("Racun br: " + broj));
-            cell.Colspan = 6;
-            cell.HorizontalAlignment = 1; // 0 - lijevo 1 - sredina 2 - desno
-            tablica.AddCell(cell);
-
-            tablica.AddCell("Redni broj");
-            tablica.AddCell("Broj stavke");
-            tablica.AddCell("Broj artikla");
-            tablica.AddCell("Naziv");
-            tablica.AddCell("Kolicina");
-            tablica.AddCell("Iznos");
-
+            tablica.DefaultCell.HorizontalAlignment = 1;
+            tablica.AddCell(new Phrase("Redni broj", tablicaFont));
+            tablica.AddCell(new Phrase("Broj stavke", tablicaFont));
+            tablica.AddCell(new Phrase("Broj artikla", tablicaFont));
+            tablica.AddCell(new Phrase("Naziv", tablicaFont));
+            tablica.AddCell(new Phrase("Kolicina", tablicaFont));
+            tablica.AddCell(new Phrase("PDV", tablicaFont));
+            tablica.AddCell(new Phrase("Iznos", tablicaFont));   
+                     
             int brojac = 0;
+            double pdv = 0;
 
             for (int i = 0; i < listaStavke.Count; i++)
             {
                 brojac++;
-                tablica.AddCell(brojac.ToString());
-                tablica.AddCell(listaStavke[i].ID_stavke_racuna.ToString());
-                tablica.AddCell(listaStavke[i].ID_artikli.ToString());
-                tablica.AddCell(listaStavke[i].Naziv);
-                tablica.AddCell(listaStavke[i].Kolicina.ToString());
-                tablica.AddCell(listaStavke[i].Iznos.ToString() + " kn");
-            }
-                 
-            tablica.HorizontalAlignment = 1;
+                PdfPCell cell1 = new PdfPCell(new Phrase(brojac.ToString(), textFont));
+                cell1.HorizontalAlignment = 2;
+                PdfPCell cell2 = new PdfPCell(new Phrase(listaStavke[i].ID_stavke_racuna.ToString(), textFont));
+                cell2.HorizontalAlignment = 1;
+                PdfPCell cell3 = new PdfPCell(new Phrase(listaStavke[i].ID_artikli.ToString(), textFont));
+                cell3.HorizontalAlignment = 1;
+                PdfPCell cell4 = new PdfPCell(new Phrase(listaStavke[i].Naziv, textFont));
+                cell4.HorizontalAlignment = 0;
+                PdfPCell cell5 = new PdfPCell(new Phrase(listaStavke[i].Kolicina.ToString(), textFont));
+                cell5.HorizontalAlignment = 2;
+                PdfPCell cell6 = new PdfPCell(new Phrase("25%", textFont));
+                cell6.HorizontalAlignment = 1;
+                PdfPCell cell7 = new PdfPCell(new Phrase(listaStavke[i].Iznos.ToString() + " kn", textFont));
+                cell7.HorizontalAlignment = 2;
+
+                tablica.AddCell(cell1);
+                tablica.AddCell(cell2);
+                tablica.AddCell(cell3);
+                tablica.AddCell(cell4);
+                tablica.AddCell(cell5);
+                tablica.AddCell(cell6);
+                tablica.AddCell(cell7);
+
+                pdv = pdv + (int.Parse(listaStavke[i].Iznos.ToString())*0.25);
+            }            
+
+            tablica.HorizontalAlignment = 1;            
+
+            PdfPCell cellPDV = new PdfPCell(new Phrase("PDV:"));
+            cellPDV.Colspan = 6;
+            cellPDV.HorizontalAlignment = 2; 
+            tablica.AddCell(cellPDV);
+
+            tablica.AddCell(pdv.ToString() + " kn");
 
             PdfPCell cellUkupno = new PdfPCell(new Phrase("Ukupno:"));
-            cellUkupno.Colspan = 5;
-            cellUkupno.HorizontalAlignment = 2; // 0 - lijevo 1 - sredina 2 - desno
+            cellUkupno.Colspan = 6;
+            cellUkupno.HorizontalAlignment = 2; 
             tablica.AddCell(cellUkupno);
 
-            tablica.AddCell(lblIznos.Text + " kn");
+            tablica.AddCell((int.Parse(lblIznos.Text) + pdv).ToString() + " kn");
 
             doc.Add(tablica);
 
             Chunk razmak = new Chunk(new VerticalPositionMark());
-            PdfPTable ispodTablice = new PdfPTable(1);
-            Phrase p = new Phrase();
+            PdfPTable ispodTablice = new PdfPTable(3);
 
-            p.Add("\n\nPotpis kupca:");
-            p.Add(razmak);
-            p.Add("Potpis prodavaca:");
+            PdfPCell potpisP = new PdfPCell(new Phrase("\n\n\n\nPotpis prodavaca:"));
+            potpisP.Border = 0;
 
-            p.Add("\n_____________");
-            p.Add(razmak);
-            p.Add("_______________");
 
-            ispodTablice.AddCell(p);
+            PdfPCell potpisK = new PdfPCell(new Phrase("\n\n\n\nPotpis kupca:"));
+            potpisK.Border = 0;
+            potpisK.Colspan = 2;
+            potpisK.HorizontalAlignment = 2;
+
+            PdfPCell crta1 = new PdfPCell(new Phrase("\n_______________"));
+            crta1.Border = 0;
+            
+            PdfPCell crta2 = new PdfPCell(new Phrase("\n____________"));
+            crta2.Border = 0;
+            crta2.Colspan = 2;
+            crta2.HorizontalAlignment = 2;
+
+            ispodTablice.AddCell(potpisP);
+            ispodTablice.AddCell(potpisK);
+            ispodTablice.AddCell(crta1);
+            ispodTablice.AddCell(crta2);
+
+            
+
             doc.Add(ispodTablice);
 
             doc.Close();
 
-            stavke = new DBClass.Stavka_racuna();
             stavke.ObrisiSve();
 
             listaStavke = DBClass.Stavka_racuna.DohvatiSveStavke();
             dgvStavkeRacuna.DataSource = listaStavke;
 
             lblIznos.Text = "0,00";
+
+            MessageBox.Show("Račun uspiješno kreiran");
         }
 
         private void OcistiRacun_Click_1(object sender, EventArgs e)

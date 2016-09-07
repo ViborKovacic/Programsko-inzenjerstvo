@@ -17,7 +17,6 @@ namespace PICvjecara
         public DBClass.Artikl artikli;
         public DBClass.Vrsta_artikla vrstaArtikla;
         public OpenFileDialog fileDialog;
-        Image file;
         public frmPregledArtikla()
         {
             InitializeComponent();
@@ -41,9 +40,13 @@ namespace PICvjecara
 
         private void btnUnosNovogArtikla_Click(object sender, EventArgs e)
         {
-            frmUnosArtikla openUnosArtikla = new frmUnosArtikla();
-            openUnosArtikla.ShowDialog();
-            OsvijeziArtikle();
+            gboxUnosAzur.Enabled = true;
+            gboxUnosAzur.Text = "Unos novog artikla";
+            groupBox1.Enabled = false;
+            btnAzuriraj.Enabled = false;
+            btnUnosNovogArtikla.Enabled = false;
+            btnPovratak.Enabled = false;
+            btnBrisi.Enabled = false;
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
@@ -53,9 +56,22 @@ namespace PICvjecara
             {
                 int odabraniArtikl = int.Parse(artikliDataGridView.SelectedCells[0].Value.ToString());                
                 lista = DBClass.Artikl.DohvatiArtikle(odabraniArtikl);
-                frmAzurirajArtikl openAzuriraj = new frmAzurirajArtikl(lista);
-                openAzuriraj.ShowDialog();
             }
+
+            gboxUnosAzur.Enabled = true;
+            gboxUnosAzur.Text = "Azuriranje artikla";
+            groupBox1.Enabled = false;
+            btnAzuriraj.Enabled = false;
+            btnUnosNovogArtikla.Enabled = false;
+            btnPovratak.Enabled = false;
+            btnBrisi.Enabled = false;
+
+            cmboxTipArtikla.DisplayMember = lista[0].ID_vrsta_artikla.ToString();
+            txtNaziv.Text = lista[0].Naziv;
+            txtCijena.Text = lista[0].Cijena.ToString();
+            txtKolicina.Text = lista[0].Kolicina.ToString();
+
+            btnDodaj.Text = "Ažuriraj";
             OsvijeziArtikle();
         }
 
@@ -92,39 +108,94 @@ namespace PICvjecara
         private void PregledArtikla_Load(object sender, EventArgs e)
         {
             OsvijeziArtikle();
+            gboxUnosAzur.Enabled = false;
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "JPG(*.JPG)|*.jpg";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                file = Image.FromFile(fileDialog.FileName);
-                pictureBox1.Image = file;
-                Uri uri = new Uri(fileDialog.FileName);
-                string imeSlike = System.IO.Path.GetFileName(uri.LocalPath);
-                lblPutanjaSlike.Text = imeSlike;
-            }
-        }
-
-        private void btnSpremi_Click(object sender, EventArgs e)
+        private void btnSpremi_Click_1(object sender, EventArgs e)
         {
             vrstaArtikla = new DBClass.Vrsta_artikla();
             int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
             if (broj == 0)
             {
                 vrstaArtikla.Vrsta = txtVrsta.Text;
-                vrstaArtikla.Url = fileDialog.FileName;
                 vrstaArtikla.Unos();
-                OsvijeziArtikle(); 
+                OsvijeziArtikle();
             }
             else
             {
                 MessageBox.Show("Kategorija vec postoji");
             }
-            
         }
+
+        private void btnPovratak1_Click(object sender, EventArgs e)
+        {
+            gboxUnosAzur.Enabled = false;
+            gboxUnosAzur.Text = "";
+            btnDodaj.Text = "Dodaj";
+            groupBox1.Enabled = true;
+            btnAzuriraj.Enabled = true;
+            btnUnosNovogArtikla.Enabled = true;
+            btnPovratak.Enabled = true;
+            btnBrisi.Enabled = true;
+
+            cmboxTipArtikla.Text = "Odaberi tip";
+            txtNaziv.Text = "Naziv artikla";
+            txtCijena.Text = "Unesite cijenu u kn";
+            txtKolicina.Text = "Unesite količinu";
+
+            OsvijeziArtikle();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            if (btnDodaj.Text == "Dodaj")
+            {
+                float broj = 0;
+                if (float.TryParse(txtCijena.Text.Trim(), out broj))
+                {
+                    if (artikli == null)
+                    {
+                        artikli = new DBClass.Artikl();
+                    }
+
+                    artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
+                    artikli.Naziv = txtNaziv.Text;
+                    artikli.Cijena = float.Parse(txtCijena.Text);
+                    artikli.Kolicina = int.Parse(txtKolicina.Text);
+                    artikli.Unos();
+                }
+                else
+                {
+                    MessageBox.Show("Cijena i količina moraju biti brojevi");
+                }
+            }
+
+            else
+            {
+                int broj = 0;
+                if (int.TryParse(txtCijena.Text.Trim(), out broj) && int.TryParse(txtKolicina.Text.Trim(), out broj))
+                {
+                    if (artikli == null)
+                    {
+                        artikli = new DBClass.Artikl();
+                    }
+
+                    artikli.ID_vrsta_artikla = int.Parse(cmboxTipArtikla.SelectedValue.ToString());
+                    artikli.Naziv = txtNaziv.Text;
+                    artikli.Cijena = int.Parse(txtCijena.Text);
+                    artikli.Kolicina = int.Parse(txtKolicina.Text);
+                    artikli.Unos();
+                }
+
+                else
+                {
+                    MessageBox.Show("Cijena i količina moraju biti brojevi");
+                }
+            }           
+
+            OsvijeziArtikle();
+        }
+
+
     }
 }

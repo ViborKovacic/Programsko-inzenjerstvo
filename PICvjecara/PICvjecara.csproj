@@ -81,12 +81,6 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmAzurirajArtikl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAzurirajArtikl.Designer.cs">
-      <DependentUpon>frmAzurirajArtikl.cs</DependentUpon>
-    </Compile>
     <Compile Include="DBClass\Artikl.cs" />
     <Compile Include="DBClass\Dobavljac.cs" />
     <Compile Include="DBClass\Kupac.cs" />
@@ -218,12 +212,6 @@
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlCommandsGrid.cs" />
-    <Compile Include="frmUnosArtikla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUnosArtikla.Designer.cs">
-      <DependentUpon>frmUnosArtikla.cs</DependentUpon>
-    </Compile>
     <Compile Include="_16027_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,9 +224,6 @@
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAzurirajArtikl.resx">
-      <DependentUpon>frmAzurirajArtikl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -306,9 +291,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUnosArtikla.resx">
-      <DependentUpon>frmUnosArtikla.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
