@@ -17,6 +17,7 @@ namespace PICvjecara
         public DBClass.Artikl artikli;
         public DBClass.Vrsta_artikla vrstaArtikla;
         public OpenFileDialog fileDialog;
+        public List<DBClass.Vrsta_artikla> listaVsrtaArtikla = new List<DBClass.Vrsta_artikla>();
         public frmPregledArtikla()
         {
             InitializeComponent();
@@ -114,7 +115,16 @@ namespace PICvjecara
         private void btnSpremi_Click_1(object sender, EventArgs e)
         {
             vrstaArtikla = new DBClass.Vrsta_artikla();
-            int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
+            listaVsrtaArtikla = vrstaArtikla.DohvatiVrstuArtikla();
+            int broj = 0;
+            for (int i = 0; i < listaVsrtaArtikla.Count; i++)
+            {
+                if (listaVsrtaArtikla[i].Vrsta == txtVrsta.Text)
+                {
+                    broj++;
+                }
+            }
+            //int broj = vrstaArtikla.DohvatiVrstuPoID(txtVrsta.Text);
             if (broj == 0)
             {
                 vrstaArtikla.Vrsta = txtVrsta.Text;

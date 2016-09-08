@@ -405,7 +405,7 @@ namespace PICvjecara
         private void OcistiRacun_Click_1(object sender, EventArgs e)
         {
             stavke = new DBClass.Stavka_racuna();
-
+            
             for (int i = 0; i < dgvStavkeRacuna.RowCount; i++)
             {
                 int brojArtiklaS = int.Parse(listaStavke[i].ID_artikli.ToString());

@@ -42,7 +42,6 @@ namespace PICvjecara.DBClass
             if (dr != null)
             {
                 Vrsta = dr["Vrsta"].ToString();
-                Url = dr["Url"].ToString();
             }
         }
 
