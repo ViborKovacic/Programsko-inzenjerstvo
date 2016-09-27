@@ -36,11 +36,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrisanjeArtikla = new System.Windows.Forms.TextBox();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.vrstaartiklaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this._16027_DBDataSet1 = new PICvjecara._16027_DBDataSet();
+            this.narucenakolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrstaartiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSpremi = new System.Windows.Forms.Button();
             this.txtVrsta = new System.Windows.Forms.TextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -63,13 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmboxTipArtikla = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSpremi = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.narucenakolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaartiklaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._16027_DBDataSet1)).BeginInit();
@@ -160,6 +160,48 @@
             this.artikliDataGridView.TabIndex = 7;
             this.artikliDataGridView.SelectionChanged += new System.EventHandler(this.artikliDataGridView_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_artikla";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_artikla";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cijena";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cijena";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Kolicina";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Kolicina";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_vrsta_artikla";
+            this.dataGridViewTextBoxColumn5.DataSource = this.vrstaartiklaBindingSource1;
+            this.dataGridViewTextBoxColumn5.DisplayMember = "Vrsta";
+            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Kategorija";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn5.ValueMember = "ID_vrsta_artikla";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
             // vrstaartiklaBindingSource1
             // 
             this.vrstaartiklaBindingSource1.DataMember = "Vrsta_artikla";
@@ -169,6 +211,14 @@
             // 
             this._16027_DBDataSet1.DataSetName = "_16027_DBDataSet";
             this._16027_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // narucenakolicinaDataGridViewTextBoxColumn
+            // 
+            this.narucenakolicinaDataGridViewTextBoxColumn.DataPropertyName = "Narucena_kolicina";
+            this.narucenakolicinaDataGridViewTextBoxColumn.HeaderText = "Narucena_kolicina";
+            this.narucenakolicinaDataGridViewTextBoxColumn.Name = "narucenakolicinaDataGridViewTextBoxColumn";
+            this.narucenakolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.narucenakolicinaDataGridViewTextBoxColumn.Visible = false;
             // 
             // artikliBindingSource
             // 
@@ -191,6 +241,16 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unos kategorije";
+            // 
+            // btnSpremi
+            // 
+            this.btnSpremi.Location = new System.Drawing.Point(239, 85);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(98, 34);
+            this.btnSpremi.TabIndex = 3;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click_1);
             // 
             // txtVrsta
             // 
@@ -296,6 +356,7 @@
             this.btnObrisi.TabIndex = 20;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnDodaj
             // 
@@ -377,66 +438,6 @@
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Tip artikla:";
-            // 
-            // btnSpremi
-            // 
-            this.btnSpremi.Location = new System.Drawing.Point(239, 85);
-            this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(98, 34);
-            this.btnSpremi.TabIndex = 3;
-            this.btnSpremi.Text = "Spremi";
-            this.btnSpremi.UseVisualStyleBackColor = true;
-            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click_1);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_artikla";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_artikla";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cijena";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Cijena";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Kolicina";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Kolicina";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID_vrsta_artikla";
-            this.dataGridViewTextBoxColumn5.DataSource = this.vrstaartiklaBindingSource1;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "Vrsta";
-            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Kategorija";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "ID_vrsta_artikla";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // narucenakolicinaDataGridViewTextBoxColumn
-            // 
-            this.narucenakolicinaDataGridViewTextBoxColumn.DataPropertyName = "Narucena_kolicina";
-            this.narucenakolicinaDataGridViewTextBoxColumn.HeaderText = "Narucena_kolicina";
-            this.narucenakolicinaDataGridViewTextBoxColumn.Name = "narucenakolicinaDataGridViewTextBoxColumn";
-            this.narucenakolicinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.narucenakolicinaDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmPregledArtikla
             // 

@@ -206,6 +206,12 @@ namespace PICvjecara
             OsvijeziArtikle();
         }
 
-
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            cmboxTipArtikla.Text = "Odaberi tip";
+            txtNaziv.Text = "Naziv artikla";
+            txtCijena.Text = "Unesite cijenu u kn";
+            txtKolicina.Text = "Unesite količinu";
+        }
     }
 }
